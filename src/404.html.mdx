@@ -1,9 +1,12 @@
-import TwoColumnLayout from './layouts/two-column'
+import SingleColumnLayout from "./layouts/404";
+import LostIcon from "./icons/lost.svg";
 
 export const layout = props => (
-    <TwoColumnLayout {...props} title='404' css='../css/main.css'>
-        {props.children}
-    </TwoColumnLayout>
-)
+  <SingleColumnLayout {...props} title="404" css="../css/404.css">
+    {props.children}
+  </SingleColumnLayout>
+);
 
-# 404 not found
+<LostIcon />
+
+**Oops, ongoing road construction...**

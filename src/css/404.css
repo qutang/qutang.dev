@@ -1,0 +1,29 @@
+@import "./shortcuts.css";
+@import "./typography.css";
+@import "./link.css";
+@import "./color.css";
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.main-container {
+  margin-bottom: 2.5vh;
+}
+
+.side-container {
+  margin-bottom: 2.5vh;
+}
+
+span svg {
+  width: 60px;
+  height: 60px;
+}
+
+.main-inner-container {
+  text-align: center;
+}
