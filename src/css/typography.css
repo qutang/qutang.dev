@@ -1,3 +1,5 @@
+@import "prism.css";
+
 body {
     font-family: -apple-system,"SF UI Text",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
     line-height: 1.5em;
@@ -21,4 +23,22 @@ h4 {
 img {
     width: 100%;
     height: auto;
+}
+
+pre {
+    overflow: auto;
+}
+
+.badge img{
+    width: inherit;
+    height: inherit;
+}
+
+.nb-output {
+    padding-left: 1em;
+    border-left: 8px solid #444;
+}
+
+pre {
+    font-size: 0.9em;
 }

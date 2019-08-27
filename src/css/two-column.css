@@ -74,15 +74,14 @@ body {
 }
 
 .layout-container {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    width: auto;
+    display: flex;
 }
 
 .side-container {
     align-self:flex-start;
     position: sticky;
     left: 0;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,10 +97,11 @@ body {
 }
 
 .main-container {
+    flex: 1;
     padding-bottom: 5em;
 }
 
 .main-container article {
     text-align: justify;
-    width: 100%;
+    max-width: 660px;
 }

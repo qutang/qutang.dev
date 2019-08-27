@@ -23,6 +23,8 @@
     "@static/charge": "^1.4.1"
   },
   "dependencies": {
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "notebookjs": "^0.4.2",
+    "react-render-html": "^0.6.0"
   }
 }
