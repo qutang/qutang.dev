@@ -2,10 +2,10 @@ class Main extends React.Component {
   render() {
     return (
       <main className="main-container">
-        <div
+        <section
           className="main-inner-container">
           {this.props.children}
-        </div>
+        </section>
       </main>
     )
   }

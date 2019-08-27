@@ -1,0 +1,44 @@
+@import "./shortcuts.css";
+@import "./link.css";
+@import "./color.css";
+@import "./two-column.css";
+@import "./typography.css";
+
+.blog-item-container {
+    margin-bottom: 2em;
+}
+
+.blog-item-header-container > h2 {
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+
+.blog-item-description-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.blog-item-first-letter {
+    font-size: 3em;
+    width: 1em;
+    height: 1em;
+    margin: 0;
+    padding: 0.2em;
+    border: 2px solid #444;
+    border-radius: 5px;
+    margin-right: 0.2em;
+    line-height: 1em;
+    text-align: center;
+}
+
+.blog-item-description {
+    flex: 1;
+    color: #666;
+    margin: 0;
+}
+
+.blog-item-footer-container {
+    text-align: left;
+    color: #888;
+}

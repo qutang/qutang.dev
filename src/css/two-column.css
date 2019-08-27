@@ -1,13 +1,16 @@
 @import "media.css";
 
 body {
-    width: 100%;
-    margin: 0;
+    margin: 0 auto;
 }
 
 @media (--extra-large-screen){
+    body {
+        width: 960px;
+        margin-left: 480px;
+        
+    }
     .layout-container {
-        padding: 0 25%;
         padding-top: 5em;
     }
     .side-container {
@@ -16,8 +19,11 @@ body {
 }
 
 @media (--large-screen){
+    body {
+        width: 960px;
+        margin-left: 120px;
+    }
     .layout-container {
-        padding: 0 15%;
         padding-top: 5em;
     }
     .side-container {
@@ -26,8 +32,11 @@ body {
 }
 
 @media (--normal-screen){
+    body {
+        width: 860px;
+        margin-left: 60px;
+    }
     .layout-container {
-        padding: 0 10%;
         padding-top: 5em;
     }
     .side-container {
@@ -36,8 +45,11 @@ body {
 }
 
 @media (--pad-screen){
+    body {
+        width: 860px;
+        margin-left: 60px;
+    }
     .layout-container {
-        padding: 0 10%;
         padding-top: 3em;
     }
     .side-container {
@@ -46,8 +58,10 @@ body {
 }
 
 @media (--phone-screen){
+    body {
+        width: 90%;
+    }
     .layout-container {
-        padding: 0 5%;
         padding-top: 3em;
     }
     
@@ -56,18 +70,35 @@ body {
     }
 }
 
+.layout-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    width: auto;
+}
 
 .side-container {
-    width: 300px;
+    align-self:flex-start;
     position: sticky;
-    float: left;
+    left: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
+.side-container nav {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .main-container {
-    padding-left: 320px;
     padding-bottom: 5em;
+}
+
+.main-container article {
+    text-align: justify;
+    width: 100%;
 }
