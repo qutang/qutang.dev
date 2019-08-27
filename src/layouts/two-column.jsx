@@ -1,6 +1,7 @@
 import Head from '../components/head'
 import Main from '../components/main'
 import Side from '../components/side'
+import MenuButton from '../components/menu-button'
 
 export default ({ data, children, css, title, environment }) => (
     <html lang="en">
@@ -11,6 +12,7 @@ export default ({ data, children, css, title, environment }) => (
                 <Main data={data}>
                     {children}
                 </Main>
+                <MenuButton data={data} />
             </div>
         </body>
     </html>

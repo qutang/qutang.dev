@@ -1,5 +1,5 @@
 @custom-media --extra-large-screen (width >= 1920px);
 @custom-media --large-screen (1366px <= width < 1920px);
 @custom-media --normal-screen (1024px <= width < 1366px);
-@custom-media --pad-screen (800px <= width < 1024px);
-@custom-media --phone-screen (width < 800px);
+@custom-media --pad-screen (800px < width < 1024px);
+@custom-media --phone-screen (width <= 800px);

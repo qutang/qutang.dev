@@ -2,6 +2,11 @@
 @import "./color.css";
 @import "./two-column.css";
 @import "./typography.css";
+@import "media.css";
+
+.main-container {
+    padding-bottom: 0;
+}
 
 .blog-item-container {
     margin-bottom: 3em;
@@ -39,4 +44,10 @@
 .blog-item-footer-container {
     text-align: right;
     color: #888;
+}
+
+@media (--phone-screen){
+    .blog-item-first-letter {
+        font-size: 2em;
+    }
 }

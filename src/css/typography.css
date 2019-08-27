@@ -1,4 +1,5 @@
 @import "prism.css";
+@import "media.css";
 
 body {
     font-family: -apple-system,"SF UI Text",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
@@ -41,4 +42,15 @@ pre {
 
 pre {
     font-size: 0.9em;
+}
+
+
+@media (--phone-screen){
+    body {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
 }
