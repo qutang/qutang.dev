@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "name": "qutang.dev",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "charge serve src",
+    "build": "charge build src public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qutang/qutang.dev.git"
+  },
+  "keywords": [],
+  "author": "Qu Tang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qutang/qutang.dev/issues"
+  },
+  "homepage": "https://github.com/qutang/qutang.dev#readme",
+  "devDependencies": {
+    "@static/charge": "^1.4.1"
+  },
+  "dependencies": {}
+}

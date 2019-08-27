@@ -1,0 +1,24 @@
+a:any-link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h4 > a:any-link {
+    color: #444;
+}
+
+h4 > a:hover {
+    text-decoration: underline;
+}
+
+li > a:any-link {
+    color: #4C9A2A
+}
+
+.shortcut-item a:hover {
+    color: #4C9A2A;
+    text-decoration: none;
+}

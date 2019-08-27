@@ -1,0 +1,73 @@
+@import "media.css";
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
+@media (--extra-large-screen){
+    .layout-container {
+        padding: 0 25%;
+        padding-top: 5em;
+    }
+    .side-container {
+        top: 5em;
+    }
+}
+
+@media (--large-screen){
+    .layout-container {
+        padding: 0 15%;
+        padding-top: 5em;
+    }
+    .side-container {
+        top: 5em;
+    }
+}
+
+@media (--normal-screen){
+    .layout-container {
+        padding: 0 10%;
+        padding-top: 5em;
+    }
+    .side-container {
+        top: 5em;
+    }
+}
+
+@media (--pad-screen){
+    .layout-container {
+        padding: 0 10%;
+        padding-top: 3em;
+    }
+    .side-container {
+        top: 3em;
+    }
+}
+
+@media (--phone-screen){
+    .layout-container {
+        padding: 0 5%;
+        padding-top: 3em;
+    }
+    
+    .side-container {
+        top: 3em;
+    }
+}
+
+
+.side-container {
+    width: 300px;
+    position: sticky;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    padding-left: 320px;
+    padding-bottom: 5em;
+}
