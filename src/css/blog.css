@@ -1,15 +1,13 @@
-@import "./shortcuts.css";
 @import "./link.css";
 @import "./color.css";
 @import "./two-column.css";
 @import "./typography.css";
 
 .blog-item-container {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 .blog-item-header-container > h2 {
-    margin: 0;
     margin-bottom: 0.5em;
 }
 
@@ -39,6 +37,6 @@
 }
 
 .blog-item-footer-container {
-    text-align: left;
+    text-align: right;
     color: #888;
 }

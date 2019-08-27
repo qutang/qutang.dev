@@ -1,4 +1,7 @@
 @import "media.css";
+@import "shortcuts.css";
+@import "avatar.css";
+@import "footer.css";
 
 body {
     margin: 0 auto;
@@ -81,7 +84,7 @@ body {
     position: sticky;
     left: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }

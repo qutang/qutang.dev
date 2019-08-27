@@ -1,7 +1,9 @@
+@import "./avatar.css";
 @import "./shortcuts.css";
 @import "./typography.css";
 @import "./link.css";
 @import "./color.css";
+@import "footer.css";
 
 .layout-container {
   display: flex;

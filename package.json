@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "qutang.dev",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "scripts": {
     "start": "charge serve src",
@@ -22,5 +22,7 @@
   "devDependencies": {
     "@static/charge": "^1.4.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
 }

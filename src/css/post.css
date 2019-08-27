@@ -3,7 +3,6 @@
 @import './link.css';
 @import './color.css';
 
-img {
-    width: inherit;
-    height: auto;
+.post-meta-container {
+    text-align: right;
 }

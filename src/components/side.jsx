@@ -1,9 +1,13 @@
 import Shortcuts from './shortcuts'
+import Avatar from './avatar'
+import Footer from './footer'
 
-export default ({data}) => {
+export default ({ data }) => {
   return (
     <aside className="side-container">
-        <Shortcuts shortcuts={data.shortcuts} />
+      <Avatar avatar={data.site.avatar} />
+      <Shortcuts shortcuts={data.shortcuts} />
+      <Footer author={data.site.author} />
     </aside>
   )
 }

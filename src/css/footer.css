@@ -1,0 +1,13 @@
+.footer-container {
+    margin-top: 1em;
+}
+
+.footer-container small {
+    display: block;
+    text-align: center;
+}
+
+.footer-container svg {
+    width: 1.5em;
+    margin-bottom: -0.3em;
+}

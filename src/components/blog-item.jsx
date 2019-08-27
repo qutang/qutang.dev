@@ -1,4 +1,5 @@
 import Link from './link'
+import moment from 'moment'
 
 export default ({ post }) => (
     <section className='blog-item-container'>
@@ -12,7 +13,7 @@ export default ({ post }) => (
             <p className='blog-item-description'>{post.meta.excerpt.slice(1)}</p>
         </section>
         <footer className='blog-item-footer-container'>
-            <time className='blog-item-date'><small>{post.meta.date}</small></time>
+            <time className='blog-item-date'><small>{moment(post.meta.date).format("MMM DD, YYYY")}</small></time>
         </footer>
     </section>
 )
