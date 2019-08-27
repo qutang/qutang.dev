@@ -63,4 +63,4 @@ typings/
 # charge.js build output
 tmp
 public
-.pytest_cache/v/cache/nodeids
+.pytest_cache
