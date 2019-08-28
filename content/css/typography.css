@@ -1,4 +1,4 @@
-@import "prism.css";
+@import "prismjs/themes/prism-tomorrow.css";
 @import "media.css";
 
 body {

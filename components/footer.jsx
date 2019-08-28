@@ -1,6 +1,6 @@
 import moment from 'moment'
-import ChargeIcon from '../icons/charge.js.svg'
-import Link from '../components/link'
+import ChargeIcon from '../content/icons/charge.js.svg'
+import Link from './link'
 export default ({ author }) => (
     <footer className='footer-container'>
         <small>{author} © {moment().format('YYYY')}</small>

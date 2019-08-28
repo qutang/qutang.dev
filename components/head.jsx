@@ -5,7 +5,6 @@ export default ({ siteName, title, css }) => (
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <title>{title + ' | ' + siteName}</title>
         <link rel="stylesheet" href={css} />
-        <link rel='stylesheet' href="../css/katex.min.css" />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
@@ -23,11 +22,6 @@ export default ({ siteName, title, css }) => (
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff"></meta>
-        <script type="text/javascript" src="../js/prism.min.js"></script>
-        <script type="text/javascript" src="../js/katex.min.js"></script>
-        <script type="text/javascript" src="../js/katex-auto-render.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" />
-        <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
         <script type="text/javascript" src="../js/main.js"></script>
     </head>
 )

@@ -1,5 +1,5 @@
-import TwoColumnLayout from "./layouts/two-column";
-import BlogItem from "./components/blog-item";
+import TwoColumnLayout from "../layouts/two-column";
+import BlogItem from "../components/blog-item";
 import moment from "moment";
 
 export default props => {

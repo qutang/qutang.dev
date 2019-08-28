@@ -1,11 +1,11 @@
 {
   "private": true,
   "name": "qutang.dev",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "scripts": {
-    "start": "charge serve src",
-    "build": "charge build src public",
+    "start": "charge serve content",
+    "build": "charge build content public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,8 +23,13 @@
     "@static/charge": "^1.4.1"
   },
   "dependencies": {
+    "gitalk": "^1.5.0",
+    "katex": "^0.11.0",
+    "mathjax-node-page": "^3.2.0",
     "moment": "^2.24.0",
     "notebookjs": "^0.4.2",
-    "react-render-html": "^0.6.0"
+    "prismjs": "^1.17.1",
+    "react-render-html": "^0.6.0",
+    "synchronize": "^2.0.0"
   }
 }
