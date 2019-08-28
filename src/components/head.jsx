@@ -3,7 +3,7 @@ export default ({ siteName, title, css }) => (
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <title>{siteName + ' | ' + title}</title>
+        <title>{title + ' | ' + siteName}</title>
         <link rel="stylesheet" href={css} />
         <link rel='stylesheet' href="../css/katex.min.css" />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
@@ -26,6 +26,8 @@ export default ({ siteName, title, css }) => (
         <script type="text/javascript" src="../js/prism.min.js"></script>
         <script type="text/javascript" src="../js/katex.min.js"></script>
         <script type="text/javascript" src="../js/katex-auto-render.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" />
+        <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
         <script type="text/javascript" src="../js/main.js"></script>
     </head>
 )

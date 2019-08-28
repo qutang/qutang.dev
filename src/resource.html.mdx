@@ -1,9 +1,15 @@
-import TwoColumnLayout from "./layouts/two-column";
+import PostLayout from "./layouts/post";
+
+export const meta = {
+    title: "Resources about data, algorithm, AI and research",
+    date: "2018-06-23 16:14:53",
+    excerpt: "Collection of resources from internet about _data, algorithm, AI, and research."
+}
 
 export const layout = props => (
-  <TwoColumnLayout {...props} title="Resources" css="../css/main.css">
+  <PostLayout {...props} meta={meta}>
     {props.children}
-  </TwoColumnLayout>
+  </PostLayout>
 );
 
 **Collection of resources from internet about _data, algorithm, AI, and research_.**

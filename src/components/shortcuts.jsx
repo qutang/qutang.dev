@@ -1,9 +1,10 @@
 import ShortcutItem from './shortcut-item'
 
-export default props => (
-  <nav>
+export default props => {
+  var shortcuts = props.shortcuts.filter(shortcut => shortcut.icon !== 'comment' || props.pageType === 'post');
+  return (<nav>
     <ul className='shortcut-container'>
-        {props.shortcuts.map(shortcut => {
+        {shortcuts.map(shortcut => {
         return (
             <li key={shortcut.to}>
                 <ShortcutItem
@@ -15,5 +16,5 @@ export default props => (
         )
         })}
     </ul>
-  </nav>
-)
+  </nav>)
+}

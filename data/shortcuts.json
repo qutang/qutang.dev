@@ -38,5 +38,10 @@
         "to": "#",
         "icon": "wechat",
         "text": "@鬼画桃符"
+    },
+    {
+        "to": "#comments",
+        "icon": "comment",
+        "text": "Comments"
     }
 ]

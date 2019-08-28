@@ -3,12 +3,12 @@ import Main from '../components/main'
 import Side from '../components/side'
 import MenuButton from '../components/menu-button'
 
-export default ({ data, children, css, title, environment }) => (
+export default ({ data, children, css, title, pageType, environment }) => (
     <html lang="en">
         <Head title={title} css={css} siteName={data.site.title} />
         <body>
             <div className='layout-container'>
-                <Side data={data}></Side>
+                <Side data={data} pageType={pageType}></Side>
                 <Main data={data}>
                     {children}
                 </Main>
