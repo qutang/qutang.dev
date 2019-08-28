@@ -10,13 +10,10 @@ import Link from './link'
 var renderWithDelimitersToString = function (text) {
     var CleanAndRender = function (str) {
         var mathText = str.replace(/\\\(|\$\$|\\\)|\$/g, "");
-        console.log(mathText);
         try {
             var result = katex.renderToString(mathText);
-            console.log(result);
             return result;
         } catch (error) {
-            console.log(error);
             return mathText
         }
 
@@ -31,7 +28,6 @@ var highlighter = function (code, lang) {
     if (typeof lang === 'undefined') lang = 'markup';
 
     if (!Prism.languages.hasOwnProperty(lang)) {
-        console.log(lang)
         try {
             loadLanguages([lang]);
         } catch (e) {
@@ -39,8 +35,6 @@ var highlighter = function (code, lang) {
             Prism.languages[lang] = false;
         }
     }
-    console.log(lang)
-
     return Prism.languages[lang] ? Prism.highlight(code, Prism.languages[lang]) : code;
 };
 
