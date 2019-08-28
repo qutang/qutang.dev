@@ -10,10 +10,13 @@ import Link from './link'
 var renderWithDelimitersToString = function (text) {
     var CleanAndRender = function (str) {
         var mathText = str.replace(/\\\(|\$\$|\\\)|\$/g, "");
+        var mathText = mathText.replace("&lt;", '<');
+        var mathText = mathText.replace("&gt;", '>');
         try {
             var result = katex.renderToString(mathText);
             return result;
         } catch (error) {
+            console.log(mathText)
             return mathText
         }
 

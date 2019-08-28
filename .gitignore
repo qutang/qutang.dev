@@ -64,3 +64,4 @@ typings/
 tmp
 public
 .pytest_cache
+.ipynb_checkpoints
