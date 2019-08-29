@@ -38,8 +38,15 @@ var highlighter = function (code, lang) {
             Prism.languages[lang] = false;
         }
     }
-    return Prism.languages[lang] ? Prism.highlight(code, Prism.languages[lang]) : code;
+    var result = Prism.languages[lang] ? Prism.highlight(code, Prism.languages[lang]) : code;
+    result = addLineNumber(result);
+    console.log(result);
+    return result;
 };
+
+var addLineNumber = function (result) {
+    return result.split('\n').map(row => '<span class="line-number-row"></span>' + row).join('\n');
+}
 
 nb.highlighter = function (text, pre, code, lang) {
     var language = lang || 'text';

@@ -1,4 +1,4 @@
-@import "prismjs/themes/prism-tomorrow.css";
+@import "prism-themes/themes/prism-ghcolors.css";
 @import "media.css";
 
 body {
@@ -27,7 +27,24 @@ img {
 }
 
 pre {
+    background-color: white;
+    padding: 1em;
+    margin: 0.5em 0px;
     overflow: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    border-image: initial;
+}
+
+pre, code[class*="language-"], pre[class*="language-"] {
+    overflow: auto;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+pre[class*="language-"] {
+    padding-left: 1.5em;
 }
 
 .badge img{
@@ -35,15 +52,52 @@ pre {
     height: inherit;
 }
 
+.nb-input {
+    position: relative;
+}
+
+.nb-input pre {
+    padding-top: 35px;
+}
+
+.nb-input:before {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    content: url('../icons/code.svg');
+    width: 18px;
+    height: auto;
+    font-size: 1em;
+    color: #ccc;
+}
+
 .nb-output {
-    padding-left: 1em;
-    border-left: 8px solid #444;
+    position: relative;
 }
 
-pre {
-    font-size: 0.9em;
+.nb-output pre {
+    padding-top: 35px;
 }
 
+.nb-output:before {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    content: url('../icons/idea.svg');
+    width: 20px;
+    height: auto;
+    font-size: 1em;
+    color: #ccc;
+}
+
+.nb-output:after {
+    position: absolute;
+    top: 10px;
+    left: 35px;
+    content: "Output";
+    font-size: 0.8em;
+    color: #ccc;
+}
 
 @media (--phone-screen){
     body {
@@ -53,4 +107,16 @@ pre {
     h2 {
         font-size: 1.2em;
     }
+}
+
+.line-number-row {
+    counter-increment: linenumber 1;
+    width: 2em;
+    display: inline-block;
+}
+
+.line-number-row:before {
+    content: counter(linenumber);
+    text-align: right;
+    color:#ccc;
 }
