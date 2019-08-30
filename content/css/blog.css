@@ -23,7 +23,7 @@
 }
 
 .blog-item-first-letter {
-    font-size: 3em;
+    font-size: 2.5em;
     width: 1em;
     height: 1em;
     margin: 0;
@@ -44,6 +44,16 @@
 .blog-item-footer-container {
     text-align: right;
     color: #888;
+    font-size: 0.9em;
+}
+
+.blog-item-series a:any-link, .blog-item-date a:any-link {
+    color: #888;
+}
+
+.blog-item-series a:hover, .blog-item-date a:hover {
+    color: #4C9A2A;
+    text-decoration: none;
 }
 
 @media (--phone-screen){

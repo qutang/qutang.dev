@@ -7,4 +7,15 @@
 
 .post-meta-container {
     text-align: right;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.post-meta-series a:any-link {
+    color: #666;
+}
+
+.post-meta-series a:hover {
+    color: #4C9A2A;
+    text-decoration: none;
 }

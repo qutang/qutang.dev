@@ -3,7 +3,7 @@ import BlogItem from "../components/blog-item";
 import moment from "moment";
 
 export default props => {
-  var posts = props.pages.filter(page => page.path.includes("blog/"));
+  var posts = props.pages.filter(page => page.path.includes("blog/") && !page.path.includes("blog/series") && !page.path.includes("blog/archive"));
   var sortedPosts = posts.sort((prev, next) => moment(prev.meta.date).isBefore(next.meta.date));
   console.log(sortedPosts);
   return (

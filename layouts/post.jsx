@@ -4,7 +4,14 @@ import moment from 'moment'
 export default ({ meta, ...props }) => (
     <TwoColumnLayout {...props} title={meta.title} css="../css/post.css" pageType='post'>
         <header><h2>{meta.title}</h2></header>
-        <section className='post-meta-container'><small><strong>{moment(meta.date).format('MMM DD, YYYY')}</strong></small></section>
+        <section className='post-meta-container'>
+            <span className='post-meta-series'>
+                <a href={"/blog/series#" + meta.series || ""}>{meta.series || ""}</a>
+            </span>{" | "}
+            <time className='post-meta-date'>
+                {moment(meta.date).format('MMM DD, YYYY')}
+            </time>
+        </section>
         <article>
             {props.children}
         </article>
