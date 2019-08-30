@@ -5,6 +5,7 @@ import moment from "moment";
 export default props => {
   var posts = props.pages.filter(page => page.path.includes("blog/"));
   var sortedPosts = posts.sort((prev, next) => moment(prev.meta.date).isBefore(next.meta.date));
+  console.log(sortedPosts);
   return (
     <TwoColumnLayout {...props} title="Blog" css="../css/blog.css">
       {sortedPosts.map(post => {

@@ -40,7 +40,6 @@ var highlighter = function (code, lang) {
     }
     var result = Prism.languages[lang] ? Prism.highlight(code, Prism.languages[lang]) : code;
     result = addLineNumber(result);
-    console.log(result);
     return result;
 };
 
