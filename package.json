@@ -18,6 +18,10 @@
   "bugs": {
     "url": "https://github.com/qutang/qutang.dev/issues"
   },
+  "engines": {
+    "node": "=10.16.3",
+    "yarn": ">=1.17.3"
+  },
   "homepage": "https://github.com/qutang/qutang.dev#readme",
   "devDependencies": {
     "@static/charge": "^1.4.1"
