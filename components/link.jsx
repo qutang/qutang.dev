@@ -1,4 +1,5 @@
 const getLinkAttrs = function(to) {
+  if (to === undefined) return { target: "", rel: "" };
   if (to.includes("//")) {
     return { target: "_blank", rel: "noreferrer noopener external" };
   } else if (to.endsWith("pdf") || to.endsWith("xml")) {

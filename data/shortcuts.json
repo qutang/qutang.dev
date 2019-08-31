@@ -1,47 +1,45 @@
 [
-    {
-        "to": "/",
-        "icon": "home",
-        "text": "Home"
-    },
-    {
-        "to": "/blog",
-        "icon": "blog",
-        "text": "Blog"
-    },
-    {
-        "to": "/CV_Tang.pdf",
-        "icon": "user",
-        "text": "CV"
-    },
-    {
-        "to": "/rss.xml",
-        "icon": "rss",
-        "text": "Subscribe"
-    },
-    {
-        "to": "https://github.com/qutang",
-        "icon": "github",
-        "text": "Github"
-    },
-    {
-        "to": "https://linkedin.com/u/qutang",
-        "icon": "linkedin",
-        "text": "Linkedin"
-    },
-    {
-        "to": "https://t.me/conan_lan",
-        "icon": "telegram",
-        "text": "Telegram"
-    },
-    {
-        "to": "#",
-        "icon": "wechat",
-        "text": "@鬼画桃符"
-    },
-    {
-        "to": "#comments",
-        "icon": "comment",
-        "text": "Comments"
-    }
+  {
+    "to": "/",
+    "icon": "home",
+    "text": "Home"
+  },
+  {
+    "to": "/blog",
+    "icon": "blog",
+    "text": "Blog"
+  },
+  {
+    "to": "/CV_Tang.pdf",
+    "icon": "user",
+    "text": "CV"
+  },
+  {
+    "icon": "rss",
+    "text": "Subscribe"
+  },
+  {
+    "to": "https://github.com/qutang",
+    "icon": "github",
+    "text": "Github"
+  },
+  {
+    "to": "https://www.linkedin.com/in/qutang/",
+    "icon": "linkedin",
+    "text": "Linkedin"
+  },
+  {
+    "to": "https://t.me/conan_lan",
+    "icon": "telegram",
+    "text": "Telegram"
+  },
+  {
+    "icon": "wechat",
+    "text": "@鬼画桃符"
+  },
+  {
+    "to": "#comments",
+    "icon": "comment",
+    "text": "Comments"
+  }
 ]
