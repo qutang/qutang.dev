@@ -1,7 +1,7 @@
 const getLinkAttrs = function(to) {
   if (to.includes("//")) {
     return { target: "_blank", rel: "noreferrer noopener external" };
-  } else if (to.endsWith("pdf")) {
+  } else if (to.endsWith("pdf") || to.endsWith("xml")) {
     return { target: "_blank", rel: "bookmark" };
   } else {
     return { target: "_self", rel: "bookmark" };

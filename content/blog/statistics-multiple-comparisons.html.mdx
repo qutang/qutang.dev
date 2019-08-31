@@ -1,15 +1,17 @@
 export const meta = {
-    title: "多重比较",
-    date: "2017-06-23 16:14:53",
-    series: "🎉统计学笔记",
-    excerpt: "多重比较 (Multiple comparisons) 是指通过多个统计测试来做出推论的方式"
-}
+  type: "mdx",
+  title: "多重比较",
+  date: "2017-06-23 16:14:53",
+  series: "🎉统计学笔记",
+  excerpt:
+    "多重比较 (Multiple comparisons) 是指通过多个统计测试来做出推论的方式"
+};
 
 import PostLayout from "../../layouts/post";
 
 export const layout = props => (
   <PostLayout {...props} meta={meta}>
-      {props.children}
+    {props.children}
   </PostLayout>
 );
 

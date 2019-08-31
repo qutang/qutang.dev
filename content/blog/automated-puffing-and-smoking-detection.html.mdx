@@ -1,14 +1,16 @@
 export const meta = {
-    title: "Automated smoking detection",
-    date: "2016-08-04T00:00:00",
-    excerpt: "A compelementary introduction for a published paper about an Activity recognition algorithm based on Random Forest to automatically detect puffing and smoking behavior using wrist accelerometers."
-}
+  type: "mdx",
+  title: "Automated smoking detection",
+  date: "2016-08-04T00:00:00",
+  excerpt:
+    "A compelementary introduction for a published paper about an Activity recognition algorithm based on Random Forest to automatically detect puffing and smoking behavior using wrist accelerometers."
+};
 
 import PostLayout from "../../layouts/post";
 
 export const layout = props => (
   <PostLayout {...props} meta={meta}>
-      {props.children}
+    {props.children}
   </PostLayout>
 );
 
@@ -28,7 +30,18 @@ This project page hosts some additional resources that are not included in the p
 Please scan through the paper before using the dataset and source codes so that you can better understand them. Please also kindly cite the original paper when publishing results that are derived from using this public dataset.
 
 <ol>
-    <li><b>Tang, Q.</b>, Vidrine, D., Crowder, E., and Intille, S. 2014. <i>Automated Detection of Puffing and Smoking with Wrist Accelerometers</i>. 8th International Conference on Pervasive Computing Technologies for Healthcare, ICST (2014). <a href="http://eudl.eu/doi/10.4108/icst.pervasivehealth.2014.254978" title="download paper"><i className="fa fa-link"></i></a></li>
+  <li>
+    <b>Tang, Q.</b>, Vidrine, D., Crowder, E., and Intille, S. 2014.{" "}
+    <i>Automated Detection of Puffing and Smoking with Wrist Accelerometers</i>.
+    8th International Conference on Pervasive Computing Technologies for
+    Healthcare, ICST (2014).{" "}
+    <a
+      href="http://eudl.eu/doi/10.4108/icst.pervasivehealth.2014.254978"
+      title="download paper"
+    >
+      <i className="fa fa-link"></i>
+    </a>
+  </li>
 </ol>
 
 ## Documentation for RealSmoking dataset package

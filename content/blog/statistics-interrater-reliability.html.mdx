@@ -1,15 +1,17 @@
 export const meta = {
+  type: "mdx",
   title: "评分者信度",
   date: "2017-06-23 16:14:53",
   series: "🎉统计学笔记",
-  excerpt: "评分者间信度 (Interrater reliability) 就是用不同数据收集者之间一致性来度量数据可信度的一种概念。"
-}
+  excerpt:
+    "评分者间信度 (Interrater reliability) 就是用不同数据收集者之间一致性来度量数据可信度的一种概念。"
+};
 
 import PostLayout from "../../layouts/post";
 
 export const layout = props => (
   <PostLayout {...props} meta={meta}>
-      {props.children}
+    {props.children}
   </PostLayout>
 );
 

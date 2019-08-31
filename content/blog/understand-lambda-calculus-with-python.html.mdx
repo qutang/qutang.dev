@@ -1,18 +1,20 @@
 export const meta = {
-    title: "Understand 𝜆-calculus with Python",
-    date: "2019-08-30T16:59:00",
-    series: "Programming",
-    excerpt: "Lambda (𝜆)-calculus is known as the world's tiniest universal programming language that adopts the functional programming paradigm. Let's think about Arithmetic, or more basically numbers. How can we define a number as function in 𝜆-calculus?"
-}
+  type: "ipynb",
+  title: "Understand 𝜆-calculus with Python",
+  date: "2019-08-30T16:59:00",
+  series: "Programming",
+  excerpt:
+    "Lambda (𝜆)-calculus is known as the world's tiniest universal programming language that adopts the functional programming paradigm. Let's think about Arithmetic, or more basically numbers. How can we define a number as function in 𝜆-calculus?"
+};
 
 import NotebookLayout from "../../layouts/notebook";
 
 export const layout = props => (
-  <NotebookLayout {...props} meta={meta} file='understand-lambda-calculus-with-python/index.ipynb'>
-      {props.children}
+  <NotebookLayout
+    {...props}
+    meta={meta}
+    file="understand-lambda-calculus-with-python/index.ipynb"
+  >
+    {props.children}
   </NotebookLayout>
 );
-
-
-
-

@@ -1,8 +1,17 @@
 import SingleColumnLayout from "../layouts/404";
 import LostIcon from "./icons/lost.svg";
 
+export const meta = {
+  type: "mdx"
+};
+
 export const layout = props => (
-  <SingleColumnLayout {...props} title="404" css="../css/404.css" pageType='404'>
+  <SingleColumnLayout
+    {...props}
+    title="404"
+    css="../css/404.css"
+    pageType="404"
+  >
     {props.children}
   </SingleColumnLayout>
 );
