@@ -15,8 +15,9 @@
     "text": "CV"
   },
   {
+    "to": "/rss.xml",
     "icon": "rss",
-    "text": "Subscribe"
+    "text": "Subscribe to my blog"
   },
   {
     "to": "https://github.com/qutang",

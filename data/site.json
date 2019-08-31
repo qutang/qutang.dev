@@ -2,5 +2,6 @@
   "title": "Qu Tang",
   "avatar": "../images/avatar.jpg",
   "author": "Qu Tang",
-  "url": "qutang.dev"
+  "url": "qutang.dev",
+  "description": "This site shares recent updates and thoughts for Qu Tang on topics of machine learning, programming, data science, and general technologies."
 }
