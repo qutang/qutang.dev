@@ -1,20 +1,21 @@
+import parseIpynb from "../../components/ipynb";
+import NotebookLayout from "../../layouts/notebook";
+
 export const meta = {
   type: "ipynb",
   title: "线性回归及其统计推断",
   date: "2019-08-27T15:39:00",
   series: "🕹机器学习笔记",
+  ipynbFile: "ml-linear-regression-statistical-inference/index.ipynb",
+  ipynbContent: parseIpynb(
+    "ml-linear-regression-statistical-inference/index.ipynb"
+  ),
   excerpt:
     "本文简要概括线性回归的各种Python实现，线性回归作为机器学习的入门算法具有异常重要的意义，经常用来理解机器学习中的各种重要概念。不仅如此，线性回归还是很多其他经典算法的基础，大量线性或者非线性模型都由线性回归发展而来，理解线性回归的实现，对实现其他算法具有基础性意义。"
 };
 
-import NotebookLayout from "../../layouts/notebook";
-
 export const layout = props => (
-  <NotebookLayout
-    {...props}
-    meta={meta}
-    file="ml-linear-regression-statistical-inference/index.ipynb"
-  >
+  <NotebookLayout {...props} meta={meta}>
     {props.children}
   </NotebookLayout>
 );
