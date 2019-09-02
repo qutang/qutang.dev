@@ -1,0 +1,13 @@
+.copyright-notice {
+  font-size: 10px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.copyright-notice p {
+  line-height: 1.2;
+}
+
+.copyright-notice h3 {
+  text-align: center;
+}
