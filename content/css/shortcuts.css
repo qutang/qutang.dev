@@ -15,7 +15,11 @@
     font-size: 14px;
 }
 
-.shortcut-item img{
+.shortcut-item svg{
     width: 25px;
     height: 25px;
+}
+
+.shortcut-item svg:hover{
+    color: #4C9A2A;
 }
