@@ -7,12 +7,15 @@ import katex from "katex";
 import Link from "./link";
 
 var renderWithDelimitersToString = function(text) {
-  var CleanAndRender = function(str) {
+  var CleanAndRender = function(str, type) {
     var mathText = str.replace(/\\\(|\$\$|\\\)|\$/g, "");
     var mathText = mathText.replace("&lt;", "<");
     var mathText = mathText.replace("&gt;", ">");
     try {
       var result = katex.renderToString(mathText);
+      if (type === 'block') {
+        result = '<p className="block-equation">' + result + '</p>'
+      }
       return result;
     } catch (error) {
       console.log(mathText);
@@ -25,12 +28,13 @@ var renderWithDelimitersToString = function(text) {
     doubleDollar,
     dollar
   ) {
-    if (
-      bracket !== undefined ||
-      dollar !== undefined ||
-      doubleDollar !== undefined
-    )
-      return CleanAndRender(m);
+    if(bracket !== undefined || dollar !== undefined){
+      return CleanAndRender(m, 'inline');
+    }
+    else if (doubleDollar !== undefined) {
+      return CleanAndRender(m, 'block');
+    }
+      
     return m;
   });
 };
