@@ -20,6 +20,13 @@ export default props => {
             )
           );
         })}
+        <li>
+          <ShortcutItem
+            to={"#"}
+            iconType={"top"}
+            text={"Back to top"}
+          />
+        </li>
       </ul>
     </nav>
   );

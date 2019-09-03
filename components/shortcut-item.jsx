@@ -6,9 +6,8 @@ export default props => {
   const Icon = icons(props.iconType)
   return (
     <div className="shortcut-item">
-      <Link to={props.to} className="color-scheme-light">
+      <Link to={props.to} className={'shortcut-' + props.iconType}>
         <Icon />
-        {/* <img src={"../icons/" + props.iconType + ".svg"} alt="" /> */}
         <span>{props.text}</span>
       </Link>
     </div>

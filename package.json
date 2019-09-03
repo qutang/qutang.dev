@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "qutang.dev",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "",
   "scripts": {
     "start": "charge serve content",
@@ -29,6 +29,7 @@
   "dependencies": {
     "feed": "^4.0.0",
     "gitalk": "^1.5.0",
+    "jump.js": "^1.0.2",
     "katex": "^0.11.0",
     "moment": "^2.24.0",
     "notebookjs": "^0.4.2",

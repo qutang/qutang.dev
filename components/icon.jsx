@@ -11,9 +11,10 @@ import Rss from '../content/icons/rss.svg'
 import Telegram from '../content/icons/telegram.svg'
 import User from '../content/icons/user.svg'
 import Wechat from '../content/icons/wechat.svg'
+import Top from '../content/icons/top.svg'
 
 export default (type) => {
-    switch(type){
+    switch (type) {
         case 'blog':
             return Blog
         case 'chargejs':
@@ -40,5 +41,7 @@ export default (type) => {
             return User
         case 'wechat':
             return Wechat
+        case 'top':
+            return Top
     }
 }
