@@ -2,7 +2,6 @@ import TwoColumnLayout from "./two-column";
 import moment from "moment";
 
 import Link from "../components/link";
-
 export default ({ meta, ...props }) => (
   <TwoColumnLayout
     {...props}

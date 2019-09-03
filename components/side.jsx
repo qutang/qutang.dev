@@ -9,7 +9,7 @@ export default ({ data, pageType }) => {
       <Avatar avatar={data.site.avatar} />
       <Shortcuts shortcuts={data.shortcuts} pageType={pageType} />
       {pageType === "post" && <Copyright data={data} />}
-      <Footer author={data.site.author} />
+      <Footer data={data} />
     </aside>
   );
 };

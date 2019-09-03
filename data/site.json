@@ -3,5 +3,9 @@
   "avatar": "../images/avatar.jpg",
   "author": "Qu Tang",
   "url": "qutang.dev",
-  "description": "This site shares recent updates and thoughts for Qu Tang on topics of machine learning, programming, data science, and general technologies."
+  "description": "This site shares recent updates and thoughts for Qu Tang on topics of machine learning, programming, data science, and general technologies.",
+  "rss": "/rss.xml",
+  "atom": "/atom.xml",
+  "json": "/feed.json",
+  "sitemap": "/sitemap.xml"
 }
