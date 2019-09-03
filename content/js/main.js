@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     toTop.style.display = "none";
     toTop && toTop.addEventListener('click', (e) => {
+        e.preventDefault();
         jump('.layout-container', {
             duration: 1000,
         })
@@ -34,9 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.onscroll = (e) => {
         if (document.documentElement.scrollTop || document.body.scrollTop > 0) {
-            if (toTop.style.display === 'none') {
-                toTop.style.display = 'flex';
-            }
+            // if (toTop.style.display === 'none') {
+            toTop.style.display = 'flex';
+            // }
         } else {
             toTop.style.display = 'none';
         }
