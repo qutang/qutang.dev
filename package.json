@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/qutang/qutang.dev#readme",
   "devDependencies": {
-    "@static/charge": "^1.4.1"
+    "@static/charge": "^1.5.0"
   },
   "dependencies": {
     "feed": "^4.0.0",
