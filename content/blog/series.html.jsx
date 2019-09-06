@@ -37,7 +37,7 @@ export default props => {
         var seriesPosts = sortedPosts.filter(post => post.meta.series === name);
         var blogItems = seriesPosts.map(post => {
           return (
-            <div className="archive-item-container">
+            <div className="archive-item-container" key={post.path}>
               <time className="archive-item-date">
                 <a
                   href={
@@ -55,7 +55,7 @@ export default props => {
           );
         });
         return (
-          <section className="archive-section-container">
+          <section className="archive-section-container" key={name}>
             <h2 id={name} className="archive-section-title">
               {name} ({seriesPosts.length})
             </h2>

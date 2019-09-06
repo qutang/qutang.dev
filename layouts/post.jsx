@@ -1,9 +1,14 @@
 import TwoColumnLayout from "./two-column";
 import moment from "moment";
-
 import Link from "../components/link";
-export default ({ meta, ...props }) => (
-  <TwoColumnLayout
+import ReactDOMServer from 'react-dom/server';
+import getReadTime from '../components/read-time';
+
+export default ({ meta, ...props }) => {
+  if (meta.type !== 'ipynb') {
+    meta['readTime'] = getReadTime(ReactDOMServer.renderToStaticMarkup(props.children));
+  }
+  return (<TwoColumnLayout
     {...props}
     title={meta.title}
     css="../css/post.css"
@@ -21,6 +26,7 @@ export default ({ meta, ...props }) => (
           {" | "}
         </span>
       )}
+      <span className='post-meta-readtime'>{meta.readTime + ' min'}{" | "}</span>
       <time className="post-meta-date">
         <Link to={"/blog/archive#" + moment(meta.date).format("YYYY")}>
           {moment(meta.date).format("MMM DD, YYYY")}
@@ -28,9 +34,9 @@ export default ({ meta, ...props }) => (
       </time>
     </section>
     <article>{props.children}</article>
-    <section class="post-comment-container">
+    <section className="post-comment-container">
       <h2 id="comments">Comments</h2>
       <div id="gitalk-container"></div>
     </section>
-  </TwoColumnLayout>
-);
+  </TwoColumnLayout>)
+};

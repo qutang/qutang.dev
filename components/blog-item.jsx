@@ -1,8 +1,17 @@
 import Link from "./link";
 import moment from "moment";
+import getReadTime from './read-time'
+import ReactDOMServer from 'react-dom/server'
 
-export default ({ post }) => (
-  <section className="blog-item-container">
+export default ({ post }) => {
+  var readTime = 0;
+  if (post.meta.type === 'ipynb') {
+    readTime = getReadTime(post.meta.ipynbContent);
+  } else if (post.meta.type === 'mdx') {
+    readTime = getReadTime(ReactDOMServer.renderToStaticMarkup(React.createElement(post.component)))
+  }
+
+  return (<section className="blog-item-container">
     <header className="blog-item-header-container">
       <h2>
         <Link to={post.path}>{post.meta.title}</Link>
@@ -21,11 +30,14 @@ export default ({ post }) => (
           {" | "}
         </span>
       )}
+      <span className="blog-item-readtime">
+        {readTime + ' min'}{" | "}
+      </span>
       <time className="blog-item-date">
         <a href={"/blog/archive#" + moment(post.meta.date).format("YYYY")}>
           {moment(post.meta.date).format("MMM DD, YYYY")}
         </a>
       </time>
     </footer>
-  </section>
-);
+  </section>)
+};

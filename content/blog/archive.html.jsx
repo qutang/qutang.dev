@@ -34,7 +34,7 @@ export default props => {
         );
         var blogItems = yearPosts.map(post => {
           return (
-            <div className="archive-item-container">
+            <div className="archive-item-container" key={post.path}>
               <time className="archive-item-date">
                 {moment(post.meta.date).format("MMM DD, YYYY")}
               </time>
@@ -51,7 +51,7 @@ export default props => {
           );
         });
         return (
-          <section className="archive-section-container">
+          <section className="archive-section-container" key={year}>
             <h2 id={year} className="archive-section-title">
               {year} ({yearPosts.length})
             </h2>

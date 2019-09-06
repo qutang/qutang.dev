@@ -1,4 +1,5 @@
 import parseIpynb from "../../components/ipynb";
+import NotebookLayout from "../../layouts/notebook";
 
 export const meta = {
   type: "ipynb",
@@ -13,7 +14,6 @@ export const meta = {
     "Lambda (𝜆)-calculus is known as the world's tiniest universal programming language that adopts the functional programming paradigm. Let's think about Arithmetic, or more basically numbers. How can we define a number as function in 𝜆-calculus?"
 };
 
-import NotebookLayout from "../../layouts/notebook";
 
 export const layout = props => (
   <NotebookLayout {...props} meta={meta}>
