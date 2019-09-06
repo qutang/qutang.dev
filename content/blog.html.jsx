@@ -17,7 +17,7 @@ export default props => {
     moment(prev.meta.date).isBefore(next.meta.date)
   );
   return (
-    <TwoColumnLayout {...props} title="Blog" css="../css/blog.css">
+    <TwoColumnLayout {...props} title="Blog" css="../css/blog.css" pageType='blog'>
       {sortedPosts.map(post => {
         return <BlogItem post={post} key={post.path} />;
       })}

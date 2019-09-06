@@ -5,7 +5,7 @@ export const meta = {
   type: "jsx"
 };
 
-var getSeries = function(posts) {
+var getSeries = function (posts) {
   var seriesNames = posts
     .map(post => post.meta.series)
     .filter(
@@ -32,7 +32,7 @@ export default props => {
   );
 
   return (
-    <TwoColumnLayout {...props} title="Blog" css="../css/archive.css">
+    <TwoColumnLayout {...props} title="Blog" css="../css/archive.css" pageType='archive'>
       {seriesNames.map(name => {
         var seriesPosts = sortedPosts.filter(post => post.meta.series === name);
         var blogItems = seriesPosts.map(post => {

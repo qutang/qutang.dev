@@ -5,7 +5,7 @@ export const meta = {
   type: "jsx"
 };
 
-var getYears = function(posts) {
+var getYears = function (posts) {
   var years = posts
     .map(post => parseInt(moment(post.meta.date).format("YYYY")))
     .filter((name, index, arr) => arr.indexOf(name) === index)
@@ -27,7 +27,7 @@ export default props => {
   );
 
   return (
-    <TwoColumnLayout {...props} title="Blog" css="../css/archive.css">
+    <TwoColumnLayout {...props} title="Blog" css="../css/archive.css" pageType="archive">
       {years.map(year => {
         var yearPosts = sortedPosts.filter(
           post => parseInt(moment(post.meta.date).format("YYYY")) === year

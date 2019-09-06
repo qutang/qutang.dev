@@ -5,7 +5,7 @@ import MenuButton from '../components/menu-button'
 
 export default ({ data, children, css, title, pageType, environment }) => (
     <html lang="en">
-        <Head title={title} css={css} siteName={data.site.title} />
+        <Head title={title} css={css} siteName={data.site.title} pageType={pageType} />
         <body>
             <div className='layout-container'>
                 <Side data={data} pageType={pageType}></Side>

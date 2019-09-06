@@ -1,4 +1,4 @@
-export default ({ siteName, title, css }) => (
+export default ({ siteName, title, css, pageType }) => (
   <head>
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,5 +66,6 @@ export default ({ siteName, title, css }) => (
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     <meta name="theme-color" content="#ffffff"></meta>
     <script type="text/javascript" src="../js/main.js"></script>
+    {pageType == 'post' && <script type="text/javascript" src="../js/post.js"></script>}
   </head>
 );
