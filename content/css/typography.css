@@ -142,3 +142,35 @@ code[class*="language-"] {
 .block-equation {
     text-align: center;
 }
+
+.footnotes li {
+    font-size: 0.9em;
+    text-align: left;
+}
+
+ol, ul {
+    padding-left: 1em;
+}
+
+blockquote {
+    position: relative;
+    color: #999;
+}
+
+blockquote:before {
+    content: '“';
+    font-size: 5em;
+    position: absolute;
+    top: -0.1em;
+    left: -0.4em;
+    line-height: 1;
+}
+
+blockquote:after {
+    content: '”';
+    font-size: 5em;
+    position: absolute;
+    bottom: -0.6em;
+    right: -0.4em;
+    line-height: 1;
+}

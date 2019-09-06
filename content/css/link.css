@@ -22,3 +22,18 @@ li > a:any-link {
     color: #4C9A2A;
     text-decoration: none;
 }
+
+sup a:hover {
+    color: #4C9A2A;
+    text-decoration: none;
+}
+
+article a:any-link {
+    color: #4C9A2A;
+    text-decoration: none;
+}
+
+article a:hover {
+    color: #4C9A2A;
+    text-decoration: underline;
+}
