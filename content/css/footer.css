@@ -1,24 +1,26 @@
 .footer-container {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 .footer-container small {
-    display: block;
-    text-align: center;
+  display: block;
+  text-align: center;
 }
 
 .footer-container svg {
-    width: 1.5em;
-    margin-bottom: -0.3em;
+  width: 1.5em;
+  margin-bottom: -0.3em;
 }
 
-.footer-feed-link svg, .footer-sitemap-link svg {
-    width: 1em;
-    height: 1em;
-    margin-bottom: -0.125em;
+.footer-feed-link svg,
+.footer-sitemap-link svg {
+  width: 1em;
+  height: 1em;
+  margin-bottom: -0.125em;
 }
 
-.footer-feed-link:hover, .footer-sitemap-link:hover {
-    color: #4C9A2A;
-    text-decoration: none;
+.footer-feed-link:hover,
+.footer-sitemap-link:hover {
+  color: #4c9a2a;
+  text-decoration: none;
 }
