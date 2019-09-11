@@ -1,11 +1,16 @@
-.shortcut-container {
-    display: grid;
-    grid-template-columns: 80px 80px 80px;
-    column-gap: 10px;
-    row-gap: 20px;
+ul.shortcut-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.shortcut-container li{
+    display: block;
+    margin: 0;
 }
 
 .shortcut-item a{

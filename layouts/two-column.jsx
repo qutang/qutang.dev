@@ -1,7 +1,6 @@
 import Head from "../components/head";
 import Main from "../components/main";
 import Side from "../components/side";
-import RightSide from "../components/right-side";
 import MenuButton from "../components/menu-button";
 
 export default ({ data, children, css, title, pageType, environment }) => (
