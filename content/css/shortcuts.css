@@ -1,30 +1,32 @@
-ul.shortcut-container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.shortcut-container {
+  max-width: 240px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.shortcut-container li{
-    display: block;
-    margin: 0;
+.shortcut-item {
+  margin-bottom: 15px;
+  max-width: 80px;
+  width: 100%;
 }
 
-.shortcut-item a{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 14px;
+.shortcut-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
 }
 
-.shortcut-item svg{
-    width: 25px;
-    height: 25px;
+.shortcut-item svg {
+  width: 25px;
+  height: 25px;
 }
 
-.shortcut-item svg:hover{
-    color: #4C9A2A;
+.shortcut-item svg:hover {
+  color: #4c9a2a;
 }

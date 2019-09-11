@@ -1,7 +1,7 @@
 import Head from "../components/head";
 import Main from "../components/main";
 import Side from "../components/side";
-import MenuButton from "../components/menu-button";
+import MenuControl from "../components/menu-control";
 
 export default ({ data, children, css, title, pageType, environment }) => (
   <html lang="en">
@@ -12,10 +12,12 @@ export default ({ data, children, css, title, pageType, environment }) => (
       pageType={pageType}
     />
     <body>
+      <div className="fixed-header">
+        <MenuControl />
+      </div>
       <div className="layout-container">
         <Side data={data} pageType={pageType}></Side>
         <Main data={data}>{children}</Main>
-        <MenuButton data={data} />
       </div>
     </body>
   </html>
