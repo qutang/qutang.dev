@@ -3,6 +3,7 @@
 @import "./two-column.css";
 @import "./typography.css";
 @import "media.css";
+@import "./mailchimp.css";
 
 .main-container {
     padding-bottom: 0;

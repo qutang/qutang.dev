@@ -1,7 +1,7 @@
 import jump from "jump.js";
 import setupSidebar from "./sidebar";
 
-const setupBackToTop = function() {
+const setupBackToTop = function () {
   const toComment = document.querySelector(".shortcut-comment");
   const toTop = document.querySelector(".shortcut-top");
   toTop.style.display = "none";
@@ -30,7 +30,7 @@ const setupBackToTop = function() {
   };
 };
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   setupBackToTop();
   setupSidebar();
 });

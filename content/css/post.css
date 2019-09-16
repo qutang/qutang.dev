@@ -3,6 +3,7 @@
 @import "./link.css";
 @import "./color.css";
 @import "./comment.css";
+@import "./mailchimp.css";
 @import "katex/dist/katex.min.css";
 
 .post-meta-container {

@@ -94,6 +94,9 @@ body {
   .copyright-notice {
     display: none;
   }
+  .mc-container {
+    display: none;
+  }
 }
 
 @media (--no-sidebar) {
@@ -108,6 +111,9 @@ body {
     display: block;
   }
   .copyright-notice {
+    display: none;
+  }
+  .mc-container {
     display: none;
   }
 }
