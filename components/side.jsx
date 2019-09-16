@@ -7,7 +7,7 @@ import MenuControl from "./menu-control";
 export default ({ data, pageType }) => {
   return (
     <aside className="side-container">
-      <MenuControl />
+      {pageType !== '404' && <MenuControl />}
       <div className="side-inner-container">
         <Avatar avatar={data.site.avatar} />
         <Shortcuts shortcuts={data.shortcuts} pageType={pageType} />
