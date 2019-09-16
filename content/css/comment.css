@@ -1,1 +1,44 @@
-@import 'gitalk/dist/gitalk.css'
+@import 'gitalk/dist/gitalk.css';
+
+.gt-container .gt-link {
+    border-bottom: 1px dotted #4C9A2A;
+}
+
+.gt-container a:hover {
+    color: #4C9A2A;
+    border-color: #4C9A2A;
+}
+
+.gt-container a {
+    color: #4C9A2A;
+}
+
+.gt-container .gt-header-controls-tip {
+    color: #4C9A2A;
+}
+
+.gt-container .gt-svg svg {
+    fill: #4C9A2A;
+}
+
+.gt-container .gt-ico-github svg {
+    fill: inherit;
+}
+
+.gt-container .gt-btn {
+    border: 1px solid #4C9A2A;
+    background-color: #4C9A2A;
+}
+
+.gt-container .gt-btn-preview {
+    background-color: #fff;
+    color: #4C9A2A;
+}
+
+.gt-container .gt-comment-username {
+    color: #4C9A2A;
+}
+
+.gt-container .gt-comment-admin .gt-comment-content {
+    background-color: #f6fef8;
+}
