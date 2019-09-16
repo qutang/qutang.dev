@@ -1,5 +1,9 @@
 @import 'gitalk/dist/gitalk.css';
 
+.gt-container .gt-meta {
+    z-index: 0;
+}
+
 .gt-container .gt-link {
     border-bottom: 1px dotted #4C9A2A;
 }

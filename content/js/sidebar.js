@@ -42,7 +42,7 @@ const openSidebar = function () {
   var el = document.querySelector(".copyright-notice");
   if (el !== null) el.style.display = "block";
   el = document.querySelector(".mc-container");
-  if (el !== null) el.removeAttribute("style");
+  if (el !== null) el.style.display = "block";
 };
 
 const fixSidebar = function () {
