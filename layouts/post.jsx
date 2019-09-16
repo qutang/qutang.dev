@@ -33,7 +33,19 @@ export default ({ meta, ...props }) => {
         </Link>
       </time>
     </section>
-    <article>{props.children}</article>
+    <article>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-1246737870300549"
+        data-ad-slot="5669809671"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      {props.children}
+    </article>
     <section className="post-comment-container">
       <h2 id="comments">Comments</h2>
       <div id="gitalk-container"></div>
