@@ -39,7 +39,7 @@ const openSidebar = function () {
   document.querySelector(".side-container").style.display = "block";
   document.querySelector(".side-container").style.width = "280px";
   document.querySelector(".footer-container").style.display = "block";
-  const el = document.querySelector(".copyright-notice");
+  var el = document.querySelector(".copyright-notice");
   if (el !== null) el.style.display = "block";
   el = document.querySelector(".mc-container");
   if (el !== null) el.removeAttribute("style");
