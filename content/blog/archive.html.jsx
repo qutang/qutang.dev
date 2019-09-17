@@ -5,7 +5,7 @@ export const meta = {
   type: "jsx"
 };
 
-var getYears = function (posts) {
+var getYears = function(posts) {
   var years = posts
     .map(post => parseInt(moment(post.meta.date).format("YYYY")))
     .filter((name, index, arr) => arr.indexOf(name) === index)
@@ -14,12 +14,15 @@ var getYears = function (posts) {
 };
 
 export default props => {
-  var posts = props.pages.filter(
-    page =>
+  var posts = props.pages.filter(page => {
+    var isDraft = page.meta.draft && props.environment === "production";
+    return (
       page.path.includes("blog/") &&
       !page.path.includes("blog/series") &&
-      !page.path.includes("blog/archive")
-  );
+      !page.path.includes("blog/archive") &&
+      !isDraft
+    );
+  });
   var years = getYears(posts);
 
   var sortedPosts = posts.sort((prev, next) =>
@@ -27,7 +30,12 @@ export default props => {
   );
 
   return (
-    <TwoColumnLayout {...props} title="Blog" css="../css/archive.css" pageType="archive">
+    <TwoColumnLayout
+      {...props}
+      title="Blog"
+      css="../css/archive.css"
+      pageType="archive"
+    >
       {years.map(year => {
         var yearPosts = sortedPosts.filter(
           post => parseInt(moment(post.meta.date).format("YYYY")) === year

@@ -19,7 +19,10 @@ var getLastModTime = function(page) {
 };
 
 export default props => {
-  var pages = props.pages.filter(page => !page.path.includes("xml"));
+  var pages = props.pages.filter(page => {
+    var isDraft = page.meta.draft && props.environment === "production";
+    return !page.path.includes("xml") && !isDraft;
+  });
   var rootUrl = props.data.site.url;
   return (
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

@@ -38,12 +38,15 @@ export default props => {
       link: siteUrl
     }
   };
-  var posts = props.pages.filter(
-    page =>
+  var posts = props.pages.filter(page => {
+    var isDraft = page.meta.draft && props.environment === "production";
+    return (
       page.path.includes("blog/") &&
       !page.path.includes("archive") &&
-      !page.path.includes("series")
-  );
+      !page.path.includes("series") &&
+      !isDraft
+    );
+  });
   var feed = new Feed(feedJson);
   posts.forEach(post => {
     var content = getContent(post, props);

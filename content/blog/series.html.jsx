@@ -5,7 +5,7 @@ export const meta = {
   type: "jsx"
 };
 
-var getSeries = function (posts) {
+var getSeries = function(posts) {
   var seriesNames = posts
     .map(post => post.meta.series)
     .filter(
@@ -19,12 +19,15 @@ var getSeries = function (posts) {
 };
 
 export default props => {
-  var posts = props.pages.filter(
-    page =>
+  var posts = props.pages.filter(page => {
+    var isDraft = page.meta.draft && props.environment === "production";
+    return (
       page.path.includes("blog/") &&
       !page.path.includes("blog/series") &&
-      !page.path.includes("blog/archive")
-  );
+      !page.path.includes("blog/archive") &&
+      !isDraft
+    );
+  });
   var seriesNames = getSeries(posts);
 
   var sortedPosts = posts.sort((prev, next) =>
@@ -32,7 +35,12 @@ export default props => {
   );
 
   return (
-    <TwoColumnLayout {...props} title="Blog" css="../css/archive.css" pageType='archive'>
+    <TwoColumnLayout
+      {...props}
+      title="Blog"
+      css="../css/archive.css"
+      pageType="archive"
+    >
       {seriesNames.map(name => {
         var seriesPosts = sortedPosts.filter(post => post.meta.series === name);
         var blogItems = seriesPosts.map(post => {
