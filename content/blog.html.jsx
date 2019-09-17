@@ -27,7 +27,7 @@ export default props => {
       pageType="blog"
     >
       {sortedPosts.map(post => {
-        return <BlogItem post={post} key={post.path} />;
+        return <BlogItem post={post} key={post.path} data={props.data} />;
       })}
     </TwoColumnLayout>
   );

@@ -3,6 +3,7 @@ import moment from "moment";
 import Link from "../components/link";
 import ReactDOMServer from 'react-dom/server';
 import getReadTime from '../components/read-time';
+import seriesFunctions from '../components/series';
 
 export default ({ meta, ...props }) => {
   if (meta.type !== 'ipynb') {
@@ -15,13 +16,13 @@ export default ({ meta, ...props }) => {
     pageType="post"
   >
     <header>
-      <h2>{meta.title}</h2>
+      <h2>{meta.title + (meta.draft ? "(draft)" : "")}</h2>
     </header>
     <section className="post-meta-container">
       {meta.series && (
         <span className="post-meta-series">
-          <Link to={"/blog/series#" + meta.series || ""}>
-            {meta.series || ""}
+          <Link to={"/blog/series#" + (meta.series || "")}>
+            {seriesFunctions.getSeriesName(meta.series, props.data) || ""}
           </Link>
           {" | "}
         </span>

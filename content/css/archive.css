@@ -17,6 +17,11 @@
     margin-bottom: 0.5em;
 }
 
+.archive-section-description {
+    margin-left: 1.2em;
+    font-size: 0.8em;
+}
+
 .archive-item-container {
     display: flex;
     justify-content: flex-start;

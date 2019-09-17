@@ -1,9 +1,8 @@
 export const meta = {
   type: "mdx",
-  title: "九月更新",
+  title: "第一期：能够检测经血的卫生巾？？？",
   date: "2019-09-17 10:44:53",
-  series: "⛵航海日志",
-  draft: true,
+  series: "voyage",
   excerpt: "Ubicomp 2019，谷歌的隐私编码算法, 以及关于开题报告的无尽挑战。"
 };
 
@@ -14,3 +13,186 @@ export const layout = props => (
     {props.children}
   </PostLayout>
 );
+
+由于是第一期更这个系列，介绍下系列的初衷。
+
+从小喜欢航海游戏或者这种类型的电影和动漫，比如海商王，大航海时代，加勒比海盗以及海贼王之类，对于作为航海士上船然后出海冒险有特别的痴迷。不过这种痴迷仅限于大航海时代，工业革命尚未开始的帆船时代。自从有了蒸汽机，卫星导航，无线电通讯，铁皮船以及半自动或者全自动的热兵器，越发觉得航海不再像是冒险了。
+
+用航海当主题，是想要让自己的经历有些冒险感和刺激感。
+
+这些日志分为三个板块，**瞭望台**分享个人新的发现和进展，**灯塔**分享重大的科技变迁以及个人的看法，**甲板**分享个人发展的心得体会。
+
+![voyage](../images/voyage.jpg)
+
+## 🔭瞭望台
+
+（缺一张好的图）
+
+本月路过年度领域顶会Ubicomp，在英国伦敦召开。花了一点时间把keynote和相关论文。。的摘要看了看。相关论文正文请复制然后自行搜索。
+
+### 非核心论文
+
+喜欢的
+
+* **Evolving Needs in IoT Control and Accountability: A Longitudinal Study on Smart Home Intelligibility**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  A key issue for smart home systems is supporting non-expert users in their management. Whereas feedback design on use cases (such as energy feedback) have gained attention, current approaches to providing awareness on the system state typically provide a rather technical view. Long-term investigations of the practices and resources needed for maintaining Do-It-Yourself smart home systems, are particularly scarce. We report on a design case study in which we equipped 12 households with DIY smart home systems for two years and studied participants' strategies for maintaining system awareness, from learning about its workings to monitoring its behavior. We find that people's needs regarding system accountability changed over time. Their privacy needs were also affected over the same period. We found that participants initially looked for in-depth awareness information from the dedicated web-based dashboard. In the later phases of appropriation, however, their interaction and information needs shifted towards management by exception on mobile or ambient displays -- only focusing on the system when things were 'going wrong'. In terms of system accountability, we find that a system's self-declaration should focus on being socially meaningful rather than technically complete, for instance by relating itself to people's activities and the home routines.
+  </details>
+  
+  *简评：智能家居的可定制性对不同家庭的个性化需求非常重要。而这种个性化需求会随着时间变化。面向非专业用户的可DIY的智能家居系统设计是难点。本文的价值在于跟踪了12个用户两年的使用习惯，发现了用户需求的迁移，从初期面面俱到的DIY，到仅仅关注”系统犯错”。个人觉得这个观察很符合常理。我的炒股经历告诉我，初期涨跌我都关注，后期除非是大涨或者大跌我统统不care。*
+
+* **micro-Stress EMA: A Passive Sensing Framework for Detecting in-the-wild Stress in Pregnant Mothers**
+  
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  High levels of stress during pregnancy increase the chances of having a premature or low-birthweight baby. Perceived self-reported stress does not often capture or align with the physiological and behavioral response. But what if there was a self-report measure that could better capture the physiological response? Current perceived stress self-report assessments require users to answer multi-item scales at different time points of the day. Reducing it to one question, using microinteraction-based ecological momentary assessment (micro-EMA, collecting a single in situ self-report to assess behaviors) allows us to identify smaller or more subtle changes in physiology. It also allows for more frequent responses to capture perceived stress while at the same time reducing burden on the participant. We propose a framework for selecting the optimal micro-EMA that combines unbiased feature selection and unsupervised Agglomerative clustering. We test our framework in 18 women performing 16 activities in-lab wearing a Biostamp, a NeuLog, and a Polar chest strap. We validated our results in 17 pregnant women in real-world settings. Our framework shows that the question "How worried were you?" results in the highest accuracy when using a physiological model. Our results provide further in-depth exposure to the challenges of evaluating stress models in real-world situations.
+  </details>
+
+  *简评：老板喜欢的。因为micro-EMA就是我实验室最先搞出来的。这个技术潜力挺大的，尤其当智能手表越来越普及之后*
+
+* **Your Table Can Be an Input Panel: Acoustic-based Device-Free Interaction Recognition**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  This paper explores the possibility of extending the input and interactions beyond the small screen of the mobile device onto ad hoc adjacent surfaces, e.g., a wooden tabletop with acoustic signals. While the existing finger tracking approaches employ the active acoustic signal with a fixed frequency, our proposed system Ipanel employs the acoustic signals generated by sliding of fingers on the table for tracking. Different from active signal tracking, the frequency of the finger-table generated acoustic signals keeps changing, making accurate tracking much more challenging than the traditional approaches with fix frequency signal from the speaker. Unique features are extracted by exploiting the spatio-temporal and frequency domain properties of the generated acoustic signals. The features are transformed into images and then we employ the convolutional neural network (CNN) to recognize the finger movement on the table. Ipanel is able to support not only commonly used gesture (click, flip, scroll, zoom, etc.) recognition, but also handwriting (10 numbers and 26 alphabets) recognition at high accuracies. We implement Ipanel on smartphones, and conduct extensive real environment experiments to evaluate its performance. The results validate the robustness of Ipanel, and show that it maintains high accuracies across different users with varying input behaviours (e.g., input strength, speed and region). Further, Ipanel's performance is robust against different levels of ambient noise and varying surface materials.
+  </details>
+
+  *简评：万物皆信号，只要有脑洞。敲桌子可能有点奇怪，但是拍拍手，打个响指还是可以的。*
+
+* **Just-in-Time but Not Too Much: Determining Treatment Timing in Mobile Health**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  There is a growing scientific interest in the use and development of just-in-time adaptive interventions in mobile health. These mobile interventions typically involve treatments, such as reminders, activity suggestions and motivational messages, delivered via notifications on a smartphone or a wearable to help users make healthy decisions in the moment. To be effective in influencing health, the combination of the right treatment and right delivery time is likely critical. A variety of prediction/detection algorithms have been developed with the goal of pinpointing the best delivery times. The best delivery times might be times of greatest risk and/or times at which the user might be most receptive to the treatment notifications. In addition, to avoid over burdening users, there is of ten a constraint on the number of treatments that should be provided per time interval (e.g., day or week). Yet there may be many more times at which the user is predicted or detected to be at risk and/or receptive. The goal then is to spread treatment uniformly across all of these times. In this paper, we introduce a method that spreads the treatment uniformly across the delivery times. This method can also be used to provide data for learning whether the treatments are effective at the delivery times. This work is motivated by our work on two mobile health studies, a smoking cessation study and a physical activity study.
+  </details>
+
+  *简评：这篇文章提出的问题很核心，怎么设计恰好合适的“及时干预”。但是，这个abstract没让我看到太多新东西。它的核心是把干预平均地分配到所有时间上，这个。。。不是很不言而喻的事吗？但是这个问题确实是所有mobile health类应用的核心*
+
+* **Interrupting Drivers for Interactions: Predicting Opportune Moments for In-vehicle Proactive Auditory-verbal Tasks**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  Auditory-verbal interactions with in-vehicle information systems have become increasingly popular for improving driver safety because they obviate the need for distractive visual-manual operations. This opens up new possibilities for enabling proactive auditory-verbal services where intelligent agents proactively provide contextualized recommendations and interactive decision-making. However, prior studies have warned that such interactions may consume considerable attentional resources, thus negatively affecting driving performance. This work aims to develop a machine learning model that can find opportune moments for the driver to engage in proactive auditory-verbal tasks by using the vehicle and environment sensor data. Given that there is a lack of definition about what constitutes interruptibility for auditory-verbal tasks, we first define interruptible moments by considering multiple dimensions and then iteratively develop the experimental framework through an extensive literature review and four pilot studies. We integrate our framework into OsmAnd, an open-source navigation service, and perform a real-road field study with 29 drivers to collect sensor data and user responses. Our machine learning analysis shows that opportune moments for interruption can be conservatively inferred with an accuracy of 0.74. We discuss how our experimental framework and machine learning models can be used to design intelligent auditory-verbal services in practical deployment contexts.
+  </details>
+
+  *简评：参考上篇，it's all about timing时机很重要！*
+
+* **How Does a Nation Walk?: Interpreting Large-Scale Step Count Activity with Weekly Streak Patterns**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  Activity trackers are being deployed in large-scale physical activity intervention programs, but analyzing their data is difficult due to the large data size and complexity. As such large datasets of steps become more available, it is paramount to develop analysis methods to deeply interpret them to understand the variety and changing nature of human steps behavior. In this work, we explored ways to analyze the heterogeneous steps activity data and propose a framework of dimensions and time aggregations to interpret how providing a city-wide population with activity trackers, and monetary incentives influences their wearing and steps behavior. We analyzed the daily step counts of 140,000 individuals, walking a combined 74 billion steps in 305 days of a city-wide public health campaign. We performed data mining clustering to identify 16 user segments, each with distinctive weekly streaks in patterns of device wear and recorded steps. We demonstrate that these clusters enable us to interpret how some users increased their steps level. Our key contributions are: a new analytic method to scalably interpret large steps data; the insights of our analysis about key user segments in our large intervention; demonstrating the power to predictive user outcomes from their first few days of tracking.
+  </details>
+
+  *简评：现在的问题确实是数据太多。这种large scale研究的特点就是方法简单，但是往往能得到最有用的结论。*
+
+不太喜欢的
+
+* **Differentiating Higher and Lower Job Performers in the Workplace Using Mobile Sensing**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  Assessing performance in the workplace typically relies on subjective evaluations, such as, peer ratings, supervisor ratings and self assessments, which are manual, burdensome and potentially biased. We use objective mobile sensing data from phones, wearables and beacons to study workplace performance and offer new insights into behavioral patterns that distinguish higher and lower performers when considering roles in companies (i.e., supervisors and non-supervisors) and different types of companies (i.e., high tech and consultancy). We present initial results from an ongoing year-long study of N=554 information workers collected over a period ranging from 2-8.5 months. We train a gradient boosting classifier that can classify workers as higher or lower performers with AUROC of 0.83. *Our work opens the way to new forms of passive objective assessment and feedback to workers to potentially provide week by week or quarter by quarter guidance in the workplace.*
+  </details>
+
+  *简评：看名字。。。emmmm？？？，前几天看新闻说有中学用人脸识别监控课堂表现，现在又来了用mobile sensing监控工作表现？最后一句话说是提供帮助，其实就是帮助老板开人吧！*
+
+* **MenstruLoss: Sensor For Menstrual Blood Loss Monitoring**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  Self-monitoring of menstrual blood loss volume could lead to early detection of multiple gynecological diseases. In this paper, we describe the development of a textile-based blood volume sensor which can be integrated into the sanitary napkin to quantify the menstrual blood loss during menstruation. It is based on sensing the resistance change detected as the output voltage change, with the added volume of fluid. Benchtop characterization tests with 5 mL of fluid determined the effect of spacing, orientation and weight, and location of fluid drop on the sensor. The sensor has been evaluated by intravenous blood samples collected from 18 participants and menstrual blood samples collected from 10 participants for four months. The collected intravenous blood samples and menstrual blood samples were used to create two regression model that can predict the blood volume and menstrual blood volume from the voltage input with Mean Absolute Percentage Error (MAPE) of 11-15% and 15-30% respectively.
+  </details>
+
+  *简评：Ubicomp果然是脑洞大会。本期热搜是关爱女性健康，从检测月经出血量开始。我仿佛看到了网红带货的黑科技卫生巾。不过。。。错误率居然有30%这么高，这更像是营销号。*
+
+### 核心论文
+
+今年关于Activity recognition算法的论文主要关注点都在annotation的问题，这也侧面反应了数据标记是本领域的一大难点。
+
+* **On the role of features in human activity recognition**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  Traditionally, the sliding window based activity recognition chain (ARC) has been dominating practical applications, in which features are carefully optimized towards scenario specifics. Recently, end-to-end, deep learning methods, that do not discriminate between representation learning and classifier optimization, have become very popular also for HAR using wearables, promising "out-of-the-box" modeling with superior recognition capabilities. In this paper, we revisit and analyze specifically the role feature representations play in HAR using wearables. In a systematic exploration we evaluate eight different feature extraction methods, including conventional heuristics and recent representation learning methods, and assess their capabilities for effective activity recognition on five benchmarks. Optimized feature learning integrated into the conventional ARC leads to comparable if not better recognition results as if using end-to-end learning methods, while at the same time offering practitioners more flexibility to optimize their systems towards specifics of wearables and their constraints and limitations.
+  </details>
+
+  *简评：这是一篇我需要阅读的文章，所以价值不言而喻。深度学习和传统机器学习在Activity recognition领域表现差别不大。深度学习并没有像在计算机视觉或者语音语言处理中那样，表现出巨大的优势。最近结束的Sussex-Huawei Locomotion Dataset challenge 2019的总结论文里也印证了类似的看法[^1]。究其原因，个人认为还是在feature的问题上，深度学习的一大特点就是多层特征的自动提取。按理说activity recognition跟语音之类的时域信号有那么点相似性，深度学习的表现不应该这么差才对。只能说可能运动信号都太低频，在短时间内基本上都是non-stationary的。*
+
+* **Leveraging Active Learning and Conditional Mutual Information to Minimize Data Annotation in Human Activity Recognition**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  A difficulty in human activity recognition (HAR) with wearable sensors is the acquisition of large amounts of annotated data for training models using supervised learning approaches. While collecting raw sensor data has been made easier with advances in mobile sensing and computing, the process of data annotation remains a time-consuming and onerous process. This paper explores active learning as a way to minimize the labor-intensive task of labeling data. We train models with active learning in both offline and online settings with data from 4 publicly available activity recognition datasets and show that it performs comparably to or better than supervised methods while using around 10% of the training data. Moreover, we introduce a method based on conditional mutual information for determining when to stop the active learning process while maximizing recognition performance. This is an important issue that arises in practice when applying active learning to unlabeled datasets.
+  </details>
+
+  *简评：这篇文章被我实验室统一推荐为必读。我草草过了一遍，确实不错，有很详细的算法描述以及实验设计。最关键的是结果很振奋，通过筛选训练数据，可以只用10%的数据达到使用完整数据集时的表现。从另一方也能说明实际上activity recognition的数据集里存在着大量的冗余数据。这跟我将要进行的实验不谋而合，一个基本假设是关于walking，来自同一episode的数据并不需要很多，两三个应该就够了，关键在于提供足够丰富的episode。这篇文章间接证实了这种假设。*
+
+* **Handling annotation uncertainty in human activity recognition**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  Developing systems for Human Activity Recognition (HAR) using wearables typically relies on datasets that were manually annotated by human experts with regards to precise timings of instances of relevant activities. However, obtaining such data annotations is often very challenging in the predominantly mobile scenarios of Human Activity Recognition. As a result, labels often carry a degree of uncertainty-label jitter-with regards to: i) correct temporal alignments of activity boundaries; and ii) correctness of the actual label provided by the human annotator. In this work, we present a scheme that explicitly incorporates label jitter into the model training process. We demonstrate the effectiveness of the proposed method through a systematic experimental evaluation on standard recognition tasks for which our method leads to significant increases of mean F1 scores.
+  </details>
+
+  *简评：我是真的不喜欢不直接在摘要里写到底模型表现提升了多少的论文的（差评+1）！但是鉴于本文说了个很重要的问题，就是数据标记时的标记和数据的时间戳经常出现错位。作者也不说到底用了什么方法解决这个问题（差评+1）。一般来说，我们通常都是掐头去尾去掉错位的部分，不过这种方法不能很好的解决短时间的动作，因为掐着掐着就没有数据了。*
+
+* **Swimming style recognition and lap counting using a smartwatch and deep learning**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  Human activity recognition from raw sensor data has enabled modern wearable devices to track and analyze everyday activities. However, when used in real world conditions, the performance of off-the-shelf devices is often insufficient. This paper tackles the problem of swimming style recognition and lap counting using sensor data from a single smartwatch. In total 17 hours of this data was collected from 40 swimmers of diverse backgrounds. The data was then used to train a convolutional neural network to recognize the four main swimming styles, transition periods and lap turns. Our method achieves an F1 score of 97.4% for style recognition and 99.2% for counting laps. To the best of our knowledge, these results are the first to enable accurate automatic swimming recognition in a realistic and completely uncontrolled environment.
+  </details>
+
+  *简评：我仿佛看到了下一代apple watch的卖点*
+
+* **Estimating load positions of wearable devices based on difference in pulse wave arrival time**
+
+  <details>
+  <summary>
+    Open to see abstract 👇
+  </summary>
+  With the increasing use of wearable devices equipped with various sensors, human activities, biometric information, and surrounding situations can be obtained via sensor data regardless of time and place. When position-free wearable devices are attached to an arbitrary part of the body, the attached position should be identified because the application process changes relative to the position. For systems that use multiple wearable devices to capture body-wide movement, estimating the attached position of the devices is meaningful. Most conventional studies estimate the loading position of the sensor using accelerometer and gyroscope data; therefore, users must perform specific motions so that each sensor produces values unique to the given position. We propose a method that estimates the load position of wearable devices without forcing the wearer to perform specific actions. The proposed method estimates the time difference between a heartbeat obtained by an electrocardiogram and a pulse wave obtained using a pulse sensor and classifies the sensor position from the estimated time difference. We assume that pulse sensor is embedded in the wearable devices to be attached to the user. From the results of an evaluation experiment with five subjects, an average F-measure of 0.805 was achieved over 15 body parts. The left ear and the right finger achieved an F-measure of 0.9+ when the proposed system uses data of approximately 20 seconds as an input.
+  </details>
+
+  *简评：日本人的脑洞还是可以的。从直觉上讲，这的确可能是个蛮有效的检测传感器位置的方法。但是如果这东西没戴在皮肤表面咋办呢？？？？*
+
+## ⛯灯塔
+
+本月新闻不多，但是苹果的新品发布会确实赚足了眼球。在计算机科学领域，不得不提的是谷歌的[differential privacy](https://github.com/google/differential-privacy)算法。个人觉得谷歌开发这个算法的根本目的就是绕开欧盟的数据保护GDPR法案的监管。毕竟谷歌是以数据为生的公司呀。
+
+苹果做产品的态度是真的值得学习，不跟风，以用户的核心体验为导向。技术方面，三摄像头的无缝流畅切换值得吹一波，希望国产厂商继续潜心修炼，尤其是被寄予众望的华为。
+
+## ⚓甲板
+
+无尽地。。。与。。。开题报告和老板博弈的过程中。。。
+
+### 关于开题报告的些微进展
+
+[^1]: L. Wang, H. Gjoreski, K. Murao, T. Okita, D. Roggen. “Summary of the Sussex-Huawei Locomotion-Transportation Recognition Challenge.” In Ubicomp Adjunct Proceedings. ACM, 2018.

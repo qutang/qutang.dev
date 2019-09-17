@@ -1,9 +1,10 @@
 import Link from "./link";
 import moment from "moment";
 import getReadTime from './read-time'
+import seriesFunctions from './series'
 import ReactDOMServer from 'react-dom/server'
 
-export default ({ post }) => {
+export default ({ post, data }) => {
   var readTime = 0;
   if (post.meta.type === 'ipynb') {
     readTime = getReadTime(post.meta.ipynbContent);
@@ -14,7 +15,7 @@ export default ({ post }) => {
   return (<section className="blog-item-container">
     <header className="blog-item-header-container">
       <h2>
-        <Link to={post.path}>{post.meta.title}</Link>
+        <Link to={post.path}>{post.meta.title + (post.meta.draft ? '(draft)' : '')}</Link>
       </h2>
     </header>
     <section className="blog-item-description-container">
@@ -25,7 +26,7 @@ export default ({ post }) => {
       {post.meta.series && (
         <span className="blog-item-series">
           <a href={"/blog/series#" + post.meta.series || ""}>
-            {post.meta.series || ""}
+            {seriesFunctions.getSeriesName(post.meta.series, data) || ""}
           </a>{" "}
           {" | "}
         </span>

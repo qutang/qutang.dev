@@ -1,11 +1,12 @@
 import TwoColumnLayout from "../../layouts/two-column";
+import seriesFunctions from "../../components/series";
 import moment from "moment";
 
 export const meta = {
   type: "jsx"
 };
 
-var getYears = function(posts) {
+var getYears = function (posts) {
   var years = posts
     .map(post => parseInt(moment(post.meta.date).format("YYYY")))
     .filter((name, index, arr) => arr.indexOf(name) === index)
@@ -48,11 +49,11 @@ export default props => {
               </time>
               {"-"}
               <h3 className="archive-item-title">
-                <a href={post.path}>{post.meta.title}</a>
+                <a href={post.path}>{post.meta.title + (post.meta.draft ? "(draft)" : "")}</a>
               </h3>
               <span className="archive-item-series">
                 <a href={"/blog/series#" + post.meta.series}>
-                  {post.meta.series}
+                  {seriesFunctions.getSeriesName(post.meta.series, props.data)}
                 </a>
               </span>
             </div>

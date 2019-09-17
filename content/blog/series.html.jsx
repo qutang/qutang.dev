@@ -1,11 +1,12 @@
 import TwoColumnLayout from "../../layouts/two-column";
+import seriesFunctions from "../../components/series";
 import moment from "moment";
 
 export const meta = {
   type: "jsx"
 };
 
-var getSeries = function(posts) {
+var getSeries = function (posts) {
   var seriesNames = posts
     .map(post => post.meta.series)
     .filter(
@@ -57,7 +58,7 @@ export default props => {
               </time>
               {"-"}
               <h3 className="archive-item-title">
-                <a href={post.path}>{post.meta.title}</a>
+                <a href={post.path}>{post.meta.title + (post.meta.draft ? "(draft)" : "")}</a>
               </h3>
             </div>
           );
@@ -65,8 +66,9 @@ export default props => {
         return (
           <section className="archive-section-container" key={name}>
             <h2 id={name} className="archive-section-title">
-              {name} ({seriesPosts.length})
+              {seriesFunctions.getSeriesName(name, props.data)} ({seriesPosts.length})
             </h2>
+            <p className="archive-section-description">{seriesFunctions.getSeriesDescription(name, props.data)}</p>
             {blogItems}
           </section>
         );
