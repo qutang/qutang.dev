@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "qutang.dev",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "",
   "scripts": {
     "start": "charge serve content",
