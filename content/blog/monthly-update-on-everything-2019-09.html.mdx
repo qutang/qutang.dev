@@ -1,0 +1,16 @@
+export const meta = {
+  type: "mdx",
+  title: "九月更新",
+  date: "2019-09-17 10:44:53",
+  series: "⛵航海日志",
+  draft: true,
+  excerpt: "Ubicomp 2019，谷歌的隐私编码算法, 以及关于开题报告的无尽挑战。"
+};
+
+import PostLayout from "../../layouts/post";
+
+export const layout = props => (
+  <PostLayout {...props} meta={meta}>
+    {props.children}
+  </PostLayout>
+);
