@@ -14,6 +14,7 @@ export default ({ meta, ...props }) => {
     title={meta.title}
     css="../css/post.css"
     pageType="post"
+    description={meta.excerpt + " " + props.data.site.description}
   >
     <header>
       <h2>{meta.title + (meta.draft ? "(draft)" : "")}</h2>

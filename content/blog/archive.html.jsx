@@ -36,6 +36,7 @@ export default props => {
       title="Blog"
       css="../css/archive.css"
       pageType="archive"
+      description={props.data.site.description}
     >
       {years.map(year => {
         var yearPosts = sortedPosts.filter(

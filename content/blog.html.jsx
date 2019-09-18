@@ -25,6 +25,7 @@ export default props => {
       title="Blog"
       css="../css/blog.css"
       pageType="blog"
+      description={"Latest articles from Qu Tang. " + props.data.site.description}
     >
       {sortedPosts.map(post => {
         return <BlogItem post={post} key={post.path} data={props.data} />;

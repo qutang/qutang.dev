@@ -41,6 +41,7 @@ export default props => {
       title="Blog"
       css="../css/archive.css"
       pageType="archive"
+      description={props.data.site.description}
     >
       {seriesNames.map(name => {
         var seriesPosts = sortedPosts.filter(post => post.meta.series === name);

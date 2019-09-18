@@ -3,13 +3,14 @@ import Main from "../components/main";
 import Side from "../components/side";
 import MenuControl from "../components/menu-control";
 
-export default ({ data, children, css, title, pageType, environment }) => (
+export default ({ data, children, css, title, pageType, description, environment }) => (
   <html lang="en">
     <Head
       title={title}
       css={css}
       siteName={data.site.title}
       pageType={pageType}
+      description={description}
     />
     <body>
       <div className="fixed-header">

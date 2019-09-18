@@ -1,7 +1,7 @@
 import TwoColumnLayout from "../layouts/two-column";
 
 export const meta = {
-  type: "mdx"
+  type: "mdx",
 };
 
 export const layout = props => (
@@ -10,6 +10,7 @@ export const layout = props => (
     title="Home"
     css="../css/index.css"
     pageType="index"
+    description={props.data.site.description}
   >
     {props.children}
   </TwoColumnLayout>
