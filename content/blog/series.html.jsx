@@ -57,7 +57,6 @@ export default props => {
                   {moment(post.meta.date).format("MMM DD, YYYY")}
                 </a>
               </time>
-              {"-"}
               <h3 className="archive-item-title">
                 <a href={post.path}>{post.meta.title + (post.meta.draft ? "(draft)" : "")}</a>
               </h3>

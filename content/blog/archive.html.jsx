@@ -48,15 +48,16 @@ export default props => {
               <time className="archive-item-date">
                 {moment(post.meta.date).format("MMM DD, YYYY")}
               </time>
-              {"-"}
-              <h3 className="archive-item-title">
-                <a href={post.path}>{post.meta.title + (post.meta.draft ? "(draft)" : "")}</a>
-              </h3>
-              <span className="archive-item-series">
-                <a href={"/blog/series#" + post.meta.series}>
-                  {seriesFunctions.getSeriesName(post.meta.series, props.data)}
-                </a>
-              </span>
+              <div className="archive-item-content">
+                <h3 className="archive-item-title">
+                  <a href={post.path}>{post.meta.title + (post.meta.draft ? "(draft)" : "")}</a>
+                </h3>
+                <span className="archive-item-series">
+                  <a href={"/blog/series#" + post.meta.series}>
+                    {seriesFunctions.getSeriesName(post.meta.series, props.data)}
+                  </a>
+                </span>
+              </div>
             </div>
           );
         });
