@@ -6,69 +6,82 @@
 @import "./mailchimp.css";
 
 .main-container {
-    padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 .archive-section-container {
-    margin-bottom: 3em;
+  margin-bottom: 3em;
 }
 
 .archive-section-title {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .archive-section-description {
-    margin-left: 1.2em;
-    font-size: 0.8em;
+  margin-left: 1.2em;
+  font-size: 0.8em;
 }
 
 .archive-item-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    font-size: 1em;
-    margin: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  font-size: 1em;
+  margin: 1em;
 }
 
 .archive-item-container > * {
-    display: block;
+  display: block;
 }
 
 .archive-item-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex: 1;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+@media (--no-sidebar) {
+  .archive-item-content {
+    margin-top: 0.5em;
+  }
 }
 
 h3.archive-item-title {
-    flex: 1;
-    font-size: 1em;
-    margin: 0;
-    text-align: left;
-    min-width: 10em;
-    margin-top: -0.125em;
+  flex: 1;
+  font-size: 1em;
+  margin: 0;
+  text-align: left;
+  min-width: 15em;
+  line-height: 1.5;
 }
 
 .archive-item-date {
-    font-size: 0.9em;
-    padding-right: 0.2em;
-    width: 7em;
+  font-size: 0.9em;
+  padding-right: 0.2em;
+  width: 8em;
+  margin-top: 0;
 }
 
 .archive-item-date:after {
-    content: ' - '
+  content: " - ";
 }
 
-.archive-item-series a:any-link{
-    font-size: 0.8em;
-    color: #666;
+.archive-item-series {
+  margin-top: 0;
 }
 
-.archive-item-title a:hover,.archive-item-date a:hover, .archive-item-series a:hover {
-    color: #4C9A2A;
-    text-decoration: none;
+.archive-item-series a:any-link {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.archive-item-title a:hover,
+.archive-item-date a:hover,
+.archive-item-series a:hover {
+  color: #4c9a2a;
+  text-decoration: none;
 }
