@@ -6,12 +6,25 @@ body {
     "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   line-height: normal;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: normal;
 }
 
 article {
   text-align: justify;
   width: 100%;
+  line-height: 1.5;
+}
+
+@media (--no-sidebar) {
+  article {
+    text-align: left;
+  }
+
+  article p,
+  article li,
+  article blockquote {
+    text-align: justify;
+  }
 }
 
 article * {
@@ -72,16 +85,16 @@ pre {
   border-style: solid;
   border-color: rgb(221, 221, 221);
   border-image: initial;
-  color: #444;
+  color: #222;
 }
 
 pre,
 code[class*="language-"],
 pre[class*="language-"] {
   overflow: auto;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
-  color: #444;
+  color: #222;
   background: white;
 }
 
@@ -150,21 +163,11 @@ code[class*="language-"] {
 
 .nb-output:after {
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 35px;
   content: "Output";
   font-size: 0.8em;
   color: #ccc;
-}
-
-@media (--phone-screen) {
-  body {
-    font-size: 14px;
-  }
-
-  h2 {
-    font-size: 1.2em;
-  }
 }
 
 .line-number-row {
@@ -185,7 +188,6 @@ code[class*="language-"] {
 
 .footnotes li {
   font-size: 0.9em;
-  text-align: left;
 }
 
 ol,
@@ -194,27 +196,7 @@ ul {
 }
 
 blockquote {
-  position: relative;
   color: #999;
-  width: 80%;
-}
-
-blockquote:before {
-  content: "“";
-  font-size: 5em;
-  position: absolute;
-  top: -0.1em;
-  left: -0.4em;
-  line-height: 1;
-}
-
-blockquote:after {
-  content: "”";
-  font-size: 5em;
-  position: absolute;
-  bottom: -0.6em;
-  right: -0.4em;
-  line-height: 1;
 }
 
 .video-container {

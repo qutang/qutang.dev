@@ -6,59 +6,80 @@
 @import "./mailchimp.css";
 
 .main-container {
-    padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 .blog-item-container {
-    margin-bottom: 3em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-item-header-container > h2 {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
 }
 
-
 .blog-item-description-container {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .blog-item-first-letter {
-    font-size: 2.5em;
-    width: 1em;
-    height: 1em;
-    margin: 0;
-    padding: 0.2em;
-    border: 2px solid #444;
-    border-radius: 5px;
-    margin-right: 0.2em;
-    line-height: 1em;
-    text-align: center;
+  font-size: 2em;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  padding: 0.2em;
+  border: 2px solid #444;
+  border-radius: 5px;
+  margin-right: 0.2em;
+  margin-top: 0.1em;
+  line-height: 1em;
+  text-align: center;
 }
 
 .blog-item-description {
-    flex: 1;
-    color: #666;
-    margin: 0;
+  flex: 1;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+  text-align: justify;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .blog-item-footer-container {
-    text-align: right;
-    color: #888;
-    font-size: 0.9em;
+  text-align: right;
+  color: #888;
+  font-size: 0.9em;
 }
 
-.blog-item-series a:any-link, .blog-item-date a:any-link {
-    color: #888;
+.blog-item-series a:any-link,
+.blog-item-date a:any-link {
+  color: #888;
 }
 
-.blog-item-series a:hover, .blog-item-date a:hover {
-    color: #4C9A2A;
-    text-decoration: none;
+.blog-item-series a:hover,
+.blog-item-date a:hover {
+  color: #4c9a2a;
+  text-decoration: none;
 }
 
-@media (--phone-screen){
-    .blog-item-first-letter {
-        font-size: 2em;
-    }
+@media (--phone-screen) {
+  .blog-item-first-letter {
+    font-size: 2em;
+  }
 }
