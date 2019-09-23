@@ -9,10 +9,23 @@
   padding-bottom: 0;
 }
 
+.main-inner-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
 .blog-item-container {
   margin-bottom: 2em;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-item-container.half-column {
+  max-width: 390px;
 }
 
 .blog-item-header-container > h2 {
@@ -21,6 +34,7 @@
 }
 
 .blog-item-description-container {
+  flex: 1;
   display: flex;
   flex-direction: row;
 }

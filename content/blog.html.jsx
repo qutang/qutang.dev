@@ -19,13 +19,29 @@ export default props => {
   var sortedPosts = posts.sort((prev, next) =>
     moment(prev.meta.date).isBefore(next.meta.date)
   );
+
+  var lastHalfPostIndex = -2;
+  var sortedPosts = sortedPosts.map((post, index) => {
+    var count = post.meta.excerpt.length;
+    if (index == lastHalfPostIndex + 1) {
+      post.meta["excerpt"] = post.meta["excerpt"].slice(0, 100) + "...";
+      post.meta["layout"] = "half";
+      lastHalfPostIndex = -2;
+    } else if (count < 100) {
+      post.meta["layout"] = "half";
+      lastHalfPostIndex = index;
+    }
+    return post;
+  });
   return (
     <TwoColumnLayout
       {...props}
       title="Blog"
       css="../css/blog.css"
       pageType="blog"
-      description={"Latest articles from Qu Tang. " + props.data.site.description}
+      description={
+        "Latest articles from Qu Tang. " + props.data.site.description
+      }
     >
       {sortedPosts.map(post => {
         return <BlogItem post={post} key={post.path} data={props.data} />;

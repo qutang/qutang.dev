@@ -1,7 +1,7 @@
 import PostLayout from "./post";
 import renderHTML from "react-render-html";
 import Link from "../components/link";
-import getReadTime from '../components/read-time';
+import readtime from "../components/read-time";
 
 var Notebook = ({ url, meta, children }) => {
   var nbviewerLink =
@@ -19,7 +19,7 @@ var Notebook = ({ url, meta, children }) => {
 };
 
 export default ({ meta, ...props }) => {
-  meta['readTime'] = getReadTime(meta.ipynbContent);
+  meta["readTime"] = readtime.getReadTime(meta.ipynbContent);
   return (
     <PostLayout {...props} meta={meta}>
       {props.children}
