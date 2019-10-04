@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 publish_mode: editorial_workflow
-media_folder: "images/uploads"
+media_folder: "content/images/uploads"
 public_folder: "/images/uploads"
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
