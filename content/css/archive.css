@@ -27,7 +27,7 @@
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   font-size: 1em;
   margin: 1em;
 }
@@ -48,6 +48,10 @@
   .archive-item-content {
     margin-top: 0.5em;
   }
+  .archive-item-container {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 h3.archive-item-title {
@@ -64,10 +68,6 @@ h3.archive-item-title {
   padding-right: 0.2em;
   width: 8em;
   margin-top: 0;
-}
-
-.archive-item-date:after {
-  content: " - ";
 }
 
 .archive-item-series {
