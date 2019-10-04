@@ -4,6 +4,8 @@ backend:
 publish_mode: editorial_workflow
 media_folder: "content/images/uploads"
 public_folder: "/images/uploads"
+display_url: https://qutang.dev
+site_url: https://qutang.dev
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
