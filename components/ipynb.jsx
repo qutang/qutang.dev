@@ -1,13 +1,11 @@
 import nb from "notebookjs";
 import fs from "fs";
-import renderHTML from "react-render-html";
 import Prism from "prismjs";
 import loadLanguages from "prismjs/components/";
 import katex from "katex";
-import Link from "./link";
 
-var renderWithDelimitersToString = function(text) {
-  var CleanAndRender = function(str, type) {
+var renderWithDelimitersToString = function (text) {
+  var CleanAndRender = function (str, type) {
     var mathText = str.replace(/\\\(|\$\$|\\\)|\$/g, "");
     var mathText = mathText.replace("&lt;", "<");
     var mathText = mathText.replace("&gt;", ">");
@@ -22,24 +20,24 @@ var renderWithDelimitersToString = function(text) {
       return mathText;
     }
   };
-  return text.replace(/(\\\([^]*?\\\))|(\$\$[^]*?\$\$)|(\$[^]*?\$)/g, function(
+  return text.replace(/(\\\([^]*?\\\))|(\$\$[^]*?\$\$)|(\$[^]*?\$)/g, function (
     m,
     bracket,
     doubleDollar,
     dollar
   ) {
-    if(bracket !== undefined || dollar !== undefined){
+    if (bracket !== undefined || dollar !== undefined) {
       return CleanAndRender(m, 'inline');
     }
     else if (doubleDollar !== undefined) {
       return CleanAndRender(m, 'block');
     }
-      
+
     return m;
   });
 };
 
-var highlighter = function(code, lang) {
+var highlighter = function (code, lang) {
   if (typeof lang === "undefined") lang = "markup";
 
   if (!Prism.languages.hasOwnProperty(lang)) {
@@ -57,14 +55,14 @@ var highlighter = function(code, lang) {
   return result;
 };
 
-var addLineNumber = function(result) {
+var addLineNumber = function (result) {
   return result
     .split("\n")
     .map(row => '<span class="line-number-row"></span>' + row)
     .join("\n");
 };
 
-nb.highlighter = function(text, pre, code, lang) {
+nb.highlighter = function (text, pre, code, lang) {
   var language = lang || "text";
   pre.className = "language-" + language;
   if (typeof code != "undefined") {
@@ -73,7 +71,7 @@ nb.highlighter = function(text, pre, code, lang) {
   return highlighter(text, language);
 };
 
-var parseFile = function(file) {
+var parseFile = function (file) {
   var absPath = "content/blog/" + file;
   var ipynb = JSON.parse(fs.readFileSync(absPath));
   var notebook = nb.parse(ipynb);

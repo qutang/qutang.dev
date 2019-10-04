@@ -8,6 +8,8 @@ export default ({ post, data }) => {
   var readTime = 0;
   if (post.meta.type === "ipynb") {
     readTime = readtime.getReadTime(post.meta.ipynbContent);
+  } else if (post.meta.markdownContent !== undefined) {
+    readTime = readtime.getReadTime(post.meta.markdownContent);
   } else if (post.meta.type === "mdx") {
     readTime = readtime.getReadTime(
       ReactDOMServer.renderToStaticMarkup(React.createElement(post.component))

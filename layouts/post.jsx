@@ -6,7 +6,7 @@ import readtime from "../components/read-time";
 import seriesFunctions from "../components/series";
 
 export default ({ meta, ...props }) => {
-  if (meta.type !== "ipynb") {
+  if (meta.type !== "ipynb" && meta.markdownContent === undefined) {
     meta["readTime"] = readtime.getReadTime(
       ReactDOMServer.renderToStaticMarkup(props.children)
     );

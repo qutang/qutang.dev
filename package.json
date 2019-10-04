@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "qutang.dev",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "",
   "scripts": {
     "start": "charge serve content",
@@ -35,8 +35,12 @@
     "notebookjs": "^0.4.2",
     "prism-themes": "^1.2.0",
     "prismjs": "^1.17.1",
-    "react-dom": "^16.10.2",
     "react": "^16.10.2",
-    "react-render-html": "^0.6.0"
+    "react-dom": "^16.10.2",
+    "react-render-html": "^0.6.0",
+    "remark": "^11.0.1",
+    "remark-html": "^10.0.0",
+    "remark-html-katex": "^2.0.0",
+    "remark-math": "^2.0.0"
   }
 }
