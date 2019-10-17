@@ -1,5 +1,6 @@
 import jump from "jump.js";
 import setupSidebar from "./sidebar";
+import quicklink from "quicklink";
 
 const setupBackToTop = function () {
   const toComment = document.querySelector(".shortcut-comment");
@@ -31,6 +32,7 @@ const setupBackToTop = function () {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
+  quicklink();
   setupBackToTop();
   setupSidebar();
 });

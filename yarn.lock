@@ -4218,6 +4218,11 @@ quick-lru@^1.0.0:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-1.1.0.tgz#4360b17c61136ad38078397ff11416e186dcfbb8"
   integrity sha1-Q2CxfGETatOAeDl/8RQW4Ybc+7g=
 
+quicklink@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/quicklink/-/quicklink-1.0.1.tgz#7a3251a8ae71aa8a02c27d8c740b53a850e7721d"
+  integrity sha512-XeHOnjh9WZKVvVdkDraArYPAbDg4VWnlzscXNUcPMiJCk1aGFwE/JOFKqdnKaChWGnmYcnKCFCbep0t8U4KbOw==
+
 range-parser@~1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
