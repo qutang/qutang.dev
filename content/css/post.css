@@ -24,5 +24,9 @@
 }
 
 article {
-  margin-top: 0.5em;
+  margin-top: 45px;
+}
+
+.nb-notebook {
+  display: inline-block;
 }

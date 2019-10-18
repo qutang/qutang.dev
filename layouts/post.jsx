@@ -4,8 +4,9 @@ import Link from "../components/link";
 import ReactDOMServer from "react-dom/server";
 import readtime from "../components/read-time";
 import seriesFunctions from "../components/series";
+import Ad from "../components/ad";
 
-export default ({ meta, ...props }) => {
+export default ({ meta, hideAd, ...props }) => {
   if (meta.type !== "ipynb" && meta.markdownContent === undefined) {
     meta["readTime"] = readtime.getReadTime(
       ReactDOMServer.renderToStaticMarkup(props.children)
@@ -42,19 +43,7 @@ export default ({ meta, ...props }) => {
         </time>
       </section>
       <article>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-1246737870300549"
-          data-ad-slot="5669809671"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({'{'}{'}'});</script>
+        {!hideAd && <Ad width="250px" height="150px" float="right" />}
         {props.children}
       </article>
       <section className="post-comment-container">
