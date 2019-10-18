@@ -1,5 +1,5 @@
 export default props => (
-    <div className='ad-container' style={{display: "block", width: props.width, height:props.height, float: props.float}}>
+    <div className='ad-container' style={{display: "block", width: props.width, height:props.height, float: props.float, marginLeft: props.leftGap}}>
     <div className='ad'>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins

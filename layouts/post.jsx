@@ -43,7 +43,7 @@ export default ({ meta, hideAd, ...props }) => {
         </time>
       </section>
       <article>
-        {!hideAd && <Ad width="250px" height="200px" float="right" />}
+        {!hideAd && <Ad width="250px" height="200px" float="right" leftGap="5px" />}
         {props.children}
       </article>
       <section className="post-comment-container">

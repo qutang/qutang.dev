@@ -25,7 +25,7 @@ export default ({ meta, ...props }) => {
     <PostLayout {...props} meta={meta} hideAd={true}>
       {props.children}
       <Notebook url={props.data.site.url} meta={meta}>
-        <Ad width="100%" height="80px" float="none" />
+        <Ad width="100%" height="80px" float="none" leftGap="0" />
         {renderHTML(meta.ipynbContent)}
       </Notebook>
     </PostLayout>
