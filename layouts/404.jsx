@@ -1,6 +1,6 @@
 import Head from "../components/head";
 import Main from "../components/main";
-import Side from "../components/side";
+import Side from "../components/left-side";
 import Ad from "../components/ad";
 
 export default ({ data, children, css, title, pageType, description, environment }) => (

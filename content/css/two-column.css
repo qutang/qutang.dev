@@ -26,6 +26,15 @@ body {
   box-shadow: 4px 0px 8px -3px rgba(17, 17, 17, 0.2);
 }
 
+.toc-side-container {
+  z-index: 1;
+  position: fixed;
+  top: 12em;
+  right: 100px;
+  width: 300px;
+  background: white;
+}
+
 .side-inner-container {
   width: 100%;
   padding-top: 2em;

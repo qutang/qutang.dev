@@ -1,10 +1,12 @@
 @import "./two-column.css";
-@import "./typography.css";
+@import "katex/dist/katex.min.css";
+@import 'tocbot/dist/styles.css';
 @import "./link.css";
 @import "./color.css";
+@import "./typography.css";
 @import "./comment.css";
 @import "./mailchimp.css";
-@import "katex/dist/katex.min.css";
+@import 'tocbot/dist/tocbot.css';
 
 .post-meta-container {
   text-align: right;
@@ -29,4 +31,24 @@ article {
 
 .nb-notebook {
   display: inline-block;
+}
+
+.toc-side-container {
+  overflow: hidden;
+}
+
+.side-toc ol {
+  list-style-type: none;
+}
+
+.side-toc li {
+  line-height: 1.5;
+}
+
+.side-toc a.toc-link {
+  color: #444;
+}
+
+.side-toc a.toc-link:hover {
+  text-decoration: none;
 }
