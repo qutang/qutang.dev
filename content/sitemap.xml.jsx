@@ -21,7 +21,7 @@ var getLastModTime = function(page) {
 export default props => {
   var pages = props.pages.filter(page => {
     var isDraft = page.meta.draft && props.environment === "production";
-    return !page.path.includes("xml") && !isDraft;
+    return !page.path.includes("xml") && !isDraft && !page.path.includes("admin");
   });
   var rootUrl = props.data.site.url;
   return (
