@@ -1,0 +1,21 @@
+import parseIpynb from "../../components/ipynb";
+import NotebookLayout from "../../layouts/notebook";
+
+export const meta = {
+  type: "ipynb",
+  title: "{{title}}",
+  date: "{{date}}",
+  series: "{{series}}",
+  ipynbFile: "{{ipynb}}",
+  ipynbContent: parseIpynb(
+    "{{ipynb}}",
+  ),
+  excerpt:
+    "{{excerpt}}"
+};
+
+export const layout = props => (
+  <NotebookLayout {...props} meta={meta}>
+    {props.children}
+  </NotebookLayout>
+);

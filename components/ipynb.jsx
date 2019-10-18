@@ -72,7 +72,7 @@ nb.highlighter = function (text, pre, code, lang) {
 };
 
 var parseFile = function (file) {
-  var absPath = "content/blog/" + file;
+  var absPath = "content/pynotebook/" + file;
   var ipynb = JSON.parse(fs.readFileSync(absPath));
   var notebook = nb.parse(ipynb);
   var finalHTML = renderWithDelimitersToString(notebook.render().outerHTML);

@@ -9,7 +9,7 @@ import remarkHtmlKatex from 'remark-html-katex';
 // import loadLanguages from "prismjs/components/";
 
 var parseFile = function (file) {
-    var absPath = "content/blog/" + file;
+    var absPath = "content/markdown/" + file;
     var mdRaw = fs.readFileSync(absPath);
     var finalHTML = remark()
         .use(remarkParse, {

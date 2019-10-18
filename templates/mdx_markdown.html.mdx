@@ -1,0 +1,21 @@
+import parseMarkdown from '../../components/markdown';
+
+export const meta = {
+  type: "mdx",
+  title: "{{title}}",
+  date: "{{date}}",
+  series: "{{series}}",
+  markdownFile: "{{title}}.md",
+  markdownContent: parseMarkdown("{{title}}.md"),
+  excerpt: "Fill with your excerpt"
+};
+
+import MarkdownLayout from "../../layouts/markdown";
+
+export const layout = props => (
+  <MarkdownLayout {...props} meta={meta}>
+    {props.children}
+  </MarkdownLayout>
+);
+
+

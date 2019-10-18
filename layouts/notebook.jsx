@@ -6,7 +6,7 @@ import Ad from "../components/ad";
 
 var Notebook = ({ url, meta, children }) => {
   var nbviewerLink =
-    "https://nbviewer.jupyter.org/url/" + url + "/blog/" + meta.ipynbFile;
+    "https://nbviewer.jupyter.org/url/" + url + "/pynotebook/" + meta.ipynbFile;
   return (
     <>
       <span className="badge">

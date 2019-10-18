@@ -1,0 +1,16 @@
+export const meta = {
+    type: "mdx",
+    title: "{{title}}",
+    date: "{{date}}",
+    series: "{{series}}",
+    excerpt:
+        "Fill with your excerpt"
+};
+
+import PostLayout from "../../layouts/post";
+
+export const layout = props => (
+    <PostLayout {...props} meta={meta}>
+        {props.children}
+    </PostLayout>
+);

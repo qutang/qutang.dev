@@ -1,12 +1,13 @@
 {
   "private": true,
   "name": "qutang.dev",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "",
   "scripts": {
     "start": "charge serve content",
     "build": "charge build content public",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "qutang.dev": "node scripts/main.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "@static/charge": "^1.5.0"
   },
   "dependencies": {
+    "commander": "^3.0.2",
     "feed": "^4.0.0",
     "gitalk": "^1.5.0",
     "jump.js": "^1.0.2",

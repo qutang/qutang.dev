@@ -1,7 +1,8 @@
 import fs from "fs";
+import path from "path";
 import moment from "moment";
 
-var getLastModTime = function(page) {
+var getLastModTime = function (page) {
   var filePath = null;
   var pagePath = page.path === "/" ? "/index" : page.path;
   switch (page.meta.type) {
@@ -12,7 +13,7 @@ var getLastModTime = function(page) {
       filePath = "./content/" + pagePath + ".html.jsx";
       break;
     case "ipynb":
-      filePath = "./content/" + pagePath + "/index.ipynb";
+      filePath = "./content/pynotebook/" + path.basename(pagePath) + ".ipynb";
       break;
   }
   return fs.statSync(filePath).mtime;
