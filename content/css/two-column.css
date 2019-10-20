@@ -65,6 +65,7 @@ body {
   max-width: 800px;
   padding: 5em 20px;
   margin: 0 auto;
+  display: flex;
 }
 
 .fixed-header {
@@ -114,6 +115,10 @@ body {
     display: none;
   }
   .mc-container {
+    display: none;
+  }
+
+  .toc-side-container {
     display: none;
   }
 }

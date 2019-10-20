@@ -1,6 +1,7 @@
 import Head from "../components/head";
 import Main from "../components/main";
-import Side from "../components/side";
+import LeftSide from "../components/left-side";
+import RightSide from "../components/right-side";
 import MenuControl from "../components/menu-control";
 
 export default ({ data, children, css, title, pageType, description, environment }) => (
@@ -17,8 +18,9 @@ export default ({ data, children, css, title, pageType, description, environment
         <MenuControl />
       </div>
       <div className="layout-container">
-        <Side data={data} pageType={pageType}></Side>
+        <LeftSide data={data} pageType={pageType}></LeftSide>
         <Main data={data}>{children}</Main>
+        <RightSide />
       </div>
     </body>
   </html>

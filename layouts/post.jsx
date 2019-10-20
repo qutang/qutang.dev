@@ -20,8 +20,9 @@ export default ({ meta, hideAd, ...props }) => {
       pageType="post"
       description={meta.excerpt + " " + props.data.site.description}
     >
+      <h2 style={{height: 0, overflow: "hidden", margin: 0, padding: 0}} id='top'>☝️ Back to top</h2>
       <header>
-        <h2>{meta.title + (meta.draft ? "(draft)" : "")}</h2>
+        <h1 className='toc-ignore'>{meta.title + (meta.draft ? "(draft)" : "")}</h1>
       </header>
       <section className="post-meta-container">
         {meta.series && (

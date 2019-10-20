@@ -4,6 +4,7 @@ import fs from "fs";
 import remarkParse from 'remark-parse';
 import remarkMath from 'remark-math';
 import remarkHtmlKatex from 'remark-html-katex';
+import remarkSlug from 'remark-slug';
 
 // import Prism from "prismjs";
 // import loadLanguages from "prismjs/components/";
@@ -16,6 +17,7 @@ var parseFile = function (file) {
             footnotes: true,
             pedantic: true
         })
+        .use(remarkSlug)
         .use(remarkMath)
         .use(remarkHtmlKatex)
         .use(remarkHtml)
