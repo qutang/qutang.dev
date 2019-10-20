@@ -7,6 +7,7 @@
 @import "./comment.css";
 @import "./mailchimp.css";
 @import 'tocbot/dist/tocbot.css';
+@import 'media.css';
 
 .post-meta-container {
   text-align: right;
@@ -34,15 +35,43 @@ article {
 }
 
 .toc-side-container {
-  overflow: hidden;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  box-shadow: 0px 4px 8px -3px rgba(17, 17, 17, 0.2);
 }
 
-.side-toc ol {
+@media (--full-sidebar-toc) {
+  .toc-side-container {
+    display: block;
+  }
+  .toc-side-container .side-inner-container {
+    overflow: hidden;
+  }
+}
+
+.side-toc {
+  overflow: hidden;
+  width: 280px;
+  margin-top: 5em;
+}
+
+.side-toc > ol.toc-list {
   list-style-type: none;
+  margin-left: 20px;
 }
 
 .side-toc li {
   line-height: 1.5;
+}
+
+.toc-list-item a {
+  padding: 5px 0;
+  display: block;
 }
 
 .side-toc a.toc-link {
