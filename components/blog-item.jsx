@@ -16,8 +16,13 @@ export default ({ post, data }) => {
     );
   }
 
-  var layoutClassName = post.meta.layout === "half" ? "half-column" : "";
+  var layoutClassName = "";
 
+  if (post.meta.layout === "left-half") {
+    layoutClassName = "half-column left-half-column";
+  } else if (post.meta.layout === "right-half") {
+    layoutClassName = "half-column right-half-column";
+  }
   return (
     <section className={"blog-item-container" + " " + layoutClassName}>
       <header className="blog-item-header-container">

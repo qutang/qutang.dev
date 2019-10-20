@@ -12,6 +12,8 @@ import Telegram from '../content/icons/telegram.svg'
 import User from '../content/icons/user.svg'
 import Wechat from '../content/icons/wechat.svg'
 import Top from '../content/icons/top.svg'
+import Previous from '../content/icons/left-arrow.svg'
+import Next from '../content/icons/right-arrow.svg'
 
 export default (type) => {
     switch (type) {
@@ -43,5 +45,9 @@ export default (type) => {
             return Wechat
         case 'top':
             return Top
+        case 'previous':
+            return Previous
+        case 'next':
+            return Next;
     }
 }

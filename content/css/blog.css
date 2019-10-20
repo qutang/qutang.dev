@@ -7,6 +7,7 @@
 
 .main-container {
   padding-bottom: 0;
+  display: block;
 }
 
 .main-inner-container {
@@ -26,6 +27,14 @@
 
 .blog-item-container.half-column {
   max-width: 390px;
+}
+
+.blog-item-container.left-half-column{
+  margin-right: 10px;
+}
+
+.blog-item-container.right-half-column{
+  margin-left: 10px;
 }
 
 .blog-item-header-container > h2 {
@@ -96,4 +105,20 @@
   .blog-item-first-letter {
     font-size: 2em;
   }
+}
+
+
+.pagination {
+  display: flex;
+}
+
+.pagination svg {
+  width: 40px;
+  height: 40px;
+  fill: #444;
+}
+
+.pagination svg:hover {
+  color: #4C9A2A;
+  fill: currentColor;
 }
