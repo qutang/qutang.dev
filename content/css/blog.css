@@ -107,6 +107,10 @@
   }
 }
 
+.shortcut-top {
+  display: none;
+}
+
 
 .pagination {
   display: flex;
