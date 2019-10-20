@@ -117,4 +117,8 @@ body {
   .mc-container {
     display: none;
   }
+
+  .toc-side-container {
+    display: none;
+  }
 }

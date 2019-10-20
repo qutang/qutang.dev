@@ -1,4 +1,3 @@
-@custom-media --full-sidebar-toc (width >= 1520px);
-@custom-media --full-sidebar (width >= 1120px);
-@custom-media --small-sidebar (925px <= width < 1120px);
-@custom-media --no-sidebar (width < 925px);
+@custom-media --full-sidebar (width >= 1440px);
+@custom-media --small-sidebar (1025px <= width < 1440px);
+@custom-media --no-sidebar (width < 1025px);
