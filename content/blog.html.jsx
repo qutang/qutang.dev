@@ -39,7 +39,7 @@ var generateBlogPage = (posts, pageIndex, totalPages, props) => {
   } else if (props.environment === "production") {
     var dest = "public/blog/" + (pageIndex + 1) + '.html';
     console.log("Generating blog pages: " + dest);
-    fs.outputFileSync(dest, htmlString);
+    fse.outputFileSync(dest, htmlString);
   }
 }
 
