@@ -106,12 +106,8 @@
 }
 
 @media (--no-sidebar) {
-  .main-inner-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    justify-content: space-between;
+  .blog-item-container {
+    display: block;
   }
 }
 
