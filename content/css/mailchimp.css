@@ -5,25 +5,34 @@
 
 .mc-form-inner-container{
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    /* align-content: center; */
     
 }
 
-.mc-email-container {
-    
+.mc-email-container {   
     text-align: center;
 }
 
+.mc-container p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
 .mc-email-input {
-    width: 70%;
+    width: 200px;
     border: 1px solid #444;
     font-size: 14px;
-    padding: 0.5em;
+    padding: 5px 10px;
+    margin: 10px 30px;
     border-radius: 5px;
     color: #444;
+    display: block;
+    box-sizing: content-box;
 }
 
 .mc-email-input:focus {
@@ -32,21 +41,20 @@
 }
 
 .mc-submit-container {
-    flex: 1;
-    text-align: left;
+    text-align: right;
+    margin-right: 30px;
 }
 
 .mc-submit-button {
     font-size: 14px;
-    background-color: white;
-    color: #444;
-    border: 1px solid #444;
+    background-color: #444;
+    color: white;
+    border: none;
     padding: 0.5em;
     border-radius: 5px;
 }
 
 .mc-submit-button:hover {
-    color: #4C9A2A;
-    border: 1px solid #4C9A2A;
     cursor: pointer;
+    background-color: #4C9A2A;
 }

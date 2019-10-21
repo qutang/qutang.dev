@@ -6,6 +6,7 @@ class Main extends React.Component {
           className="main-inner-container">
           {this.props.children}
         </section>
+        {this.props.pagination}
       </main>
     )
   }

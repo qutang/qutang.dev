@@ -4,7 +4,7 @@ import LeftSide from "../components/left-side";
 import RightSide from "../components/right-side";
 import MenuControl from "../components/menu-control";
 
-export default ({ data, children, css, title, pageType, description, environment }) => (
+export default ({ data, children, css, title, pageType, description, pagination, environment }) => (
   <html lang="en">
     <Head
       title={title}
@@ -19,7 +19,7 @@ export default ({ data, children, css, title, pageType, description, environment
       </div>
       <div className="layout-container">
         <LeftSide data={data} pageType={pageType}></LeftSide>
-        <Main data={data}>{children}</Main>
+        <Main data={data} pagination={pagination}>{children}</Main>
         <RightSide />
       </div>
     </body>

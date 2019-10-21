@@ -21,11 +21,11 @@ var PageContent = ({ posts, pageIndex, totalPages, ...props }) => {
     description={
       "Latest articles from Qu Tang. " + props.data.site.description
     }
+    pagination={<Pagination next={nextPage} previous={previousPage} />}
   >
     {posts.map(post => {
       return <BlogItem post={post} key={post.path} data={props.data} />;
     })}
-    <Pagination next={nextPage} previous={previousPage} />
   </TwoColumnLayout>
 };
 

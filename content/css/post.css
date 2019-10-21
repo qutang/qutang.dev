@@ -1,6 +1,5 @@
 @import "./two-column.css";
 @import "katex/dist/katex.min.css";
-@import 'tocbot/dist/styles.css';
 @import "./link.css";
 @import "./color.css";
 @import "./typography.css";

@@ -6,7 +6,7 @@
 @import "./mailchimp.css";
 
 .main-container {
-  padding-bottom: 0;
+  padding-bottom: 3em;
   display: block;
 }
 
@@ -16,6 +16,10 @@
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: space-between;
+}
+
+.toc-side-container {
+  display: none;
 }
 
 .blog-item-container {
