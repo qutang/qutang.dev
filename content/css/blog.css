@@ -23,7 +23,6 @@
 }
 
 .blog-item-container {
-  flex-shrink: 0;
   margin-bottom: 2em;
   display: flex;
   flex-direction: column;
@@ -106,9 +105,13 @@
   text-decoration: none;
 }
 
-@media (--phone-screen) {
-  .blog-item-first-letter {
-    font-size: 2em;
+@media (--no-sidebar) {
+  .main-inner-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
   }
 }
 
