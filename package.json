@@ -40,7 +40,7 @@
     "prismjs": "^1.17.1",
     "quicklink": "^1.0.1",
     "react": "^16.11.0",
-    "react-dom": "^16.10.2",
+    "react-dom": "^16.11.0",
     "react-render-html": "^0.6.0",
     "remark": "^11.0.1",
     "remark-html": "^10.0.0",
