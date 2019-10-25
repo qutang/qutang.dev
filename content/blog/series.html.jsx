@@ -31,9 +31,14 @@ export default props => {
   });
   var seriesNames = getSeries(posts);
 
-  var sortedPosts = posts.sort((prev, next) =>
-    moment(prev.meta.date).isBefore(next.meta.date)
-  );
+  var sortedPosts = posts.sort((prev, next) => {
+    var prevBeforeNext = moment(prev.meta.date).isBefore(next.meta.date)
+    if (prevBeforeNext) {
+      return 1
+    } else {
+      return -1
+    }
+  });
 
   return (
     <TwoColumnLayout

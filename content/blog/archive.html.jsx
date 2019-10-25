@@ -26,9 +26,16 @@ export default props => {
   });
   var years = getYears(posts);
 
-  var sortedPosts = posts.sort((prev, next) =>
-    moment(prev.meta.date).isBefore(next.meta.date)
-  );
+  posts.sort((prev, next) => {
+    var prevBeforeNext = moment(prev.meta.date).isBefore(next.meta.date)
+    if (prevBeforeNext) {
+      return 1
+    } else {
+      return -1
+    }
+  });
+
+  var dates = posts.map(post => post.meta.date)
 
   return (
     <TwoColumnLayout
@@ -39,7 +46,7 @@ export default props => {
       description={props.data.site.description}
     >
       {years.map(year => {
-        var yearPosts = sortedPosts.filter(
+        var yearPosts = posts.filter(
           post => parseInt(moment(post.meta.date).format("YYYY")) === year
         );
         var blogItems = yearPosts.map(post => {

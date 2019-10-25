@@ -1,0 +1,22 @@
+import parseMarkdown from '../../components/markdown';
+
+export const meta = {
+  type: "mdx",
+  title: "第二期：健康应用技术评价的两大指标：参与度与达标率",
+  date: "2019-10-25 16:03:17",
+  series: "voyage",
+  draft: true,
+  markdownFile: "monthly-update-on-everything-2019-10.md",
+  markdownContent: parseMarkdown("monthly-update-on-everything-2019-10.md"),
+  excerpt: "Affectiva's Emotion AI summit, 健康应用技术评价的两大指标：engagement (参与度) and compliance rate（达标率）。"
+};
+
+import MarkdownLayout from "../../layouts/markdown";
+
+export const layout = props => (
+  <MarkdownLayout {...props} meta={meta}>
+    {props.children}
+  </MarkdownLayout>
+);
+
+
