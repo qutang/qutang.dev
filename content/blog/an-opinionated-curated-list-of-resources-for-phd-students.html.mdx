@@ -1,0 +1,19 @@
+import MarkdownLayout from "../../layouts/markdown";
+import parseMarkdown from '../../components/markdown';
+
+export const meta = {
+  type: "mdx",
+  title: "An opinionated curated list of resources for Ph.D. students",
+  date: "2018-06-23 16:14:53",
+  series: "survivalkit",
+  markdownFile: 'an-opinionated-curated-list-of-resources-for-phd-students.md',
+  markdownContent: parseMarkdown('an-opinionated-curated-list-of-resources-for-phd-students.md'),
+  excerpt:
+    "A curated list of resources for Ph.D. students. It includes both academic resources mainly for Computer Science or Engineering students and other resources (e.g., personal development, communication, and writing) that I personally feel useful and needed during my Ph.D. time."
+};
+
+export const layout = props => (
+  <MarkdownLayout {...props} meta={meta}>
+    {props.children}
+  </MarkdownLayout>
+);

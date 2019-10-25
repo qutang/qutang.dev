@@ -1,8 +1,10 @@
-**Collection of resources from internet about _data, algorithm, AI, and research_.**
+A curated list of resources for Ph.D. students. It includes both academic resources mainly for Computer Science or Engineering students and other resources (e.g., personal development, communication, and writing) that I personally feel useful and needed during my Ph.D. time.
 
 > **Disclaimer**
 >
-> I have not reviewed all the resources, but all resources are recommended by me or at least one of my labmates or colleagues.
+> I have not reviewed all the resources, but all resources are recommended by me or at least one of my advisor, friends or colleagues.
+
+---
 
 ## Data
 
@@ -86,12 +88,20 @@
 - [The coming A.I. autumn](http://jeffreybigham.com/blog/2019/the-coming-ai-autumnn.html) Start to think A.I. from human's perspective.
 - [Adam Geitgey](https://medium.com/@ageitgey) Very hands-on tutorials and blogs about A.I. and machine learning applications. His blog articles are well-written and just fit my personal pace of learning.
 
-## Research
+## Health with technologies
 
-### Success in PhD
+- [PROMIS measures](https://www.nia.nih.gov/research/resource/patient-reported-outcomes-measurement-information-system-promis) Patient-Reported Outcomes Measurement Information System (PROMIS) and its core [citations](http://www.healthmeasures.net/images/Primary_Citations_for_PROMIS_Measures_1.23.19.pdf).
+
+---
+
+## Live as a Ph.D. student
+
+### Personality and habits
 
 - [Learning to think: Becoming a functional PhD student](https://medium.com/@OAlannah/learning-to-think-becoming-a-functional-phd-student-7706f33cf22e)
-- [Some Modest Advice for Graduate Students](https://stearnslab.yale.edu/some-modest-advice-graduate-students) \* [The Graduate Student Survival Guide](http://gradresources.org/the-graduate-student-survival-guide/)
+- [Some Modest Advice for Graduate Students](https://stearnslab.yale.edu/some-modest-advice-graduate-students)
+- [The Graduate Student Survival Guide](http://gradresources.org/the-graduate-student-survival-guide/)
+- [NirandFar](https://www.nirandfar.com/) This is official website of the author Nir Eyal, who has published famous books (e.g., hooked) about _behaviorial design_ that may be used in mobile app design. The book was originally recommended by my advisor during the course. Regardless of using the idea in app design, I find it is also important to understand how our brains and behaviors are affected by the technologies around us, both the positive and the negative sides. It is especially important for STEM Ph.D. students to be aware of the impact, because our lives are about creating new technical gadgets and concepts and are literally surrounded by them.
 
 
 ### Communication matters
@@ -144,7 +154,7 @@ The crisis of managing the exploding digital stuffs fed by your projects.
 
     ![How to name](/images/digital_stuff_naming.png)
 
-### Identify impact of papers[^2]
+### Identify impact of papers[^1]
 I will exclude well-known Google Scholar, and Microsoft Academic Search from the list because these are not indexing services and do not exclude predatory journals and conferences.
 
 Web of Science is excluded because this requires subscription. But your school should usually have the subscription. And its citation report is probably the most reliable service to find impactful journals.
@@ -155,9 +165,4 @@ Web of Science is excluded because this requires subscription. But your school s
 - [Directory of open access journals](https://doaj.org/) Search and verify if an open source journal is actually certified.
 - [Beall's list of predatory journals and publishers](https://beallslist.weebly.com/) You know by its name.
 
-## Health and behaviors with technologies
-
-- [PROMIS measures](https://www.nia.nih.gov/research/resource/patient-reported-outcomes-measurement-information-system-promis) Patient-Reported Outcomes Measurement Information System (PROMIS) and its core [citations](http://www.healthmeasures.net/images/Primary_Citations_for_PROMIS_Measures_1.23.19.pdf).
-- [Nir Eyal](https://www.nirandfar.com/) A famouse scientist and consultant on "behavioral design". His articles are easy-to-understand but useful to connect human behaviors, the underlying psychological theories, and their connections with technologies.
-
-[^1]<sup>, </sup>[^2]: This section extracts information from two webinar talks: [How can I organize and manage my digital stuff](https://nuonline.mediaspace.kaltura.com/media/t/1_olizfjzy), [How can I avoid predatory journals and publishers](https://nuonline.mediaspace.kaltura.com/media/t/0_odez1m0t) and [How can I determine how impactful my research is](https://nuonline.mediaspace.kaltura.com/media/t/1_mm58p2ln) from Northeastern University Library Service.
+[^1]: This section extracts information from two webinar talks: [How can I organize and manage my digital stuff](https://nuonline.mediaspace.kaltura.com/media/t/1_olizfjzy), [How can I avoid predatory journals and publishers](https://nuonline.mediaspace.kaltura.com/media/t/0_odez1m0t) and [How can I determine how impactful my research is](https://nuonline.mediaspace.kaltura.com/media/t/1_mm58p2ln) from Northeastern University Library Service.
