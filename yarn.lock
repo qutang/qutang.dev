@@ -5292,10 +5292,10 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
-tocbot@^4.8.1:
-  version "4.8.1"
-  resolved "https://registry.yarnpkg.com/tocbot/-/tocbot-4.8.1.tgz#9441163e02912ea2cd3a5ffc1cd3f6764889973c"
-  integrity sha512-Ix01rVUatqORHLJWv9HBsuQ1Nlhr3x7J+JnKZT+YPJcMhSM5dv7v54vTAUmRtfAPLZN9GhNPtmrOLvF2LI1EZQ==
+tocbot@^4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/tocbot/-/tocbot-4.9.0.tgz#674e4e57a9961e4296324287b07e455ab59d2d80"
+  integrity sha512-QHCTp0v9AQwT3LceZpyT5ThXARXXDhfpDSMkmFQ05C9WxUxlqlyXwE6tjABpimyn+GdG7cmXVJo4z6LdnxLGLQ==
 
 toidentifier@1.0.0:
   version "1.0.0"

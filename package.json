@@ -47,6 +47,6 @@
     "remark-html-katex": "^2.0.0",
     "remark-math": "^2.0.0",
     "remark-slug": "^5.1.2",
-    "tocbot": "^4.8.1"
+    "tocbot": "^4.9.0"
   }
 }
