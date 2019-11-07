@@ -61,6 +61,12 @@ A curated list of resources for Ph.D. students. It includes both academic resour
 
 - [Eli Bendersky](https://eli.thegreenplace.net/) About system level, and AI programming with Python, C/C++, and go
 
+### Open source community
+
+It is always good to participate in open source projects, while we all have benefited a lot from the open source work accomplished by others. During your Ph.D. life, you may find that all the programming scripts you've written for your research projects can be turned into some reusable open source software packages to be shared with others, and at the same time get some citation impact on the work that uses your software packages. Here are some good venues you may consider to publish your open source software packages.
+
+- [In which journals should I publish my software?](https://www.software.ac.uk/which-journals-should-i-publish-my-software) A good list of the venues you may consider publishing your software.
+
 ## Artificial Intelligence
 
 ### Learn machine learning
