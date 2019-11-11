@@ -42,7 +42,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-render-html": "^0.6.0",
-    "remark": "^11.0.1",
+    "remark": "^11.0.2",
     "remark-html": "^10.0.0",
     "remark-html-katex": "^2.0.0",
     "remark-math": "^2.0.0",
