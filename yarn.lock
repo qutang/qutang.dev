@@ -5310,10 +5310,10 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
-tocbot@^4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/tocbot/-/tocbot-4.9.0.tgz#674e4e57a9961e4296324287b07e455ab59d2d80"
-  integrity sha512-QHCTp0v9AQwT3LceZpyT5ThXARXXDhfpDSMkmFQ05C9WxUxlqlyXwE6tjABpimyn+GdG7cmXVJo4z6LdnxLGLQ==
+tocbot@^4.9.1:
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/tocbot/-/tocbot-4.9.1.tgz#65b32ffaf616d6fbff869d245591ecee979b2664"
+  integrity sha512-c4qTHyPsYC23NWpeQRB+oqR5Up8l+oEshTh4G4UIdFad7b1JarHviX+uijCnPVqJ9O4Jh8ziubOB8PLdwKsigg==
 
 toidentifier@1.0.0:
   version "1.0.0"
