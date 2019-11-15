@@ -28,7 +28,7 @@
     "@static/charge": "^1.5.0"
   },
   "dependencies": {
-    "commander": "^4.0.0",
+    "commander": "^4.0.1",
     "feed": "^4.0.0",
     "fs-extra": "^8.1.0",
     "gitalk": "^1.5.0",
@@ -40,13 +40,13 @@
     "prismjs": "^1.17.1",
     "quicklink": "^1.0.1",
     "react": "^16.12.0",
-    "react-dom": "^16.11.0",
+    "react-dom": "^16.12.0",
     "react-render-html": "^0.6.0",
-    "remark": "^11.0.1",
+    "remark": "^11.0.2",
     "remark-html": "^10.0.0",
     "remark-html-katex": "^2.0.0",
     "remark-math": "^2.0.0",
     "remark-slug": "^5.1.2",
-    "tocbot": "^4.9.0"
+    "tocbot": "^4.9.1"
   }
 }
