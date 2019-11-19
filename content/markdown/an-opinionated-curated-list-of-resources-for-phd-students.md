@@ -172,3 +172,7 @@ Web of Science is excluded because this requires subscription. But your school s
 - [Beall's list of predatory journals and publishers](https://beallslist.weebly.com/) You know by its name.
 
 [^1]: This section extracts information from two webinar talks: [How can I organize and manage my digital stuff](https://nuonline.mediaspace.kaltura.com/media/t/1_olizfjzy), [How can I avoid predatory journals and publishers](https://nuonline.mediaspace.kaltura.com/media/t/0_odez1m0t) and [How can I determine how impactful my research is](https://nuonline.mediaspace.kaltura.com/media/t/1_mm58p2ln) from Northeastern University Library Service.
+
+### Write an impactful paper
+
+- [How to Craft Your Article Title to Increase Views and Citations](https://www.acsm.org/home/featured-blogs---homepage/acsm-blog/2019/11/04/how-to-craft-your-article-title-increase-views-citations) It all starts with a good title that, according to Prof. Roger M. Enoka, can boost the citations and views of your paper.
