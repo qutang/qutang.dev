@@ -40,7 +40,7 @@ program
         console.log('Selected article type: ' + cmdObj.type)
         console.log('Article title: ' + title)
         console.log('---')
-        title = title.toLowerCase().replace(' ', '-');
+        title = title.toLowerCase().replace(/\s/g, '-');
         src = getTemplateFile(cmdObj.type);
         dest = getDestinationFile(title);
         template = fs.readFileSync(src, 'utf8');
