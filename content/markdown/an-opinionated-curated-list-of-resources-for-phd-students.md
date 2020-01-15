@@ -81,13 +81,19 @@ It is always good to participate in open source projects, while we all have bene
 
 - [Google PAIR](https://ai.google/research/teams/brain/pair)
 
+### Learn from Q&A
+
+- [What tools are good for drawing neural network architecture diagrams?](https://www.quora.com/What-tools-are-good-for-drawing-neural-network-architecture-diagrams)
+    - [NN SVG](http://alexlenail.me/NN-SVG/index.html) A neat web tool to create professional neural network diagrams in different styles.
+    - [Daft](https://docs.daft-pgm.org/en/latest/) A python package to create professional directional graphical model diagrams.
+
 ### Start with the state-of-art packages
 
 - [AliPy](https://github.com/NUAA-AL/ALiPy) Latest Active Learning algorithms in a single Python package
 - [Flair](https://github.com/zalandoresearch/flair) State-of-the-art Natural Language Processing framework
 - [DAWN](https://dawn.cs.stanford.edu/) DAWN is a five-year research project by Stanford to create tools to democratize AI by making it dramatically easier to build AI-powered applications.
 - [streamlit](https://streamlit.io/) "The fastest way to build custom ML tools out of scripts". 
-- [NN SVG](http://alexlenail.me/NN-SVG/index.html) A neat web tool to create professional neural network diagrams in different styles.
+
 
 ### Words from famouse scientists
 
