@@ -1,0 +1,22 @@
+import parseIpynb from "../../components/ipynb";
+import NotebookLayout from "../../layouts/notebook";
+
+export const meta = {
+  type: "ipynb",
+  title: "基于传感器的人类活动识别深度神经网络模型总结",
+  date: "2020-01-15 17:13:52",
+  series: "ml",
+  draft: true,
+  ipynbFile: "dnn-models-for-activity-recognition-using-ubiquitous-sensors.ipynb",
+  ipynbContent: parseIpynb(
+    "dnn-models-for-activity-recognition-using-ubiquitous-sensors.ipynb",
+  ),
+  excerpt:
+    "让我来看看，到底人类活动识别的深度学习模型都玩出什么花了。。。"
+};
+
+export const layout = props => (
+  <NotebookLayout {...props} meta={meta}>
+    {props.children}
+  </NotebookLayout>
+);
