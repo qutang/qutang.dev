@@ -87,6 +87,7 @@ It is always good to participate in open source projects, while we all have bene
 - [Flair](https://github.com/zalandoresearch/flair) State-of-the-art Natural Language Processing framework
 - [DAWN](https://dawn.cs.stanford.edu/) DAWN is a five-year research project by Stanford to create tools to democratize AI by making it dramatically easier to build AI-powered applications.
 - [streamlit](https://streamlit.io/) "The fastest way to build custom ML tools out of scripts". 
+- [NN SVG](http://alexlenail.me/NN-SVG/index.html) A neat web tool to create professional neural network diagrams in different styles.
 
 ### Words from famouse scientists
 
