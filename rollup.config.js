@@ -7,8 +7,9 @@ import { terser } from "rollup-plugin-terser";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
 import css from "rollup-plugin-css-only";
-import { jupyter } from './src/_plugins/jupyter';
+import { jupyter } from "./src/_plugins/jupyter";
 import { customMarkdown } from "./src/_plugins/markdown";
+import glob from "glob";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -19,13 +20,27 @@ const onwarn = (warning, onwarn) =>
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
   onwarn(warning);
 
-
-
 export default {
   client: {
     input: config.client.input(),
     output: config.client.output(),
     plugins: [
+      {
+        buildStart() {
+          var self = this;
+          const postsDir = "./contents";
+          glob(postsDir + "/**/*.md", null, function(er, files) {
+            files.forEach(file => {
+              self.addWatchFile(file);
+            });
+          });
+          glob(postsDir + "/**/*.ipynb", null, function(er, files) {
+            files.forEach(file => {
+              self.addWatchFile(file);
+            });
+          });
+        }
+      },
       replace({
         "process.browser": true,
         "process.env.NODE_ENV": JSON.stringify(mode)
@@ -33,10 +48,7 @@ export default {
       svelte({
         dev,
         extensions: [".svelte", ".md", ".ipynb"],
-        preprocess: [
-          jupyter(),
-          customMarkdown()
-        ],
+        preprocess: [jupyter(), customMarkdown()],
         hydratable: true,
         emitCss: true
       }),
@@ -50,33 +62,33 @@ export default {
       }),
 
       legacy &&
-      babel({
-        extensions: [".js", ".mjs", ".html", ".svelte"],
-        runtimeHelpers: true,
-        exclude: ["node_modules/@babel/**"],
-        presets: [
-          [
-            "@babel/preset-env",
-            {
-              targets: "> 0.25%, not dead"
-            }
+        babel({
+          extensions: [".js", ".mjs", ".html", ".svelte"],
+          runtimeHelpers: true,
+          exclude: ["node_modules/@babel/**"],
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                targets: "> 0.25%, not dead"
+              }
+            ]
+          ],
+          plugins: [
+            "@babel/plugin-syntax-dynamic-import",
+            [
+              "@babel/plugin-transform-runtime",
+              {
+                useESModules: true
+              }
+            ]
           ]
-        ],
-        plugins: [
-          "@babel/plugin-syntax-dynamic-import",
-          [
-            "@babel/plugin-transform-runtime",
-            {
-              useESModules: true
-            }
-          ]
-        ]
-      }),
+        }),
 
       !dev &&
-      terser({
-        module: true
-      })
+        terser({
+          module: true
+        })
     ],
 
     onwarn
@@ -86,6 +98,22 @@ export default {
     input: config.server.input(),
     output: config.server.output(),
     plugins: [
+      {
+        buildStart() {
+          var self = this;
+          const postsDir = "./contents";
+          glob(postsDir + "/**/*.md", null, function(er, files) {
+            files.forEach(file => {
+              self.addWatchFile(file);
+            });
+          });
+          glob(postsDir + "/**/*.ipynb", null, function(er, files) {
+            files.forEach(file => {
+              self.addWatchFile(file);
+            });
+          });
+        }
+      },
       replace({
         "process.browser": false,
         "process.env.NODE_ENV": JSON.stringify(mode)
@@ -93,11 +121,10 @@ export default {
       svelte({
         generate: "ssr",
         extensions: [".svelte", ".md", ".ipynb"],
-        preprocess: [
-          jupyter(),
-          customMarkdown()
-        ],
-        dev
+        preprocess: [jupyter(), customMarkdown()],
+        dev,
+        hydratable: true,
+        emitCss: true
       }),
       resolve({
         dedupe: ["svelte"]
@@ -109,7 +136,7 @@ export default {
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||
-      Object.keys(process.binding("natives"))
+        Object.keys(process.binding("natives"))
     ),
 
     onwarn

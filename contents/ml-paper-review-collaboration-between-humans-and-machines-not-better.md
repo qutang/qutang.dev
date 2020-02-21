@@ -53,6 +53,9 @@ _作者把上面的模板提供给人类做决策，这个模板本身已经是�
 作者认为这个结论还揭示出当模型犯错时，人类可能并没有足够的认知去纠正这种错误，特指开放性的决策类的错误。与一般的计算机视觉，自然语言处理问题不同，这类决策问题通常没有固定的答案，而只有决策的可能的优劣。
 
 [^1]: Goldstein, I. M., Lawrence, J., Miner, A. S. 2017. Human-machine collaboration in cancer and beyond: the Centaur Care Model. JAMA Oncology 3(10), 1303.
+
 [^2]: Johnson, R. C. 2018. Overcoming AI bias with AI fairness. Communications of the ACM (December 6).
+
 [^3]: Dressel, J., Farid, H. 2018. The accuracy, fairness, and limits of predicting recidivism. Science Advances 4(1), eaao5580.
+
 [^4]: Tversky, A., Kahneman, D. 1974. Judgment under uncertainty: heuristics and biases. Science 185(4157), 1124—1131.

@@ -72,5 +72,7 @@ Emmmmm...这段我就不多说了，因为没什么技术性的东西。主要�
 作者提到了一篇关于计算机视觉的可理解神经网络的论文，蛮有意思[^3]。
 
 [^1]: Michael McGough. How bad is sacramento’s air, exactly? google results appear at odds with reality, some say. Sacramento Bee, 2018. URL: https://www.sacbee.com/news/state/california/fires/article216227775.html.
+
 [^2]: Nelson Cowan. The magical mystery four how is working memory capacity limited, and why? Current directions in psychological science, 19(1):51–57, 2010.
+
 [^3]: Oscar Li, Hao Liu, Chaofan Chen, and Cynthia Rudin. Deep learning for case-based reasoning through prototypes: A neural network that explains its predictions. In Proceedings of AAAI, 2018.

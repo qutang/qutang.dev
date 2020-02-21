@@ -16,11 +16,11 @@ export function jupyter(options = {}) {
   };
 }
 
-export function jupyterRenderer(content, options) {
+export function jupyterRenderer(content, options, path) {
   let result;
   let jupyterDom = JSON.parse(content);
   content = jupyterDom2Markdown(jupyterDom);
-  result = customMarked(options)(content);
+  result = customMarked(options, content, path);
   return result;
 }
 

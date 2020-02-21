@@ -6,7 +6,7 @@ const path = require("path");
 
 const cwd = process.cwd();
 const POSTS_DIR = path.join(cwd, "contents/");
-const posts_per_page = 1;
+const posts_per_page = 6;
 
 const posts = fs
   .readdirSync(POSTS_DIR)
@@ -20,9 +20,9 @@ const posts = fs
     let html = undefined;
     let page = Math.floor(index / posts_per_page) + 1;
     if (extension == "md") {
-      html = customMarked()(fileMd);
+      html = customMarked({}, fileMd, "/blog/" + slug);
     } else if (extension == "ipynb") {
-      html = jupyterRenderer(fileMd);
+      html = jupyterRenderer(fileMd, "/blog/" + slug);
     }
 
     return {
