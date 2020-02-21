@@ -1,8 +1,6 @@
 ---
 title: Who I am
 date: 2020-02-21T18:40:37.799Z
-type: page
-
 ---
 # About me
 

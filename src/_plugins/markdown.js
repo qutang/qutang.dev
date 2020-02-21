@@ -31,6 +31,11 @@ function customParser(content, path, options) {
     if (result !== null) {
       tokens[i].text = result;
     }
+
+    result = parseVideo(tokens[i].text);
+    if (result !== null) {
+      tokens[i].text = result;
+    }
     result = parseFootnote(tokens[i].text, path);
     if (result !== null) {
       footnotes.push(result);
@@ -120,6 +125,23 @@ function parseReference(text, counter, refMap) {
   }
 
   return { text, counter, refMap };
+}
+
+function parseVideo(text) {
+  if (text === undefined) {
+    return null;
+  }
+  if (text.startsWith("online_video")) {
+    let url = text.split(" ")[1];
+    if (url.includes("bilibili")) {
+      let id = url.split("av")[1].split("?")[0];
+      return `<iframe src="//player.bilibili.com/player.html?aid=${id}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  style="width: 640px; height: 360px; max-width: 100%; margin: 0 auto;"></iframe>`;
+    } else if (url.includes("youtube")) {
+      let id = url.split("v=")[1];
+      return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    }
+  }
+  return null;
 }
 
 function getCustomOptions(options) {

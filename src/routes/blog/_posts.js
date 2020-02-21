@@ -16,7 +16,7 @@ const posts = fs
     const slug = fileName.split(".")[0];
     const extension = fileName.split(".")[1];
     let excerpt = "";
-    let title = undefined;
+    let title = slug.toUpperCase();
     let html = undefined;
     let page = Math.floor(index / posts_per_page) + 1;
     if (extension == "md") {
