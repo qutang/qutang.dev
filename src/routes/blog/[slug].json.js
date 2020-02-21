@@ -1,6 +1,7 @@
-import posts from "./_posts.js";
+import blog from "./_posts.js";
 
 const lookup = new Map();
+const posts = blog.posts;
 posts.forEach(post => {
   lookup.set(post.slug, JSON.stringify(post));
 });

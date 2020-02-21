@@ -6,17 +6,19 @@ const path = require("path");
 
 const cwd = process.cwd();
 const POSTS_DIR = path.join(cwd, "contents/");
+const posts_per_page = 1;
 
 const posts = fs
   .readdirSync(POSTS_DIR)
   .filter(fileName => /\.((md)|(ipynb))$/.test(fileName))
-  .map(fileName => {
+  .map((fileName, index) => {
     const fileMd = fs.readFileSync(path.join(POSTS_DIR, fileName), "utf8");
     const slug = fileName.split(".")[0];
     const extension = fileName.split(".")[1];
     let excerpt = "";
     let title = undefined;
     let html = undefined;
+    let page = Math.floor(index / posts_per_page) + 1;
     if (extension == "md") {
       html = customMarked()(fileMd);
     } else if (extension == "ipynb") {
@@ -29,9 +31,12 @@ const posts = fs
         "https://github.com/qutang/v2.qutang.dev/blob/master/contents/" +
         fileName,
       slug,
-      html
+      html,
+      page: page.toString()
     };
   });
+
+let totalPages = Math.max(...posts.map(post => post.page));
 
 // posts.sort((a, b) => {
 //   const dateA = new Date(a.date);
@@ -46,4 +51,4 @@ posts.forEach(post => {
   post.html = post.html.replace(/^\t{3}/gm, "");
 });
 
-export default posts;
+export default { posts, totalPages };

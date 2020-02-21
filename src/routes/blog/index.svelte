@@ -2,14 +2,19 @@
   export function preload({ params, query }) {
     return this.fetch(`blog.json`)
       .then(r => r.json())
-      .then(posts => {
-        return { posts };
+      .then(blog => {
+        let posts = blog.posts.filter(post => {
+          return post.page == "1";
+        });
+        return { posts, page: 1, totalPages: blog.totalPages };
       });
   }
 </script>
 
 <script>
   export let posts;
+  export let page;
+  export let totalPages;
 </script>
 
 <style>
@@ -36,3 +41,11 @@
     </li>
   {/each}
 </ul>
+
+{#if page > 1}
+  <a href="/blog/page/{page - 1}">Newer posts</a>
+{/if}
+
+{#if page < totalPages}
+  <a href="/blog/page/{page + 1}">Older posts</a>
+{/if}

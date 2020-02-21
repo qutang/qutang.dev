@@ -1,13 +1,15 @@
-import posts from "./_posts.js";
+import blog from "./_posts.js";
 
-const contents = JSON.stringify(
-  posts.map(post => {
+const contents = JSON.stringify({
+  posts: blog.posts.map(post => {
     return {
       title: post.title,
-      slug: post.slug
+      slug: post.slug,
+      page: post.page
     };
-  })
-);
+  }),
+  totalPages: blog.totalPages
+});
 
 export function get(req, res) {
   res.writeHead(200, {
