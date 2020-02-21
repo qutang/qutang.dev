@@ -1,6 +1,11 @@
 ---
 title: Automated Puffing and Smoking Detection
 date: 2020-02-21T18:46:27.228Z
+excerpt: >-
+  A compelementary introduction for a published paper about an Activity
+  recognition algorithm based on Random Forest to automatically detect puffing
+  and smoking behavior using wrist accelerometers.
+series: ml
 ---
 A compelementary introduction for a published paper about an Activity recognition algorithm based on Random Forest to automatically detect
 puffing and smoking behavior using wrist accelerometers.

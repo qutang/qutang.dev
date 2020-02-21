@@ -16,4 +16,20 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - {
+          label: "Series",
+          name: "series",
+          widget: "select",
+          required: false,
+          default: [{ label: "未分类", value: "" }],
+          options:
+            [
+              { label: "未分类", value: "" },
+              { label: "航海日志", value: "voyage" },
+              { label: "哆啦A梦", value: "ml" },
+              { label: "统计学笔记", value: "stats" },
+              { label: "北美博士生生存指南", value: "survivalkit" },
+            ],
+        }
       - { label: "Body", name: "body", widget: "markdown" }
