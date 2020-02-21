@@ -1,3 +1,7 @@
+---
+title: Automated Puffing and Smoking Detection
+date: 2020-02-21T18:46:27.228Z
+---
 A compelementary introduction for a published paper about an Activity recognition algorithm based on Random Forest to automatically detect
 puffing and smoking behavior using wrist accelerometers.
 
@@ -15,15 +19,15 @@ Please scan through the paper before using the dataset and source codes so that 
 
 <ol>
   <li>
-    <b>Tang, Q.</b>, Vidrine, D., Crowder, E., and Intille, S. 2014.{" "}
+    <b>Tang, Q.</b>, Vidrine, D., Crowder, E., and Intille, S. 2014.
     <i>Automated Detection of Puffing and Smoking with Wrist Accelerometers</i>.
     8th International Conference on Pervasive Computing Technologies for
-    Healthcare, ICST (2014).{" "}
+    Healthcare, ICST (2014).
     <a
       href="http://eudl.eu/doi/10.4108/icst.pervasivehealth.2014.254978"
       title="download paper"
     >
-      <i className="fa fa-link"></i>
+      Download paper
     </a>
   </li>
 </ol>
@@ -46,18 +50,21 @@ These videos are shot to show the real world cases of smoking behavior. Videos a
 <div className='video-container'>
   <iframe className="center-block" width="400" height="250" src="//www.youtube.com/embed/0vuninozmh0" frameBorder="0" allowFullScreen align="center"></iframe>
 </div>
+
 **Separable concurrent activities**: In this video, tester was asked to perform smoking while walking. As you can see from the video, signal was shown to contain additive components from both hand movement (puffing) and body movement (walking). These two components are independent and additive because they are conducted by different body components. This gives us some inspiration when dealing with concurrent activities.
 
 <br />
 <div className='video-container'>
   <iframe className="center-block" width="400" height="250" src="//www.youtube.com/embed/9ariksf8jAk" frameBorder="0" allowFullScreen></iframe>
 </div>
+
 **Ambiguous hand gestures**: In this video, tester was asked to perform puffing, eating and drinking during smoking in a natural way. The signal contains several ups and downs but none of them shows distinguish characteristics only for puffing. In fact, these activites all belong to hand-to-mouse gestures. The differences between these activities are quite minor from the view of the signal. This exposes one of the chanllenges in activity recognition, which is to classify similar movements.
 
 <br />
 <div className='video-container'>
   <iframe className="center-block" width="400" height="250" src="//www.youtube.com/embed/FjhBPKOZ1a0" frameBorder="0" allowFullScreen></iframe>
 </div>
+
 **A comprehensive episode**: This video shows a comprehensive episode of natural smoking behavior including a series of complex activities ongoing at the same time. Signals, as shown on the right side, appear to be quite intervened and complex and lack of visible distinguish characteristics for each type of activities. The activites are changing relatively fast in time, thus makes them even more difficult to be captured and recognized in real time.
 
 ## Acknowledge

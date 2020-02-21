@@ -1,3 +1,10 @@
+---
+title: "人借助机器学习并不一定能做出更好的决策？"
+date: "2019-10-17T10:26:00"
+series: "ml"
+excerpt: "Human centric AI里很重要的一个话题就是探索人与机器的协作关系。其中人在机器学习的帮助或影响下的决策过程更是研究的重点。虽然很多论文展示出机器学习能够帮助人更好地做决策，但是也有不同的声音认为因为很多因素，一个好的机器学习模型并不一定能显著帮助人们改善他们的决策水平。Michelle Vaccaro和Jim Waldo就在The effects of mixing machine learning and human judgement一文中对这个问题进行了探讨。本文旨在总结这篇论文的知识点并说说自己的一些看法。"
+---
+
 ## 背景：人与机器在决策里的协同效应
 
 Human centric AI 里很重要的一个话题就是探索人与机器的协作关系。其中人在机器学习的帮助或影响下的决策过程更是研究的重点。虽然很多论文展示出机器学习能够帮助人更好地做决策，但是也有不同的声音认为因为很多因素，一个好的机器学习模型并不一定能显著帮助人们改善他们的决策水平。Michelle Vaccaro 和 Jim Waldo 就在[The effects of mixing machine learning and human judgement](https://queue.acm.org/detail.cfm?id=3363293)一文中对这个问题进行了探讨。本文旨在总结这篇论文的知识点并说说自己的一些看法。
