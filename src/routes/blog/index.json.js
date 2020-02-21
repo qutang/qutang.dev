@@ -3,9 +3,7 @@ import blog from "./_posts.js";
 const contents = JSON.stringify({
   posts: blog.posts.map(post => {
     return {
-      title: post.title,
-      slug: post.slug,
-      page: post.page
+      ...post
     };
   }),
   totalPages: blog.totalPages

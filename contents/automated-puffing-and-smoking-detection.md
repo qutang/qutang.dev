@@ -1,6 +1,6 @@
 ---
 title: Automated Puffing and Smoking Detection
-date: 2020-02-21T18:46:27.228Z
+date: 2016-08-04T00:00:00
 excerpt: >-
   A compelementary introduction for a published paper about an Activity
   recognition algorithm based on Random Forest to automatically detect puffing

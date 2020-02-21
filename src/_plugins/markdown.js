@@ -2,6 +2,7 @@ import hljs from "highlight.js";
 import katex from "katex";
 import { markdown, Renderer } from "svelte-preprocess-markdown";
 import marked from "marked";
+import fm from "front-matter";
 
 export function customMarkdown(options) {
   options = getCustomOptions(options);
@@ -9,10 +10,13 @@ export function customMarkdown(options) {
 }
 
 export function customMarked(options, content, path) {
+  let result = fm(content);
+  content = result.body;
+  let meta = result.attributes;
   options = getCustomOptions(options);
   marked.setOptions(options);
   let html = customParser(content, path, options);
-  return html;
+  return { html, meta };
 }
 
 function customParser(content, path, options) {

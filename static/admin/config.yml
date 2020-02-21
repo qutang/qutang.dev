@@ -30,6 +30,7 @@ collections:
               { label: "哆啦A梦", value: "ml" },
               { label: "统计学笔记", value: "stats" },
               { label: "北美博士生生存指南", value: "survivalkit" },
+              { label: "鬼画桃符", value: "programming" },
             ],
         }
       - { label: "Body", name: "body", widget: "markdown" }

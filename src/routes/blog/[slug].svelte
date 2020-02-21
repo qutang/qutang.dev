@@ -34,6 +34,7 @@
 
 <h1>{post.title}</h1>
 
+<p>{post.date}, {post.series}</p>
 <a href={post.src} target="_blank">Edit this page</a>
 
 <div class="content">
