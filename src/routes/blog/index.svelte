@@ -10,7 +10,6 @@
 
 <script>
   export let posts;
-  export let Extra = require("../contents/metawear_syncing.ipynb");
 </script>
 
 <style>
@@ -37,5 +36,3 @@
     </li>
   {/each}
 </ul>
-
-<Extra />

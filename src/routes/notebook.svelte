@@ -1,5 +1,5 @@
 <script>
-  import Content from "../contents/metawear_syncing.ipynb";
+  import Content from "../../contents/metawear_syncing.ipynb";
   import "../../node_modules/highlight.js/styles/arta.css";
 </script>
 
