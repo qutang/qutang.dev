@@ -66,17 +66,30 @@ blockquote {
 pre {
   width: 100%;
   display: flex;
+  background: rgb(253, 252, 233);
+  overflow: auto;
+  padding: 0.5em;
 }
 
 code {
   font-size: 18px;
   border-radius: 2px;
   padding: 3px 5px;
-  display: block;
+  background: rgb(230, 244, 250);
 }
 
-code.language-mermaid {
+pre code {
+  display: block;
+  background: none;
+}
+
+.mermaid {
+  margin: 1em 0;
+}
+
+.mermaid svg {
   margin: 0 auto;
+  display: block;
 }
 
 mark,
@@ -119,4 +132,9 @@ td {
 
 table {
   margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
