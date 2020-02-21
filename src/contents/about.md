@@ -158,6 +158,7 @@ which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
 ```python
 def test():
     print('hello world!')
+    return {}
 ```
 
 $$a = b + c$$
