@@ -73,6 +73,19 @@
     width: 3.5em;
   }
 
+  .subscribe {
+    background: lightcoral;
+    padding: 0.2em 0.4em;
+    margin: 1.05em 0.3em;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: white;
+  }
+
+  .subscribe:hover{
+    filter: brightness(120%);
+  }
+
   @media screen and (max-width: 600px) {
     li, a {
       font-size: 18px;
@@ -80,7 +93,10 @@
     .extra-nav a, .extra-nav span {
     height: 4em;
     width: 4em;
-  }
+    }
+    .extra-nav li:last-child {
+      display: none;
+    }
   }
 </style>
 
@@ -96,7 +112,12 @@
     <li>
       <a class:selected={segment === 'about'} href="about">about</a>
     </li>
+    <li>
+      <a class='subscribe' href='http://eepurl.com/gEVgL9' target='_blank'>Subscribe</a>
+    </li>
   </ul>
+
+
 
   <ul class='extra-nav'>
     <li class='extra-github'>

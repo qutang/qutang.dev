@@ -67,11 +67,8 @@
 <div class="content">
   <pre id="slogan">
     <code class="language-python">
-      <span class="hljs-keyword">while</span>
-      <span class="hljs-literal">True</span>
-      :
-      <span id="slogan-core">🏃</span>
-      🌫️🌫️🌫️
+      <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+  <span id="slogan-core">🏃</span>🌫️🌫️🌫️
     </code>
   </pre>
 
