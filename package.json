@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "qutang.dev",
+  "description": "qutang.dev version 2",
   "version": "0.0.1",
   "scripts": {
     "dev": "run-p -l -r dev-site cms",
