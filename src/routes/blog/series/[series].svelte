@@ -22,6 +22,8 @@
   export let series;
   import parseSeries from '../_series.js';
   import moment from 'moment';
+  import zh from 'moment/locale/zh-cn';
+  import { lang } from '../../../components/stores.js';
 </script>
 
 <style>
@@ -74,7 +76,7 @@
 </style>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>{($lang == 'cn' ? '唐曲的博客：': "Qu Tang's Blog: ") + parseSeries[series][$lang]}</title>
 </svelte:head>
 
 
@@ -92,7 +94,7 @@
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-    <li><span style='font-family: Arial;color:gray;'>{moment(post.date).format('YYYY-MM-DD')}</span> <a rel="prefetch" href="blog/{post.slug}">{post.title}</a>
+    <li><span style='font-family: Arial;color:gray;'>{moment(post.date).locale($lang == 'cn' ? 'zh-cn' : 'en').format('LL')}</span> <a rel="prefetch" href="blog/{post.slug}">{post.title}</a>
       </li>
   {/each}
 </ul>

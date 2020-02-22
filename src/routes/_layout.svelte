@@ -1,7 +1,19 @@
 <script>
+  import { lang } from "../components/stores.js";
   import Nav from "../components/Nav.svelte";
+  import { onMount } from 'svelte';
 
   export let segment;
+
+  onMount(async () => {
+		const sysLang = window.userLanguage || window.navigator.language;
+    const value = sysLang.includes('zh') ? 'cn' : 'en';
+
+    if($lang == "") {
+      lang.update(() => value);
+    }
+	});
+  
 </script>
 
 <svelte:head>

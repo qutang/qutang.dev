@@ -2177,10 +2177,10 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-svelte-icons@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/svelte-icons/-/svelte-icons-1.1.0.tgz#f992947889136bdb07ef907b3d288723fcda4b3f"
-  integrity sha512-i43a3nPJufH3M+LQn71Li1f6PoA4Vx+8pV6fGnoFczwA6v8OT5o7B0LBf7LKViG9BVJNvFxGube4t/KQBN7rzg==
+svelte-feather-icons@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/svelte-feather-icons/-/svelte-feather-icons-3.2.2.tgz#fdb4ecc7ac9127442d06d8bbeee52d3be0491834"
+  integrity sha512-GY86mGZYjZCRRnY2t5caiY+2gzSWrYvG8dUjhnOi6YlaWVZEAzDOBuTDiZ1abOz2mM9fCpdpbgj1JZajjzEEAw==
 
 svelte-preprocess-markdown@^2.5.11:
   version "2.5.11"

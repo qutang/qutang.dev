@@ -7,7 +7,9 @@
 </script>
 
 <script>
-  import Home from "../../contents/index.md";
+  import { lang } from "../components/stores.js";
+  import Home from "../../contents/pages/index.md";
+  import HomeCN from "../../contents/pages/index.cn.md";
 </script>
 
 <style>
@@ -55,7 +57,7 @@
 
 <svelte:head>
   <title>
-    Qu Tang - share about data science, machine learning, mobile health
+    {$lang == 'cn' ? "唐曲 - 数据，机器学习，移动健康": "Qu Tang - share about data science, machine learning, mobile health"}
   </title>
   <script
     type="text/javascript"
@@ -73,9 +75,12 @@
   </pre>
 
   <p id="highlight-heading">
-    <strong>Highlights.</strong>
+    <strong>{$lang == "cn" ? "重点项目" : "Highlights."}</strong>
   </p>
 
-  <Home />
-
+  {#if $lang == 'cn'}
+    <HomeCN />
+  {:else}
+    <Home />
+  {/if}
 </div>

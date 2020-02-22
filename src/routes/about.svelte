@@ -1,11 +1,13 @@
 <script>
-  import Content from "../../contents/about.md";
+  import { lang } from '../components/stores.js';
+  import Content from "../../contents/pages/about.md";
+  import ContentCN from "../../contents/pages/about.cn.md";
   import "../../node_modules/highlight.js/styles/arta.css";
 </script>
 
 <svelte:head>
 
-  <title>About</title>
+  <title>{$lang == 'cn' ? '关于我' : "About"}</title>
 </svelte:head>
 
 <style>
@@ -71,7 +73,11 @@
   </code>
 </pre>
 <div class='about'>
-<Content />
+{#if $lang == 'cn'}
+  <ContentCN />
+{:else}
+  <Content />
+{/if}
 </div>
 
 </div>

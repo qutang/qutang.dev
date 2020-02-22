@@ -73,8 +73,8 @@ date: "2020-02-21 16:35:00"
     color: gray;
   }
 
-  li>:first-child {
-    font-size: 24px;
+  li>:first-child, li>:first-child a {
+    font-size: 22px;
     font-family: Arial;
     text-align: center;
   }

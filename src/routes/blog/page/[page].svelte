@@ -22,8 +22,10 @@
   export let posts;
   export let page;
   export let totalPages;
+  import {lang} from '../../../components/stores.js';
   import series from '../_series.js';
   import moment from 'moment';
+  import zh from 'moment/locale/zh-cn';
 </script>
 
 <style>
@@ -94,7 +96,7 @@
 </style>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>{$lang == 'cn' ? '唐曲的博客' : "Qu Tang's Blog"}</title>
 </svelte:head>
 
 
@@ -113,20 +115,20 @@
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-    <li><span style='font-family: Arial;color:gray;'>{moment(post.date).format('YYYY-MM-DD')}</span> <a rel="prefetch" href="blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series]['label']}</a></span> 
+    <li><span style='font-family: Arial;color:gray;'>{moment(post.date).locale($lang == 'cn' ? "zh-cn" : 'en').format('LL')}</span> <a rel="prefetch" href="blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
       </li>
   {/each}
 </ul>
 
 <p class='pagination'>
 {#if page > 2}
-  <a href="/blog/page/{page - 1}" class='pagination-previous'>Previous page</a>
+  <a href="/blog/page/{page - 1}" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
 {:else if page == 2}
-  <a href="/blog/" class='pagination-previous'>Previous page</a>
+  <a href="/blog/" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
 {/if}
 
 {#if page < totalPages}
-  <a href="/blog/page/{page + 1}" class='pagination-next'>Next page</a>
+  <a href="/blog/page/{page + 1}" class='pagination-next'>{$lang == 'cn' ? "下一页" : "Next page"}</a>
 {/if}
 </p>
 </div>
