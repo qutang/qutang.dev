@@ -11,7 +11,7 @@ This website supports,
 7. sitemap + rss
 8. markdown + jupyter notebook
 
-**Disclaimer: The website is developed in harsh, codes are not well organized. Use it with caution.**
+**Disclaimer: The website is developed in harsh (literally THREE days), codes are not well organized. Use it with caution.**
 
 # Collaboration
 
