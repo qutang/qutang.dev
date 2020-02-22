@@ -2,6 +2,7 @@
   import { lang } from '../components/stores.js';
   import Content from "../../contents/pages/about.md";
   import ContentCN from "../../contents/pages/about.cn.md";
+  import About from "../../README.md";
   import "../../node_modules/highlight.js/styles/arta.css";
 </script>
 
@@ -78,7 +79,10 @@
 {:else}
   <Content />
 {/if}
+<About />
 </div>
+
+
 
 </div>
 

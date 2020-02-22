@@ -25,14 +25,25 @@ h1 {
 }
 
 h2 {
-  font-family: "Lato", serif;
-  font-size: 26px;
   font-weight: 700;
   padding: 0;
-  margin: 56px 0 -13px -1.883px;
-  text-align: left;
   line-height: 34.5px;
   letter-spacing: -0.45px;
+  text-align: center;
+  font-size: 36px;
+  font-family: "Lora", serif;
+  margin: 1em auto;
+}
+
+h3 {
+  font-weight: 500;
+  padding: 0;
+  margin: 56px 0 0px 0px;
+  line-height: 34.5px;
+  letter-spacing: -0.45px;
+  text-align: left;
+  font-size: 28px;
+  font-family: Tahoma, sans-serif;
 }
 
 li,
