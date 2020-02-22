@@ -6,7 +6,7 @@ const path = require("path");
 
 const cwd = process.cwd();
 const POSTS_DIR = path.join(cwd, "contents/");
-const posts_per_page = 6;
+const posts_per_page = 5;
 
 let posts = fs
   .readdirSync(POSTS_DIR)
@@ -16,7 +16,6 @@ let posts = fs
     const slug = fileName.split(".")[0];
     const extension = fileName.split(".")[1];
 
-    let page = Math.floor(index / posts_per_page) + 1;
     let result = undefined;
     if (extension == "md") {
       result = customMarked({}, fileMd, "/blog/" + slug);
@@ -33,9 +32,14 @@ let posts = fs
         "https://github.com/qutang/v2.qutang.dev/blob/master/contents/" +
         fileName,
       slug,
-      html,
-      page: page.toString()
+      html
     };
+  })
+  .filter(post => post.type == "post")
+  .map((post, index) => {
+    let page = Math.floor(index / posts_per_page) + 1;
+    post["page"] = page.toString();
+    return post;
   });
 
 let totalPages = Math.max(...posts.map(post => post.page));
@@ -52,5 +56,7 @@ posts = posts.sort((a, b) => {
 posts.forEach(post => {
   post.html = post.html.replace(/^\t{3}/gm, "");
 });
+
+posts = posts;
 
 export default { posts, totalPages };

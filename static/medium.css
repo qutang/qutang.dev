@@ -69,6 +69,7 @@ pre {
   background: rgb(253, 252, 233);
   overflow: auto;
   padding: 0.5em;
+  max-height: 250px;
 }
 
 code {

@@ -5,16 +5,25 @@ backend:
 local_backend: true
 
 publish_mode: editorial_workflow
-media_folder: "static/images/uploads" # Media files will be stored in the repo under images/uploads
-public_folder: "/images/uploads"
+media_folder: "static/media/uploads" # Media files will be stored in the repo under images/uploads
+public_folder: "/media/uploads"
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "contents" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    filter: { field: "type", value: "post" }
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Type",
+          name: "type",
+          widget: "select",
+          required: true,
+          default: ["post"],
+          options: ["post", "page"],
+        }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
       - {
@@ -33,4 +42,22 @@ collections:
               { label: "鬼画桃符", value: "programming" },
             ],
         }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "pages" # Used in routes, e.g., /admin/collections/blog
+    label: "Pages" # Used in the UI
+    folder: "contents" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    filter: { field: "type", value: "page" }
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Type",
+          name: "type",
+          widget: "select",
+          required: true,
+          default: ["post"],
+          options: ["post", "page"],
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }

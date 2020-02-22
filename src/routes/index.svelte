@@ -1,54 +1,68 @@
 <style>
-  h1,
-  figure,
-  p {
-    text-align: center;
+
+  #slogan {
+    background: none;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    max-height: inherit;
+  }
+
+  #slogan code {
+    font-size: 3em;
     margin: 0 auto;
   }
 
-  h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
+  #slogan-core {
+    font-size: 3.8em;
   }
 
-  figure {
-    margin: 0 0 1em 0;
-  }
-
-  img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 0 1em 0;
+  #highlight-heading {
+    font-size: 36px;
   }
 
   p {
-    margin: 1em auto;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.6em;
+  }
+
+  .content {
+    margin: 5em auto;
   }
 
   @media (min-width: 480px) {
-    h1 {
-      font-size: 4em;
-    }
   }
 </style>
+
+<script>
+import Home from '../../contents/index.md';
+</script>
 
 <svelte:head>
   <title>
     Qu Tang - share about data science, machine learning, mobile health
   </title>
+  
 </svelte:head>
 
-<h1>Where learning begins</h1>
+<div class='content'>
+<pre id="slogan">
+  <code class="language-python">
+  <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+  <span id='slogan-core'>🏃</span> 🌫️🌫️🌫️
+  </code>
+</pre>
 
-<figure>
-  <img alt="Borat" src="great-success.png" />
-  <figcaption>HIGH FIVE!</figcaption>
-</figure>
-
-<p>
+<p id='highlight-heading'>
   <strong>
-    Try editing this file (src/routes/index.svelte) to test live reloading.
+    Highlights.
   </strong>
 </p>
+
+<div id='highlights'>
+  <Home />
+</div>
+</div>
+
+

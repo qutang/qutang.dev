@@ -15,12 +15,52 @@
   export let posts;
   export let page;
   export let totalPages;
+  import series from './_series.js';
+  import moment from 'moment';
 </script>
 
 <style>
+#slogan {
+    background: none;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    max-height: inherit;
+  }
+
+  #slogan code {
+    font-size: 3em;
+    margin: 0 auto;
+  }
+
+  #slogan-core {
+    font-size: 3.8em;
+  }
+  .content {
+    width: 56em;
+    margin: 5em auto;
+  }
   ul {
     margin: 0 0 1em 0;
     line-height: 1.5;
+  }
+  .pagination-previous {
+    float: left;
+  }
+
+  .pagination-next {
+    float: right;
+  }
+
+  .series {
+    background: lightgreen;
+    padding: 0.2em 0.5em;
+    border-radius: 2px;
+    font-weight: bold;
+  }
+
+  .series a{
+    text-decoration: none;
   }
 </style>
 
@@ -28,24 +68,37 @@
   <title>Blog</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
 
-<ul>
-  {#each posts as post}
-    <!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-    <li>
-      <a rel="prefetch" href="blog/{post.slug}">{post.title}</a>
-    </li>
-  {/each}
-</ul>
+<div class='content'>
+  <pre id="slogan">
+  <code class="language-python">
+  <span class="hljs-keyword">while</span> free:
+  <span id='slogan-core'>📝</span>...
+  </code>
+</pre>
 
-{#if page > 1}
-  <a href="/blog/page/{page - 1}">Newer posts</a>
-{/if}
+  <ul>
+    {#each posts as post}
+      <!-- we're using the non-standard `rel=prefetch` attribute to
+          tell Sapper to load the data for the page as soon as
+          the user hovers over the link or taps it, instead of
+          waiting for the 'click' event -->
+      <li><span style='font-family: Arial;color:gray;'>{moment(post.date).format('YYYY-MM-DD')}</span> <a rel="prefetch" href="blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series]['label']}</a></span> 
+      </li>
+    {/each}
+  </ul>
 
-{#if page < totalPages}
-  <a href="/blog/page/{page + 1}">Older posts</a>
-{/if}
+  <p class='pagination'>
+  {#if page > 1}
+    <a href="/blog/page/{page - 1}" class='pagination-previous'>Previous page</a>
+  {:else if page == 2}
+  <a href="/blog/" class='pagination-previous'>Previous page</a>
+  {/if}
+
+  {#if page < totalPages}
+    <a href="/blog/page/{page + 1}" class='pagination-next'>Next page</a>
+  {/if}
+  </p>
+  
+</div>
+
