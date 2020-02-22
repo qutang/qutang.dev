@@ -51,7 +51,7 @@ import Home from '../../contents/index.md';
   <title>
     Qu Tang - share about data science, machine learning, mobile health
   </title>
-  
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </svelte:head>
 
 <div class='content'>
