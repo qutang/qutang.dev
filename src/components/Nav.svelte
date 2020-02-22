@@ -66,13 +66,7 @@
     font-family: Arial;
     text-transform: capitalize;
   }
-
-  .extra-nav a, .extra-nav span {
-    display: inline-block;
-    height: 3.5em;
-    width: 3.5em;
-  }
-
+  
   .subscribe {
     background: lightcoral;
     padding: 0.2em 0.4em;
@@ -121,13 +115,13 @@
 
   <ul class='extra-nav'>
     <li class='extra-github'>
-      <a href="https://github.com/qutang">
-      <FaGithub />
+      <a href="https://github.com/qutang" style="display: inline-block;height: 3.5em;width: 3.5em;">
+      <FaGithub loading="lazy" />
       </a>
     </li>
     <li>
-      <span onclick="window.open('/admin/')" style="cursor:pointer;">
-      <FaRegUserCircle />
+      <span onclick="window.open('/admin/')" style="cursor:pointer;display: inline-block;height: 3.5em;width: 3.5em;">
+      <FaRegUserCircle loading="lazy" />
       </span>
     </li>
   </ul>
