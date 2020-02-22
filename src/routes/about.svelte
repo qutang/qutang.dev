@@ -3,6 +3,7 @@
   import Content from "../../contents/pages/about.md";
   import ContentCN from "../../contents/pages/about.cn.md";
   import About from "../../README.md";
+  import AboutCN from "../../README.cn.md";
   import "../../node_modules/highlight.js/styles/arta.css";
 </script>
 
@@ -76,10 +77,12 @@
 <div class='about'>
 {#if $lang == 'cn'}
   <ContentCN />
+  <AboutCN />
 {:else}
   <Content />
+  <About />
 {/if}
-<About />
+
 </div>
 
 
