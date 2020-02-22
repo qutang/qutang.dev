@@ -18,8 +18,18 @@ This website supports,
 1. Feel free to fork the repo and create your own website.
 2. Be aware that the contents are shared and protected by [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 3. If you want to co-author on the website, drop me a note via [contact information](https://qutang.dev/about#contact) on the website.
-4. If you want to help revise the website, create issues or send me pull requests.
+4. If you want to join to improve the website, create issues or send me pull requests.
 
 # Future direction
 
 So far I'm happy with the SSN (sapper + svelte + netlify) stack, so I will stay with them for quite a while. My primary work is done in Python, so forgive me about my bad JS coding skills.
+
+A little story to share, my tech trajectory in terms of building personal website,
+
+    Wordpress in Php
+    Jekyll in Ruby
+    Hexo in JS
+    Charge in React
+    Sapper in Svelte
+
+I think Sapper makes the most sense, thanks to Rich Harris.
