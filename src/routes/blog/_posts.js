@@ -29,7 +29,7 @@ let posts = fs
     return {
       ...meta,
       src:
-        "https://github.com/qutang/v2.qutang.dev/blob/master/contents/" +
+        "https://github.com/qutang/qutang.dev/blob/master/contents/" +
         fileName,
       slug,
       html

@@ -15,7 +15,7 @@ date: 2020-02-21T18:40:37.799Z
 
 如果有共同创作，全职研究或开发工作，咨询，独立项目的邀请或合作意向，请通过[电子邮件](https://mailhide.io/e/SthF9)，[领英](https://www.linkedin.com/in/qutang/)或者[微信](media/uploads/wechat.jpg)联络我。
 
-如果你有兴趣改进这个网站，修改文章，共同管理这个网站，共同写更多的文章，请到这个网站的[Github仓库](https://github.com/qutang/v2.qutang.dev)创建issues或者发送pull requests。
+如果你有兴趣改进这个网站，修改文章，共同管理这个网站，共同写更多的文章，请到这个网站的[Github仓库](https://github.com/qutang/qutang.dev)创建issues或者发送pull requests。
 
 <style>
 
