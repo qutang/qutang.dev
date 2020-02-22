@@ -22,9 +22,9 @@ date: "2020-02-21 16:35:00"
 
 * Want to explore more? ㊙️
 
-  Check out my [Github repos](https://github.com/qutang?tab=repositories), [Google Scholar](http://tiny.cc/googlescholar-qutang), or [CV](media/uploads/CV_Tang.pdf).
+  Check out my [Github repos](https://github.com/qutang?tab=repositories), [Google Scholar](http://tiny.cc/googlescholar-qutang), or [biography](/about#bio).
 
-* [Want to get in touch?](/about) 🈸
+* [Want to get in touch?](/about#contact) 🈸
 
   I'm open for collaboration, co-authoring or job opportunities. You may find me on [LinkedIn](https://www.linkedin.com/in/qutang/) or [Email](https://mailhide.io/e/SthF9).
 
