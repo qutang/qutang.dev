@@ -1,5 +1,16 @@
-<style>
+<script context="module">
+  export function preload({ params, query }) {
+    return this.fetch(`blog/rss.xml`).then(() => {
+      return this.fetch("sitemap.xml");
+    });
+  }
+</script>
 
+<script>
+  import Home from "../../contents/index.md";
+</script>
+
+<style>
   #slogan {
     background: none;
     display: flex;
@@ -31,46 +42,43 @@
     margin: 5em auto;
   }
 
-@media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 600px) {
     #slogan code {
-    font-size: 2em;
-    margin: 0 auto;
-  }
-  #slogan-core {
-    font-size: 3em;
-  }
-
+      font-size: 2em;
+      margin: 0 auto;
+    }
+    #slogan-core {
+      font-size: 3em;
+    }
   }
 </style>
-
-<script>
-import Home from '../../contents/index.md';
-</script>
 
 <svelte:head>
   <title>
     Qu Tang - share about data science, machine learning, mobile health
   </title>
-  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script
+    type="text/javascript"
+    src="https://identity.netlify.com/v1/netlify-identity-widget.js">
+
+  </script>
 </svelte:head>
 
-<div class='content'>
-<pre id="slogan">
-  <code class="language-python">
-  <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
-  <span id='slogan-core'>🏃</span> 🌫️🌫️🌫️
-  </code>
-</pre>
+<div class="content">
+  <pre id="slogan">
+    <code class="language-python">
+      <span class="hljs-keyword">while</span>
+      <span class="hljs-literal">True</span>
+      :
+      <span id="slogan-core">🏃</span>
+      🌫️🌫️🌫️
+    </code>
+  </pre>
 
-<p id='highlight-heading'>
-  <strong>
-    Highlights.
-  </strong>
-</p>
-
+  <p id="highlight-heading">
+    <strong>Highlights.</strong>
+  </p>
 
   <Home />
 
 </div>
-
-
