@@ -29,7 +29,7 @@
 		all elements inside .content
 	*/
   .content {
-    width: 56em;
+    max-width: 56em;
     margin: 5em auto;
   }
 

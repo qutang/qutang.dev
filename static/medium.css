@@ -122,6 +122,12 @@ mark,
 .katex-block {
   text-align: center;
   width: 100%;
+  overflow: auto;
+}
+
+.katex .base {
+  max-width: 100%;
+  overflow: auto;
 }
 
 table,
@@ -132,10 +138,27 @@ td {
 }
 
 table {
+  max-width: 100%;
   margin: 0 auto;
+}
+
+.content div > table {
+  margin: 0 auto;
+  min-width: 800px;
+}
+
+.content div {
+  max-width: 100%;
+  overflow: auto;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  blockquote {
+    padding: 0 20px;
+  }
 }

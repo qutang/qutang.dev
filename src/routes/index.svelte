@@ -31,7 +31,15 @@
     margin: 5em auto;
   }
 
-  @media (min-width: 480px) {
+@media only screen and (max-width: 600px) {
+    #slogan code {
+    font-size: 2em;
+    margin: 0 auto;
+  }
+  #slogan-core {
+    font-size: 3em;
+  }
+
   }
 </style>
 
@@ -60,9 +68,9 @@ import Home from '../../contents/index.md';
   </strong>
 </p>
 
-<div id='highlights'>
+
   <Home />
-</div>
+
 </div>
 
 

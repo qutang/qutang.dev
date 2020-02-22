@@ -21,18 +21,44 @@
     max-height: inherit;
   }
 
-  #slogan code {
-    font-size: 3em;
+    #slogan code {
+    font-size: 2.5em;
     margin: 0 auto;
   }
 
   #slogan-core {
-    font-size: 2.8em;
+    font-size: 2em;
+    margin: 0 auto;
   }
 
   .about {
-    width: 56em;
+    max-width: 56em;
     margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+
+    #slogan code {
+    font-size: 3em;
+  }
+
+  #slogan-core {
+    font-size: 2.5em;
+  }
+  }
+
+  @media screen and (max-width: 600px) {
+    .about {
+      width: 95%;
+
+    }
+    #slogan code {
+    font-size: 1.6em;
+  }
+
+  #slogan-core {
+    font-size: 1.2em;
+  }
   }
 
 </style>

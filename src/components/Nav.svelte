@@ -8,12 +8,13 @@
   nav {
     /* border-bottom: 1px solid rgba(255, 62, 0, 0.1); */
     font-weight: 300;
-    padding: 0 1em;
+    padding: 0;
     display: flex;
     justify-content: space-between;
     position: fixed;
     width: 100%;
     z-index: 1;
+    background: white;
   }
 
   ul {
@@ -70,6 +71,16 @@
     display: inline-block;
     height: 3.5em;
     width: 3.5em;
+  }
+
+  @media screen and (max-width: 600px) {
+    li, a {
+      font-size: 18px;
+    }
+    .extra-nav a, .extra-nav span {
+    height: 4em;
+    width: 4em;
+  }
   }
 </style>
 

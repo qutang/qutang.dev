@@ -142,7 +142,7 @@ function parseVideo(text) {
       return `<iframe src="//player.bilibili.com/player.html?aid=${id}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  style="width: 640px; height: 360px; max-width: 100%; margin: 0 auto;"></iframe>`;
     } else if (url.includes("youtube")) {
       let id = url.split("v=")[1];
-      return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      return `<iframe style="width: 640px; height: 360px; max-width: 100%;margin: 0 auto;" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
     }
   }
   return null;

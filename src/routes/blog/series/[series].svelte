@@ -47,15 +47,29 @@
   }
 
   #slogan-core {
-    font-size: 3.8em;
+    font-size: 3.2em;
   }
   .content {
-    width: 56em;
+    max-width: 56em;
     margin: 5em auto;
   }
   ul {
-    margin: 0 0 1em 0;
+    margin: 0 auto;
     line-height: 1.5;
+  }
+
+   @media screen and (max-width:600px) {
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+     #slogan code {
+    font-size: 1.8em;
+  }
+
+  #slogan-core {
+    font-size: 1.6em;
+  }
   }
 </style>
 

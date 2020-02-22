@@ -29,21 +29,39 @@ date: "2020-02-21 16:35:00"
   I'm open for collaboration, co-authoring or job opportunities. You may find me on [LinkedIn](https://www.linkedin.com/in/qutang/) or [Email](https://mailhide.io/e/SthF9).
 
 <style>
+  @media screen and (min-width: 1024px) {
+    ul {
+      max-width: 80em;
+      margin: 0 auto;
+    }
+    li {
+      width: 18em;
+      padding: 0.5em 1em;
+      margin-top: 0;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    ul {
+      width: 100%;
+      margin: 0 auto;
+    }
+    li {
+      padding: 0;
+      margin-top: 0;
+    }
+  }
   ul{
     display: flex;
     list-style-type: none;
-    justify-content: flex-start;
-    align-content: flex-start;
-    width: 75%;
+    justify-content: space-around;
+    align-content: center;
     margin: 0 auto;
+    padding-left: 0;
     flex-wrap: wrap;
   }
 
-  li {
-    width: 33%;
-    padding: 0.5em 1em;
-    margin-top: 0;
-  }
+  
 
   li p {
     font-size: 0.9em;

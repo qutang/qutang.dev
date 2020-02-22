@@ -52,7 +52,7 @@
     font-size: 3.8em;
   }
   .content {
-    width: 56em;
+    max-width: 56em;
     margin: 5em auto;
   }
   ul {
@@ -75,6 +75,21 @@
 
   .series a{
     text-decoration: none;
+  }
+
+  @media screen and (max-width:600px) {
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    #slogan code {
+    font-size: 2em;
+  }
+
+  #slogan-core {
+    font-size: 2em;
+  }
   }
 </style>
 

@@ -20,14 +20,30 @@
 </svelte:head>
 
 <style>
+
   main {
-    position: relative;
+
     max-width: 90%;
-    background-color: white;
     padding: 2em;
+    position: relative;
+    background-color: white;
     margin: 0em auto;
     box-sizing: border-box;
   }
+
+  @media only screen and (max-width: 600px) {
+  main {
+    max-width: 100%;
+    padding: 1em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    max-width: 90%;
+    padding: 2em;
+  }
+}
 </style>
 
 <Nav {segment} />
