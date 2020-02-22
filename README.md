@@ -29,6 +29,7 @@ A little story to share, my tech trajectory in terms of building personal websit
     Wordpress in Php
     Jekyll in Ruby
     Hexo in JS
+    Gatsby in React
     Charge in React
     Sapper in Svelte
 
