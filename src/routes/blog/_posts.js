@@ -36,6 +36,14 @@ let posts = fs
     };
   })
   .filter(post => post.type == "post")
+  .sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+
+    if (dateA > dateB) return -1;
+    if (dateA < dateB) return 1;
+    return 0;
+  })
   .map((post, index) => {
     let page = Math.floor(index / posts_per_page) + 1;
     post["page"] = page.toString();
@@ -43,15 +51,6 @@ let posts = fs
   });
 
 let totalPages = Math.max(...posts.map(post => post.page));
-
-posts = posts.sort((a, b) => {
-  const dateA = new Date(a.date);
-  const dateB = new Date(b.date);
-
-  if (dateA > dateB) return -1;
-  if (dateA < dateB) return 1;
-  return 0;
-});
 
 posts.forEach(post => {
   post.html = post.html.replace(/^\t{3}/gm, "");
