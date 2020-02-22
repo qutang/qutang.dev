@@ -1,0 +1,3 @@
+This folder stores the contents (posts and pages) of my personal website, including jupyter notebooks and markdown articles.
+
+It uses poetry to management all Python dependencies.
