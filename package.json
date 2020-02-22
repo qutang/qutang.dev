@@ -8,7 +8,9 @@
     "cms": "npx netlify-cms-proxy-server",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
-    "start": "node __sapper__/build",
+    "serve": "node __sapper__/build",
+    "start": "run-p -l -r serve cms",
+    "static": "npx serve __sapper__/export",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run"
@@ -32,6 +34,7 @@
     "highlight.js": "^9.18.1",
     "katex": "^0.11.1",
     "mermaid": "^8.4.7",
+    "moment": "^2.24.0",
     "npm-run-all": "^4.1.5",
     "rollup": "^1.20.0",
     "rollup-plugin-babel": "^4.0.2",
@@ -40,6 +43,7 @@
     "rollup-plugin-terser": "^4.0.4",
     "sapper": "^0.27.0",
     "svelte": "^3.0.0",
+    "svelte-icons": "^1.1.0",
     "svelte-preprocess-markdown": "^2.5.11"
   }
 }
