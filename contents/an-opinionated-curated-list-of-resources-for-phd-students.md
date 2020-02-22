@@ -1,9 +1,13 @@
 ---
 title: A Curated List of Resources for Ph.D. Students
-date: 2018-06-23 16:14:53
-series: "survivalkit"
-excerpt: "A curated list of resources for Ph.D. students. It includes both academic resources mainly for Computer Science or Engineering students and other resources (e.g., personal development, communication, and writing) that I personally feel useful and needed during my Ph.D. time."
-type: "post"
+type: post
+date: 2018-06-23T16:14:53.000Z
+excerpt: >-
+  A curated list of resources for Ph.D. students. It includes both academic
+  resources mainly for Computer Science or Engineering students and other
+  resources (e.g., personal development, communication, and writing) that I
+  personally feel useful and needed during my Ph.D. time.
+series: survivalkit
 ---
 A curated list of resources for Ph.D. students. It includes both academic resources mainly for Computer Science or Engineering students and other resources (e.g., personal development, communication, and writing) that I personally feel useful and needed during my Ph.D. time.
 
@@ -169,12 +173,12 @@ The crisis of managing the exploding digital stuffs fed by your projects.
 * [How to organize code in Python if you are a scientist](https://towardsdatascience.com/workflow-for-reportable-reusable-and-reproducible-computational-research-45d036c8a908) Opinionated principles in software engineering for scientific codes. It may also apply to other programming languages.
 * Try the following organization diagram + a README file recommended by Northeastern University Library.
 
-  ![How to organize](/images/uploads/digital_stuff_management.PNG)
+  ![How to organize](/media/uploads/digital_stuff_management.PNG)
 * How to name your digital stuffs (except for scripts)
 
-  ![How to name](/images/uploads/digital_stuff_naming.PNG)
+  ![How to name](/media/uploads/digital_stuff_naming.PNG)
 
-### Identify impact of papers\[^1]
+### Identify impact of papers[^1]
 
 I will exclude well-known Google Scholar, and Microsoft Academic Search from the list because these are not indexing services and do not exclude predatory journals and conferences.
 
@@ -186,7 +190,7 @@ Web of Science is excluded because this requires subscription. But your school s
 * [Directory of open access journals](https://doaj.org/) Search and verify if an open source journal is actually certified.
 * [Beall's list of predatory journals and publishers](https://beallslist.weebly.com/) You know by its name.
 
-\[^1]: This section extracts information from two webinar talks: [How can I organize and manage my digital stuff](https://nuonline.mediaspace.kaltura.com/media/t/1_olizfjzy), [How can I avoid predatory journals and publishers](https://nuonline.mediaspace.kaltura.com/media/t/0_odez1m0t) and [How can I determine how impactful my research is](https://nuonline.mediaspace.kaltura.com/media/t/1_mm58p2ln) from Northeastern University Library Service.
+[^1]: This section extracts information from two webinar talks: [How can I organize and manage my digital stuff](https://nuonline.mediaspace.kaltura.com/media/t/1_olizfjzy), [How can I avoid predatory journals and publishers](https://nuonline.mediaspace.kaltura.com/media/t/0_odez1m0t) and [How can I determine how impactful my research is](https://nuonline.mediaspace.kaltura.com/media/t/1_mm58p2ln) from Northeastern University Library Service.
 
 ### Write an impactful paper
 

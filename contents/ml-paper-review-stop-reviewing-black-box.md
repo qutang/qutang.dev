@@ -1,8 +1,12 @@
 ---
-title: "黑盒模型的解释算法在高风险决策中也许并不恰当"
-date: "2019-09-05T13:51:00"
-series: "ml"
-excerpt: "这是一篇Cythia Rudin写的论文'Please Stop Explaining Black Box Models for High-Stakes Decisions'的笔记摘要。这篇文章主要分析和归纳了那些用来解释黑盒模型的算法在高风险决策中的各种问题，在Deep learning占据主流的AI市场，算法的偏见，不公正和不透明性已经成为不可忽视的问题。在一些高风险决策中，这种不透明性可以是致命的，而任何解释黑盒模型的算法都有着自己的缺陷。"
+title: 黑盒模型的解释算法在高风险决策中也许并不恰当
+type: post
+date: '2019-09-05T13:51:00'
+excerpt: >-
+  这是一篇Cythia Rudin写的论文'Please Stop Explaining Black Box Models for High-Stakes
+  Decisions'的笔记摘要。这篇文章主要分析和归纳了那些用来解释黑盒模型的算法在高风险决策中的各种问题，在Deep
+  learning占据主流的AI市场，算法的偏见，不公正和不透明性已经成为不可忽视的问题。在一些高风险决策中，这种不透明性可以是致命的，而任何解释黑盒模型的算法都有着自己的缺陷。
+series: ml
 ---
 
 这是一篇 Cythia Rudin 写的论文[Please Stop Explaining Black Box Models for

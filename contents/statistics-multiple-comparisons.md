@@ -1,8 +1,9 @@
 ---
-title: "多重比较"
-date: "2017-06-23 16:14:53"
-series: "stats"
-excerpt: "多重比较 (Multiple comparisons) 是指通过多个统计测试来做出推论的方式"
+title: 多重比较
+type: post
+date: '2017-06-23 16:14:53'
+excerpt: 多重比较 (Multiple comparisons) 是指通过多个统计测试来做出推论的方式
+series: stats
 ---
 
 多重比较是指通过多个统计测试来做出推论的方式。举个 🌰，为了验证 **北京人比四川人更能吃辣** 有没有显著性，

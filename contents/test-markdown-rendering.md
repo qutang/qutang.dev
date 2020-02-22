@@ -1,6 +1,8 @@
 ---
 title: 测试页面
+type: post
 date: 2020-02-21T19:06:51.993Z
+series: programming
 ---
 
 ## Test

@@ -1,8 +1,9 @@
 ---
-title: "评分者信度"
-date: "2017-06-23 16:14:53"
-series: "stats"
-excerpt: "评分者间信度 (Interrater reliability) 就是用不同数据收集者之间一致性来度量数据可信度的一种概念。"
+title: 评分者信度
+type: post
+date: '2017-06-23 16:14:53'
+excerpt: 评分者间信度 (Interrater reliability) 就是用不同数据收集者之间一致性来度量数据可信度的一种概念。
+series: stats
 ---
 
 
