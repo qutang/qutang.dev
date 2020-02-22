@@ -60,9 +60,9 @@
     {$lang == 'cn' ? "唐曲 - 数据，机器学习，移动健康": "Qu Tang - share about data science, machine learning, mobile health"}
   </title>
   <script
+    defer
     type="text/javascript"
     src="https://identity.netlify.com/v1/netlify-identity-widget.js">
-
   </script>
 </svelte:head>
 

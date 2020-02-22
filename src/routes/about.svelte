@@ -4,7 +4,6 @@
   import ContentCN from "../../contents/pages/about.cn.md";
   import About from "../../README.md";
   import AboutCN from "../../README.cn.md";
-  import "../../node_modules/highlight.js/styles/arta.css";
 </script>
 
 <svelte:head>

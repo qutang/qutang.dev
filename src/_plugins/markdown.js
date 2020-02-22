@@ -151,7 +151,7 @@ function parseVideo(text) {
 function getCustomOptions(options) {
   let renderer = Renderer();
   let originalCode = renderer.code.bind(renderer);
-  renderer.code = function(code, language) {
+  renderer.code = function (code, language) {
     if (language == "mermaid") {
       return '<div class="mermaid">' + code + "</div>";
     } else {
@@ -160,6 +160,13 @@ function getCustomOptions(options) {
         code,
         language
       )}</code></pre>`;
+    }
+  };
+  renderer.link = function (href, title, text) {
+    if (href.startsWith('http')) {
+      return `<a href="${href}" rel="noopener" title="${title}" target="_blank">${text}</a>`
+    } else {
+      return `<a href="${href}" title="${title}">${text}</a>`
     }
   };
   options = {
@@ -175,7 +182,7 @@ function getCustomOptions(options) {
   return options;
 }
 
-const highlightCode = function(code, lang) {
+const highlightCode = function (code, lang) {
   let language = hljs.getLanguage(lang) ? lang : "plaintext";
   let result = hljs.highlight(language, code).value;
   return result;

@@ -2,7 +2,7 @@
   export async function preload({ params, query }) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
-    console.log(params.page);
+    // console.log(params.page);
     const res = await this.fetch(`blog/page/${params.page}.json`);
     const data = await res.json();
 

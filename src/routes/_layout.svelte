@@ -2,7 +2,8 @@
   import { lang } from "../components/stores.js";
   import Nav from "../components/Nav.svelte";
   import { onMount } from 'svelte';
-
+  import "../../node_modules/katex/dist/katex.min.css";
+  import "../../node_modules/highlight.js/styles/arta.css";
   export let segment;
 
   onMount(async () => {
@@ -18,17 +19,12 @@
 
 <svelte:head>
 <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
-<link rel="stylesheet" href="highlight.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.css"
-      integrity="sha384-bsHo4/LA+lkZv61JspMDQB9QP1TtO4IgOf2yYS+J6VdAYLVyx1c3XKcsHh0Vy8Ws"
-      crossorigin="anonymous"
-    />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="medium.css" />
-
-    <script src="https://unpkg.com/mermaid@8.4.7/dist/mermaid.min.js"></script>
+<link rel="preload" href="highlight.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="highlight.css"></noscript>
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="preload" href="medium.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="medium.css"></noscript>
+<script async src="mermaid.min.js"></script>
 </svelte:head>
 
 <style>

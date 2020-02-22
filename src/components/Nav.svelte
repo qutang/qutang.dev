@@ -134,7 +134,7 @@
       <a class:selected={segment === 'about'} href="about">{$lang == 'cn' ? "关于我":"about"}</a>
     </li>
     <li>
-      <a class='subscribe' href='http://eepurl.com/gEVgL9' target='_blank'>{$lang == 'cn' ? "邮件订阅":"subscribe"}</a>
+      <a class='subscribe' href='http://eepurl.com/gEVgL9' rel="noopener" target='_blank'>{$lang == 'cn' ? "邮件订阅":"subscribe"}</a>
     </li>
   </ul>
 
@@ -149,7 +149,7 @@
       {/if}
     </li>
     <li class='extra-github'>
-      <a href="https://github.com/qutang" target="_blank" style="display: inline-block;">
+      <a href="https://github.com/qutang" target="_blank" rel="noopener" style="display: inline-block;">
       <GithubIcon size="24" />
       </a>
     </li>

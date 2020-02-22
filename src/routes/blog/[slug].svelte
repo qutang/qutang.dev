@@ -56,7 +56,7 @@
 <div class="content">
 <h1>{post.title}</h1>
 
-<p><span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> {moment(post.date).locale($lang == 'cn' ? 'zh-cn' : 'en').format("LL")} <a href={post.src} target="_blank" style='float:right; margin-top: 0'>{$lang == 'cn' ? "编辑本文" : "Edit this page"}</a></p>
+<p><span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> {moment(post.date).locale($lang == 'cn' ? 'zh-cn' : 'en').format("LL")} <a href={post.src} rel='noopener' target="_blank" style='float:right; margin-top: 0'>{$lang == 'cn' ? "编辑本文" : "Edit this page"}</a></p>
 
   {@html post.html}
 </div>
