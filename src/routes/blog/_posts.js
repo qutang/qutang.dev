@@ -17,10 +17,15 @@ let posts = fs
     const extension = fileName.split(".")[1];
 
     let result = undefined;
+    let src = undefined;
+
     if (extension == "md") {
       result = customMarked({}, fileMd, "/blog/" + slug);
+      src = "https://github.com/qutang/qutang.dev/blob/master/contents/" +
+        fileName;
     } else if (extension == "ipynb") {
       result = jupyterRenderer(fileMd, "/blog/" + slug);
+      src = "https://colab.research.google.com/github/qutang/qutang.dev/blob/master/contents/" + fileName;
     }
 
     let html = result.html;
@@ -28,9 +33,7 @@ let posts = fs
 
     return {
       ...meta,
-      src:
-        "https://github.com/qutang/qutang.dev/blob/master/contents/" +
-        fileName,
+      src,
       slug,
       html
     };

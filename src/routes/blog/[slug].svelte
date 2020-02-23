@@ -20,6 +20,15 @@
   import { lang } from '../../components/stores.js';
   import moment from 'moment';
   import zh from 'moment/locale/zh-cn';
+
+  let edit_text = undefined;
+  let on_colab = post.src.includes('colab');
+  let edit_where = on_colab ? "Colab" : "Github";
+  if ($lang == 'cn') {
+    edit_text = "在" + edit_where + "编辑本文";
+  } else {
+    edit_text = "Edit this page on " + edit_where;
+  }
 </script>
 
 <style>
@@ -56,7 +65,7 @@
 <div class="content">
 <h1>{post.title}</h1>
 
-<p><span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> {moment(post.date).locale($lang == 'cn' ? 'zh-cn' : 'en').format("LL")} <a href={post.src} rel='noopener' target="_blank" style='float:right; margin-top: 0'>{$lang == 'cn' ? "编辑本文" : "Edit this page"}</a></p>
+<p><span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> {moment(post.date).locale($lang == 'cn' ? 'zh-cn' : 'en').format("LL")} <a href={post.src} rel='noopener' target="_blank" style='float:right; margin-top: 0'>{edit_text}</a></p>
 
   {@html post.html}
 </div>
