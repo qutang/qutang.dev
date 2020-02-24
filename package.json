@@ -42,7 +42,7 @@
     "rollup-plugin-svelte": "^5.0.1",
     "rollup-plugin-terser": "^4.0.4",
     "sapper": "^0.27.0",
-    "serialize-javascript": "2.1.1",
+    "serialize-javascript": "3.0.0",
     "svelte": "^3.0.0",
     "svelte-feather-icons": "^3.2.2",
     "svelte-preprocess-markdown": "^2.5.11"
