@@ -65,6 +65,36 @@
     color: black;
     font-weight: normal;
   }
+
+  .meta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .date {
+    padding: 0.2em 0.5em;
+  }
+
+  .edit {
+    padding: 0.2em 0.5em;
+    flex:1;
+    text-align: right;
+  }
+
+  @media screen and (max-width:600px) {
+    .edit, .date {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width:1024px) and (min-width:600px) {
+    .edit {
+      width: 100%;
+      flex: auto;
+    }
+  }
 </style>
 
 <svelte:head>
@@ -75,7 +105,11 @@
 <div class="content">
 <h1>{post.title}</h1>
 
-<p><span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> {moment(post.date).locale($lang == 'cn' ? 'zh-cn' : 'en').format("LL")} <a href={post.src} rel='noopener' target="_blank" style='float:right; margin-top: 0'>{edit_text}</a></p>
+<p class='meta'>
+  <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
+  <span class='date'>{moment(post.date).locale($lang == 'cn' ? 'zh-cn' : 'en').format("LL")}</span> 
+  <span class='edit'><a href={post.src} rel='noopener' target="_blank" style='margin-top: 0'>{edit_text}</a></span>
+</p>
 
 <p class='license'>
   {#if $lang == 'cn'}
