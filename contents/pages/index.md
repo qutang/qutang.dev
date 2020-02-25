@@ -1,29 +1,23 @@
 ---
 title: Home
 type: page
-date: "2020-02-21 16:35:00"
+date: '2020-02-21 16:35:00'
 ---
-
 * [MIMS-unit Algorithm](https://mhealthgroup.github.io/MIMSunit/) 🈴
 
   An open source and device-agnostic summarization algorithm for wearable accelerometer data.
-
 * [Multi-site Activity Recognition](https://qutang.github.io/MUSS/) 🈴
 
   Best comibinations of body locations to detect posture and physical activities with wearable accelerometers.
-
 * [Smoking Detection](/blog/automated-puffing-and-smoking-detection) 🈴
 
   Hierarchical recognition model for puffing and smoking detection with wrist accelerometers.
-
 * Active Training 🈺
 
   An innovative interactive system for building personalized activity recognition system.
-
 * Want to explore more? ㊙️
 
-  Check out my [Github repos](https://github.com/qutang?tab=repositories), [Google Scholar](http://tiny.cc/googlescholar-qutang), or [biography](/about#bio).
-
+  Check out this [curated list](https://qutang.dev/blog/an-opinionated-curated-list-of-resources-for-phd-students), my [Github repos](https://github.com/qutang?tab=repositories), [Google Scholar](http://tiny.cc/googlescholar-qutang), or [biography](/about#bio).
 * [Want to get in touch?](/about#contact) 🈸
 
   I'm open for collaboration, co-authoring or job opportunities. You may find me on [LinkedIn](https://www.linkedin.com/in/qutang/) or [Email](https://mailhide.io/e/SthF9).
