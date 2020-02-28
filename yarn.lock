@@ -2183,10 +2183,10 @@ svelte-feather-icons@^3.2.2:
   resolved "https://registry.yarnpkg.com/svelte-feather-icons/-/svelte-feather-icons-3.2.2.tgz#fdb4ecc7ac9127442d06d8bbeee52d3be0491834"
   integrity sha512-GY86mGZYjZCRRnY2t5caiY+2gzSWrYvG8dUjhnOi6YlaWVZEAzDOBuTDiZ1abOz2mM9fCpdpbgj1JZajjzEEAw==
 
-svelte-preprocess-markdown@^2.5.11:
-  version "2.5.11"
-  resolved "https://registry.yarnpkg.com/svelte-preprocess-markdown/-/svelte-preprocess-markdown-2.5.11.tgz#95f01574dfbf7c7498f1bcc00a3270e5b65f9646"
-  integrity sha512-+TzlI7Nefy/Zm5tSNpSV2CyUPmTnbIhrw1t92SHLnCDUL8zUjzATiFjjEelO2VCPqDeiqR+iwJAbtyjUMj0ptQ==
+svelte-preprocess-markdown@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/svelte-preprocess-markdown/-/svelte-preprocess-markdown-2.6.0.tgz#575bfa426c5757b757d8471140642d80b1207d25"
+  integrity sha512-E5Js6jSXVZ4Ezl7dEHabwdJVfhF58Jf3yYK3DLXFoZywKeWJ0M9JgVWwOPaf68PGXK1svpCankoHKwpII8TXiA==
   dependencies:
     front-matter "^3.0.2"
     marked "^0.7.0"
