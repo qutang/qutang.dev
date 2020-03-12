@@ -116,7 +116,7 @@ It is always good to participate in open source projects, while we all have bene
 ## Health with technologies
 
 * [PROMIS measures](https://www.nia.nih.gov/research/resource/patient-reported-outcomes-measurement-information-system-promis) Patient-Reported Outcomes Measurement Information System (PROMIS) and its core [citations](http://www.healthmeasures.net/images/Primary_Citations_for_PROMIS_Measures_1.23.19.pdf).
-
+* [EMA item repository](https://www.esmitemrepository.com/) This website hosts a shared repository for common items used in EMA questions. This provides standard and conventional items used in EMA questions (and choices) for a wide range of domains, such as emotion, physical activity, mood, and behaviors.
 - - -
 
 ## Live as a Ph.D. student
