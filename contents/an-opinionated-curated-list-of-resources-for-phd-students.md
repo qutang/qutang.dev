@@ -47,7 +47,8 @@ A curated list of resources for Ph.D. students. It includes both academic resour
 ### Datasets
 
 * [All of Us: health records dataset](https://www.researchallofus.org/)
-* [Google dataset search](https://datasetsearch.research.google.com/) Google's dataset search engine that indexes more than 25 million public datasets.
+* [Google dataset search](https://datasetsearch.research.google.com/) Google's dataset search engine that indexes more than 25 million public datasets.[](https://datacommons.org/)
+* [datacommons.org](https://datacommons.org/) Data repo of US census data initiated by Google.
 
 ## Algorithm and Programming
 
