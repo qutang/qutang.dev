@@ -47,6 +47,7 @@ A curated list of resources for Ph.D. students. It includes both academic resour
 ### Datasets
 
 * [All of Us: health records dataset](https://www.researchallofus.org/)
+* [Google dataset search](https://datasetsearch.research.google.com/) Google's dataset search engine that indexes more than 25 million public datasets.
 
 ## Algorithm and Programming
 
@@ -117,6 +118,7 @@ It is always good to participate in open source projects, while we all have bene
 
 * [PROMIS measures](https://www.nia.nih.gov/research/resource/patient-reported-outcomes-measurement-information-system-promis) Patient-Reported Outcomes Measurement Information System (PROMIS) and its core [citations](http://www.healthmeasures.net/images/Primary_Citations_for_PROMIS_Measures_1.23.19.pdf).
 * [EMA item repository](https://www.esmitemrepository.com/) This website hosts a shared repository for common items used in EMA questions. This provides standard and conventional items used in EMA questions (and choices) for a wide range of domains, such as emotion, physical activity, mood, and behaviors.
+
 - - -
 
 ## Live as a Ph.D. student
@@ -178,7 +180,7 @@ The crisis of managing the exploding digital stuffs fed by your projects.
 
   ![How to name](/media/uploads/digital_stuff_naming.PNG)
 
-### Identify impact of papers[^1]
+### Identify impact of papers\[^1]
 
 I will exclude well-known Google Scholar, and Microsoft Academic Search from the list because these are not indexing services and do not exclude predatory journals and conferences.
 
@@ -190,7 +192,7 @@ Web of Science is excluded because this requires subscription. But your school s
 * [Directory of open access journals](https://doaj.org/) Search and verify if an open source journal is actually certified.
 * [Beall's list of predatory journals and publishers](https://beallslist.weebly.com/) You know by its name.
 
-[^1]: This section extracts information from two webinar talks: [How can I organize and manage my digital stuff](https://nuonline.mediaspace.kaltura.com/media/t/1_olizfjzy), [How can I avoid predatory journals and publishers](https://nuonline.mediaspace.kaltura.com/media/t/0_odez1m0t) and [How can I determine how impactful my research is](https://nuonline.mediaspace.kaltura.com/media/t/1_mm58p2ln) from Northeastern University Library Service.
+\[^1]: This section extracts information from two webinar talks: [How can I organize and manage my digital stuff](https://nuonline.mediaspace.kaltura.com/media/t/1_olizfjzy), [How can I avoid predatory journals and publishers](https://nuonline.mediaspace.kaltura.com/media/t/0_odez1m0t) and [How can I determine how impactful my research is](https://nuonline.mediaspace.kaltura.com/media/t/1_mm58p2ln) from Northeastern University Library Service.
 
 ### Write an impactful paper
 
