@@ -31,7 +31,7 @@
     "@rollup/plugin-replace": "^2.3.2",
     "front-matter": "^3.1.0",
     "glob": "^7.1.6",
-    "highlight.js": "^10.0.1",
+    "highlight.js": "^10.0.3",
     "katex": "^0.11.1",
     "mermaid": "^8.5.0",
     "moment": "^2.24.0",
