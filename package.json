@@ -45,6 +45,6 @@
     "serialize-javascript": "3.0.0",
     "svelte": "^3.22.2",
     "svelte-feather-icons": "^3.2.2",
-    "svelte-preprocess-markdown": "^2.7.1"
+    "svelte-preprocess-markdown": "^2.7.2"
   }
 }
