@@ -2,11 +2,10 @@
 title: A Curated List of Resources for Ph.D. Students
 type: post
 date: 2018-06-23T16:14:53.000Z
-excerpt: >-
-  A curated list of resources for Ph.D. students. It includes both academic
-  resources mainly for Computer Science or Engineering students and other
-  resources (e.g., personal development, communication, and writing) that I
-  personally feel useful and needed during my Ph.D. time.
+excerpt: A curated list of resources for Ph.D. students. It includes both
+  academic resources mainly for Computer Science or Engineering students and
+  other resources (e.g., personal development, communication, and writing) that
+  I personally feel useful and needed during my Ph.D. time.
 series: survivalkit
 ---
 A curated list of resources for Ph.D. students. It includes both academic resources mainly for Computer Science or Engineering students and other resources (e.g., personal development, communication, and writing) that I personally feel useful and needed during my Ph.D. time.
@@ -43,6 +42,7 @@ A curated list of resources for Ph.D. students. It includes both academic resour
 * [Improving your statistical inferences](https://www.coursera.org/learn/statistical-inferences/) A great online course to improve your understanding on statistical inference
 * [See theory](https://seeing-theory.brown.edu/) Learn probability and statistics through visualization
 * [Simple Statistics](https://simplystatistics.org/) Popular blog talking about data science
+* [Basic data science lessons with COVID-19 data](https://medium.com/@ageitgey/four-basic-data-science-lessons-illustrated-by-covid-19-data-7d94134a5b0e) Such a great illustration article about the importance of investigating data rather than rushing into building models, by Adam Geitgey.
 
 ### Datasets
 
@@ -168,7 +168,7 @@ It is always good to participate in open source projects, while we all have bene
 
 * [The history and development of N-of-1 trials](http://jameslindlibrary.org/wp-data/uploads/2017/02/J-R-Soc-Med-2017-08-Mirza-330-340.pdf)
 
-### Solve productivity crisis\[^1]
+### Solve productivity crisis[^1]
 
 The crisis of managing the exploding digital stuffs fed by your projects.
 
@@ -181,7 +181,7 @@ The crisis of managing the exploding digital stuffs fed by your projects.
 
   ![How to name](/media/uploads/digital_stuff_naming.PNG)
 
-### Identify impact of papers\[^1]
+### Identify impact of papers[^1]
 
 I will exclude well-known Google Scholar, and Microsoft Academic Search from the list because these are not indexing services and do not exclude predatory journals and conferences.
 
@@ -193,7 +193,7 @@ Web of Science is excluded because this requires subscription. But your school s
 * [Directory of open access journals](https://doaj.org/) Search and verify if an open source journal is actually certified.
 * [Beall's list of predatory journals and publishers](https://beallslist.weebly.com/) You know by its name.
 
-\[^1]: This section extracts information from two webinar talks: [How can I organize and manage my digital stuff](https://nuonline.mediaspace.kaltura.com/media/t/1_olizfjzy), [How can I avoid predatory journals and publishers](https://nuonline.mediaspace.kaltura.com/media/t/0_odez1m0t) and [How can I determine how impactful my research is](https://nuonline.mediaspace.kaltura.com/media/t/1_mm58p2ln) from Northeastern University Library Service.
+[^1]: This section extracts information from two webinar talks: [How can I organize and manage my digital stuff](https://nuonline.mediaspace.kaltura.com/media/t/1_olizfjzy), [How can I avoid predatory journals and publishers](https://nuonline.mediaspace.kaltura.com/media/t/0_odez1m0t) and [How can I determine how impactful my research is](https://nuonline.mediaspace.kaltura.com/media/t/1_mm58p2ln) from Northeastern University Library Service.
 
 ### Write an impactful paper
 
