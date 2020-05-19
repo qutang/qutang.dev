@@ -20,10 +20,11 @@ export function customMarked(options, content, path) {
 }
 
 function customParser(content, path, options) {
-  const tokens = marked.lexer(content);
+  let tokens = marked.lexer(content);
   let refCounter = 0;
   let refMap = new Map();
   let footnotes = [];
+
   for (let i in tokens) {
     let result = parseReference(tokens[i].text, refCounter, refMap);
     if (result !== null) {
@@ -32,6 +33,7 @@ function customParser(content, path, options) {
       refMap = result.refMap;
     }
     result = parseMath(tokens[i].text);
+
     if (result !== null) {
       tokens[i].text = result;
     }
@@ -46,10 +48,11 @@ function customParser(content, path, options) {
       tokens[i].text = "";
     }
   }
+
   let html = marked.parser(tokens, options);
   html = html.replace(/#bib/g, `${path}#bib`);
   if (footnotes.length > 0) {
-    footnotes = footnotes.map(f => `<li id="bib-${f.name}">${f.note}</li>`);
+    footnotes = footnotes.map((f) => `<li id="bib-${f.name}">${f.note}</li>`);
     html += `
 <hr />
 <ol>
@@ -79,7 +82,7 @@ function parseFootnote(text, path) {
 
   let footnote = {
     name,
-    note: `${marked(note)}`
+    note: `${marked(note)}`,
   };
   return footnote;
 }
@@ -103,7 +106,6 @@ function parseMath(text) {
     const result = renderMathsExpression(expr);
     text = text.replace(expr, result);
   }
-
   return text;
 }
 
@@ -163,12 +165,13 @@ function getCustomOptions(options) {
     }
   };
   renderer.link = function (href, title, text) {
-    if (href.startsWith('http')) {
-      return `<a href="${href}" rel="noopener" title="${title}" target="_blank">${text}</a>`
+    if (href.startsWith("http")) {
+      return `<a href="${href}" rel="noopener" title="${title}" target="_blank">${text}</a>`;
     } else {
-      return `<a href="${href}" title="${title}">${text}</a>`
+      return `<a href="${href}" title="${title}">${text}</a>`;
     }
   };
+
   options = {
     ...options,
     renderer: renderer,
@@ -177,7 +180,7 @@ function getCustomOptions(options) {
     langPrefix: "language-",
     headerPrefix: "",
     mangle: true,
-    pedantic: false
+    pedantic: false,
   };
   return options;
 }

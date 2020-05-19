@@ -10,7 +10,7 @@ const posts_per_page = 5;
 
 let posts = fs
   .readdirSync(POSTS_DIR)
-  .filter(fileName => /\.((md)|(ipynb))$/.test(fileName))
+  .filter((fileName) => /\.((md)|(ipynb))$/.test(fileName))
   .map((fileName, index) => {
     const fileMd = fs.readFileSync(path.join(POSTS_DIR, fileName), "utf8");
     const slug = fileName.split(".")[0];
@@ -21,11 +21,13 @@ let posts = fs
 
     if (extension == "md") {
       result = customMarked({}, fileMd, "/blog/" + slug);
-      src = "https://github.com/qutang/qutang.dev/blob/master/contents/" +
-        fileName;
+      src =
+        "https://github.com/qutang/qutang.dev/blob/master/contents/" + fileName;
     } else if (extension == "ipynb") {
       result = jupyterRenderer(fileMd, "/blog/" + slug);
-      src = "https://colab.research.google.com/github/qutang/qutang.dev/blob/master/contents/" + fileName;
+      src =
+        "https://colab.research.google.com/github/qutang/qutang.dev/blob/master/contents/" +
+        fileName;
     }
 
     let html = result.html;
@@ -35,10 +37,10 @@ let posts = fs
       ...meta,
       src,
       slug,
-      html
+      html,
     };
   })
-  .filter(post => post.type == "post")
+  .filter((post) => post.type == "post")
   .sort((a, b) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
@@ -53,9 +55,9 @@ let posts = fs
     return post;
   });
 
-let totalPages = Math.max(...posts.map(post => post.page));
+let totalPages = Math.max(...posts.map((post) => post.page));
 
-posts.forEach(post => {
+posts.forEach((post) => {
   post.html = post.html.replace(/^\t{3}/gm, "");
 });
 
