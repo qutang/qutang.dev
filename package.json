@@ -46,6 +46,6 @@
     "svelte": "^3.22.3",
     "svelte-feather-icons": "^3.2.2",
     "svelte-preprocess-markdown": "^2.7.2",
-    "marked": "0.8.2"
+    "marked": "1.1.0"
   }
 }
