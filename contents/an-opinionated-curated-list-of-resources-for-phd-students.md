@@ -90,6 +90,7 @@ It is always good to participate in open source projects, while we all have bene
 * [Dive into deep learning](https://d2l.ai)
 * [Microsoft's introduction to recommendation systems](https://github.com/Microsoft/Recommenders)
 * [CMU's human A.I. course](http://www.humanaiclass.org/)
+* [Springer's 65 free data and machine learning book!](https://towardsdatascience.com/springer-has-released-65-machine-learning-and-data-books-for-free-961f8181f189)
 
 ### Learn from the Giants
 
