@@ -15,7 +15,7 @@ See more in my [CV](media/uploads/cv_tang.pdf).
 
 I'm open for collaboration, co-authoring, full-time jobs, consulting, or freelancing, please contact me via [Email](https://mailhide.io/e/SthF9) or [LinkedIn](https://www.linkedin.com/in/qutang/). 
 
-If you want to contribute to this website, any of the articles or write posts for the website. Please go to the [Github repo](https://github.com/qutang/v2.qutang.dev) of this website and create issues or send me pull requests. 
+If you want to contribute to this website, any of the articles or write posts for the website. Please go to the [Github repo](https://github.com/qutang/qutang.dev) of this website and create issues or send me pull requests. 
 
 <style>
 
