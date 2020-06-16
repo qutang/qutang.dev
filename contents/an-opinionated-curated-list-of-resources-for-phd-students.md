@@ -20,7 +20,7 @@ A curated list of resources for Ph.D. students. It includes both academic resour
 
 ### Visualize data
 
-* [**Signaligner Pro**]
+* **[Signaligner Pro](https://crowdgames.github.io/signaligner/) A desktop-based visualization tool developed by [my lab](https://mhealthgroup.org) and [crowdgames lab](http://www.ccs.neu.edu/home/scooper/#students) used to view multi-day high frequency raw sensory data, arbitrary annotations, and algorithm predictions.**
 * [Fundamentals of data visualization](https://serialmentor.com/dataviz)
 * [Chart Chooser](http://experception.net/Franconeri_ExperCeptionDotNet_ChartChooser.pdf) Cheat sheet to choose the proper chart for data
 * [Data infographics](https://www.ahrq.gov/research/data/data-infographics/index.html) Examples of data infographics
