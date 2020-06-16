@@ -20,6 +20,7 @@ A curated list of resources for Ph.D. students. It includes both academic resour
 
 ### Visualize data
 
+* [**Signaligner Pro**]
 * [Fundamentals of data visualization](https://serialmentor.com/dataviz)
 * [Chart Chooser](http://experception.net/Franconeri_ExperCeptionDotNet_ChartChooser.pdf) Cheat sheet to choose the proper chart for data
 * [Data infographics](https://www.ahrq.gov/research/data/data-infographics/index.html) Examples of data infographics
