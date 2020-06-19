@@ -106,6 +106,7 @@ It is always good to participate in open source projects, while we all have bene
 
 ### Start with the state-of-art packages
 
+* **[ARUS](https://qutang.github.io/arus) A python package, in development by me, provides a computational and experimental framework to manage and process sensory data or wireless devices, to develop and run activity recognition algorithms on the data, and to create interactive programs using the algorithms and data streams from wireless devices.**
 * [AliPy](https://github.com/NUAA-AL/ALiPy) Latest Active Learning algorithms in a single Python package
 * [Flair](https://github.com/zalandoresearch/flair) State-of-the-art Natural Language Processing framework
 * [DAWN](https://dawn.cs.stanford.edu/) DAWN is a five-year research project by Stanford to create tools to democratize AI by making it dramatically easier to build AI-powered applications.
