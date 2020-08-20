@@ -7,3 +7,4 @@ yarn-error.log
 .venv
 .ipynb_checkpoints
 highlight.css
+.pytest_cache
