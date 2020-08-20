@@ -16,6 +16,10 @@ A curated list of resources for Ph.D. students. It includes both academic resour
 
 - - -
 
+${toc}
+
+- - -
+
 ## Data
 
 ### Visualize data

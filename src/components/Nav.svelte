@@ -25,7 +25,7 @@
     position: fixed;
     width: 100%;
     z-index: 1;
-    background: white;
+    background: none;
   }
 
   ul {

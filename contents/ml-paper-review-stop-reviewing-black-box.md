@@ -9,6 +9,12 @@ excerpt: >-
 series: ml
 ---
 
+- - -
+  
+${toc}
+
+- - -
+
 这是一篇 Cythia Rudin 写的论文[Please Stop Explaining Black Box Models for
 High-Stakes Decisions](https://arxiv.org/abs/1811.10154)的笔记摘要。这篇文章主要分析和归纳了那些用来解释黑盒模型的算法在高风险决策中的各种问题[^1]，在 Deep learning 占据主流的 AI 市场，算法的偏见，不公正和不透明性已经成为不可忽视的问题。在一些高风险决策中，这种不透明性可以是致命的，而任何解释黑盒模型的算法都有着自己的缺陷。
 

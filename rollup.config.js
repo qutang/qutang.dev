@@ -2,14 +2,13 @@ import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import commonjs from "@rollup/plugin-commonjs";
 import svelte from "rollup-plugin-svelte";
-import babel from "rollup-plugin-babel";
+import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
 import css from "rollup-plugin-css-only";
-import { jupyter } from "./src/_plugins/jupyter";
-import { customMarkdown } from "./src/_plugins/markdown";
 import glob from "glob";
+const { markdown } = require("svelte-preprocess-markdown");
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -29,36 +28,36 @@ export default {
         buildStart() {
           var self = this;
           const postsDir = "./contents";
-          glob(postsDir + "/**/*.md", null, function(er, files) {
-            files.forEach(file => {
+          glob(postsDir + "/**/*.md", null, function (er, files) {
+            files.forEach((file) => {
               self.addWatchFile(file);
             });
           });
-          glob(postsDir + "/**/*.ipynb", null, function(er, files) {
-            files.forEach(file => {
+          glob(postsDir + "/**/*.ipynb", null, function (er, files) {
+            files.forEach((file) => {
               self.addWatchFile(file);
             });
           });
-        }
+        },
       },
       replace({
         "process.browser": true,
-        "process.env.NODE_ENV": JSON.stringify(mode)
+        "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       svelte({
         dev,
-        extensions: [".svelte", ".md", ".ipynb"],
-        preprocess: [jupyter(), customMarkdown()],
+        extensions: [".svelte", ".md"],
+        preprocess: markdown(),
         hydratable: true,
-        emitCss: true
+        emitCss: true,
       }),
       resolve({
         browser: true,
-        dedupe: ["svelte"]
+        dedupe: ["svelte"],
       }),
       commonjs(),
       css({
-        output: "static/highlight.css"
+        output: "static/highlight.css",
       }),
 
       legacy &&
@@ -70,28 +69,28 @@ export default {
             [
               "@babel/preset-env",
               {
-                targets: "> 0.25%, not dead"
-              }
-            ]
+                targets: "> 0.25%, not dead",
+              },
+            ],
           ],
           plugins: [
             "@babel/plugin-syntax-dynamic-import",
             [
               "@babel/plugin-transform-runtime",
               {
-                useESModules: true
-              }
-            ]
-          ]
+                useESModules: true,
+              },
+            ],
+          ],
         }),
 
       !dev &&
         terser({
-          module: true
-        })
+          module: true,
+        }),
     ],
 
-    onwarn
+    onwarn,
   },
 
   server: {
@@ -102,44 +101,44 @@ export default {
         buildStart() {
           var self = this;
           const postsDir = "./contents";
-          glob(postsDir + "/**/*.md", null, function(er, files) {
-            files.forEach(file => {
+          glob(postsDir + "/**/*.md", null, function (er, files) {
+            files.forEach((file) => {
               self.addWatchFile(file);
             });
           });
-          glob(postsDir + "/**/*.ipynb", null, function(er, files) {
-            files.forEach(file => {
+          glob(postsDir + "/**/*.ipynb", null, function (er, files) {
+            files.forEach((file) => {
               self.addWatchFile(file);
             });
           });
-        }
+        },
       },
       replace({
         "process.browser": false,
-        "process.env.NODE_ENV": JSON.stringify(mode)
+        "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       svelte({
         generate: "ssr",
-        extensions: [".svelte", ".md", ".ipynb"],
-        preprocess: [jupyter(), customMarkdown()],
+        extensions: [".svelte", ".md"],
+        preprocess: markdown(),
         dev,
         hydratable: true,
-        emitCss: true
+        emitCss: true,
       }),
       resolve({
-        dedupe: ["svelte"]
+        dedupe: ["svelte"],
       }),
       commonjs(),
       css({
-        output: "static/highlight.css"
-      })
+        output: "static/highlight.css",
+      }),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||
         Object.keys(process.binding("natives"))
     ),
 
-    onwarn
+    onwarn,
   },
 
   serviceworker: {
@@ -149,12 +148,12 @@ export default {
       resolve(),
       replace({
         "process.browser": true,
-        "process.env.NODE_ENV": JSON.stringify(mode)
+        "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       commonjs(),
-      !dev && terser()
+      !dev && terser(),
     ],
 
-    onwarn
-  }
+    onwarn,
+  },
 };

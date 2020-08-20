@@ -1,9 +1,10 @@
 <script>
   import { lang } from "../components/stores.js";
   import Nav from "../components/Nav.svelte";
+  import Footer from "../components/Footer.svelte";
   import { onMount } from 'svelte';
   import "../../node_modules/katex/dist/katex.min.css";
-  import "../../node_modules/highlight.js/styles/arta.css";
+  import "../../node_modules/highlight.js/styles/darcula.css";
   export let segment;
 
   onMount(async () => {
@@ -13,6 +14,10 @@
     if($lang == "") {
       lang.update(() => value);
     }
+
+    [...document.querySelectorAll('a[href^="#"]')].map(
+      x => (x.href = document.location + new URL(x.href).hash)
+    )
 	});
   
 </script>
@@ -59,3 +64,5 @@
 <main>
   <slot />
 </main>
+
+<Footer />

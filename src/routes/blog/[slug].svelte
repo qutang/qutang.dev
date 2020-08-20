@@ -20,6 +20,7 @@
   import { lang } from '../../components/stores.js';
   import moment from 'moment';
   import zh from 'moment/locale/zh-cn';
+  import { onMount } from 'svelte';
 
   let edit_text = undefined;
   let license_text = undefined;
@@ -30,6 +31,19 @@
   } else {
     edit_text = "Edit this page on " + edit_where;
   }
+
+  onMount(async () => {
+		const sysLang = window.userLanguage || window.navigator.language;
+    const value = sysLang.includes('zh') ? 'cn' : 'en';
+
+    if($lang == "") {
+      lang.update(() => value);
+    }
+
+    [...document.querySelectorAll('a[href^="#"]')].map(
+      x => (x.href = '/blog/' + post.slug + new URL(x.href).hash)
+    )
+	});
 </script>
 
 <style>

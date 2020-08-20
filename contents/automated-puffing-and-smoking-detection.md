@@ -8,9 +8,16 @@ excerpt: >-
   and smoking behavior using wrist accelerometers.
 series: ml
 ---
+
+- - -
+  
+${toc}
+
+- - -
+
 A compelementary introduction for a published paper about an Activity recognition algorithm based on Random Forest to automatically detect puffing and smoking behavior using wrist accelerometers.
 
-This project is aiming to detect puffing and smoking behavior in a real-world real-time or near-real-time setting with single or multiple on-body accelerometers. Currently, I've published one main track conference paper for this project at PervasiveHealth. I'm now working on designing a real-time detection system and verifying the offline algorithm in a real-time environment setting, under the supervision of Professor Stephen Intille.<!--more-->
+This project is aiming to detect puffing and smoking behavior in a real-world real-time or near-real-time setting with single or multiple on-body accelerometers. Currently, I've published one main track conference paper for this project at PervasiveHealth. I'm now working on designing a real-time detection system and verifying the offline algorithm in a real-time environment setting, under the supervision of Professor Stephen Intille.
 
 Please contact me through email if you have any question or are interested in this project.
 
@@ -22,20 +29,10 @@ This project page hosts some additional resources that are not included in the p
 
 Please scan through the paper before using the dataset and source codes so that you can better understand them. Please also kindly cite the original paper when publishing results that are derived from using this public dataset.
 
-<ol>
-  <li>
-    <b>Tang, Q.</b>, Vidrine, D., Crowder, E., and Intille, S. 2014.
-    <i>Automated Detection of Puffing and Smoking with Wrist Accelerometers</i>.
+1. __Tang, Q.__, Vidrine, D., Crowder, E., and Intille, S. 2014.
+    _Automated Detection of Puffing and Smoking with Wrist Accelerometers_.
     8th International Conference on Pervasive Computing Technologies for
-    Healthcare, ICST (2014).
-    <a
-      href="http://eudl.eu/doi/10.4108/icst.pervasivehealth.2014.254978"
-      title="download paper"
-    >
-      Download paper
-    </a>
-  </li>
-</ol>
+    Healthcare, ICST (2014). [Download paper](http://eudl.eu/doi/10.4108/icst.pervasivehealth.2014.254978)
 
 ## Documentation for RealSmoking dataset package
 
@@ -43,27 +40,24 @@ Please scan through the paper before using the dataset and source codes so that 
 
 [View and download](https://qutang.gitbooks.io/documentation-real-world-puffing-and-smoking-data/content/)
 
-<div className="spacing"></div>
-
 ## Demos: the complexity of smoking behavior in real world
 
 - - -
 
 These videos are shot to show the real world cases of smoking behavior. Videos and corresponding accelerometer signal are put side by side to give a direct impression of how movement could affect and intervene the underlying signal.
 
-online_video https://www.youtube.com/watch?v=0vuninozmh0
+/i/https://www.youtube.com/embed/0vuninozmh0
 
 **Separable concurrent activities**: In this video, tester was asked to perform smoking while walking. As you can see from the video, signal was shown to contain additive components from both hand movement (puffing) and body movement (walking). These two components are independent and additive because they are conducted by different body components. This gives us some inspiration when dealing with concurrent activities.
 
 
 
-online_video https://www.youtube.com/watch?v=FjhBPKOZ1a0
+/i/https://www.youtube.com/embed/FjhBPKOZ1a0
 
 **Ambiguous hand gestures**: In this video, tester was asked to perform puffing, eating and drinking during smoking in a natural way. The signal contains several ups and downs but none of them shows distinguish characteristics only for puffing. In fact, these activites all belong to hand-to-mouse gestures. The differences between these activities are quite minor from the view of the signal. This exposes one of the chanllenges in activity recognition, which is to classify similar movements.
 
 
-
-online_video https://www.youtube.com/watch?v=FjhBPKOZ1a0
+/i/https://www.youtube.com/embed/FjhBPKOZ1a0
 
 **A comprehensive episode**: This video shows a comprehensive episode of natural smoking behavior including a series of complex activities ongoing at the same time. Signals, as shown on the right side, appear to be quite intervened and complex and lack of visible distinguish characteristics for each type of activities. The activites are changing relatively fast in time, thus makes them even more difficult to be captured and recognized in real time.
 

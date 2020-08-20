@@ -17,6 +17,10 @@ a,
   text-rendering: optimizeLegibility;
 }
 
+.content sup {
+  vertical-align: baseline;
+}
+
 h1 {
   font-family: "Playfair Display", serif;
   font-size: 48px;
@@ -77,10 +81,9 @@ blockquote {
 pre {
   width: 100%;
   display: flex;
-  background: rgb(253, 252, 233);
   overflow: auto;
   padding: 0.5em;
-  max-height: 250px;
+  max-height: 500px;
 }
 
 code {
@@ -93,6 +96,10 @@ code {
 pre code {
   display: block;
   background: none;
+}
+
+.hljs {
+  width: 100%;
 }
 
 .mermaid {
@@ -130,15 +137,13 @@ mark,
   background-color: lavender;
 }
 
-.katex-block {
-  text-align: center;
-  width: 100%;
-  overflow: auto;
+nav.table-of-contents ol {
+  padding-left: 1em;
+  list-style-type: upper-roman;
 }
 
-.katex .base {
-  max-width: 100%;
-  overflow: auto;
+nav.table-of-contents ol li {
+  margin-top: 5px;
 }
 
 table,

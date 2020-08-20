@@ -1,32 +1,16 @@
-import { customMarkdown, customMarked } from "./markdown";
+import { customMarked } from "./md-it";
 
-export function jupyter(options = {}) {
-  options.filetype = "ipynb";
-  return {
-    markup({ content, filename }) {
-      let result;
-      if (filename.endsWith(`.${options.filetype}`)) {
-        let jupyterDom = JSON.parse(content);
-        content = jupyterDom2Markdown(jupyterDom);
-        result = customMarkdown().markup({ content: content, filename: ".md" });
-        content = result["code"];
-      }
-      return { code: content };
-    }
-  };
-}
-
-export function jupyterRenderer(content, options, path) {
+export function jupyterRenderer(content) {
   let result;
   let jupyterDom = JSON.parse(content);
   content = jupyterDom2Markdown(jupyterDom);
-  result = customMarked(options, content, path);
+  result = customMarked(content);
   return result;
 }
 
 function jupyterDom2Markdown(dom) {
   let result = [];
-  dom["cells"].forEach(element => {
+  dom["cells"].forEach((element) => {
     if (element["cell_type"] == "markdown") {
       if (element["source"].length > 0) {
         if (!element["source"][element["source"].length - 1].endsWith("\n")) {
@@ -45,7 +29,7 @@ function jupyterDom2Markdown(dom) {
         result.push("\n");
       }
       if (element["outputs"].length > 0) {
-        let outputs = element["outputs"].map(output => {
+        let outputs = element["outputs"].map((output) => {
           if (output["output_type"] == "execute_result") {
             let key = Object.keys(output["data"])[0];
             if (key == "text/html") {

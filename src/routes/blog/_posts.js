@@ -1,4 +1,5 @@
-import { customMarked } from "../../_plugins/markdown";
+// import { customMarked } from "../../_plugins/markdown";
+import { customMarked } from "../../_plugins/md-it";
 import { jupyterRenderer } from "../../_plugins/jupyter";
 
 const fs = require("fs");
@@ -20,11 +21,13 @@ let posts = fs
     let src = undefined;
 
     if (extension == "md") {
-      result = customMarked({}, fileMd, "/blog/" + slug);
+      result = customMarked(fileMd);
+      // result = customMarked({}, fileMd, "/blog/" + slug);
       src =
         "https://github.com/qutang/qutang.dev/blob/master/contents/" + fileName;
     } else if (extension == "ipynb") {
-      result = jupyterRenderer(fileMd, "/blog/" + slug);
+      // result = jupyterRenderer(fileMd, "/blog/" + slug);
+      result = jupyterRenderer(fileMd);
       src =
         "https://colab.research.google.com/github/qutang/qutang.dev/blob/master/contents/" +
         fileName;

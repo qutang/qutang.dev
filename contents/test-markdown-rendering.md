@@ -5,6 +5,13 @@ date: 2020-02-21T19:06:51.993Z
 series: programming
 ---
 
+- - -
+  
+${toc}
+
+- - -
+  
+
 ## Test
 
 # An h1 header
@@ -167,8 +174,3 @@ $$a = b + c$$
 | ID  | Name |
 | --- | ---- |
 | 1   | John |
-
-```mermaid
-graph LR
-    A-->B
-```
