@@ -1,7 +1,7 @@
 {
   "name": "qutang.dev",
   "description": "qutang.dev version 2",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "run-p -l -r dev-site cms",
     "dev-site": "sapper dev",
