@@ -29,7 +29,6 @@
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="preload" href="medium.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="medium.css"></noscript>
-<script async src="mermaid.min.js"></script>
 </svelte:head>
 
 <style>

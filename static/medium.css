@@ -102,15 +102,6 @@ pre code {
   width: 100%;
 }
 
-.mermaid {
-  margin: 1em 0;
-}
-
-.mermaid svg {
-  margin: 0 auto;
-  display: block;
-}
-
 mark,
 .highlighted {
   background: #7dffb3;
