@@ -23,6 +23,7 @@ function jupyterDom2Markdown(dom) {
         if (!element["source"][element["source"].length - 1].endsWith("\n")) {
           element["source"][element["source"].length - 1] += "\n";
         }
+        result.push("Input code\n");
         result.push("```python\n");
         result = result.concat(element["source"]);
         result.push("```\n");
@@ -32,21 +33,47 @@ function jupyterDom2Markdown(dom) {
         let outputs = element["outputs"].map((output) => {
           if (output["output_type"] == "execute_result") {
             let key = Object.keys(output["data"])[0];
-            if (key == "text/html") {
-              return output["data"][key].join("") + "\n\n";
-            } else {
-              return output["data"][key].join("") + "\n";
+            let result = "";
+            for (key in output["data"]) {
+              if (key == "text/html") {
+                result += "Output results\n";
+                result += output["data"][key].join("") + "\n\n";
+              } else if (key == "image/png") {
+                result +=
+                  "![" +
+                  output["data"]["text/plain"] +
+                  "](data:image/png;base64," +
+                  output["data"]["image/png"] +
+                  ")\n\n";
+              } else {
+                if (Array.isArray(output["data"][key])) {
+                  result += "Output results\n";
+                  result += "```\n";
+                  result += output["data"][key].join("") + "\n";
+                  result += "```\n";
+                } else {
+                  result += "Output results\n";
+                  result += "```\n";
+                  result += output["data"][key].toString() + "\n";
+                  result += "```\n";
+                }
+              }
             }
+            return result;
           } else if (output["output_type"] == "stream") {
             var text = output["text"];
-            return "```output\n" + text.join("") + "```\n\n";
+            if (Array.isArray(text)) {
+              return "Output results\n```\n" + text.join("") + "```\n\n";
+            } else {
+              return "Output results\n```\n" + text.toString() + "```\n\n";
+            }
           } else if (output["output_type"] == "display_data") {
             return (
               "![" +
               output["data"]["text/plain"] +
               "](data:image/png;base64," +
               output["data"]["image/png"] +
-              ")\n"
+              ")\n\n"
             );
           }
         });
