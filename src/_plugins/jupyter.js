@@ -37,7 +37,11 @@ function jupyterDom2Markdown(dom) {
             for (key in output["data"]) {
               if (key == "text/html") {
                 result += "Output results\n";
-                result += output["data"][key].join("") + "\n\n";
+                if (Array.isArray(output["data"][key])) {
+                  result += output["data"][key].join("") + "\n\n";
+                } else {
+                  result += output["data"][key] + "\n\n";
+                }
               } else if (key == "image/png") {
                 result +=
                   "![" +
