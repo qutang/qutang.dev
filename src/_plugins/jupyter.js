@@ -20,17 +20,6 @@ function saveBase64Image(base64Str, name, post_name) {
     //Finished
     console.log(err);
   });
-  if (fs.existsSync("__sapper__/export/media/uploads/")) {
-    if (!fs.existsSync("__sapper__/export/media/uploads/jupyter/")) {
-      fs.mkdirSync("__sapper__/export/media/uploads/jupyter/");
-    }
-    var path =
-      "__sapper__/export/media/uploads/" + post_name + "_" + name + ".png";
-    fs.writeFile(path, data, { encoding: "base64" }, function (err) {
-      //Finished
-      console.log(err);
-    });
-  }
   return ref;
 }
 
