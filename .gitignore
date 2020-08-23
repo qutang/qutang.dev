@@ -9,3 +9,4 @@ yarn-error.log
 highlight.css
 .pytest_cache
 **/*.pth
+static/media/uploads/jupyter

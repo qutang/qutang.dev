@@ -27,7 +27,7 @@ let posts = fs
         "https://github.com/qutang/qutang.dev/blob/master/contents/" + fileName;
     } else if (extension == "ipynb") {
       // result = jupyterRenderer(fileMd, "/blog/" + slug);
-      result = jupyterRenderer(fileMd);
+      result = jupyterRenderer(fileMd, slug);
       src =
         "https://colab.research.google.com/github/qutang/qutang.dev/blob/master/contents/" +
         fileName;
