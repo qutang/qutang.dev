@@ -16,10 +16,21 @@ function saveBase64Image(base64Str, name, post_name) {
   }
   var path = "static/media/uploads/jupyter/" + post_name + "_" + name + ".png";
   var ref = "/media/uploads/jupyter/" + post_name + "_" + name + ".png";
-  require("fs").writeFile(path, data, { encoding: "base64" }, function (err) {
+  fs.writeFile(path, data, { encoding: "base64" }, function (err) {
     //Finished
     console.log(err);
   });
+  if (fs.existsSync("__sapper__/export/media/uploads/")) {
+    if (!fs.existsSync("__sapper__/export/media/uploads/jupyter/")) {
+      fs.mkdirSync("__sapper__/export/media/uploads/jupyter/");
+    }
+    var path =
+      "__sapper__/export/media/uploads/" + post_name + "_" + name + ".png";
+    fs.writeFile(path, data, { encoding: "base64" }, function (err) {
+      //Finished
+      console.log(err);
+    });
+  }
   return ref;
 }
 
