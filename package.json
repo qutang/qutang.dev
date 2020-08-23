@@ -50,7 +50,7 @@
     "rollup-plugin-css-only": "^2.0.0",
     "rollup-plugin-svelte": "^5.2.2",
     "rollup-plugin-terser": "^5.2.0",
-    "sapper": "^0.27.13",
+    "sapper": "^0.28.0",
     "serialize-javascript": "^3.0.0",
     "svelte": "^3.22.3",
     "svelte-feather-icons": "^3.2.2",
