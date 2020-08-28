@@ -1,13 +1,5 @@
 import { customMarked } from "./md-it";
 
-export function jupyterRenderer(content, slug) {
-  let result;
-  let jupyterDom = JSON.parse(content);
-  content = jupyterDom2Markdown(jupyterDom, slug);
-  result = customMarked(content);
-  return result;
-}
-
 function saveBase64Image(base64Str, name, post_name) {
   var data = base64Str;
   var fs = require("fs");
@@ -100,6 +92,12 @@ function jupyterDom2Markdown(dom, slug) {
   return result;
 }
 
-// let content = fs.readFileSync('src/contents/metawear_syncing.ipynb', 'utf8').toString()
-// result = jupyter().markup({ content: content, filename: 'src/contents/metawear_syncing.ipynb' })
-// fs.writeFileSync('test.html', result['code'])
+function jupyterRenderer(content, slug) {
+  let result;
+  let jupyterDom = JSON.parse(content);
+  content = jupyterDom2Markdown(jupyterDom, slug);
+  result = customMarked(content);
+  return result;
+}
+
+export { jupyterRenderer };

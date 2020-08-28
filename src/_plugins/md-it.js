@@ -1,6 +1,4 @@
-import fm from "front-matter";
-import hljs from "highlight.js";
-
+const fm = require("front-matter");
 const tm = require("markdown-it-texmath");
 const md = require("markdown-it")({
   html: true,
@@ -26,10 +24,12 @@ const md = require("markdown-it")({
     katexOptions: { macros: { "\\RR": "\\mathbb{R}" } },
   });
 
-export function customMarked(content) {
+function customMarked(content) {
   let result = fm(content);
   content = result.body;
   let meta = result.attributes;
   let html = md.render(content);
   return { html, meta };
 }
+
+export { customMarked };
