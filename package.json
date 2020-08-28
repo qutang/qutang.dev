@@ -32,6 +32,7 @@
     "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-replace": "^2.3.2",
+    "@yuque/sdk": "^1.1.1",
     "front-matter": "^4.0.2",
     "glob": "^7.1.6",
     "highlight.js": "^10.0.3",
