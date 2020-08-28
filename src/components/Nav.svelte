@@ -124,14 +124,14 @@
 <nav>
   <ul class='main-nav {$lang == 'cn' ? "bold": "normal"}'>
     <li>
-      <a class:selected={segment === undefined} href=".">{$lang == 'cn' ? "首页":"home"}</a>
+      <a rel=prefetch class:selected={segment === undefined} href=".">{$lang == 'cn' ? "首页":"home"}</a>
     </li>
     
     <li>
-      <a rel="prefetch" class:selected={segment === 'blog'} href="blog">{$lang == 'cn' ? "博客":"blog"}</a>
+      <a rel=prefetch class:selected={segment === 'blog'} href="blog">{$lang == 'cn' ? "博客":"blog"}</a>
     </li>
     <li>
-      <a class:selected={segment === 'about'} href="about">{$lang == 'cn' ? "关于我":"about"}</a>
+      <a rel=prefetch class:selected={segment === 'about'} href="about">{$lang == 'cn' ? "关于我":"about"}</a>
     </li>
     <li>
       <a class='subscribe' href='http://eepurl.com/gEVgL9' rel="noopener" target='_blank'>{$lang == 'cn' ? "邮件订阅":"subscribe"}</a>
