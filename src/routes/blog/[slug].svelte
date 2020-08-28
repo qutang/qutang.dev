@@ -25,12 +25,11 @@
   let edit_text = undefined;
   let license_text = undefined;
   let on_colab = post.src.includes('colab');
+  let on_yuque = post.src.includes('yuque');
   let edit_where = on_colab ? "Colab" : "Github";
-  if ($lang == 'cn') {
-    edit_text = "在" + edit_where + "编辑本文";
-  } else {
-    edit_text = "Edit this page on " + edit_where;
-  }
+  edit_where = on_yuque ? "语雀" : edit_where;
+  const edit_text_cn = "在" + edit_where + "编辑本文";
+  const edit_text_en = "Edit this page on " + edit_where;
 
   onMount(async () => {
 		const sysLang = window.userLanguage || window.navigator.language;
@@ -122,7 +121,7 @@
 <p class='meta'>
   <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
   <span class='date'>{moment(post.date).locale($lang == 'cn' ? 'zh-cn' : 'en').format("LL")}</span> 
-  <span class='edit'><a href={post.src} rel='noopener' target="_blank" style='margin-top: 0'>{edit_text}</a></span>
+  <span class='edit'><a href={post.src} rel='noopener' target="_blank" style='margin-top: 0'>{$lang == 'cn' ? edit_text_cn : edit_text_en}</a></span>
 </p>
 
 <p class='license'>
