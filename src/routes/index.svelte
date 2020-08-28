@@ -1,6 +1,8 @@
 <script context="module">
   export function preload({ params, query }) {
+    console.log('Start preloading...')
     return this.fetch(`blog/rss.xml`).then(() => {
+      console.log('Finished preloading...')
       return this.fetch("sitemap.xml");
     });
   }
