@@ -1,7 +1,7 @@
-// import { customMarked } from "../../_plugins/markdown";
 import { customMarked } from "../../_plugins/md-it";
 import { jupyterRenderer } from "../../_plugins/jupyter";
-
+import { get_yuque_post } from "../../_plugins/yuque";
+const fsPromises = require("fs").promises;
 const fs = require("fs");
 const path = require("path");
 
@@ -9,61 +9,87 @@ const cwd = process.cwd();
 const POSTS_DIR = path.join(cwd, "contents/");
 const posts_per_page = 5;
 
-let posts = fs
-  .readdirSync(POSTS_DIR)
-  .filter((fileName) => /\.((md)|(ipynb))$/.test(fileName))
-  .map((fileName, index) => {
-    const fileMd = fs.readFileSync(path.join(POSTS_DIR, fileName), "utf8");
-    const slug = fileName.split(".")[0];
-    const extension = fileName.split(".")[1];
+let parse_post = function (filename) {
+  const fileMd = fs.readFileSync(path.join(POSTS_DIR, filename), "utf8");
+  const slug = filename.split(".")[0];
+  const extension = filename.split(".")[1];
 
-    let result = undefined;
-    let src = undefined;
+  let result = undefined;
+  let src = undefined;
 
-    if (extension == "md") {
-      result = customMarked(fileMd);
-      // result = customMarked({}, fileMd, "/blog/" + slug);
-      src =
-        "https://github.com/qutang/qutang.dev/blob/master/contents/" + fileName;
-    } else if (extension == "ipynb") {
-      // result = jupyterRenderer(fileMd, "/blog/" + slug);
-      result = jupyterRenderer(fileMd, slug);
-      src =
-        "https://colab.research.google.com/github/qutang/qutang.dev/blob/master/contents/" +
-        fileName;
-    }
+  if (extension == "md") {
+    result = customMarked(fileMd);
+    src =
+      "https://github.com/qutang/qutang.dev/blob/master/contents/" + filename;
+  } else if (extension == "ipynb") {
+    result = jupyterRenderer(fileMd, slug);
+    src =
+      "https://colab.research.google.com/github/qutang/qutang.dev/blob/master/contents/" +
+      filename;
+  }
 
-    let html = result.html;
-    let meta = result.meta;
+  let html = result.html;
+  let meta = result.meta;
 
-    return {
-      ...meta,
-      src,
-      slug,
-      html,
-    };
-  })
-  .filter((post) => post.type == "post")
-  .sort((a, b) => {
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
+  return {
+    ...meta,
+    src,
+    slug,
+    html,
+  };
+};
 
-    if (dateA > dateB) return -1;
-    if (dateA < dateB) return 1;
-    return 0;
-  })
-  .map((post, index) => {
-    let page = Math.floor(index / posts_per_page) + 1;
-    post["page"] = page.toString();
-    return post;
-  });
+let compare_posts = function (a, b) {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
 
-let totalPages = Math.max(...posts.map((post) => post.page));
+  if (dateA > dateB) return -1;
+  if (dateA < dateB) return 1;
+  return 0;
+};
 
-posts.forEach((post) => {
+let paginate = function (post, index) {
+  let page = Math.floor(index / posts_per_page) + 1;
+  post["page"] = page.toString();
+  return post;
+};
+
+let clean_html = function (post) {
   post.html = post.html.replace(/^\t{3}/gm, "");
-});
+  return post;
+};
 
-posts = posts;
+let get_total_pages = async function (posts) {
+  let pages = await posts.map((post) => post.page);
+  let totalPages = await Math.max(...pages);
+  return totalPages;
+};
 
-export default { posts, totalPages };
+let get_posts = async function () {
+  let posts = await fsPromises.readdir(POSTS_DIR);
+  let yuque_post = await get_yuque_post();
+  posts = await posts.filter((fileName) => /\.((md)|(ipynb))$/.test(fileName));
+  posts = await posts.map((filename, _) => {
+    return parse_post(filename);
+  });
+  posts = await posts.filter((post) => post.type == "post");
+  posts = await posts.concat(yuque_post);
+  posts = await posts.sort(compare_posts);
+  posts = await posts.map(paginate);
+  posts = await posts.map(clean_html);
+
+  let totalPages = await get_total_pages(posts);
+  return { posts: posts, totalPages: totalPages };
+};
+
+export { get_posts };
+
+// async function main() {
+//   const result = await get_posts();
+//   const posts = result.posts;
+//   const totalPages = result.totalPages;
+//   console.log(posts.map((post) => post.page));
+//   console.log(totalPages);
+// }
+
+// main();

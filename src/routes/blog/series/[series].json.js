@@ -1,35 +1,29 @@
-import blog from "../_posts.js";
+import { get_posts } from "../_posts.js";
 
-const lookup = new Map();
-blog.posts.forEach(post => {
-  let seriesPosts = lookup.get(post.series);
-  if (seriesPosts === undefined) {
-    lookup.set(post.series, [post]);
-  } else {
-    seriesPosts.push(post);
-    lookup.set(post.series, seriesPosts);
-  }
-});
-
-export function get(req, res) {
+export async function get(req, res) {
   // the `page` parameter is available because
   // this file is called [page].json.js
   const { series } = req.params;
 
-  if (lookup.has(series)) {
+  const result = await get_posts();
+  const serie_posts = await result.posts.filter(
+    (post) => post.series == series
+  );
+
+  if (serie_posts.length > 0) {
     res.writeHead(200, {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     });
 
-    res.end(JSON.stringify({ posts: lookup.get(series) }));
+    res.end(await JSON.stringify({ posts: serie_posts }));
   } else {
     res.writeHead(404, {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     });
 
     res.end(
       JSON.stringify({
-        message: `Not found`
+        message: `Not found`,
       })
     );
   }
