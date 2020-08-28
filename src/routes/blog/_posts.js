@@ -1,6 +1,6 @@
 import { customMarked } from "../../_plugins/md-it";
 import { jupyterRenderer } from "../../_plugins/jupyter";
-import { get_yuque_post } from "../../_plugins/yuque";
+import { get_yuque_posts } from "../../_plugins/yuque";
 const fsPromises = require("fs").promises;
 const fs = require("fs");
 const path = require("path");
@@ -65,10 +65,13 @@ let get_total_pages = async function (posts) {
   return totalPages;
 };
 
-let get_posts = async function () {
+let get_posts = async function (slug) {
   let posts = await fsPromises.readdir(POSTS_DIR);
-  let yuque_post = await get_yuque_post();
   posts = await posts.filter((fileName) => /\.((md)|(ipynb))$/.test(fileName));
+  if (slug !== undefined) {
+    posts = await posts.filter((filename) => filename.includes(slug));
+  }
+  let yuque_post = await get_yuque_posts(slug);
   posts = await posts.map((filename, _) => {
     return parse_post(filename);
   });

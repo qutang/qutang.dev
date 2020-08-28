@@ -36,7 +36,7 @@ async function parse_post(post) {
   return result;
 }
 
-async function fetch_from_online() {
+async function fetch_from_online(slug) {
   const SDK = require("@yuque/sdk");
   const client = new SDK({
     token: "AzLuOScwp4WiV29sd6NXVQl8h7bjkViJuTlw1nUn",
@@ -45,24 +45,36 @@ async function fetch_from_online() {
 
   //   const userInfo = await client.users.get();
   // console.log(userInfo);
-  const docsInfo = await client.docs.get({
-    namespace: "qutang/blog",
-    slug: "ny150b",
-    data: {
-      raw: 1,
-    },
-  });
+  let docsInfo;
+  if (slug !== undefined) {
+    docsInfo = await client.docs.get({
+      namespace: "qutang/blog",
+      slug: slug,
+      data: {
+        raw: 1,
+      },
+    });
+  } else {
+    docsInfo = await client.docs.get({
+      namespace: "qutang/blog",
+      slug: "ny150b",
+      data: {
+        raw: 1,
+      },
+    });
+  }
+
   return docsInfo;
 }
 
-export async function get_yuque_post() {
+export async function get_yuque_posts(slug) {
   let result;
   if (check_cache()) {
     console.log("Load yuque posts from cache...");
     result = read_cache();
   } else {
     console.log("Fetch yuque posts from online...");
-    const docsInfo = await fetch_from_online();
+    const docsInfo = await fetch_from_online(slug);
     result = await parse_post(docsInfo);
     await cache_posts(result);
   }
