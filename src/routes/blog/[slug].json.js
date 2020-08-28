@@ -4,7 +4,7 @@ export async function get(req, res, next) {
   // the `slug` parameter is available because
   // this file is called [slug].json.js
   const { slug } = req.params;
-  const result = await get_posts();
+  const result = await get_posts(slug);
   const posts = result.posts;
   // filter
   const slug_post = await posts.filter((post) => post.slug == slug);
