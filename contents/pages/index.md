@@ -9,7 +9,7 @@ date: '2020-02-21 16:35:00'
 * [Multi-site Activity Recognition](https://qutang.github.io/MUSS/) 🈴
 
   Best comibinations of body locations to detect posture and physical activities with wearable accelerometers.
-* [Smoking Detection](/blog/automated-puffing-and-smoking-detection) 🈴
+* [Smoking Detection](/blog/rac2bb) 🈴
 
   Hierarchical recognition model for puffing and smoking detection with wrist accelerometers.
 * Active Training 🈺
