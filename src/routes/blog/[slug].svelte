@@ -18,8 +18,7 @@
   
   import series from './_series.js';
   import { lang } from '../../components/stores.js';
-  import moment from 'moment';
-  import zh from 'moment/locale/zh-cn';
+  import { toLocale } from '../../_plugins/date.js';
   import { onMount } from 'svelte';
 
   let edit_text = undefined;
@@ -28,8 +27,8 @@
   let on_yuque = post.src.includes('yuque');
   let edit_where = on_colab ? "Colab" : "Github";
   edit_where = on_yuque ? "语雀" : edit_where;
-  const edit_text_cn = "在" + edit_where + "编辑本文";
-  const edit_text_en = "Edit this page on " + edit_where;
+  const edit_text_cn = "在" + edit_where + "查看或编辑本文";
+  const edit_text_en = "View/edit this page on " + edit_where;
 
   onMount(async () => {
 		const sysLang = window.userLanguage || window.navigator.language;
@@ -120,8 +119,8 @@
 
 <p class='meta'>
   <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
-  <span class='date'>{moment(post.date).locale($lang == 'cn' ? 'zh-cn' : 'en').format("LL")}</span> 
-  <span class='edit'><a href={post.src} rel='noopener' target="_blank" style='margin-top: 0'>{$lang == 'cn' ? edit_text_cn : edit_text_en}</a></span>
+  <span class='date'>{toLocale(post.date, $lang == 'cn' ? 'zh-cn' : 'en')}</span> 
+  <span class='edit'><a href={post.src + '?translate=' + ($lang == 'cn' ? 'zh' : 'en')} rel='noopener' target="_blank" style='margin-top: 0'>{$lang == 'cn' ? edit_text_cn : edit_text_en}</a></span>
 </p>
 
 <p class='license'>

@@ -24,8 +24,7 @@
   export let totalPages;
   import {lang} from '../../../components/stores.js';
   import series from '../_series.js';
-  import moment from 'moment';
-  import zh from 'moment/locale/zh-cn';
+  import { toLocale } from '../../../_plugins/date.js';
 </script>
 
 <style>
@@ -115,7 +114,7 @@
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-    <li><span style='font-family: Arial;color:gray;'>{moment(post.date).locale($lang == 'cn' ? "zh-cn" : 'en').format('LL')}</span> <a rel="prefetch" href="blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
+    <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn' ? "zh-cn" : 'en')}</span> <a rel="prefetch" href="blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
       </li>
   {/each}
 </ul>
