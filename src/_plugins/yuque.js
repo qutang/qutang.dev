@@ -2,6 +2,7 @@ import { customMarked } from "./md-it";
 import fs from "fs";
 const path = require("path");
 const cwd = process.cwd();
+const token = process.env.YUQUE_TOKEN;
 
 async function cache_posts(posts) {
   const cache = JSON.stringify(posts);
@@ -39,7 +40,7 @@ async function parse_post(post) {
 async function fetch_from_online(slug) {
   const SDK = require("@yuque/sdk");
   const client = new SDK({
-    token: "AzLuOScwp4WiV29sd6NXVQl8h7bjkViJuTlw1nUn",
+    token: token,
     // other options
   });
 

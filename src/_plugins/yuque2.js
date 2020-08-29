@@ -4,7 +4,7 @@ const path = require("path");
 const cwd = process.cwd();
 const { NODE_ENV } = process.env;
 const dev = NODE_ENV === "development";
-
+const user_token = process.env.YUQUE_TOKEN;
 class YuQue {
   constructor(token) {
     const SDK = require("@yuque/sdk");
@@ -131,7 +131,7 @@ class YuQue {
   }
 }
 
-export default new YuQue("AzLuOScwp4WiV29sd6NXVQl8h7bjkViJuTlw1nUn");
+export default new YuQue(user_token);
 
 // "AzLuOScwp4WiV29sd6NXVQl8h7bjkViJuTlw1nUn"
 
