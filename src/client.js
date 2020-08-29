@@ -7,7 +7,7 @@ sapper
   .then(() => {
     console.log("client-side app has started");
     var oldHref = document.location.href;
-    console.log(oldHref);
+    // console.log(oldHref);
     var oldLang = document.querySelector(".language").textContent;
 
     var bodyList = document.querySelector("body"),

@@ -10,7 +10,7 @@ function saveBase64Image(base64Str, name, post_name) {
   var ref = "/media/uploads/jupyter/" + post_name + "_" + name + ".png";
   fs.writeFile(path, data, { encoding: "base64" }, function (err) {
     //Finished
-    console.log(err);
+    // console.log(err);
   });
   return ref;
 }
