@@ -17,7 +17,7 @@ date: '2020-02-21 16:35:00'
   An innovative interactive system for building personalized activity recognition system.
 * Want to explore more? ㊙️
 
-  Check out this [curated list](https://qutang.dev/blog/an-opinionated-curated-list-of-resources-for-phd-students), my [Github repos](https://github.com/qutang?tab=repositories), [Google Scholar](http://tiny.cc/googlescholar-qutang), or [biography](/about#bio).
+  Check out this [curated list](https://qutang.dev/blog/eo9zcq), my [Github repos](https://github.com/qutang?tab=repositories), [Google Scholar](http://tiny.cc/googlescholar-qutang), or [biography](/about#bio).
 * [Want to get in touch?](/about#contact) 🈸
 
   I'm open for collaboration, co-authoring or job opportunities. You may find me on [LinkedIn](https://www.linkedin.com/in/qutang/) or [Email](https://mailhide.io/e/SthF9).
