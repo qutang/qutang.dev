@@ -1,3 +1,6 @@
+<script context='module'>
+   export const preload = () => ({});
+</script>
 <script>
   import { lang } from "../components/stores.js";
   import Nav from "../components/Nav.svelte";
@@ -18,17 +21,17 @@
     [...document.querySelectorAll('a[href^="#"]')].map(
       x => (x.href = document.location + new URL(x.href).hash)
     )
-	});
-  
+  });
+
 </script>
 
 <svelte:head>
 <link href="sanitize.css" rel="stylesheet" />
-<link rel="preload" href="highlight.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload prefetch stylesheet" href="highlight.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="highlight.css"></noscript>
 <link rel="icon" type="image/png" href="favicon.png" />
-<link rel="preload" href="medium.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="medium.css"></noscript>
+<link rel="preload prefetch stylesheet" href="medium.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="medium.css" as="style"></noscript>
 </svelte:head>
 
 <style>
