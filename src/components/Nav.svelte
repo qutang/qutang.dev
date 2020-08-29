@@ -82,6 +82,11 @@
     font-family: Arial;
     text-transform: capitalize;
   }
+
+  a > img {
+    width: 26px;
+    height: auto;
+  }
   
   .subscribe {
     background: lightcoral;
@@ -151,6 +156,11 @@
     <li class='extra-github'>
       <a href="https://github.com/qutang" target="_blank" rel="noopener" style="display: inline-block;">
       <GithubIcon size="24" />
+      </a>
+    </li>
+    <li>
+      <a href="https://www.yuque.com/qutang" target='_blank' rel="noopener" style="display: inline-block;">
+        <img src="yuque.svg" alt="Yuque" />
       </a>
     </li>
     <li>
