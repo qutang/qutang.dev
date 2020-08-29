@@ -21,6 +21,7 @@ const onwarn = (warning, onwarn) =>
 
 export default {
   client: {
+    preserveEntrySignatures: false,
     input: config.client.input(),
     output: config.client.output(),
     plugins: [
