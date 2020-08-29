@@ -17,7 +17,7 @@ date: '2020-02-21 16:35:00'
   一种用于构建个性化人类活动识别系统的创新交互式系统。
 * 想了解更多吗? ㊙️
 
-  去我收集的[资料库](https://qutang.dev/blog/eo9zcq)，我的[Github仓库](https://github.com/qutang?tab=repositories)，[Google学术](http://tiny.cc/googlescholar-qutang)，或者[个人简介](/about#bio)看看吧。
+  去我收集的[资料库](https://qutang.dev/blog/eo9zcq)，我的[Github仓库](https://github.com/qutang?tab=repositories)，[Google学术](https://scholar.google.com/citations?user=siPONw4AAAAJ&hl=en)，或者[个人简介](/about#bio)看看吧。
 * [想跟我联络或合作?](/about#contact) 🈸
 
   如果想要与我合作，共同创作或有工作机会。请通过[领英](https://www.linkedin.com/in/qutang/)，[语雀](https://www.yuque.com/qutang/), [电子邮件](https://mailhide.io/e/SthF9)，或者[微信](media/uploads/wechat.jpg)与我联系。
