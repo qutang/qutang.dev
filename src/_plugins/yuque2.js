@@ -2,6 +2,8 @@ import { customMarked } from "./md-it";
 const fs = require("fs");
 const path = require("path");
 const cwd = process.cwd();
+const { NODE_ENV } = process.env;
+const dev = NODE_ENV === "development";
 
 class YuQue {
   constructor(token) {
@@ -12,24 +14,27 @@ class YuQue {
     });
   }
 
+  _getCacheName(name) {
+    if (dev) {
+      return path.join(cwd, "__sapper__", "dev", `${name}.json`);
+    } else {
+      return path.join(cwd, "__sapper__", "build", `${name}.json`);
+    }
+  }
+
   async _cachePosts(obj, name) {
     console.log(`Caching yuque object: ${name}`);
     const cache = JSON.stringify(obj);
-    fs.writeFileSync(
-      path.join(cwd, "__sapper__", "dev", `${name}.json`),
-      cache
-    );
+    fs.writeFileSync(this._getCacheName(name), cache);
   }
 
   _checkCache(name) {
-    return fs.existsSync(path.join(cwd, "__sapper__", "dev", `${name}.json`));
+    return fs.existsSync(this._getCacheName(name));
   }
 
   _readCache(name) {
     console.log(`Reading yuque cache: ${name}`);
-    const cache = fs.readFileSync(
-      path.join(cwd, "__sapper__", "dev", `${name}.json`)
-    );
+    const cache = fs.readFileSync(this._getCacheName(name));
     return JSON.parse(cache);
   }
 
