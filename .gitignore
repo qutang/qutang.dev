@@ -10,3 +10,4 @@ highlight.css
 .pytest_cache
 **/*.pth
 *.hdf5
+.vscode
