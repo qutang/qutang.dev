@@ -12,7 +12,7 @@ const md = require("markdown-it")({
     frameborder: 0, // default: 0
     renderIframe: true, // default: true
   })
-  .use(require("markdown-it-highlightjs"), { inline: true })
+  .use(require("markdown-it-highlightjs"), { inline: false })
   .use(require("markdown-it-footnote"))
   .use(require("markdown-it-anchor"), {
     level: 2,
