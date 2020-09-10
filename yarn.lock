@@ -2306,11 +2306,6 @@ resolve@^1.10.0, resolve@^1.17.0, resolve@^1.3.2, resolve@^1.8.1:
   dependencies:
     path-parse "^1.0.6"
 
-rollup-dependency-tree@0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/rollup-dependency-tree/-/rollup-dependency-tree-0.0.10.tgz#03fea43f41c88c6284edb86f4d68708ec173adbc"
-  integrity sha512-xgnV7DomkPLkQDFzfa5b3JW3kLQrrY8QiI4qbz/4uBk8NPj5sTjI12xQbEIzzvrLvhUSk/3WBscSVYHkgDxmvA==
-
 rollup-plugin-css-only@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-css-only/-/rollup-plugin-css-only-2.1.0.tgz#b9e8505eb01c5257b5eab65bd51eec9050bed9a3"
@@ -2367,14 +2362,13 @@ safe-buffer@^5.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sapper@^0.28.2:
-  version "0.28.4"
-  resolved "https://registry.yarnpkg.com/sapper/-/sapper-0.28.4.tgz#e2486dfd40decb0b8ee70639ac9ae0ce1a946dab"
-  integrity sha512-+6nw10RiMylt8SEXFbY49TWv37TX7x6clTeBKGsAfdlWmIXha8q/Mu9ruVK/Kwsiupv62MREU9vvwtuvLWBtqg==
+sapper@^0.28.6:
+  version "0.28.6"
+  resolved "https://registry.yarnpkg.com/sapper/-/sapper-0.28.6.tgz#bf5438bdef430d6ff96aa98ef652b6c810382ba2"
+  integrity sha512-PLCZXBcXcL2ISBh+CqoUxcT0MwMnA8N71UDNhQig0Em5Z8vqg+g2jpKfYSnnyxqB5Plwc9LipN5ZJr42Vs4hXg==
   dependencies:
     html-minifier "^4.0.0"
     http-link-header "^1.0.2"
-    rollup-dependency-tree "0.0.10"
     shimport "^1.0.1"
     source-map "^0.6.1"
     sourcemap-codec "^1.4.6"
