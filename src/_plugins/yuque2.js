@@ -5,6 +5,15 @@ const cwd = process.cwd();
 const { NODE_ENV } = process.env;
 const dev = NODE_ENV === "development";
 const user_token = process.env.YUQUE_TOKEN;
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function randomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 class YuQue {
   constructor(token) {
     const SDK = require("@yuque/sdk");
@@ -92,6 +101,7 @@ class YuQue {
   }
 
   async getPosts(repoName) {
+
     let posts;
     if (repoName !== undefined) {
       let cacheName = repoName;
@@ -100,6 +110,9 @@ class YuQue {
       }
       let rawPosts = await this._client.docs.list({
         namespace: `qutang/blog-${repoName}`,
+      });
+      rawPosts = await rawPosts.filter((raw) => {
+        return raw.status == 1;
       });
       posts = await Promise.all(
         rawPosts.map(async (raw) => {
@@ -122,6 +135,7 @@ class YuQue {
       let repos = await this.getRepos();
       posts = await Promise.all(
         repos.map(async (repo) => {
+          await sleep(randomInt(1000));
           return this.getPosts(repo);
         })
       );
