@@ -30,7 +30,7 @@
     "@babel/runtime": "^7.9.6",
     "@rollup/plugin-babel": "^5.2.0",
     "@rollup/plugin-commonjs": "^15.0.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
     "@rollup/plugin-replace": "^2.3.2",
     "@yuque/sdk": "^1.1.1",
     "front-matter": "^4.0.2",
