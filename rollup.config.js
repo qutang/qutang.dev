@@ -28,12 +28,18 @@ export default {
         buildStart() {
           var self = this;
           const postsDir = "./contents";
+          const staticDir = "./static";
           glob(postsDir + "/**/*.md", null, function (er, files) {
             files.forEach((file) => {
               self.addWatchFile(file);
             });
           });
           glob(postsDir + "/**/*.ipynb", null, function (er, files) {
+            files.forEach((file) => {
+              self.addWatchFile(file);
+            });
+          });
+          glob(staticDir + "/**/*.css", null, function (er, files) {
             files.forEach((file) => {
               self.addWatchFile(file);
             });
