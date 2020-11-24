@@ -15,12 +15,21 @@
 </script>
 
 <style>
+  
   #slogan {
     background: none;
     display: flex;
     width: 100%;
     margin: 0 auto;
     max-height: inherit;
+  }
+
+  #slogan img {
+    max-width: 600px;
+    height: auto;
+    box-shadow: none;
+    display: block;
+    margin: 0 auto;
   }
 
   #slogan code {
@@ -54,7 +63,11 @@
     #slogan-core {
       font-size: 3em;
     }
+    #slogan img {
+      max-width: 100%;
+    }
   }
+
 </style>
 
 <svelte:head>
@@ -69,11 +82,15 @@
 </svelte:head>
 
 <div class="content">
-  <pre id="slogan">
+  <!-- <pre id="slogan">
     <code class="language-python">
       <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
   <span id="slogan-core">🏃</span>🌫️🌫️🌫️
     </code>
+  </pre> -->
+
+  <pre id="slogan">
+    <img src="/media/uploads/index_cover.png" alt="">
   </pre>
 
   <p id="highlight-heading">

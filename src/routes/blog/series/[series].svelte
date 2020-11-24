@@ -42,6 +42,14 @@
     max-height: inherit;
   }
 
+  #slogan img {
+    max-width: 600px;
+    height: auto;
+    box-shadow: none;
+    display: block;
+    margin: 0 auto;
+  }
+
   #slogan code {
     font-size: 3em;
     margin: 0 auto;
@@ -71,6 +79,10 @@
   #slogan-core {
     font-size: 1.6em;
   }
+
+  #slogan img {
+      max-width: 100%;
+    }
   }
 </style>
 
@@ -81,10 +93,14 @@
 
 <div class='content'>
 
- <pre id="slogan">
+ <!-- <pre id="slogan">
   <code class="language-python">
   <span class="hljs-keyword">yield from</span> <span id='slogan-core'>{parseSeries[series]['emoji']}</span>...
   </code>
+</pre> -->
+
+<pre id="slogan">
+  <img src="{parseSeries[series]['url']}" alt="">
 </pre>
 
 <ul>

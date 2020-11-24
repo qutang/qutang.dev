@@ -16,6 +16,14 @@
   margin: 5em auto;
 }
 
+#slogan img {
+  max-width: 600px;
+  height: auto;
+  box-shadow: none;
+  display: block;
+  margin: 0 auto;
+}
+
 #slogan {
     background: none;
     display: flex;
@@ -62,16 +70,23 @@
   #slogan-core {
     font-size: 1.2em;
   }
+
+  #slogan img {
+      max-width: 100%;
+    }
   }
 
 </style>
 
 <div class='content'>
-<pre id="slogan">
+<!-- <pre id="slogan">
   <code class="language-python">
   me <span class="hljs-keyword">=</span> (
   <span class='hljs-string'>"</span><span id='slogan-core'>😄</span><span class='hljs-string'>"</span>, <span class='hljs-string'>"</span><span id='slogan-core'>💻</span><span class='hljs-string'>"</span>, <span id='slogan-core'>🎓</span><span class='hljs-string'>"</span>)
   </code>
+</pre> -->
+<pre id="slogan">
+  <img src="/media/uploads/about_cover.png" alt="">
 </pre>
 <div class='about'>
 {#if $lang == 'cn'}

@@ -29,6 +29,14 @@
     max-height: inherit;
   }
 
+  #slogan img {
+    max-width: 500px;
+    height: auto;
+    box-shadow: none;
+    display: block;
+    margin: 0 auto;
+  }
+
   #slogan code {
     font-size: 3em;
     margin: 0 auto;
@@ -76,6 +84,10 @@
   #slogan-core {
     font-size: 2em;
   }
+
+  #slogan img {
+      max-width: 100%;
+    }
   }
 </style>
 
@@ -85,12 +97,15 @@
 
 
 <div class='content'>
+  <!-- <pre id="slogan">
+    <code class="language-python">
+    <span class="hljs-keyword">while</span> free:
+    <span id='slogan-core'>📝</span>...
+    </code>
+  </pre> -->
   <pre id="slogan">
-  <code class="language-python">
-  <span class="hljs-keyword">while</span> free:
-  <span id='slogan-core'>📝</span>...
-  </code>
-</pre>
+    <img src="/media/uploads/blog_cover.png" alt="">
+  </pre>
 
   <ul>
     {#each posts as post}

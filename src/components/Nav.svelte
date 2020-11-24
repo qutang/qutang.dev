@@ -35,11 +35,15 @@
 
   ul.main-nav {
     align-self: flex-start;
+    background: white;
+    border-radius: 5px;
   }
 
   ul.extra-nav {
     align-self: flex-end;
     margin-right: 1em;
+    background: white;
+    border-radius: 5px;
   }
 
   /* clearfix */
@@ -117,11 +121,17 @@
   }
 
   @media screen and (max-width: 600px) {
+    nav {
+      background: white;
+    }
     li, a {
       font-size: 17px;
     }
-    .extra-nav li:last-child {
+    .extra-nav li {
       display: none;
+    }
+    .extra-nav li:first-child {
+      display: inline-block;
     }
   }
 </style>

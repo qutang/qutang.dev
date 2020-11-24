@@ -20,8 +20,7 @@
     padding: 0;
     bottom:0;
     display: flex;
-    justify-content: flex-end;
-    position: fixed;
+    justify-content: center;
     width: 100%;
     z-index: 1;
     background: none;
