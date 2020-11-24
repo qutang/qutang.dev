@@ -6,7 +6,6 @@ import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
-import css from "rollup-plugin-css-only";
 import glob from "glob";
 const { markdown } = require("svelte-preprocess-markdown");
 
@@ -57,9 +56,6 @@ export default {
         dedupe: ["svelte"],
       }),
       commonjs(),
-      css({
-        output: "static/highlight.css",
-      }),
 
       legacy &&
         babel({
@@ -130,9 +126,6 @@ export default {
         dedupe: ["svelte"],
       }),
       commonjs(),
-      css({
-        output: "static/highlight.css",
-      }),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||
