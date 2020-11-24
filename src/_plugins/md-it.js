@@ -2,6 +2,7 @@ const fm = require("front-matter");
 const tm = require("markdown-it-texmath");
 const md = require("markdown-it")({
   html: true,
+  xhtmlOut: true,
   linkify: true,
   typographer: true,
 })
