@@ -51,11 +51,13 @@ export default {
         "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       svelte({
-        dev,
+        compilerOptions: {
+          dev,
+          hydratable: true
+        },
         extensions: [".svelte", ".md"],
         preprocess: markdown(),
-        hydratable: true,
-        emitCss: true,
+        emitCss: false,
       }),
       resolve({
         browser: true,
@@ -121,12 +123,14 @@ export default {
         "process.env.NODE_ENV": JSON.stringify(mode),
       }),
       svelte({
-        generate: "ssr",
+        compilerOptions: {
+          generate: "ssr",
+          dev,
+          hydratable: true
+        },
         extensions: [".svelte", ".md"],
         preprocess: markdown(),
-        dev,
-        hydratable: true,
-        emitCss: true,
+        emitCss: false,
       }),
       resolve({
         dedupe: ["svelte"],
