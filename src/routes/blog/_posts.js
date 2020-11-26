@@ -1,6 +1,7 @@
 import { customMarked } from "../../_plugins/md-it";
 import { jupyterRenderer } from "../../_plugins/jupyter";
 import yuqueClient from "../../_plugins/yuque2";
+import githubClient from "../../_plugins/github";
 const fsPromises = require("fs").promises;
 const fs = require("fs");
 const path = require("path");
@@ -67,17 +68,21 @@ let get_total_pages = async function (posts) {
 
 let get_posts = async function (slug) {
   let yuquePosts = await yuqueClient.getPosts();
-  let posts = await fsPromises.readdir(POSTS_DIR);
-  posts = await posts.filter((fileName) => /\.((md)|(ipynb))$/.test(fileName));
+  let githubPosts = await githubClient.getPosts();
+  let posts = [];
+  // let posts = await fsPromises.readdir(POSTS_DIR);
+  // posts = await posts.filter((fileName) => /\.((md)|(ipynb))$/.test(fileName));
   if (slug !== undefined) {
-    posts = await posts.filter((filename) => filename.includes(slug));
+    // posts = await posts.filter((filename) => filename.includes(slug));
     yuquePosts = await yuquePosts.filter((post) => post.slug == slug);
+    githubPosts = await githubPosts.filter((post) => post.slug == slug);
   }
-  posts = await posts.map((filename, _) => {
-    return parse_post(filename);
-  });
-  posts = await posts.filter((post) => post.type == "post");
+  // posts = await posts.map((filename, _) => {
+  //   return parse_post(filename);
+  // });
+  // posts = await posts.filter((post) => post.type == "post");
   posts = await posts.concat(yuquePosts);
+  posts = await posts.concat(githubPosts);
   posts = await posts.sort(compare_posts);
   posts = await posts.map(paginate);
   posts = await posts.map(clean_html);

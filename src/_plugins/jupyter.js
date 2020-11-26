@@ -21,15 +21,27 @@ function jupyterDom2Markdown(dom, slug) {
   dom["cells"].forEach((element) => {
     if (element["cell_type"] == "markdown") {
       if (element["source"].length > 0) {
-        if (!element["source"][element["source"].length - 1].endsWith("\n")) {
-          element["source"][element["source"].length - 1] += "\n";
+        if (typeof element["source"] == 'string') {
+          if (!element["source"].endsWith("\n")) {
+            element["source"] += "\n";
+          }
+        } else {
+          if (!element["source"][element['source'].length - 1].endsWith("\n")) {
+            element["source"][element['source'].length - 1] += "\n";
+          }
         }
         result = result.concat(element["source"]);
       }
     } else if (element["cell_type"] == "code") {
       if (element["source"].length > 0) {
-        if (!element["source"][element["source"].length - 1].endsWith("\n")) {
-          element["source"][element["source"].length - 1] += "\n";
+        if (typeof element["source"] == 'string') {
+          if (!element["source"].endsWith("\n")) {
+            element["source"] += "\n";
+          }
+        } else {
+          if (!element["source"][element['source'].length - 1].endsWith("\n")) {
+            element["source"][element['source'].length - 1] += "\n";
+          }
         }
         result.push("Input code\n");
         result.push("```python\n");
@@ -94,7 +106,13 @@ function jupyterDom2Markdown(dom, slug) {
 
 function jupyterRenderer(content, slug) {
   let result;
-  let jupyterDom = JSON.parse(content);
+  let jupyterDom;
+  if (typeof content == 'string') {
+    jupyterDom = JSON.parse(content);
+  } else {
+    jupyterDom = content;
+  }
+  
   content = jupyterDom2Markdown(jupyterDom, slug);
   result = customMarked(content);
   return result;
