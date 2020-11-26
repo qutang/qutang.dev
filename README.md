@@ -12,8 +12,9 @@ This website supports,
 4. Pagination.
 5. Mailchimp subscription.
 6. Post categorization.
-7. sitemap + rss
-8. markdown + jupyter notebook
+7. Sitemap + RSS.
+8. Local markdown and jupyter notebook files.
+9. Remote YuQue posts and github-hosted jupyter notebook files.
 
 **Disclaimer: The website is developed in harsh (literally THREE days), codes are not well organized. Use it with caution.**
 
