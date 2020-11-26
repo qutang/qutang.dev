@@ -9,7 +9,6 @@ const dev = NODE_ENV === "development";
 
 
 const user_token = process.env.GITHUB_QUTANG_DEV_TOKEN;
-console.log(user_token);
 
 class GitHub {
     constructor(token) {
