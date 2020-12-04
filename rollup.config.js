@@ -1,4 +1,4 @@
-import resolve from "@rollup/plugin-node-resolve";
+import {nodeResolve} from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import commonjs from "@rollup/plugin-commonjs";
 import svelte from "rollup-plugin-svelte";
@@ -59,7 +59,7 @@ export default {
         preprocess: markdown(),
         emitCss: false,
       }),
-      resolve({
+      nodeResolve({
         browser: true,
         dedupe: ["svelte"],
       }),
@@ -132,7 +132,7 @@ export default {
         preprocess: markdown(),
         emitCss: false,
       }),
-      resolve({
+      nodeResolve({
         dedupe: ["svelte"],
       }),
       commonjs(),
@@ -149,7 +149,7 @@ export default {
     input: config.serviceworker.input(),
     output: config.serviceworker.output(),
     plugins: [
-      resolve(),
+      nodeResolve(),
       replace({
         "process.browser": true,
         "process.env.NODE_ENV": JSON.stringify(mode),

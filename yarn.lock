@@ -14,7 +14,7 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.12.7.tgz#9329b4782a7d6bbd7eef57e11addf91ee3ef1e41"
   integrity sha512-YaxPMGs/XIWtYqrdEOZOCPsVWfEoriXopnsz3/i7apYPXQ3698UFhS6dVT1KN5qOsWmVgw/FOrmQgpRaZayGsw==
 
-"@babel/core@^7.9.6":
+"@babel/core@^7.12.9":
   version "7.12.9"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.12.9.tgz#fd450c4ec10cdbb980e2928b7aa7a28484593fc8"
   integrity sha512-gTXYh3M5wb7FRXQy+FErKFAv90BnlOuNn1QkCK2lREoPAjrQCO49+HVSrFoe5uakFAF5eenS75KbO2vQiLrTMQ==
@@ -373,7 +373,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/plugin-syntax-dynamic-import@^7.0.0", "@babel/plugin-syntax-dynamic-import@^7.8.0":
+"@babel/plugin-syntax-dynamic-import@^7.8.0", "@babel/plugin-syntax-dynamic-import@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-dynamic-import/-/plugin-syntax-dynamic-import-7.8.3.tgz#62bf98b2da3cd21d626154fc96ee5b3cb68eacb3"
   integrity sha512-5gdGbFon+PszYzqs83S3E5mpi7/y/8M9eC90MRTZfduQOYW76ig6SOSPNe41IG5LoP3FGBn2N0RjVDSQiS94kQ==
@@ -641,7 +641,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/plugin-transform-runtime@^7.9.6":
+"@babel/plugin-transform-runtime@^7.12.1":
   version "7.12.1"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.12.1.tgz#04b792057eb460389ff6a4198e377614ea1e7ba5"
   integrity sha512-Ac/H6G9FEIkS2tXsZjL4RAdS3L3WHxci0usAnz7laPWUmFiGtj7tIASChqKZMHTSQTQY6xDbOq+V1/vIq3QrWg==
@@ -702,7 +702,7 @@
     "@babel/helper-create-regexp-features-plugin" "^7.12.1"
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/preset-env@^7.9.6":
+"@babel/preset-env@^7.12.7":
   version "7.12.7"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.12.7.tgz#54ea21dbe92caf6f10cb1a0a576adc4ebf094b55"
   integrity sha512-OnNdfAr1FUQg7ksb7bmbKoby4qFOHw6DKWWUNB9KqnnCldxhxJlP+21dpyaWFmf2h0rTbOkXJtAGevY3XW1eew==
@@ -785,7 +785,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.8.4", "@babel/runtime@^7.9.6":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.8.4":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
@@ -933,7 +933,7 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.11.tgz#aeb16f50649a91af79dbe36574b66d0f9e4d9f71"
   integrity sha512-3NsZsJIA/22P3QUyrEDNA2D133H4j224twJrdipXN38dpnIOzAbUDtOwkcJ5pXmn75w7LSQDjA4tO9dm1XlqlA==
 
-"@rollup/plugin-babel@^5.2.0":
+"@rollup/plugin-babel@^5.2.2":
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.2.2.tgz#e5623a01dd8e37e004ba87f2de218c611727d9b2"
   integrity sha512-MjmH7GvFT4TW8xFdIeFS3wqIX646y5tACdxkTO+khbHvS3ZcVJL6vkAHLw2wqPmkhwCfWHoNsp15VYNwW6JEJA==
@@ -2460,7 +2460,7 @@ safe-buffer@^5.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sapper@^0.28.2:
+sapper@^0.28.10:
   version "0.28.10"
   resolved "https://registry.yarnpkg.com/sapper/-/sapper-0.28.10.tgz#fa3341f8e04fba7bc8b6c5faedb6cff7c3ac406b"
   integrity sha512-Z6OpuDOHxiRHKd7JCjHaDe8uOM2fFZxpTLsj/0Ib4sM034xstEvNNUtdY7Pg/a85kP3cFCnkNiM1v7W37vzDGg==
