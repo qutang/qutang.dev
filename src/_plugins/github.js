@@ -1,6 +1,6 @@
 import { Octokit } from "@octokit/rest";
 import { jupyterRenderer } from "./jupyter";
-global.atob = require("atob");
+import { customMarked } from "./md-it";
 const fs = require("fs");
 const path = require("path");
 const cwd = process.cwd();
@@ -19,11 +19,53 @@ class GitHub {
         });
     }
 
-    _decodeUnicode(base64Str) {
-        // Going backwards: from bytestream, to percent-encoding, to original string.
-        return decodeURIComponent(atob(base64Str).split('').map(function (c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
+    async getProjects(projects) {
+        if (this._checkCache('projects')) {
+            return this._readCache('projects');
+        }
+        let projs = await Promise.all(
+            projects.map(async (proj) => {
+                let result;
+                if (proj['path'] != null) {
+                    result = await this._client.repos.getContent({
+                        owner: proj['owner'],
+                        repo: proj['repo'],
+                        path: proj['path'],
+                        mediaType: {
+                            format: 'raw'
+                        }
+                    })
+                } else {
+                    result = await this._client.repos.getReadme({
+                        owner: proj['owner'],
+                        repo: proj['repo'],
+                        mediaType: {
+                            format: 'raw'
+                        }
+                    })
+                }
+                let license = await this._client.licenses.getForRepo({
+                    owner: proj['owner'],
+                    repo: proj['repo'],
+
+                })
+                let html_result = customMarked(result.data);
+                result = {
+                    'html': html_result.html,
+                    'src': `https://github.com/${proj["owner"]}/${proj['repo']}`,
+                    'name': proj['name'],
+                    'owner': proj['owner'],
+                    'repo': proj['repo'],
+                    'license': license.data['license']['name'],
+                    'official': proj['official'],
+                    'desc': proj['desc'],
+                    'tags': proj['tags']
+                }
+                return result;
+            })
+        );
+        this._cacheObj(projs, 'projects');
+        return projs;
     }
 
     async getPosts() {

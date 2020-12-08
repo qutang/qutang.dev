@@ -3,13 +3,13 @@ title: 主页
 type: page
 date: '2020-02-21 16:35:00'
 ---
-* [MIMS-unit算法](https://mhealthgroup.github.io/MIMSunit/) 🈴
+* [MIMS-unit算法](/projects/MIMSunit) 🈴
 
   一种开源可穿戴式加速度计数据的归纳算法，该算法的输出在不同品牌传感器上有高度一致性。
-* [多个可穿戴传感器的人类活动识别](https://qutang.github.io/MUSS/) 🈴
+* [多个可穿戴传感器的人类活动识别](/projects/MUSS) 🈴
 
   本项目研究可穿戴加速度计在检测人体姿势和行为活动时的最佳穿戴位置组合。
-* [基于手表式传感器的吸烟行为识别](/blog/rac2bb) 🈴
+* [基于手表式传感器的吸烟行为识别](/projects/tang_pervhealth_14) 🈴
 
   一种使用手腕加速度计进行吸烟检测的多层机器学习模型。
 * 主动训练系统 🈺

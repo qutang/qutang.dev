@@ -136,7 +136,7 @@
   }
 </style>
 
-<nav>
+<nav id='nav'>
   <ul class='main-nav {$lang == 'cn' ? "bold": "normal"}'>
     <li>
       <a rel=prefetch class:selected={segment === undefined} href=".">{$lang == 'cn' ? "首页":"home"}</a>

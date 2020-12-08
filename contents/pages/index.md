@@ -3,13 +3,13 @@ title: Home
 type: page
 date: '2020-02-21 16:35:00'
 ---
-* [MIMS-unit Algorithm](https://mhealthgroup.github.io/MIMSunit/) 🈴
+* [MIMS-unit Algorithm](/projects/MIMSunit) 🈴
 
   An open source and device-agnostic summarization algorithm for wearable accelerometer data.
-* [Multi-site Activity Recognition](https://qutang.github.io/MUSS/) 🈴
+* [Multi-site Activity Recognition](/projects/MUSS) 🈴
 
   Best comibinations of body locations to detect posture and physical activities with wearable accelerometers.
-* [Smoking Detection](/blog/rac2bb) 🈴
+* [Smoking Detection](/projects/tang_pervhealth_14) 🈴
 
   Hierarchical recognition model for puffing and smoking detection with wrist accelerometers.
 * Active Training 🈺
@@ -17,7 +17,7 @@ date: '2020-02-21 16:35:00'
   An innovative interactive system for building personalized activity recognition system.
 * Want to explore more? ㊙️
 
-  Check out this [curated list](https://qutang.dev/blog/eo9zcq), my [Github repos](https://github.com/qutang?tab=repositories), [Google Scholar](https://scholar.google.com/citations?user=siPONw4AAAAJ&hl=en), [biography](/about#bio), or [CV](/media/uploads/cv_tang.pdf).
+  Check out this [curated list](https://qutang.dev/blog/eo9zcq), my [**Projects**](/projects), [Github repos](https://github.com/qutang?tab=repositories), [Google Scholar](https://scholar.google.com/citations?user=siPONw4AAAAJ&hl=en), [biography](/about#bio), or [CV](/media/uploads/cv_tang.pdf).
 * [Want to get in touch?](/about#contact) 🈸
 
   I'm open for collaboration, co-authoring or job opportunities. You may find me on [LinkedIn](https://www.linkedin.com/in/qutang/), [Yuque](https://www.yuque.com/qutang) or [Email](https://mailhide.io/e/SthF9).

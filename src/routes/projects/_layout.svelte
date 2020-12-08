@@ -1,14 +1,12 @@
 <script context='module'>
-   export const preload = () => {};
+  export const preload = () => {};
 </script>
 <script>
-  import { lang } from "../components/stores.js";
-  import Nav from "../components/Nav.svelte";
-  import Footer from "../components/Footer.svelte";
+  import { lang } from "../../components/stores.js";
+  import Nav from "../../components/Nav.svelte";
   import { onMount } from 'svelte';
-  import "../../node_modules/katex/dist/katex.min.css";
-  import "../../node_modules/highlight.js/styles/darcula.css";
-  export let segment;
+  import "../../../node_modules/katex/dist/katex.min.css";
+  import "../../../node_modules/highlight.js/styles/darcula.css";
 
   onMount(async () => {
 		const sysLang = window.userLanguage || window.navigator.language;
@@ -22,13 +20,14 @@
       x => (x.href = document.location + new URL(x.href).hash)
     )
   });
+
 </script>
 
 <svelte:head>
 <link href="sanitize.css" rel="stylesheet" />
 <link rel="icon" type="image/png" href="favicon.png" />
-<link rel="preload prefetch stylesheet" href="medium.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="medium.css" as="style"></noscript>
+<link rel="preload prefetch stylesheet" href="project.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="project.css" as="style"></noscript>
 </svelte:head>
 
 <style>
@@ -58,10 +57,6 @@
 }
 </style>
 
-<Nav segment="{segment}" />
+<slot />
 
-<main>
-  <slot />
-</main>
 
-<Footer />

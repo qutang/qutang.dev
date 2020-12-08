@@ -25,41 +25,41 @@ a,
   vertical-align: baseline;
 }
 
-h1 {
-  font-family: "Playfair Display", serif;
+.content h1 {
+  font-family: Arial, sans-serif;
   font-size: 48px;
-  text-align: left;
+  text-align: center;
   margin-bottom: 8px;
 }
 
-h2 {
+.content h2 {
   font-weight: 700;
   padding: 0;
   line-height: 34.5px;
-  letter-spacing: -0.45px;
+  /* letter-spacing: -0.45px; */
   text-align: center;
   font-size: 36px;
-  font-family: "Lora", serif;
+  font-family: Arial, sans-serif;
   margin: 1em auto;
 }
 
-h3 {
+.content h3 {
   font-weight: 500;
   padding: 0;
   margin: 56px 0 0px 0px;
   line-height: 34.5px;
-  letter-spacing: -0.45px;
+  /* letter-spacing: -0.45px; */
   text-align: left;
   font-size: 28px;
   font-family: Tahoma, sans-serif;
 }
 
-li,
-p,
-i,
-a {
+.content li,
+.content p,
+.content i,
+.content a {
   margin-top: 21px;
-  font-family: "Lora";
+  font-family: Arial, sans-serif;
   font-size: 21px;
   letter-spacing: -0.03px;
   line-height: 1.58;
@@ -69,11 +69,11 @@ a {
   text-decoration: underline;
 }
 
-blockquote {
-  font-family: "Playfair Display", serif;
+.content blockquote {
+  font-family: Arial, sans-serif;
   font-size: 30px;
   font-style: italic;
-  letter-spacing: -0.36px;
+  /* letter-spacing: -0.36px; */
   line-height: 44.4px;
   overflow-wrap: break-word;
   margin: 55px 0 33px 0;
@@ -91,7 +91,6 @@ pre {
 }
 
 code {
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
   font-size: 18px;
   border-radius: 2px;
   padding: 3px 5px;
@@ -165,12 +164,11 @@ table {
 }
 
 .content img {
-  max-width: 95%;
+  max-width: 100%;
   height: auto;
   margin-top: 1em;
   display: block;
-  box-shadow: 0px 0px 10px 4px lightgray;
-  margin-left: 0.5em;
+  box-shadow: none;
 }
 
 .content .license img {
