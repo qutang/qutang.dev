@@ -37,7 +37,7 @@ const PROJECTS = [
     'name': 'Detect stereotypical motor movements in individuals on the autism spectrum using wireless accelerometry',
     'official': 'https://docs.google.com/document/d/12cjQ6QPVeTjPgOZZtoWGJ0Wqh9KEk20LOLi3qEW17D4/edit#',
     'desc': 'This paper describes an algorithm that automatically detects stereotypical motor movements (SMM) in individuals on the autism spectrum using three-axis accelerometer data obtained through wearable wireless sensors.',
-    'tags': ['Python', 'Open source', 'Algorithm', 'Dataset', 'Mobile health']
+    'tags': ['R', 'MATLAB', 'Open source', 'Algorithm', 'Dataset', 'Mobile health']
   },
   {
     'owner': 'qutang',
