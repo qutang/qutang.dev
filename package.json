@@ -31,7 +31,7 @@
     "@octokit/rest": "^18.0.9",
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^11.1.0",
     "@rollup/plugin-replace": "^2.3.2",
     "@yuque/sdk": "^1.1.1",
     "colorsys": "^1.0.22",
