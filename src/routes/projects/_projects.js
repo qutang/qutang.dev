@@ -23,10 +23,10 @@ const PROJECTS = [
   },
   {
     'owner': 'crowdgames',
-    'repo': 'signaligner',
-    'path': 'docs/index.md',
+    'repo': 'signaligner-web',
+    'path': 'index.md',
     'name': 'Signaligner Pro: A professional mobile sensor data visualization, annotation tool',
-    'official': 'https://crowdgames.github.io/signaligner/',
+    'official': 'https://crowdgames.github.io/signaligner-web/',
     'desc': 'Signaligner-Pro is an interactive tool for algorithm-assisted exploration and annotation of raw accelerometer data. The tool can be used by researchers using raw accelerometer data to support research in activity recognition/machine learning, exercise science, and sleep quality research among others.',
     'tags': ['JavaScript', 'Python', 'Software', 'Web', 'Mobile health']
   },
