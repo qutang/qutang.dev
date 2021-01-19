@@ -11,15 +11,11 @@ async function main() {
         timeZone: "US/New York"
     });
 
-    let result = await client.repos.getReadme({
-        owner: 'qutang',
-        repo: 'MUSS',
-        mediaType: {
-            format: 'html'
-        }
-    })
-
-    console.log(result);
+    let result = await client.licenses.getForRepo({
+        owner: 'crowdgames',
+        repo: 'signaligner-web',
+    }).catch(err => console.log(err.status))
+    
 }
 
 main();

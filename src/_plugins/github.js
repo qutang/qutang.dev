@@ -47,8 +47,12 @@ class GitHub {
                 let license = await this._client.licenses.getForRepo({
                     owner: proj['owner'],
                     repo: proj['repo'],
-
-                })
+                }).catch(err => console.log(`Error in getting license: ${err.status}`));
+                if (license !== undefined) {
+                    license = license.data['license']['name'];
+                } else {
+                    license = 'License not set';
+                }
                 let html_result = customMarked(result.data);
                 result = {
                     'html': html_result.html,
@@ -56,7 +60,7 @@ class GitHub {
                     'name': proj['name'],
                     'owner': proj['owner'],
                     'repo': proj['repo'],
-                    'license': license.data['license']['name'],
+                    'license': license,
                     'official': proj['official'],
                     'desc': proj['desc'],
                     'tags': proj['tags']
