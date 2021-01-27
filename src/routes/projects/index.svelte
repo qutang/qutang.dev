@@ -188,7 +188,7 @@
           the user hovers over the link or taps it, instead of
           waiting for the 'click' event -->
       <li> 
-      <p><a rel="prefetch" href="/projects/{project.repo}">{project.name}</a></p>
+      <p><a sapper:prefetch href="/projects/{project.repo}">{project.name}</a></p>
       <p class='tags'>
         {#each project.tags as tag}
           <span class='tag' style={`background: ${randomColor(tag)};`}>{tag}</span>

@@ -113,7 +113,7 @@
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-    <li><a rel="prefetch" href="projects/{project.repo}">{project.name}</a> 
+    <li><a sapper:prefetch href="projects/{project.repo}">{project.name}</a> 
       </li>
   {/each}
 </ul>

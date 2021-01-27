@@ -109,7 +109,7 @@
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
-    <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn' ? 'zh-cn' : 'en')}</span> <a rel="prefetch" href="blog/{post.slug}">{post.title}</a>
+    <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn' ? 'zh-cn' : 'en')}</span> <a sapper:prefetch href="blog/{post.slug}">{post.title}</a>
       </li>
   {/each}
 </ul>
