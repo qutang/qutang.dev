@@ -32,7 +32,7 @@
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
-    "@rollup/plugin-replace": "^2.3.2",
+    "@rollup/plugin-replace": "^2.4.1",
     "@yuque/sdk": "^1.1.1",
     "colorsys": "^1.0.22",
     "front-matter": "^4.0.2",
