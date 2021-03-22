@@ -37,7 +37,7 @@
     "colorsys": "^1.0.22",
     "front-matter": "^4.0.2",
     "glob": "^7.1.6",
-    "highlight.js": "^10.0.3",
+    "highlight.js": "^10.7.1",
     "install": "^0.13.0",
     "katex": "^0.12.0",
     "markdown-it": "^12.0.0",
