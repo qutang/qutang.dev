@@ -9,7 +9,7 @@ Qu Tang, S.M., is a sixth year Ph.D. student in the Department of Electrical and
 
 Mr. Tang received his S.M. from Northeastern University in 2013 working on developing activity recognition algorithms at mHealth Research Group, and a B.S.E. degree in Electrical Engineering from the University of Electronic Science and Technology of China (UESTC) in 2010. He has published research on activity recognition, physical behavior measurement using accelerometers, and real-time system for measuring human behaviors. Mr. Tang has been serving as a reviewer for conferences and journals including IMWUT, Sensors, and JMIR.
 
-See more in my [CV](media/uploads/cv_tang.pdf).
+See more in my [CV](media/uploads/CV.pdf).
 
 ## **Contact.**
 
