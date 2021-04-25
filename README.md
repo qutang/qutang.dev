@@ -1,4 +1,4 @@
-## **This website.**
+## **This website**
 
 如果在通过Github仓库阅读，点这里切换到[中文](https://github.com/qutang/qutang.dev/blob/master/README.cn.md)。
 
