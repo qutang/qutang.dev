@@ -36,7 +36,7 @@
     "@yuque/sdk": "^1.1.1",
     "colorsys": "^1.0.22",
     "front-matter": "^4.0.2",
-    "glob": "^7.1.6",
+    "glob": "^7.1.7",
     "highlight.js": "^10.0.3",
     "install": "^0.13.0",
     "katex": "^0.13.0",
