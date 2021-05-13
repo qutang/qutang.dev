@@ -1,7 +1,7 @@
 ---
 title: Home
 type: page
-date: '2020-02-21 16:35:00'
+date: 2020-02-21 16:35:00
 ---
 * [MIMS-unit Algorithm](/projects/MIMSunit) 🈴
 
