@@ -55,8 +55,6 @@ date: 2020-02-21 16:35:00
     flex-wrap: wrap;
   }
 
-  
-
   li p {
     font-size: 0.9em;
     text-align: center;
