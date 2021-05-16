@@ -1,4 +1,4 @@
-import { get_posts } from "$lib/blog/_posts.js";
+import { get_posts } from "$lib/Blog/_posts.js";
 const siteUrl = "https://qutang.dev";
 const renderXmlRssFeed = async (
   posts
