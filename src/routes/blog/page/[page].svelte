@@ -1,30 +1,40 @@
 <script context="module">
-  export async function preload({ params, query }) {
+  export async function load({ page, fetch, session, context }) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
     // console.log(params.page);
-    const res = await this.fetch(`blog/page/${params.page}.json`);
+    const url = `/blog/page/${page.params.page}.json`;
+    const res = await fetch(url);
     const data = await res.json();
 
-    if (res.status === 200) {
+    if (res.ok) {
       return {
-        posts: data.posts,
-        totalPages: data.totalPages,
-        page: parseInt(params.page)
+        props: {
+          posts: data.posts,
+          totalPages: data.totalPages,
+          page: parseInt(page.params.page)
+        }
       };
-    } else {
-      this.error(res.status, data.message);
+    }
+
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${url}`)
     }
   }
+
+  export const prerender = true;
 </script>
 
 <script>
   export let posts;
   export let page;
   export let totalPages;
-  import {lang} from '../../../components/stores.js';
-  import series from '../_series.js';
-  import { toLocale } from '../../../_plugins/date.js';
+  import {lang, navName} from '$lib/stores';
+  import series from '$lib/Blog/_series';
+  import { toLocale } from '$lib/api/date';
+
+  navName.update(() => 'blog');
 </script>
 
 <style>
@@ -110,11 +120,7 @@
 
 <ul>
   {#each posts as post}
-    <!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-    <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn' ? "zh-cn" : 'en')}</span> <a sapper:prefetch href="blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
+    <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn' ? "zh-cn" : 'en')}</span> <a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
       </li>
   {/each}
 </ul>
@@ -123,7 +129,7 @@
 {#if page > 2}
   <a href="/blog/page/{page - 1}" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
 {:else if page == 2}
-  <a href="/blog/" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
+  <a href="/blog" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
 {/if}
 
 {#if page < totalPages}

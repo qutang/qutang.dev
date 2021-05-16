@@ -1,23 +1,40 @@
 <script context="module">
-  export function preload({ params, query }) {
-    return this.fetch(`blog.json`)
-      .then(r => r.json())
-      .then(blog => {
-        let posts = blog.posts.filter(post => {
+  export async function load({ page, fetch, session, context }) {
+    const url = `/blog.json`;
+    const res = await fetch(url);
+    const blog = await res.json();
+    const posts = blog.posts.filter(post => {
           return post.page == "1";
-        });
-        return { posts, page: 1, totalPages: blog.totalPages };
-      });
+    });
+    const totalPages = blog.totalPages;
+    if (res.ok) {
+      return {
+        props: {
+          posts: posts,
+          page: 1,
+          totalPages: totalPages
+        }
+      }
+    }
+
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${url}`)
+    }
   }
+
+  export const prerender = true;
 </script>
 
 <script>
   export let posts;
   export let page;
   export let totalPages;
-  import {lang} from '../../components/stores.js';
-  import { toLocale } from '../../_plugins/date.js';
-  import series from './_series.js';
+  import { lang, navName } from '$lib/stores';
+  import { toLocale } from '$lib/api/date';
+  import series from '$lib/Blog/_series';
+  import coverUrl from '$lib/Blog/blog_cover.png';
+  navName.update(() => "blog");
 </script>
 
 <style>
@@ -37,14 +54,6 @@
     margin: 0 auto;
   }
 
-  #slogan code {
-    font-size: 3em;
-    margin: 0 auto;
-  }
-
-  #slogan-core {
-    font-size: 3.8em;
-  }
   .content {
     max-width: 56em;
     margin: 5em auto;
@@ -77,15 +86,8 @@
       list-style-type: none;
       padding-left: 0;
     }
-     #slogan code {
-    font-size: 2em;
-  }
 
-  #slogan-core {
-    font-size: 2em;
-  }
-
-  #slogan img {
+    #slogan img {
       max-width: 100%;
     }
   }
@@ -97,23 +99,13 @@
 
 
 <div class='content'>
-  <!-- <pre id="slogan">
-    <code class="language-python">
-    <span class="hljs-keyword">while</span> free:
-    <span id='slogan-core'>📝</span>...
-    </code>
-  </pre> -->
   <pre id="slogan">
-    <img src="/media/uploads/blog_cover.png" alt="">
+    <img src="{coverUrl}" alt="">
   </pre>
 
   <ul>
     {#each posts as post}
-      <!-- we're using the non-standard `rel=prefetch` attribute to
-          tell Sapper to load the data for the page as soon as
-          the user hovers over the link or taps it, instead of
-          waiting for the 'click' event -->
-      <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn'? 'zh-cn' : 'en')}</span> <a sapper:prefetch href="blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
+      <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn'? 'zh-cn' : 'en')}</span> <a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
       </li>
     {/each}
   </ul>
@@ -122,7 +114,7 @@
   {#if page > 1}
     <a href="/blog/page/{page - 1}" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
   {:else if page == 2}
-  <a href="/blog/" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
+  <a href="/blog" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
   {/if}
 
   {#if page < totalPages}

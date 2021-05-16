@@ -1,25 +1,39 @@
 <script context="module">
-  export function preload({ params, query }) {
+  export async function load({ page, fetch, session, context }) {
     console.log('Start fetching projects...')
-    return this.fetch(`projects.json`)
-      .then(r => r.json())
-      .then(result => {
-        // console.log(result);
-        let projects = result.projects.filter(project => {
+    const url = `/projects.json`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const projects = data.projects.filter(
+      project => {
           return project.page == "1";
-        });
-        console.log('Stop fetching projects...')
-        return { projects, page: 1, totalPages: result.totalPages };
-      });
+        }
+    );
+    console.log('Stop fetching projects...');
+    if (res.ok) {
+      return {
+        props: {
+          projects: projects, 
+          page: 1, 
+          totalPages: data.totalPages
+        }
+      }
+    }
+
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${url}`)
+    }
   }
+
+  export const prerender = true;
 </script>
 
 <script>
   export let projects;
   export let page;
   export let totalPages;
-  import {lang} from '../../components/stores.js';
-  import { toLocale } from '../../_plugins/date.js';
+  import { lang, navName } from '$lib/stores';
   import colorsys from 'colorsys';
 
   function toHex(str) {
@@ -38,9 +52,10 @@
     var hh = parseInt(encoded.substring(1, 3), 16);
     var ss = parseInt(encoded.substring(4, 6), 16) / 255;
     var vv = parseInt(encoded.substring(6, 8), 16) / 255 * 0.5 + 0.5;
-
-    return colorsys.stringify(colorsys.hsvToRgb({h: hh, s: ss * 100, v: vv * 100}));
+    return colorsys.stringify(colorsys.hsv2Rgb({h: hh, s: ss * 100, v: vv * 100}));
   }
+
+  navName.update(() => 'project');
 </script>
 
 <style>
@@ -183,12 +198,8 @@
 
   <ul>
     {#each projects as project}
-      <!-- we're using the non-standard `rel=prefetch` attribute to
-          tell Sapper to load the data for the page as soon as
-          the user hovers over the link or taps it, instead of
-          waiting for the 'click' event -->
       <li> 
-      <p><a sapper:prefetch href="/projects/{project.repo}">{project.name}</a></p>
+      <p><a sveltekit:prefetch href="/projects/{project.repo}">{project.name}</a></p>
       <p class='tags'>
         {#each project.tags as tag}
           <span class='tag' style={`background: ${randomColor(tag)};`}>{tag}</span>
