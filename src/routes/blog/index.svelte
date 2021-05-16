@@ -30,15 +30,11 @@
   export let posts;
   export let page;
   export let totalPages;
-  import { beforeUpdate } from "svelte";
   import { lang, navName } from '$lib/stores';
   import { toLocale } from '$lib/api/date';
   import series from '$lib/Blog/_series';
   import coverUrl from '$lib/Blog/blog_cover.png';
   navName.update(() => "blog");
-  beforeUpdate(() => {
-    
-  });
 </script>
 
 <style>
