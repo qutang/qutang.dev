@@ -114,7 +114,7 @@
   {#if page > 1}
     <a href="/blog/page/{page - 1}" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
   {:else if page == 2}
-  <a href="/blog/" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
+  <a href="/blog" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
   {/if}
 
   {#if page < totalPages}
