@@ -2,39 +2,46 @@
 <script>
     export let data;
     export let image;
-    import { csvParse } from "d3-dsv";
-    import { scaleLinear } from 'd3-scale';
-    import { line } from 'd3-shape';
-    import { min, max } from 'd3-array';
+    import * as d33 from "d3";
+    import { dev } from "$app/env";
 
-    data = csvParse(data);
+    let d3;
+    if (dev) {
+        d3 = d33;
+    } else {
+        d3 = d33.default;
+    }
+
+    data = d3.csvParse(data);
+
+    
     const height = 320
     const width = 640
     const strokeWidth = 8;
     const margin = ({top: 40, right: 30, bottom: 100, left: 40})
-    const x = scaleLinear()
-        .domain([min(data, d => d.x), max(data, d => d.x)])
+    const x = d3.scaleLinear()
+        .domain([d3.min(data, d => d.x), d3.max(data, d => d.x)])
         .range([margin.left, width - margin.right])
-    const y = scaleLinear()
+    const y = d3.scaleLinear()
         .domain([-1, 1])
         .range([height - margin.bottom, margin.top])
-    const acc_x_line = line()
+    const acc_x_line = d3.line()
         .x(d => x(d.x))
         .y(d => y(d.l_acc_x))
-    const acc_y_line = line()
+    const acc_y_line = d3.line()
         .x(d => x(d.x))
         .y(d => y(d.l_acc_y))
-    const acc_z_line = line()
+    const acc_z_line = d3.line()
         .x(d => x(d.x))
         .y(d => y(d.l_acc_z))
     
-    const r_acc_x_line = line()
+    const r_acc_x_line = d3.line()
         .x(d => x(d.x))
         .y(d => y(d.r_acc_x))
-    const r_acc_y_line = line()
+    const r_acc_y_line = d3.line()
         .x(d => x(d.x))
         .y(d => y(d.r_acc_y))
-    const r_acc_z_line = line()
+    const r_acc_z_line = d3.line()
         .x(d => x(d.x))
         .y(d => y(d.r_acc_z))
 </script>
