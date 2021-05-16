@@ -37,7 +37,8 @@
 	},
 	"dependencies": {
 		"@lukeed/uuid": "^2.0.0",
-		"cookie": "^0.4.1"
+		"cookie": "^0.4.1",
+		"d3": "^6.7.0"
 	},
 	"engines": {
 		"node": ">=14.7.0 <15"

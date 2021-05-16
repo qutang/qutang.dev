@@ -1,18 +1,29 @@
 <script context="module">
+    export async function load({ page, fetch, session, context }) {
+        const filePath = '/badges/rubbing_palms.csv';
+		const imageUrl = '/badges/rubbing_palms.png';
+        const data = await fetch(filePath);
+        const content = await data.text();
+        return {
+            props: {
+                data: content,
+				image: imageUrl
+            }
+        }
+    }
 	export const prerender = true;
 </script>
 
 <script>
-	import coverUrl from "$lib/Home/index_cover.png";
+	export let data;
+	export let image;
+	// import coverUrl from "$lib/Home/index_cover.png";
+	import Badge from "$lib/SignalBadge/index.svelte";
 	import { lang, navName } from "$lib/stores";
 	import Home from "$lib/Home/index.svelte";
-	import { beforeUpdate } from 'svelte';
+	// import { beforeUpdate } from 'svelte';
 
 	navName.update(() => "");
-
-	beforeUpdate(() => {
-		
-	});
 </script>
 
 <svelte:head>
@@ -27,9 +38,10 @@
 </svelte:head>
 
 <div class="content">
-	<pre id="slogan">
-		<img src="{coverUrl}" alt="">
-	</pre>
+	<div id="slogan">
+		<!-- <img src="{coverUrl}" alt=""> -->
+		<Badge data={data} image={image} />
+	</div>
 	<p id="highlight-heading">
 		<strong>{$lang == "cn" ? "重点项目" : "Highlights."}</strong>
 	</p>
@@ -40,19 +52,19 @@
   
 #slogan {
 	background: none;
-	display: flex;
-	width: 100%;
+	/* display: flex; */
+	width: 600px;
 	margin: 0 auto;
-	max-height: inherit;
+	margin-bottom: 50px;
 }
-
+/* 
 #slogan img {
 	max-width: 600px;
 	height: auto;
 	box-shadow: none;
 	display: block;
 	margin: 0 auto;
-}
+} */
 
 #highlight-heading {
 	font-size: 36px;
@@ -69,9 +81,9 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
-	#slogan img {
+	/* #slogan img {
 	max-width: 100%;
-	}
+	} */
 }
 
 </style>
