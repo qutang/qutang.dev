@@ -5,7 +5,7 @@
 
 
 {#each content as section}
-    <h2><b>{$lang == 'cn' ? section.title.cn : section.title.en}</b></h2>
+    <h2 id="{section.anchor}"><b>{$lang == 'cn' ? section.title.cn : section.title.en}</b></h2>
     <div>
         {@html $lang == 'cn' ? section.content.cn : section.content.en}
     </div>
