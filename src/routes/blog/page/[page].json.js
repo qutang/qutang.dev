@@ -1,30 +1,21 @@
-import { get_posts } from "../_posts.js";
+import { get_posts } from "$lib/Blog/_posts";
 
-export async function get(req, res) {
+export async function get({ params }) {
   // the `page` parameter is available because
   // this file is called [page].json.js
-  const { page } = req.params;
+  const { page } = params;
 
   const result = await get_posts();
   const page_posts = await result.posts.filter((post) => post.page === page);
   const totalPages = result.totalPages;
 
   if (page_posts.length > 0) {
-    res.writeHead(200, {
-      "Content-Type": "application/json",
-    });
-    res.end(
-      await JSON.stringify({ posts: page_posts, totalPages: totalPages })
-    );
-  } else {
-    res.writeHead(404, {
-      "Content-Type": "application/json",
-    });
-
-    res.end(
-      JSON.stringify({
-        message: `Not found`,
-      })
-    );
+    return {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: { posts: page_posts, totalPages: totalPages }
+    }
   }
 }

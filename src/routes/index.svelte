@@ -1,105 +1,77 @@
 <script context="module">
-  export function preload({ params, query }) {
-    console.log('Start preloading...')
-    return this.fetch(`blog/rss.xml`).then(() => {
-      console.log('Finished preloading...')
-      return this.fetch("sitemap.xml");
-    });
-  }
+	export const prerender = true;
 </script>
 
 <script>
-  import { lang } from "../components/stores.js";
-  import Home from "../../contents/pages/index.md";
-  import HomeCN from "../../contents/pages/index.cn.md";
+	import coverUrl from "$lib/Home/index_cover.png";
+	import { lang, navName } from "$lib/stores";
+	import Home from "$lib/Home/index.svelte";
+	import { beforeUpdate } from 'svelte';
+
+	navName.update(() => "");
+
+	beforeUpdate(() => {
+		
+	});
 </script>
 
-<style>
-  
-  #slogan {
-    background: none;
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    max-height: inherit;
-  }
-
-  #slogan img {
-    max-width: 600px;
-    height: auto;
-    box-shadow: none;
-    display: block;
-    margin: 0 auto;
-  }
-
-  #slogan code {
-    font-size: 3em;
-    margin: 0 auto;
-  }
-
-  #slogan-core {
-    font-size: 3.8em;
-  }
-
-  #highlight-heading {
-    font-size: 36px;
-  }
-
-  p {
-    text-align: center;
-    margin: 0 auto;
-    font-size: 1.6em;
-  }
-
-  .content {
-    margin: 5em auto;
-  }
-
-  @media only screen and (max-width: 600px) {
-    #slogan code {
-      font-size: 2em;
-      margin: 0 auto;
-    }
-    #slogan-core {
-      font-size: 3em;
-    }
-    #slogan img {
-      max-width: 100%;
-    }
-  }
-
-</style>
-
 <svelte:head>
-  <title>
-    {$lang == 'cn' ? "唐曲 - 数据，机器学习，移动健康": "Qu Tang - share about data science, machine learning, mobile health"}
-  </title>
-  <script
-    defer
-    type="text/javascript"
-    src="https://identity.netlify.com/v1/netlify-identity-widget.js">
-  </script>
+	<title>
+		{$lang == 'cn' ? "唐曲 - 数据，机器学习，移动健康": "Qu Tang - share about data science, machine learning, mobile health"}
+	</title>
+	<script
+		defer
+		type="text/javascript"
+		src="https://identity.netlify.com/v1/netlify-identity-widget.js">
+	</script>
 </svelte:head>
 
 <div class="content">
-  <!-- <pre id="slogan">
-    <code class="language-python">
-      <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
-  <span id="slogan-core">🏃</span>🌫️🌫️🌫️
-    </code>
-  </pre> -->
-
-  <pre id="slogan">
-    <img src="/media/uploads/index_cover.png" alt="">
-  </pre>
-
-  <p id="highlight-heading">
-    <strong>{$lang == "cn" ? "重点项目" : "Highlights."}</strong>
-  </p>
-
-  {#if $lang == 'cn'}
-    <HomeCN />
-  {:else}
-    <Home />
-  {/if}
+	<pre id="slogan">
+		<img src="{coverUrl}" alt="">
+	</pre>
+	<p id="highlight-heading">
+		<strong>{$lang == "cn" ? "重点项目" : "Highlights."}</strong>
+	</p>
+	<Home />
 </div>
+
+<style>
+  
+#slogan {
+	background: none;
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+	max-height: inherit;
+}
+
+#slogan img {
+	max-width: 600px;
+	height: auto;
+	box-shadow: none;
+	display: block;
+	margin: 0 auto;
+}
+
+#highlight-heading {
+	font-size: 36px;
+}
+
+p {
+	text-align: center;
+	margin: 0 auto;
+	font-size: 1.6em;
+}
+
+.content {
+	margin: 5em auto;
+}
+
+@media only screen and (max-width: 600px) {
+	#slogan img {
+	max-width: 100%;
+	}
+}
+
+</style>

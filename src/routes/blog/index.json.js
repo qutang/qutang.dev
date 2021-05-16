@@ -1,21 +1,23 @@
-import { get_posts } from "./_posts.js";
+import { get_posts } from "$lib/Blog/_posts";
 
-export async function get(req, res) {
+export async function get({ params }) {
   const result = await get_posts();
-  const posts = result.posts;
   const totalPages = result.totalPages;
-
-  const contents = await JSON.stringify({
-    posts: posts.map((post) => {
-      return {
-        ...post,
-      };
-    }),
-    totalPages: totalPages,
+  const posts = await result.posts.map((post) => {
+    return {
+      ...post,
+    };
   });
-  res.writeHead(200, {
-    "Content-Type": "application/json",
-  });
+  const contents = {
+    posts: posts,
+    totalPages: totalPages
+  };
 
-  res.end(contents);
+  return {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: contents
+  }
 }

@@ -1,0 +1,79 @@
+@media screen and (min-width: 1024px) {
+	.content ul {
+		max-width: 80em;
+		margin: 0 auto;
+	}
+	.content li {
+		width: 18em;
+		padding: 0.5em 1em;
+		margin-top: 0;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.content ul {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.content li {
+		padding: 0;
+		margin-top: 0;
+	}
+}
+
+.content ul {
+	display: flex;
+	list-style-type: none;
+	justify-content: space-around;
+	align-content: center;
+	margin: 0 auto;
+	padding-left: 0;
+	flex-wrap: wrap;
+}
+
+.content li p {
+	font-size: 0.9em;
+	text-align: center;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	margin: 0.5em 0;
+	color: gray;
+}
+
+.content h2 {
+	font-size: 22px;
+	font-family: Arial;
+	text-align: center;
+	font-weight: normal;
+	text-align: center;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	margin: 0.5em 0;
+	color: gray;
+	letter-spacing: -0.03px;
+}
+
+.content h2 a {
+	font-size: 22px;
+	font-family: Arial;
+	text-align: center;
+}
+
+.content .smaller-font {
+	font-size: 20px;
+}
+
+.content li a {
+	font-family: Arial;
+	text-decoration: none;
+}
+
+.content li a:hover {
+	text-decoration: underline;
+}
+
+.content li :nth-child(n + 2) {
+	font-family: Arial;
+}

@@ -1,28 +1,35 @@
 <script context="module">
-  export async function preload({ params, query }) {
+  export async function load({ page, fetch, session, context }) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
-    const res = await this.fetch(`blog/${params.slug}.json`);
+    const url = `/blog/${page.params.slug}.json`;
+    const res = await fetch(url);
     const data = await res.json();
-
-    if (res.status === 200) {
-      return { post: data };
+    if (res.ok) {
+      return { 
+        props: {
+          post: data.post
+        } 
+      };
     } else {
-      this.error(res.status, data.message);
+      return {
+        status: res.status,
+        error: new Error(`Could not load ${url}`)
+      }
     }
   }
+
+  export const prerender = true;
 </script>
 
 <script>
   export let post;
   
-  import series from './_series.js';
-  import { lang } from '../../components/stores.js';
-  import { toLocale } from '../../_plugins/date.js';
+  import series from '$lib/Blog/_series';
+  import { lang, navName } from '$lib/stores';
+  import { toLocale } from '$lib/api/date';
   import { onMount } from 'svelte';
 
-  let edit_text = undefined;
-  let license_text = undefined;
   let on_colab = post.src.includes('colab');
   let on_yuque = post.src.includes('yuque');
   let edit_where = on_colab ? "Colab" : "Github";
@@ -42,8 +49,9 @@
       x => (x.href = '/blog/' + post.slug + new URL(x.href).hash)
     )
 	});
-</script>
 
+  navName.update(() => "blog");
+</script>
 <style>
   /*
 		By default, CSS is locally scoped to the component,

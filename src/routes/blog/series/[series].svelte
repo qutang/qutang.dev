@@ -1,28 +1,38 @@
 <script context="module">
-  export async function preload({ params, query }) {
+  export async function load({ page, fetch, session, context }) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
     // console.log(params.series);
-    const res = await this.fetch(`blog/series/${params.series}.json`);
+    const url = `/blog/series/${page.params.series}.json`;
+    const res = await fetch(url);
     const data = await res.json();
 
-    if (res.status === 200) {
+    if (res.ok) {
       return {
-        posts: data.posts,
-        series: params.series
+        props: {
+          posts: data.posts,
+          series: page.params.series
+        }
       };
-    } else {
-      this.error(res.status, data.message);
+    }
+
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${url}`)
     }
   }
+
+  export const prerender = true;
 </script>
 
 <script>
   export let posts;
   export let series;
-  import parseSeries from '../_series.js';
-  import { toLocale } from '../../../_plugins/date.js';
-  import { lang } from '../../../components/stores.js';
+  import parseSeries from '$lib/Blog/_series';
+  import { toLocale } from '$lib/api/date';
+  import { lang, navName } from '$lib/stores';
+
+  navName.update(() => "blog");
 </script>
 
 <style>
@@ -50,14 +60,6 @@
     margin: 0 auto;
   }
 
-  #slogan code {
-    font-size: 3em;
-    margin: 0 auto;
-  }
-
-  #slogan-core {
-    font-size: 3.2em;
-  }
   .content {
     max-width: 56em;
     margin: 5em auto;
@@ -72,15 +74,7 @@
       list-style-type: none;
       padding-left: 0;
     }
-     #slogan code {
-    font-size: 1.8em;
-  }
-
-  #slogan-core {
-    font-size: 1.6em;
-  }
-
-  #slogan img {
+    #slogan img {
       max-width: 100%;
     }
   }
@@ -93,23 +87,13 @@
 
 <div class='content'>
 
- <!-- <pre id="slogan">
-  <code class="language-python">
-  <span class="hljs-keyword">yield from</span> <span id='slogan-core'>{parseSeries[series]['emoji']}</span>...
-  </code>
-</pre> -->
-
 <pre id="slogan">
   <img src="{parseSeries[series]['url']}" alt="">
 </pre>
 
 <ul>
   {#each posts as post}
-    <!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-    <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn' ? 'zh-cn' : 'en')}</span> <a sapper:prefetch href="blog/{post.slug}">{post.title}</a>
+    <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn' ? 'zh-cn' : 'en')}</span> <a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a>
       </li>
   {/each}
 </ul>

@@ -1,27 +1,35 @@
 <script context="module">
-  export async function preload({ params, query }) {
+  export async function load({ page, fetch, session, context }) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
-    const res = await this.fetch(`projects/${params.repo}.json`);
+    const url = `/projects/${page.params.repo}.json`;
+    const res = await fetch(url);
     const data = await res.json();
 
-    if (res.status === 200) {
-      return { project: data };
-    } else {
-      this.error(res.status, data.message);
+    if (res.ok) {
+      return {
+        props: {
+          project: data
+        }
+      };
+    }
+
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${url}`)
     }
   }
+
+	export const prerender = true;
 </script>
 
 <script>
   export let project;
   
-  import { lang } from '../../components/stores.js';
-  import { toLocale } from '../../_plugins/date.js';
+  import { lang, navName } from '$lib/stores';
   import { onMount } from 'svelte';
+  import '$lib/Project/project_repo.css';
 
-  let edit_text = undefined;
-  let license_text = undefined;
   const edit_text_cn = "在GitHub查看本项目";
   const edit_text_en = "View on GitHub";
 
@@ -37,6 +45,8 @@
       x => (x.href = '/projects/' + project.repo + new URL(x.href).hash)
     )
 	});
+
+  navName.update(() => "project");
 </script>
 
 <style>
@@ -84,7 +94,7 @@
   }
 
   @media screen and (max-width:600px) {
-    .edit, .date {
+    .edit {
       width: 100%;
     }
   }
@@ -96,13 +106,6 @@
     }
   }
 </style>
-
-<svelte:head>
-  <title>{project.name}</title>
-  <link rel="preload prefetch stylesheet" href="project_repo.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="project_repo.css" as="style"></noscript>
-</svelte:head>
-
 
 <div class="content">
 
