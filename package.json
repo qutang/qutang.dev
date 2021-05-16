@@ -28,6 +28,7 @@
 		"markdown-it-iframe": "^1.0.0",
 		"markdown-it-texmath": "^0.8.0",
 		"markdown-it-toc-done-right": "^4.2.0",
+		"marked": "^2.0.3",
 		"prettier": "~2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
 		"svelte": "^3.34.0",
