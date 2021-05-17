@@ -1,6 +1,13 @@
+html,
+body {
+	height: 100vh;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
 main {
-	max-width: 90%;
-	padding: 2em;
+	max-width: 100%;
+	/* padding: 2em; */
 	position: relative;
 	background-color: white;
 	margin: 0em auto;
@@ -16,7 +23,25 @@ main {
 
 @media only screen and (min-width: 1024px) {
 	main {
-		max-width: 90%;
-		padding: 2em;
+		max-width: 100%;
+		/* padding: 2em; */
 	}
+}
+
+.content {
+	overflow-y: auto;
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+	width: 100%;
+	height: 100vh;
+}
+
+.section {
+	height: 100vh;
+	scroll-snap-align: start;
+	position: relative;
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 }

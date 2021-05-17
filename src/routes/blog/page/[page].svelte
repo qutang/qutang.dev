@@ -33,8 +33,12 @@
   import {lang, navName} from '$lib/stores';
   import series from '$lib/Blog/_series';
   import { toLocale } from '$lib/api/date';
+  import Footer from "$lib/Footer/index.svelte";
+  import ScrollUp from "$lib/ScrollUpButton/index.svelte";
 
   navName.update(() => 'blog');
+
+  let el;
 </script>
 
 <style>
@@ -62,7 +66,7 @@
   #slogan-core {
     font-size: 3.8em;
   }
-  .content {
+  .inner {
     max-width: 56em;
     margin: 5em auto;
   }
@@ -109,32 +113,34 @@
 </svelte:head>
 
 
-<div class='content'>
-
- <pre id="slogan">
-  <code class="language-python">
-  <span class="hljs-keyword">while</span> free:
-  <span id='slogan-core'>📝</span>...
-  </code>
-</pre>
-
-<ul>
-  {#each posts as post}
-    <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn' ? "zh-cn" : 'en')}</span> <a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
-      </li>
-  {/each}
-</ul>
-
-<p class='pagination'>
-{#if page > 2}
-  <a href="/blog/page/{page - 1}" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
-{:else if page == 2}
-  <a href="/blog" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
-{/if}
-
-{#if page < totalPages}
-  <a href="/blog/page/{page + 1}" class='pagination-next'>{$lang == 'cn' ? "下一页" : "Next page"}</a>
-{/if}
-</p>
+<div class='content' bind:this={el}>
+<div class='inner'>
+  <pre id="slogan">
+    <code class="language-python">
+    <span class="hljs-keyword">while</span> free:
+    <span id='slogan-core'>📝</span>...
+    </code>
+  </pre>
+  
+  <ul>
+    {#each posts as post}
+      <li><span style='font-family: Arial;color:gray;'>{toLocale(post.date, $lang == 'cn' ? "zh-cn" : 'en')}</span> <a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a> <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
+        </li>
+    {/each}
+  </ul>
+  
+  <p class='pagination'>
+  {#if page > 2}
+    <a href="/blog/page/{page - 1}" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
+  {:else if page == 2}
+    <a href="/blog" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
+  {/if}
+  
+  {#if page < totalPages}
+    <a href="/blog/page/{page + 1}" class='pagination-next'>{$lang == 'cn' ? "下一页" : "Next page"}</a>
+  {/if}
+  </p>
+</div>
+<Footer />
 </div>
 

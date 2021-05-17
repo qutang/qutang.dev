@@ -35,6 +35,7 @@
   export let totalPages;
   import { lang, navName } from '$lib/stores';
   import colorsys from 'colorsys';
+  import Footer from "$lib/Footer/index.svelte";
 
   function toHex(str) {
     var result = '';
@@ -60,9 +61,9 @@
 
 <style>
 
-  .content {
+  .inner {
     max-width: 90em;
-    margin: 4em auto 4em auto;
+    margin: 10em auto 5em auto;
   }
   ul {
     margin: 0 0 1em 0;
@@ -80,7 +81,7 @@
     float: right;
   }
 
-  .content h1 {
+  .inner h1 {
     text-align: center;
     margin: 0 auto;
     font-size: 1.6em;
@@ -93,6 +94,10 @@
     ul {
       list-style-type: none;
       padding-left: 0;
+    }
+
+    .inner {
+      margin: 3em auto 2em auto;
     }
      
   }
@@ -192,35 +197,38 @@
 
 
 <div class='content'>
-  <h1 id="highlight-heading">
-    <strong>{$lang == "cn" ? "项目" : "Projects."}</strong>
-  </h1>
-
-  <ul>
-    {#each projects as project}
-      <li> 
-      <p><a sveltekit:prefetch href="/projects/{project.repo}">{project.name}</a></p>
-      <p class='tags'>
-        {#each project.tags as tag}
-          <span class='tag' style={`background: ${randomColor(tag)};`}>{tag}</span>
-        {/each}
-      </p>
-       <p>{project.desc}</p>
-      </li>
-    {/each}
-  </ul>
-
-  <p class='pagination'>
-  {#if page > 1}
-    <a href="/projects/page/{page - 1}" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
-  {:else if page == 2}
-  <a href="/projects/" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
-  {/if}
-
-  {#if page < totalPages}
-    <a href="/projects/page/{page + 1}" class='pagination-next'>{$lang == 'cn' ? "下一页" : "Next page"}</a>
-  {/if}
-  </p>
+  <div class='inner'>
+    <h1 id="highlight-heading">
+      <strong>{$lang == "cn" ? "项目" : "Projects."}</strong>
+    </h1>
   
+    <ul>
+      {#each projects as project}
+        <li> 
+        <p><a sveltekit:prefetch href="/projects/{project.repo}">{project.name}</a></p>
+        <p class='tags'>
+          {#each project.tags as tag}
+            <span class='tag' style={`background: ${randomColor(tag)};`}>{tag}</span>
+          {/each}
+        </p>
+         <p>{project.desc}</p>
+        </li>
+      {/each}
+    </ul>
+  
+    <p class='pagination'>
+    {#if page > 1}
+      <a href="/projects/page/{page - 1}" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
+    {:else if page == 2}
+    <a href="/projects/" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
+    {/if}
+  
+    {#if page < totalPages}
+      <a href="/projects/page/{page + 1}" class='pagination-next'>{$lang == 'cn' ? "下一页" : "Next page"}</a>
+    {/if}
+    </p>
+  </div>
+  
+  <Footer />
 </div>
 

@@ -29,6 +29,8 @@
   import { lang, navName } from '$lib/stores';
   import { onMount } from 'svelte';
   import '$lib/Project/project_repo.css';
+  import Footer from "$lib/Footer/index.svelte";
+  import ScrollUp from "$lib/ScrollUpButton/index.svelte";
 
   const edit_text_cn = "在GitHub查看本项目";
   const edit_text_en = "View on GitHub";
@@ -47,6 +49,8 @@
 	});
 
   navName.update(() => "project");
+
+  let el;
 </script>
 
 <style>
@@ -59,7 +63,7 @@
 		all elements inside .content
   */
 
-  .content {
+  .inner {
     max-width: 56em;
     margin: 5em auto;
   }
@@ -69,6 +73,7 @@
     padding: 0.2em 0.5em;
     background: lightsalmon;
     border-radius: 5px;
+    text-align: center;
   }
 
   .meta {
@@ -94,33 +99,36 @@
   }
 
   @media screen and (max-width:600px) {
-    .edit {
+    .edit, .license {
       width: 100%;
     }
   }
 
   @media screen and (max-width:1024px) and (min-width:600px) {
-    .edit {
+    .edit, .license {
       width: 100%;
       flex: auto;
     }
   }
 </style>
 
-<div class="content">
+<div class="content" bind:this={el}>
+<div class='inner'>
+  <p class='breadcumb'>
+    <a href="/">qutang.dev</a> | <a href="/projects">Other projects</a> | <a href={project.official || project.src} rel='noopener' target="_blank" >{project.official != null ? "Official site" : "GitHub Repo"}</a>
+    </p>
+    
+      {@html project.html}
+    
+    
+    <p class='meta'>
+      <span class='edit'><a href={project.src} rel='noopener' target="_blank" style='margin-top: 0'>{$lang == 'cn' ? edit_text_cn : edit_text_en}</a></span>
+      <span class='license'><a href={`https://github.com/${project.owner}/${project.repo}/blob/master/LICENSE`} rel='noopener' target="_blank" title='LICENSE'>{project.license}</a></span>
+    </p>
+</div>
 
-<p class='breadcumb'>
-<a href="/">qutang.dev</a> | <a href="/projects">Other projects</a> | <a href={project.official || project.src} rel='noopener' target="_blank" >{project.official != null ? "Official site" : "GitHub Repo"}</a>
-</p>
-
-  {@html project.html}
-
-
-<p class='meta'>
-  <span class='edit'><a href={project.src} rel='noopener' target="_blank" style='margin-top: 0'>{$lang == 'cn' ? edit_text_cn : edit_text_en}</a></span>
-  <span class='license'><a href={`https://github.com/${project.owner}/${project.repo}/blob/master/LICENSE`} rel='noopener' target="_blank" title='LICENSE'>{project.license}</a></span>
-</p>
-
+<ScrollUp el={el} />
+<Footer />
 
 
 </div>

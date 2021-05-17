@@ -31,8 +31,12 @@
   import parseSeries from '$lib/Blog/_series';
   import { toLocale } from '$lib/api/date';
   import { lang, navName } from '$lib/stores';
+  import Footer from "$lib/Footer/index.svelte";
+  import ScrollUp from "$lib/ScrollUpButton/index.svelte";
 
   navName.update(() => "blog");
+
+  let el;
 </script>
 
 <style>
@@ -85,8 +89,8 @@
 </svelte:head>
 
 
-<div class='content'>
-
+<div class='content' bind:this={el}>
+<div class='inner'>
 <pre id="slogan">
   <img src="{parseSeries[series]['url']}" alt="">
 </pre>
@@ -97,5 +101,8 @@
       </li>
   {/each}
 </ul>
+</div>
+<ScrollUp el={el} />
+<Footer />
 </div>
 

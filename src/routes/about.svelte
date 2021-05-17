@@ -6,6 +6,8 @@
 
 <script>
 	import coverUrl from '$lib/About/about_cover.png';
+	import Footer from "$lib/Footer/index.svelte"
+	import ScrollUpButton from "$lib/ScrollUpButton/index.svelte";
 	import { lang, navName } from '$lib/stores';
 	import About from '$lib/About/index.svelte';
 	import Readme from '../../README.md';
@@ -17,30 +19,36 @@
 	beforeUpdate(() => {
 		
 	});
-	
+	let parallax;
 </script>
 
 <svelte:head>
 	<title>{$lang == 'cn' ? '关于我' : "About"}</title>
 </svelte:head>
 
-<div class='content'>
-	<pre id="slogan">
-	  <img src="{coverUrl}" alt="">
-	</pre>
-	<div class='about'>
-		<About />
-		{#if $lang == 'cn'}
-		<ReadmeCN />
-		{:else}
-		<Readme />
-		{/if}
+<div class='content' bind:this={parallax}>
+	<div class='inner'>
+		<pre id="slogan">
+			<img src="{coverUrl}" alt="">
+		  </pre>
+		  <div class='about'>
+			  <About />
+			  {#if $lang == 'cn'}
+			  <ReadmeCN />
+			  {:else}
+			  <Readme />
+			  {/if}
+		  </div>
 	</div>
+	<ScrollUpButton el={parallax} />
+	<Footer />
 </div>
 
 <style>
-.content {
+
+.inner {
 	margin: 5em auto;
+	max-width: 56em;
 }
 
 #slogan img {
@@ -60,7 +68,6 @@
 	}
 
 	.about {
-	max-width: 56em;
 	margin: 0 auto;
 	}
 

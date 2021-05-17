@@ -17,13 +17,31 @@
 <script>
 	export let data;
 	export let image;
+	import ScrollUp from '$lib/ScrollUpButton/index.svelte'
+	import ScrollDown from '$lib/ScrollDownButton/index.svelte'
+	import Footer from '$lib/Footer/index.svelte'
 	// import coverUrl from "$lib/Home/index_cover.png";
 	import Badge from "$lib/SignalBadge/index.svelte";
 	import { lang, navName } from "$lib/stores";
 	import Home from "$lib/Home/index.svelte";
+import { onMount } from 'svelte';
+	// import { Parallax, ParallaxLayer } from 'svelte-parallax';
+	// import { onMount } from 'svelte';
 	// import { beforeUpdate } from 'svelte';
-
+	let parallax;
 	navName.update(() => "");
+	let id;
+	onMount(() => {
+		id = setTimeout(() => {
+			console.log('fire');
+			parallax.scrollBy(0, 100);
+		}, 2000);
+
+		window.ontouchstart = () => {
+			clearTimeout(id);
+		};
+	});
+	
 </script>
 
 <svelte:head>
@@ -37,26 +55,78 @@
 	</script>
 </svelte:head>
 
-<div class="content">
-	<div id="slogan">
-		<!-- <img src="{coverUrl}" alt=""> -->
-		<Badge data={data} image={image} />
-	</div>
-	<p id="highlight-heading">
-		<strong>{$lang == "cn" ? "重点项目" : "Highlights."}</strong>
-	</p>
-	<Home />
+<div class="content" bind:this={parallax} on:mousemove={() => clearTimeout(id)} >
+	<!-- <Parallax sections={2} config={{stiffness: 0.2, damping: 0.3}} bind:this={parallax}> -->
+		<!-- <ParallaxLayer rate={0} offset={0}> -->
+		<div class='section'>
+			<div id="slogan">
+				<Badge data={data} image={image} />
+				<h2>
+					Researcher, developer, and enthusiast in mobile technologies, health, and artificial intelligence.
+				</h2>
+			</div>
+			<div class='control'>
+				<ScrollDown el={parallax} />
+			</div>
+			
+		</div>
+			
+		<!-- </ParallaxLayer> -->
+		<!-- <ParallaxLayer rate={0} offset={1}> -->
+		<div class='section'>
+			<div id="highlight">
+				<p id="highlight-heading">
+					<strong>{$lang == "cn" ? "重点项目" : "Highlights."}</strong>
+				</p>
+				<Home />
+			</div>
+			<div class='control'>
+				<ScrollUp el={parallax} />
+			<Footer />
+			</div>
+			
+		</div>
+			
+		<!-- </ParallaxLayer> -->
+	<!-- </Parallax> -->
+	<!-- <div class="section" id="section-slogan">
+		<img src="{coverUrl}" alt="">
+		
+	</div> -->
+	
+	<!-- <div class="section" id="section-highlight">
+		
+	</div> -->
 </div>
 
 <style>
-  
-#slogan {
-	background: none;
-	/* display: flex; */
+
+#slogan h2 {
+	margin: 0 auto;
+	margin-top: 50px;
+	font-family: "Lora";
+	font-size: 20px;
+	width: 70%;
+}
+
+ #slogan {
 	width: 600px;
 	margin: 0 auto;
-	margin-bottom: 50px;
 }
+
+#highlight {
+	margin: 0 auto;
+	position: relative;
+} 
+
+.control {
+	position: absolute;
+	bottom: 20px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+
 /* 
 #slogan img {
 	max-width: 600px;
@@ -74,10 +144,6 @@ p {
 	text-align: center;
 	margin: 0 auto;
 	font-size: 1.6em;
-}
-
-.content {
-	margin: 5em auto;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,7 +1,6 @@
 <script>
 	import { lang } from "$lib/stores";
 	import Nav from '$lib/Nav/index.svelte';
-	import Footer from '$lib/Footer/index.svelte';
 	import { navigating, page } from '$app/stores';
 	import '$lib/app.css';
 	import '$lib/medium.css';
@@ -62,4 +61,5 @@
 	<slot />
 </main>
 
-<Footer />
+
+

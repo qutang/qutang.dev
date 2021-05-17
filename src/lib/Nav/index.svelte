@@ -23,7 +23,8 @@ nav {
     display: flex;
     justify-content: space-between;
     position: fixed;
-    width: 100%;
+    width: 96%;
+    margin: 0 2%;
     z-index: 1;
     background: none;
 }

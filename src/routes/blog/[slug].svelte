@@ -29,6 +29,8 @@
   import { lang, navName } from '$lib/stores';
   import { toLocale } from '$lib/api/date';
   import { onMount } from 'svelte';
+  import Footer from "$lib/Footer/index.svelte";
+  import ScrollUp from "$lib/ScrollUpButton/index.svelte";
 
   let on_colab = post.src.includes('colab');
   let on_yuque = post.src.includes('yuque');
@@ -51,6 +53,8 @@
 	});
 
   navName.update(() => "blog");
+
+  let el;
 </script>
 <style>
   /*
@@ -61,7 +65,7 @@
 		so we have to use the :global(...) modifier to target
 		all elements inside .content
 	*/
-  .content {
+  .inner {
     max-width: 56em;
     margin: 5em auto;
   }
@@ -122,23 +126,29 @@
 </svelte:head>
 
 
-<div class="content">
-<h1>{post.title}</h1>
+<div class="content" bind:this={el}>
+  <div class="inner">
+    <h1>{post.title}</h1>
 
-<p class='meta'>
-  <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
-  <span class='date'>{toLocale(post.date, $lang == 'cn' ? 'zh-cn' : 'en')}</span> 
-  <span class='edit'><a href={post.src + '?translate=' + ($lang == 'cn' ? 'zh' : 'en')} rel='noopener' target="_blank" style='margin-top: 0'>{$lang == 'cn' ? edit_text_cn : edit_text_en}</a></span>
-</p>
+    <p class='meta'>
+      <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
+      <span class='date'>{toLocale(post.date, $lang == 'cn' ? 'zh-cn' : 'en')}</span> 
+      <span class='edit'><a href={post.src + '?translate=' + ($lang == 'cn' ? 'zh' : 'en')} rel='noopener' target="_blank" style='margin-top: 0'>{$lang == 'cn' ? edit_text_cn : edit_text_en}</a></span>
+    </p>
+    
+    <p class='license'>
+      {#if $lang == 'cn'}
+      <a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> 本作品采用<a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+      {:else}
+      <a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> 
+      This work is licensed under a <a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+      {/if}
+    </p>
+    
+      {@html post.html}
+  </div>
 
-<p class='license'>
-  {#if $lang == 'cn'}
-  <a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> 本作品采用<a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
-  {:else}
-  <a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> 
-  This work is licensed under a <a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-  {/if}
-</p>
+  <ScrollUp el={el} />
+  <Footer />
 
-  {@html post.html}
 </div>
