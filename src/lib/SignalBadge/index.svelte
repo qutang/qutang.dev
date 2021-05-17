@@ -3,10 +3,10 @@
     export let data;
     export let image;
     import * as d33 from "d3";
-    import { dev } from "$app/env";
+    import { dev, browser } from "$app/env";
 
     let d3;
-    if (dev) {
+    if (dev || browser) {
         d3 = d33;
     } else {
         d3 = d33.default;
@@ -14,7 +14,6 @@
 
     data = d3.csvParse(data);
 
-    
     const height = 320
     const width = 640
     const strokeWidth = 8;
