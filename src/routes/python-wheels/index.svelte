@@ -23,7 +23,7 @@
     <h2>{pack.title}</h2>
     <ul>
         {#each pack.wheels as wheel}
-            <li><a ref="external" href="{wheel.url}">{wheel.name}</a></li>
+            <li><a ref="external" href="https://qutang.dev{wheel.url}">{wheel.name}</a></li>
         {/each}
     </ul>
 {/each}
