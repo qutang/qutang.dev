@@ -46,7 +46,7 @@ import { onMount } from 'svelte';
 
 <svelte:head>
 	<title>
-		{$lang == 'cn' ? "唐曲 - 数据，机器学习，移动健康": "Qu Tang - share about data science, machine learning, mobile health"}
+		{$lang == 'cn' ? "移动、可穿戴、物联技术；人工智能；下一代健康医疗生活方式": "Mobile, wearable, and IoT technologies; Artificial intelligence; Health and lifestyle driven by AI."} | qutang.dev
 	</title>
 </svelte:head>
 

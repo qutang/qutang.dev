@@ -23,7 +23,8 @@
 </script>
 
 <svelte:head>
-	<title>{$lang == 'cn' ? '关于我' : "About"}</title>
+	<title>{$lang == 'cn' ? '关于我' : "About"} 
+	| qutang.dev</title>
 </svelte:head>
 
 <div class='content' bind:this={parallax}>

@@ -112,10 +112,21 @@
   }
 </style>
 
+<svelte:head>
+  <title>{$lang == 'cn' ? project.name.cn : project.name.en} | qutang.dev</title>
+</svelte:head>
+
+
 <div class="content" bind:this={el}>
 <div class='inner'>
   <p class='breadcumb'>
-    <a href="/">qutang.dev</a> | <a href="/projects">Other projects</a> | <a href={project.official || project.src} rel='noopener' target="_blank" >{project.official != null ? "Official site" : "GitHub Repo"}</a>
+    <a href="/">qutang.dev</a> | <a href="/projects">{$lang == 'cn' ? '其他项目' : 'Other projects'}</a> | <a href={project.official || project.src} rel='noopener' target="_blank" >
+      {#if $lang == 'cn'}
+        {project.official != null ? "官方网站" : "GitHub仓库"}
+      {:else}
+        {project.official != null ? "Official site" : "GitHub Repo"}
+      {/if}
+    </a>
     </p>
     
       {@html project.html}

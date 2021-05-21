@@ -91,7 +91,7 @@
 </style>
 
 <svelte:head>
-  <title>{$lang == 'cn' ? '唐曲-项目' : "Qu Tang - Projects"}</title>
+  <title>{$lang == 'cn' ? '技术项目' : "Projects"} | qutang.dev</title>
 </svelte:head>
 
 
@@ -106,7 +106,7 @@
 
 <ul>
   {#each projects as project}
-    <li><a sveltekit:prefetch href="/projects/{project.repo}">{project.name}</a> 
+    <li><a sveltekit:prefetch href="/projects/{project.repo}">{$lang == 'cn' ? project.name.cn : project.name.en}</a> 
       </li>
   {/each}
 </ul>

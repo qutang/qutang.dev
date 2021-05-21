@@ -98,7 +98,7 @@
 </style>
 
 <svelte:head>
-  <title>{$lang == 'cn' ? '唐曲的博客' : "Qu Tang's Blog"}</title>
+  <title>{$lang == 'cn' ? '博客' : "Blog"} | qutang.dev</title>
 </svelte:head>
 
 

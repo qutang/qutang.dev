@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Not found</title>
+	<title>Page not found | qutang.dev</title>
 </svelte:head>
 
 <div>

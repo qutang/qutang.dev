@@ -36,6 +36,7 @@
   import { lang, navName } from '$lib/stores';
   import colorsys from 'colorsys';
   import Footer from "$lib/Footer/index.svelte";
+import { HtmlTag } from 'svelte/internal';
 
   function toHex(str) {
     var result = '';
@@ -57,6 +58,8 @@
   }
 
   navName.update(() => 'project');
+
+  let tags;
 </script>
 
 <style>
@@ -192,7 +195,7 @@
 </style>
 
 <svelte:head>
-  <title>{$lang == 'cn' ? '唐曲-项目' : "Qu Tang - Projects"}</title>
+  <title>{$lang == 'cn' ? '技术项目' : "Projects"} | qutang.dev</title>
 </svelte:head>
 
 
@@ -205,13 +208,13 @@
     <ul>
       {#each projects as project}
         <li> 
-        <p><a sveltekit:prefetch href="/projects/{project.repo}">{project.name}</a></p>
+        <p><a sveltekit:prefetch href="/projects/{project.repo}">{$lang == 'cn' ? project.name.cn : project.name.en}</a></p>
         <p class='tags'>
-          {#each project.tags as tag}
+          {#each ($lang == 'cn' ? project.tags.cn : project.tags.en) as tag}
             <span class='tag' style={`background: ${randomColor(tag)};`}>{tag}</span>
           {/each}
         </p>
-         <p>{project.desc}</p>
+         <p>{$lang == 'cn' ? project.desc.cn : project.desc.en}</p>
         </li>
       {/each}
     </ul>
