@@ -8,13 +8,12 @@ This website supports,
 
 1. Internalization in Chinese.
 2. Netlify CMS.
-3. Netlify identity.
-4. Pagination.
-5. Mailchimp subscription.
-6. Post categorization.
-7. Sitemap + RSS.
-8. Local markdown and jupyter notebook files.
-9. Remote YuQue posts and github-hosted jupyter notebook files.
+3. Pagination.
+4. Mailchimp subscription.
+5. Post categorization.
+6. Sitemap + RSS.
+7. Local markdown and jupyter notebook files.
+8. Remote YuQue posts and github-hosted jupyter notebook files.
 
 **Disclaimer: The website is developed in harsh (literally THREE days), codes are not well organized. Use it with caution.**
 

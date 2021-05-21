@@ -11,8 +11,8 @@
 	},
 	"devDependencies": {
 		"@octokit/rest": "^18.5.3",
-		"@sveltejs/adapter-static": "next",
-		"@sveltejs/kit": "next",
+		"@sveltejs/adapter-static": "^1.0.0-next.11",
+		"@sveltejs/kit": "^1.0.0-next.109",
 		"@yuque/sdk": "^1.1.1",
 		"colorsys": "^1.0.22",
 		"eslint": "^7.22.0",

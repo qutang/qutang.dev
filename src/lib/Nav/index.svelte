@@ -1,5 +1,5 @@
 <script>
-import { GithubIcon, LogInIcon } from 'svelte-feather-icons'
+import { GithubIcon, LogInIcon, MessageSquareIcon } from 'svelte-feather-icons'
 import { lang, navName } from '$lib/stores';
 import yuqueSvg from './yuque.svg';
 
@@ -174,10 +174,10 @@ span.language:hover {
         <img src="{yuqueSvg}" alt="Yuque" />
     </a>
     </li>
-    <li>
-    <span onclick="window.open('/admin/')" style="cursor:pointer;display: inline-block;">
-    <LogInIcon size="24" />
-    </span>
+    <li class='extra-chat'>
+        <a href="/chat" target="_blank" rel="noopener" style="display: inline-block;" title={$lang=="cn" ? "加入聊天群和小伙伴们愉快交流" : "Join the happy community chat"}>
+        <MessageSquareIcon size="24" />
+        </a>
     </li>
 </ul>
 </nav>

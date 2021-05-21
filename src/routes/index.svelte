@@ -48,11 +48,6 @@ import { onMount } from 'svelte';
 	<title>
 		{$lang == 'cn' ? "唐曲 - 数据，机器学习，移动健康": "Qu Tang - share about data science, machine learning, mobile health"}
 	</title>
-	<script
-		defer
-		type="text/javascript"
-		src="https://identity.netlify.com/v1/netlify-identity-widget.js">
-	</script>
 </svelte:head>
 
 <div class="content" bind:this={parallax} on:mousemove={() => clearTimeout(id)} >
@@ -62,7 +57,10 @@ import { onMount } from 'svelte';
 			<div id="slogan">
 				<Badge data={data} image={image} />
 				<h2>
-					Researcher, developer, and enthusiast in mobile technologies, health, and artificial intelligence.
+					{
+						$lang == 'cn' ? "热衷于探索移动、物联、可穿戴技术，以及人工智能在医疗、健康、生活方式上带来的变革。" : "Researcher, developer, and enthusiast in mobile technologies, health, and artificial intelligence."
+					}
+					
 				</h2>
 			</div>
 			<div class='control'>
