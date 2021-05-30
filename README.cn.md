@@ -7,14 +7,15 @@ If you are reading this page on Github, click here for [English](https://github.
 本网站支持，
 
 1. 中英文切换。
-2. Netlify内容管理系统。
-3. Netlify身份管理系统。
-4. 分页。
-5. Mailchimp订阅。
-6. 博文分类页。
-7. 网站地图和RSS订阅。
-8. 本地Markdown文件和Jupyter笔记本的导入。
-9. 云端语雀文档和单独Github仓库中的Jupyter笔记本的导入。
+2. 分页。
+3. Mailchimp订阅。
+4. 博文分类页。
+5. 网站地图和RSS订阅。
+6. 本地Markdown文件和Jupyter笔记本的导入。
+7. 云端语雀文档和单独Github仓库中的Jupyter笔记本的导入。
+8. 任意Github仓库的README页导入。
+9.  **NEW!** 深色模式切换。
+10. **NEW!** 即使关闭页面，网站语言和颜色模式也会保存。
 
 **免责声明：该网站是在很短时间内（不到三天）开发的。代码的组织结构可能不够好，请谨慎使用。**
 

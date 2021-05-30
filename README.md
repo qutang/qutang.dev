@@ -7,13 +7,15 @@ The website hosts my projects, posts and contact information. It is built using 
 This website supports,
 
 1. Internalization in Chinese.
-2. Netlify CMS.
-3. Pagination.
-4. Mailchimp subscription.
-5. Post categorization.
-6. Sitemap + RSS.
-7. Local markdown and jupyter notebook files.
-8. Remote YuQue posts and github-hosted jupyter notebook files.
+2. Pagination.
+3. Mailchimp subscription.
+4. Post categorization.
+5. Sitemap + RSS.
+6. Local markdown and jupyter notebook files.
+7. Remote YuQue posts and github-hosted jupyter notebook files.
+8. Remote github-hosted project README pages.
+9. **NEW!** Switch between light and dark color mode.
+10. **NEW!** Persist language and color mode settings.
 
 **Disclaimer: The website is developed in harsh (literally THREE days), codes are not well organized. Use it with caution.**
 
