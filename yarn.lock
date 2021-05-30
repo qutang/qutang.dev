@@ -1918,15 +1918,15 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-svelte-feather-icons@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/svelte-feather-icons/-/svelte-feather-icons-3.3.0.tgz#77789da8f96c087ce20ff9dd6cb02b9df02928cf"
-  integrity sha512-9zlgrWK34YXDjvYgvjHG0HFhol5FrapK0VEiZEUN0m2iUpifqMefLojBhAxB+zSh7lK3TohvIJBoqhFTZtgljA==
-
 svelte-hmr@^0.14.2:
   version "0.14.4"
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.4.tgz#b7ef2bfeef23916e0e912828c50645ca572ac355"
   integrity sha512-kItFF7vqzStckSigoFmMnxJpTOdB9TWnQAW6Js+yAB4277tLbJIIE5KBlGHNmJNpA7MguqidsPB27Uw5UzQPCA==
+
+svelte-icons@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/svelte-icons/-/svelte-icons-2.1.0.tgz#6f2ec72f1d5c8b2de1a4b8a822c95bcb2f701aca"
+  integrity sha512-rHPQjweEc9fGSnvM0/4gA3pDHwyZyYsC5KhttCZRhSMJfLttJST5Uq0B16Czhw+HQ+HbSOk8kLigMlPs7gZtfg==
 
 svelte-parallax@^0.2.7:
   version "0.2.7"

@@ -45,18 +45,19 @@
         .y(d => y(d.r_acc_z))
 </script>
 
-<div class='text'><pre><span class='blue'>Wash</span>
-    <span class='gold'>&#8201;hands</span> regularly:</pre></div>
+
 <div class="graph">
-    <div class='signal'>
+    <div class='plot'>
         <svg viewBox="0 0 {width} {height}">
             <path d="{acc_x_line(data)}" fill="none" stroke="steelblue" stroke-width="{strokeWidth}" stroke-miterlimit="1"></path>
             <path d="{acc_y_line(data)}" fill="none" stroke="gold" stroke-width="{strokeWidth}" stroke-miterlimit="1"></path>
             <path d="{acc_z_line(data)}" fill="none" stroke="indianred" stroke-width="{strokeWidth}" stroke-miterlimit="1"></path>
         </svg>
     </div>
-    <img src="{image}" alt="">
-    <div class='signal'>
+    <div class="plot">
+        <img src="{image}" alt="">
+    </div>
+    <div class='plot'>
         <svg viewBox="0 0 {width} {height}">
             <path d="{r_acc_x_line(data)}" fill="none" stroke="steelblue" stroke-width="{strokeWidth}" stroke-miterlimit="1"></path>
             <path d="{r_acc_y_line(data)}" fill="none" stroke="gold" stroke-width="{strokeWidth}" stroke-miterlimit="1"></path>
@@ -69,45 +70,19 @@
 <style>
 	svg {
 		width: 100%;
-        margin: 0 auto;
 	}
 
     div.graph {
         display: flex;
     }
 
-    div.signal {
+    div.plot {
         margin-top: 40px;
     }
 
-    div.text {
-        font-size: 24px;
-        margin: 0;
-        color: forestgreen;
-    }
-
-    div.text pre {
-        margin: 0;
-    }
-
-    div.text span.blue {
-        color: steelblue;
-    }
-
-    div.text span.gold {
-        color: goldenrod;
-    }
-
-    @media only screen and (max-width: 600px) {
-        div.signal {
-            margin-top: 30px;
-        }
-    }
-
-    div.graph img {
-        width: 25%;
+    div.plot img {
+        width: 160px;
         height: auto;
-        flex: 1;
         box-shadow: none;
     }
 </style>

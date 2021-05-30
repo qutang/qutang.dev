@@ -1,184 +1,220 @@
 <script>
-import { GithubIcon, LogInIcon, MessageSquareIcon } from 'svelte-feather-icons'
-import { lang, navName } from '$lib/stores';
-import yuqueSvg from './yuque.svg';
+	import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
+    import TiMessages from 'svelte-icons/ti/TiMessages.svelte';
+    import IoMdMoon from 'svelte-icons/io/IoMdMoon.svelte';
+    import IoMdSunny from 'svelte-icons/io/IoMdSunny.svelte';
+	import { lang, navName, scheme } from '$lib/stores';
+	import i18n from '$lib/i18n';
 
-function switchLang() {
-    lang.update(value => {
-    if (value == 'en') {
-        value = 'cn'
-    } else {
-        value = 'en'
+	function switchLang() {
+        var value = localStorage.getItem("lang");
+        if (value == 'en') {
+            localStorage.setItem("lang", "cn");
+            lang.update(() => "cn");
+        } else {
+            localStorage.setItem("lang", "en");
+            lang.update(() => "en");
+        }
+	}
+
+    function switchScheme() {
+        var value = localStorage.getItem("scheme");
+        if (value === "dark") {
+            localStorage.setItem("scheme", "light");
+            scheme.update(() => "light");
+        } else {
+            localStorage.setItem("scheme", "dark");
+            scheme.update(() => "dark");
+        }
     }
-    return value;
-    });
-}
 </script>
 
+<header>
+	<nav>
+		<ul class="left-nav">
+            <li>
+                <h1>{i18n['owner']['en']}</h1>
+            </li>
+			<li>
+                <a class="website-name" sveltekit:prefetch class:selected={$navName === ''} href="/"> @qutang.dev</a>
+			</li>
+
+			<li>
+				<a sveltekit:prefetch class:selected={$navName === 'blog'} href="/blog"
+					>{i18n['blog'][$lang]}</a
+				>
+			</li>
+			<li>
+				<a sveltekit:prefetch class:selected={$navName === 'about'} href="/about"
+					>{i18n['about'][$lang]}</a
+				>
+			</li>
+			<li>
+                <a class="button subscribe" href="http://eepurl.com/gEVgL9" rel="noopener" target="_blank">
+                    {i18n['mailing_list'][$lang]}
+                </a>
+			</li>
+		</ul>
+
+		<ul class="right-nav">
+            <li>
+                <span class="scheme" on:click={switchScheme}>
+                    {#if $scheme === "dark"} 
+                    <span class="icon" title={i18n['light_scheme_alt_text'][$lang]}><IoMdSunny /></span>
+                    {:else}
+                    <span class="icon" title={i18n['dark_scheme_alt_text'][$lang]}><IoMdMoon /></span>
+                    {/if} 
+                </span>
+			</li>
+			<li>
+                <span class="button language" on:click={switchLang}>{i18n["lang_button_text"][$lang]}</span>
+			</li>
+			<li class="extra-github">
+				<a href="https://github.com/qutang" target="_blank" rel="noopener">
+					<span class="icon"><FaGithub /></span>
+				</a>
+			</li>
+			<li class="extra-chat">
+				<a href="/chat" target="_blank" rel="noopener" title={i18n['chat_alt_text'][$lang]}>
+					<span class="icon"><TiMessages /></span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+
 <style>
-nav {
-    /* border-bottom: 1px solid rgba(255, 62, 0, 0.1); */
-    font-weight: 300;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    width: 96%;
-    margin: 0 2%;
-    z-index: 1;
-    background: none;
-}
 
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-ul.main-nav {
-    align-self: flex-start;
-    background: white;
-    border-radius: 5px;
-}
-
-ul.extra-nav {
-    align-self: flex-end;
-    margin-right: 1em;
-    background: white;
-    border-radius: 5px;
-}
-
-/* clearfix */
-ul::after {
-    content: "";
-    display: block;
-    /* clear: both; */
-}
-
-li {
-    float: left;
-    display: block;
-    margin-top: 0em;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.selected {
-    position: relative;
-    display: inline-block;
-}
-
-.selected::after {
-    position: absolute;
-    content: "";
-    width: calc(100% - 1em);
-    height: 3px;
-    background-color: #32aaee;
-    display: block;
-    bottom: -1px;
-}
-
-a, span {
-    margin-top: 0em;
-    text-decoration: none;
-    padding: 1em 0.5em;
-    display: block;
-    font-family: Arial;
-    text-transform: capitalize;
-}
-
-a > img {
-    width: 26px;
-    height: auto;
-}
-
-.subscribe {
-    background: lightcoral;
-    padding: 0.2em 0.4em;
-    margin: 1.05em 0.3em;
-    border-radius: 5px;
-    font-size: 0.9em;
-    color: white;
-}
-
-.subscribe:hover{
-    filter: brightness(120%);
-}
-
-span.language {
-    background: lightblue;
-    font-weight:bolder;
-    margin:1em 0.5em;
-    padding: 0em 0.3em;
-    padding-top: 0.1em;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-}
-
-span.language:hover {
-    filter: contrast(105%);
-}
-
-@media screen and (max-width: 600px) {
-    nav {
-    background: white;
+    header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        font-size: 1.2rem;
+        z-index: 1;
     }
-    li, a {
-    font-size: 17px;
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+        background: var(--background-alt);
+        margin: 0;
+        padding: 10px 20px;
+	}
+ 
+	ul {
+		margin: 0;
+		padding: 0;
+        display: flex;
+        align-content: center;
+	}
+
+    li {
+        align-self: center;
+		display: block;
+		margin: 0 0.5em;
+        padding: 0;
+        font-weight: bold;
+	}
+
+    a, .icon {
+        color: var(--text-muted);
+        text-transform: capitalize;
     }
-    .extra-nav li {
-    display: none;
+
+    a:hover, .icon:hover {
+        color: var(--text-bright);
+        text-decoration: none;
     }
-    .extra-nav li:first-child {
-    display: inline-block;
+
+    .website-name {
+        text-transform: none;
     }
-}
+
+    h1 {
+        display: inline-block;
+        font-size: 2.5em;
+        font-family: "Shopping Script";
+        margin: 0;
+        padding: 0;
+    }
+
+    .button {
+        color: white;
+    }
+
+    .button:hover {
+        color: white;
+    }
+
+    .subscribe {
+		background: rgb(233, 85, 75);
+	}
+
+    .language {
+		background: var(--focus);
+	}
+
+	.language:hover {
+		filter: contrast(110%);
+	}
+
+    .scheme .icon {
+        color: var(--scheme-color);
+    }
+
+	.selected {
+		color: var(--text-main);
+	}
+
+    @media screen and (max-width: 1024px) {
+        header {
+            font-size: 1rem;
+        }
+    }
+	
+
+	@media screen and (max-width: 700px) {
+        header {
+            font-size: 0.85rem;
+        }
+		.right-nav li {
+			display: none;
+		}
+		.right-nav li:first-child {
+			display: block;
+		}
+
+        .right-nav li:nth-child(2) {
+			display: block;
+		}
+	}
+
+    @media screen and (max-width: 610px) {
+        nav {
+            padding: 20px 20px;
+        }
+        .left-nav li:first-child {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        header {
+            font-size: 0.75rem;
+        }
+        nav {
+            padding: 20px 5px;
+        }
+        
+    }
+
+    @media screen and (max-width: 340px) {
+        header {
+            font-size: 0.65rem;
+        }
+        nav {
+            padding: 20px 5px;
+        }
+        
+    }
 </style>
-
-<nav id='nav'>
-<ul class='main-nav {$lang == 'cn' ? "bold": "normal"}'>
-    <li>
-    <a sveltekit:prefetch class:selected={$navName === ''} href="/">{$lang == 'cn' ? "首页":"home"}</a>
-    </li>
-    
-    <li>
-    <a sveltekit:prefetch class:selected={$navName === 'blog'} href="/blog">{$lang == 'cn' ? "博客":"blog"}</a>
-    </li>
-    <li>
-    <a sveltekit:prefetch class:selected={$navName === 'about'} href="/about">{$lang == 'cn' ? "关于我":"about"}</a>
-    </li>
-    <li>
-    <a class='subscribe' href='http://eepurl.com/gEVgL9' rel="noopener" target='_blank'>{$lang == 'cn' ? "邮件订阅":"subscribe"}</a>
-    </li>
-</ul>
-
-
-
-<ul class='extra-nav'>
-    <li>
-    {#if $lang == "en"}
-        <span class='language' style="font-weight: bold" on:click={switchLang}>中</span>
-    {:else}
-        <span class='language' style="font-weight: bolder" on:click={switchLang}>EN</span>
-    {/if}
-    </li>
-    <li class='extra-github'>
-    <a href="https://github.com/qutang" target="_blank" rel="noopener" style="display: inline-block;">
-    <GithubIcon size="24" />
-    </a>
-    </li>
-    <li>
-    <a href="https://www.yuque.com/qutang" target='_blank' rel="noopener" style="display: inline-block;">
-        <img src="{yuqueSvg}" alt="Yuque" />
-    </a>
-    </li>
-    <li class='extra-chat'>
-        <a href="/chat" target="_blank" rel="noopener" style="display: inline-block;" title={$lang=="cn" ? "加入聊天群和小伙伴们愉快交流" : "Join the happy community chat"}>
-        <MessageSquareIcon size="24" />
-        </a>
-    </li>
-</ul>
-</nav>
-  

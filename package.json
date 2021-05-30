@@ -32,7 +32,7 @@
 		"prettier": "~2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
 		"svelte": "^3.34.0",
-		"svelte-feather-icons": "^3.3.0",
+		"svelte-icons": "^2.1.0",
 		"svelte-parallax": "^0.2.7",
 		"svelte-preprocess-markdown": "^2.7.3"
 	},

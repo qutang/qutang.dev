@@ -5,17 +5,8 @@
 
 
 {#each content as section}
-    <h2 id="{section.anchor}"><b>{$lang == 'cn' ? section.title.cn : section.title.en}</b></h2>
+    <h2 id="{section.anchor}"><b>{section.title[$lang]}</b></h2>
     <div>
-        {@html $lang == 'cn' ? section.content.cn : section.content.en}
+        {@html section.content[$lang]}
     </div>
 {/each}
-
-<style>
-    h2 {
-        text-align: center;
-        font-size: 36px;
-        font-family: "Lora", sans-serif;
-        margin: 1em auto;
-    }
-</style>

@@ -1,0 +1,8 @@
+/* latin-ext */
+@font-face {
+	font-family: 'Shopping Script';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(/css/shopping_script.ttf) format('truetype');
+}

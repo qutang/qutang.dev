@@ -1,237 +1,135 @@
 <script context="module">
-  export async function load({ page, fetch, session, context }) {
-    console.log('Start fetching projects...')
-    const url = `/projects.json`;
-    const res = await fetch(url);
-    const data = await res.json();
-    const projects = data.projects.filter(
-      project => {
-          return project.page == "1";
-        }
-    );
-    console.log('Stop fetching projects...');
-    if (res.ok) {
-      return {
-        props: {
-          projects: projects, 
-          page: 1, 
-          totalPages: data.totalPages
-        }
-      }
-    }
+	export async function load({ page, fetch, session, context }) {
+		console.log('Start fetching projects...');
+		const url = `/projects.json`;
+		const res = await fetch(url);
+		const data = await res.json();
+		const projects = data.projects.filter((project) => {
+			return project.page == '1';
+		});
+		console.log('Stop fetching projects...');
+		if (res.ok) {
+			return {
+				props: {
+					projects: projects,
+					page: 1,
+					totalPages: data.totalPages
+				}
+			};
+		}
 
-    return {
-      status: res.status,
-      error: new Error(`Could not load ${url}`)
-    }
-  }
+		return {
+			status: res.status,
+			error: new Error(`Could not load ${url}`)
+		};
+	}
 
-  export const prerender = true;
+	export const prerender = true;
 </script>
 
 <script>
-  export let projects;
-  export let page;
-  export let totalPages;
-  import { lang, navName } from '$lib/stores';
-  import colorsys from 'colorsys';
-  import Footer from "$lib/Footer/index.svelte";
-import { HtmlTag } from 'svelte/internal';
+	export let projects;
+	import { lang, navName } from '$lib/stores';
+  import i18n from "$lib/i18n";
+	import colorsys from 'colorsys';
+  import { browser } from "$app/env";
+	function toHex(str) {
+		var result = '';
+		for (var i = 0; i < str.length; i++) {
+			result += str.charCodeAt(i).toString(16);
+		}
+		return result;
+	}
 
-  function toHex(str) {
-    var result = '';
-    for (var i=0; i<str.length; i++) {
-      result += str.charCodeAt(i).toString(16);
-    }
-    return result;
-  }
+	function randomColor(data) {
+		var encoded = toHex(data);
+		if (encoded.length < 10) {
+			encoded = encoded.repeat(5);
+		}
+		var hh = parseInt(encoded.substring(1, 3), 16);
+		var ss = parseInt(encoded.substring(4, 6), 16) / 255;
+		var vv = (parseInt(encoded.substring(6, 8), 16) / 255) * 0.5 + 0.5;
+		return colorsys.stringify(colorsys.hsv2Rgb({ h: hh, s: ss * 100, v: vv * 100 }));
+	}
 
-  function randomColor(data) {
-    var encoded = toHex(data);
-    if (encoded.length < 10) {
-      encoded = encoded.repeat(5);
-    }
-    var hh = parseInt(encoded.substring(1, 3), 16);
-    var ss = parseInt(encoded.substring(4, 6), 16) / 255;
-    var vv = parseInt(encoded.substring(6, 8), 16) / 255 * 0.5 + 0.5;
-    return colorsys.stringify(colorsys.hsv2Rgb({h: hh, s: ss * 100, v: vv * 100}));
-  }
-
-  navName.update(() => 'project');
-
-  let tags;
+	navName.update(() => 'project');
+  if (browser) {
+		lang.update(() => localStorage.getItem("lang"));
+	}
 </script>
+
+<svelte:head>
+	<title>{i18n['projects'][$lang]} | qutang.dev</title>
+</svelte:head>
+
+<section class="container">
+		<h2>
+			{i18n['projects'][$lang]}
+		</h2>
+    {#each projects as project}
+      <hr>
+      <article>
+        <h3>
+          <a sveltekit:prefetch href="/projects/{project.repo}"
+            >{project.name[$lang]}</a
+          >
+        </h3>
+        <section class="tags">
+          {#each $lang == 'cn' ? project.tags.cn : project.tags.en as tag}
+            <span class="tag" style={`background: ${randomColor(tag)};`}>{tag}</span>
+          {/each}
+        </section>
+        <p>{project.desc[$lang]}</p>
+      </article>
+
+    {/each}
+</section>
 
 <style>
 
-  .inner {
-    max-width: 90em;
-    margin: 10em auto 5em auto;
-  }
-  ul {
-    margin: 0 0 1em 0;
-    line-height: 1.5;
-  }
-  .pagination-previous {
-    float: left;
+  .container {
+    margin: 120px auto;
+    max-width: 600px;
+    height: inherit;
+    display: block;
   }
 
-  #highlight-heading {
-    font-size: 36px;
-  }
-
-  .pagination-next {
-    float: right;
-  }
-
-  .inner h1 {
+  h2 {
     text-align: center;
-    margin: 0 auto;
-    font-size: 1.6em;
-    font-family: "Lora";
+    margin-bottom: 2em;
   }
 
-
-
-  @media screen and (max-width:600px) {
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    .inner {
-      margin: 3em auto 2em auto;
-    }
-     
-  }
-
-
-  @media screen and (min-width: 1024px) {
-    ul {
-      max-width: 80em;
-      margin: 0 auto;
-    }
-    li {
-      width: 18em;
-      padding: 0.5em 1em;
-      margin-top: 0;
-    }
-  }
-
-  @media only screen and (max-width: 600px) {
-    ul {
-      width: 100%;
-      margin: 0 auto;
-    }
-    li {
-      padding: 0;
-      margin-top: 0;
-    }
-  }
-  ul{
-    display: flex;
-    width: 100%;
-    list-style-type: none;
-    justify-content: space-evenly;
-    align-content: flex-start;
-    margin: 0 auto;
-    padding-left: 0;
-    flex-wrap: wrap;
-  }
-
-  
-
-  li p {
-    font-size: 0.7em;
-    text-align: justify;
-    word-break: normal;
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    margin: 0.5em 0;
-    color: gray;
-  }
-
-  li>p:first-child {
-    text-align: center;
-    word-break: normal;
-  }
-
-  li>:first-child, li>:first-child a {
-    font-size: 22px;
-    font-family: Arial;
-    text-align: center;
-  }
-
-  li a {
-    font-family: Arial;
-    text-decoration: none;
-  }
-
-  li a:hover{
-    text-decoration: underline;
-  }
-
-  li :nth-child(n+2) {
-    font-family: Arial;
+  h3 {
+    margin-bottom: 0;
   }
 
   .tags {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    height: inherit;
+    display: block;
+    line-height: 1.5em;
+    text-align: left;
   }
 
   .tag {
-    margin: 0.1em 0.3em;
-    padding: 0.3em 0.5em;
-    border-radius: 5px;
     color: white;
-    word-wrap: normal;   
+    margin-left: 0;
+    padding: 0.05em 0.2em;
+    margin: 0.05em 0.15em;
+    border-radius: 3px;
+    font-size: 0.9em;
   }
 
+  @media screen and (max-width: 700px) {
+    .container {
+      margin: 0 auto;
+      max-width: 90%;
+      height: inherit;
+      display: block;
+    }
+
+    .tags {
+      width: 100%;
+      word-wrap: normal;
+    }
+  }
 </style>
-
-<svelte:head>
-  <title>{$lang == 'cn' ? '技术项目' : "Projects"} | qutang.dev</title>
-</svelte:head>
-
-
-<div class='content'>
-  <div class='inner'>
-    <h1 id="highlight-heading">
-      <strong>{$lang == "cn" ? "项目" : "Projects."}</strong>
-    </h1>
-  
-    <ul>
-      {#each projects as project}
-        <li> 
-        <p><a sveltekit:prefetch href="/projects/{project.repo}">{$lang == 'cn' ? project.name.cn : project.name.en}</a></p>
-        <p class='tags'>
-          {#each ($lang == 'cn' ? project.tags.cn : project.tags.en) as tag}
-            <span class='tag' style={`background: ${randomColor(tag)};`}>{tag}</span>
-          {/each}
-        </p>
-         <p>{$lang == 'cn' ? project.desc.cn : project.desc.en}</p>
-        </li>
-      {/each}
-    </ul>
-  
-    <p class='pagination'>
-    {#if page > 1}
-      <a href="/projects/page/{page - 1}" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
-    {:else if page == 2}
-    <a href="/projects/" class='pagination-previous'>{$lang == 'cn' ? "上一页" : "Previous page"}</a>
-    {/if}
-  
-    {#if page < totalPages}
-      <a href="/projects/page/{page + 1}" class='pagination-next'>{$lang == 'cn' ? "下一页" : "Next page"}</a>
-    {/if}
-    </p>
-  </div>
-  
-  <Footer />
-</div>
-

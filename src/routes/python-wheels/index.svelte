@@ -6,8 +6,7 @@
     <title>Python Wheels | qutang.dev</title>
 </svelte:head>
 
-<p><a href="/">Back to qutang.dev</a></p>
-
+<article>
 <h1>Python binary wheels for Windows</h1>
 <p>A partial linkable list of python wheels for Windows, migrated from <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">https://www.lfd.uci.edu/~gohlke/pythonlibs/</a>.</p>
 
@@ -27,3 +26,18 @@
         {/each}
     </ul>
 {/each}
+</article>
+
+<style>
+    article {
+        max-width: 600px;
+        margin: 120px auto;
+    }
+
+    @media screen and (max-width: 700px) {
+        article {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    }
+</style>

@@ -1,21 +1,20 @@
 <script>
   import { lang } from "$lib/stores";
-  import "./index.css";
   import content from "$lib/Home/_content.json";
 </script>
 
 <ul>
   {#each content as item}
 	<li>
-		<h2 class="{$lang == "cn" ? "smaller-font": ""}">
+		<h3>
       {#if item.url != null}
-        <a href="{item.url}" class="{$lang == "cn" ? "smaller-font": ""}">{$lang == 'cn' ? item.title.cn: item.title.en}</a> {item.icon}
+        <a href="{item.url}">{item.title[$lang]}</a> {item.icon}
       {:else}
-        {$lang == 'cn' ? item.title.cn: item.title.en} {item.icon}
+        {item.title[$lang]} {item.icon}
       {/if}
-    </h2>
+    </h3>
 		<p>
-			{@html $lang == 'cn' ? item.description.cn: item.description.en}
+			{@html item.description[$lang]}
 		</p>
 	</li>
   {/each}

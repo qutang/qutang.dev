@@ -1,153 +1,114 @@
 <script context="module">
-    export async function load({ page, fetch, session, context }) {
-        const filePath = '/badges/rubbing_palms.csv';
+	export async function load({ page, fetch, session, context }) {
+		const filePath = '/badges/rubbing_palms.csv';
 		const imageUrl = '/badges/rubbing_palms.png';
-        const data = await fetch(filePath);
-        const content = await data.text();
-        return {
-            props: {
-                data: content,
+		const data = await fetch(filePath);
+		const content = await data.text();
+		return {
+			props: {
+				data: content,
 				image: imageUrl
-            }
-        }
-    }
+			}
+		};
+	}
 	export const prerender = true;
 </script>
 
 <script>
 	export let data;
 	export let image;
-	import ScrollUp from '$lib/ScrollUpButton/index.svelte'
-	import ScrollDown from '$lib/ScrollDownButton/index.svelte'
-	import Footer from '$lib/Footer/index.svelte'
-	// import coverUrl from "$lib/Home/index_cover.png";
-	import Badge from "$lib/SignalBadge/index.svelte";
-	import { lang, navName } from "$lib/stores";
-	import Home from "$lib/Home/index.svelte";
-import { onMount } from 'svelte';
-	// import { Parallax, ParallaxLayer } from 'svelte-parallax';
-	// import { onMount } from 'svelte';
-	// import { beforeUpdate } from 'svelte';
-	let parallax;
-	navName.update(() => "");
-	let id;
-	onMount(() => {
-		id = setTimeout(() => {
-			console.log('fire');
-			parallax.scrollBy(0, 100);
-		}, 2000);
-
-		window.ontouchstart = () => {
-			clearTimeout(id);
-		};
-	});
-	
+	import IoMdArrowRoundDown from 'svelte-icons/io/IoMdArrowRoundDown.svelte'
+	import IoMdArrowRoundUp from 'svelte-icons/io/IoMdArrowRoundUp.svelte'
+	import Badge from '$lib/SignalBadge/index.svelte';
+	import { lang, navName } from '$lib/stores';
+	import { browser } from "$app/env";
+	import Home from '$lib/Home/index.svelte';
+	import i18n from "$lib/i18n";
+	navName.update(() => '');
+	if (browser) {
+		lang.update(() => localStorage.getItem("lang"));
+	}
 </script>
 
 <svelte:head>
 	<title>
-		{$lang == 'cn' ? "移动、可穿戴、物联技术；人工智能；下一代健康医疗生活方式": "Mobile, wearable, and IoT technologies; Artificial intelligence; Health and lifestyle driven by AI."} | qutang.dev
+		{i18n["home_title"][$lang]} | qutang.dev
 	</title>
 </svelte:head>
 
-<div class="content" bind:this={parallax} on:mousemove={() => clearTimeout(id)} >
-	<!-- <Parallax sections={2} config={{stiffness: 0.2, damping: 0.3}} bind:this={parallax}> -->
-		<!-- <ParallaxLayer rate={0} offset={0}> -->
-		<div class='section'>
-			<div id="slogan">
-				<Badge data={data} image={image} />
-				<h2>
-					{
-						$lang == 'cn' ? "热衷于探索移动、物联、可穿戴技术，以及人工智能在医疗、健康、生活方式上带来的变革。" : "Researcher, developer, and enthusiast in mobile technologies, health, and artificial intelligence."
-					}
-					
-				</h2>
-			</div>
-			<div class='control'>
-				<ScrollDown el={parallax} />
-			</div>
-			
-		</div>
-			
-		<!-- </ParallaxLayer> -->
-		<!-- <ParallaxLayer rate={0} offset={1}> -->
-		<div class='section'>
-			<div id="highlight">
-				<p id="highlight-heading">
-					<strong>{$lang == "cn" ? "重点项目" : "Highlights."}</strong>
-				</p>
-				<Home />
-			</div>
-			<div class='control'>
-				<ScrollUp el={parallax} />
-			<Footer />
-			</div>
-			
-		</div>
-			
-		<!-- </ParallaxLayer> -->
-	<!-- </Parallax> -->
-	<!-- <div class="section" id="section-slogan">
-		<img src="{coverUrl}" alt="">
-		
-	</div> -->
-	
-	<!-- <div class="section" id="section-highlight">
-		
-	</div> -->
-</div>
+<section id="showcase">
+	<pre><span class='blue'>Wash</span><span class='gold'>&#8201;hands</span> regularly:</pre>
+	<Badge {data} {image} />
+	<h2>
+		{i18n['home_slogan'][$lang]}
+	</h2>
+	<div class="control">
+		<a href="/#highlight" class="icon"><IoMdArrowRoundDown /></a>
+	</div>
+</section>
+<section id="highlight">
+	<h2>
+		{i18n['home_highlight_title'][$lang]}
+	</h2>
+	<Home />
+	<div class="control">
+		<a href="/#showcase" class="icon"><IoMdArrowRoundUp /></a>
+	</div>
+</section>
+
 
 <style>
 
-#slogan h2 {
-	margin: 0 auto;
-	margin-top: 50px;
-	font-family: "Lora";
-	font-size: 20px;
-	width: 70%;
-}
+	#showcase, #highlight {
+		scroll-snap-type: y mandatory;
+	}
 
- #slogan {
-	width: 600px;
-	margin: 0 auto;
-}
+	h2 {
+		margin: 0 auto;
+		max-width: 600px;
+		text-align: center;
+	}
 
-#highlight {
-	margin: 0 auto;
-	position: relative;
-} 
+	#showcase h2 {
+		margin-top: 50px;
+	}
 
-.control {
-	position: absolute;
-	bottom: 20px;
-	margin-bottom: 10px;
-	width: 100%;
-}
+	.control {
+		text-align: center;
+		position: absolute;
+		bottom: 60px;
+		width: 100%;
+	}
 
+	pre {
+        margin: 0 0;
+		padding: 0;
+		color: forestgreen;
+		font-size: 1.8em;
+		position: relative;
+		left: -200px;
+    }
 
-/* 
-#slogan img {
-	max-width: 600px;
-	height: auto;
-	box-shadow: none;
-	display: block;
-	margin: 0 auto;
-} */
+    .blue {
+        color: steelblue;
+    }
 
-#highlight-heading {
-	font-size: 36px;
-}
+    .gold {
+        color: goldenrod;
+    }
 
-p {
-	text-align: center;
-	margin: 0 auto;
-	font-size: 1.6em;
-}
+	@media screen and (max-width: 700px) {
 
-@media only screen and (max-width: 600px) {
-	/* #slogan img {
-	max-width: 100%;
-	} */
-}
+		pre {
+			left: 0;
+			position: static;
+			align-self: flex-start;
+		}
 
+		.control {
+			display: none;
+		}
+	}
+
+	
 </style>

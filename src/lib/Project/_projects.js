@@ -1,6 +1,6 @@
 import githubClient from "$lib/api/github";
 
-const posts_per_page = 6;
+const posts_per_page = 100;
 
 const PROJECTS = [
   {

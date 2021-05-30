@@ -1,63 +1,99 @@
 <script context="module">
-  export async function load({ page, fetch, session, context }) {
-    // the `slug` parameter is available because
-    // this file is called [slug].svelte
-    const url = `/blog/${page.params.slug}.json`;
-    const res = await fetch(url);
-    const data = await res.json();
-    if (res.ok) {
-      return { 
-        props: {
-          post: data.post
-        } 
-      };
-    } else {
-      return {
-        status: res.status,
-        error: new Error(`Could not load ${url}`)
-      }
-    }
-  }
+	export async function load({ page, fetch, session, context }) {
+		// the `slug` parameter is available because
+		// this file is called [slug].svelte
+		const url = `/blog/${page.params.slug}.json`;
+		const res = await fetch(url);
+		const data = await res.json();
+		if (res.ok) {
+			return {
+				props: {
+					post: data.post
+				}
+			};
+		} else {
+			return {
+				status: res.status,
+				error: new Error(`Could not load ${url}`)
+			};
+		}
+	}
 
-  export const prerender = true;
+	export const prerender = true;
 </script>
 
 <script>
-  export let post;
-  
-  import series from '$lib/Blog/_series';
-  import { lang, navName } from '$lib/stores';
-  import { toLocale } from '$lib/api/date';
-  import { onMount } from 'svelte';
-  import Footer from "$lib/Footer/index.svelte";
-  import ScrollUp from "$lib/ScrollUpButton/index.svelte";
+	export let post;
 
-  let on_colab = post.src.includes('colab');
-  let on_yuque = post.src.includes('yuque');
-  let edit_where = on_colab ? "Colab" : "Github";
-  edit_where = on_yuque ? "语雀" : edit_where;
-  const edit_text_cn = "在" + edit_where + "查看或编辑本文";
-  const edit_text_en = "View/edit this page on " + edit_where;
+	import series from '$lib/Blog/_series';
+	import { lang, navName } from '$lib/stores';
+	import { toLocale } from '$lib/api/date';
+	import { onMount } from 'svelte';
+	import { browser } from "$app/env";
 
-  onMount(async () => {
-		const sysLang = window.userLanguage || window.navigator.language;
-    const value = sysLang.includes('zh') ? 'cn' : 'en';
+	let on_colab = post.src.includes('colab');
+	let on_yuque = post.src.includes('yuque');
+	let edit_where = on_colab ? 'Colab' : 'Github';
+	edit_where = on_yuque ? '语雀' : edit_where;
+	const edit_text_cn = '在' + edit_where + '查看或编辑本文';
+	const edit_text_en = 'View/edit this page on ' + edit_where;
 
-    if($lang == "") {
-      lang.update(() => value);
-    }
-
-    [...document.querySelectorAll('a[href^="#"]')].map(
-      x => (x.href = '/blog/' + post.slug + new URL(x.href).hash)
-    )
+	onMount(async () => {
+		[...document.querySelectorAll('a[href^="#"]')].map(
+			(x) => (x.href = '/blog/' + post.slug + new URL(x.href).hash)
+		);
 	});
 
-  navName.update(() => "blog");
-
-  let el;
+	navName.update(() => 'blog');
+	if (browser) {
+		lang.update(() => localStorage.getItem("lang"));
+	}
 </script>
+
+<svelte:head>
+	<title>{post.title}</title>
+</svelte:head>
+
+<article class="container">
+	<h2>{post.title}</h2>
+
+	<section class="meta">
+		<span class="button series"
+			><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span
+		>
+		<time class="date button" datetime={post.date}>{toLocale(post.date, $lang)}</time>
+		<span class="button edit"
+			><a
+				href={post.src + '?translate=' + ($lang == 'cn' ? 'zh' : 'en')}
+				rel="noopener"
+				target="_blank"
+				style="margin-top: 0">{$lang == 'cn' ? edit_text_cn : edit_text_en}</a
+			></span
+		>
+	</section>
+
+	<section class="license box">
+		{#if $lang == 'cn'}
+			本作品采用<a
+				rel="license"
+				target="_blank"
+				href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+				>知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a
+			>进行许可。
+		{:else}
+			This work is licensed under a
+			<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+				>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a
+			>.
+		{/if}
+	</section>
+	<article class="article">
+		{@html post.html}
+	</article>
+</article>
+
 <style>
-  /*
+	/*
 		By default, CSS is locally scoped to the component,
 		and any unused styles are dead-code-eliminated.
 		In this page, Svelte can't know which elements are
@@ -65,90 +101,42 @@
 		so we have to use the :global(...) modifier to target
 		all elements inside .content
 	*/
-  .inner {
-    max-width: 56em;
-    margin: 5em auto;
-  }
+	article.container {
+		max-width: 600px;
+		margin: 120px auto;
+	}
 
-  .series {
-    background: lightgreen;
-    padding: 0.2em 0.5em;
-    border-radius: 2px;
-    font-weight: bold;
-  }
+	.container section {
+		height: inherit;
+		display: block;
+	}
 
-  .series a{
-    text-decoration: none;
-  }
+	.meta {
+		line-height: 2.5em;
+	}
 
-  .license {
-    padding: 0.5em;
-    background: coral;
-    filter: brightness(150%);
-    border-radius: 5px;
-    color: black;
-    font-weight: normal;
-  }
+	.button a {
+		color: white;
+		text-decoration: none;
+	}
 
-  .meta {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
+	.series {
+		background: var(--focus);
+		font-weight: bold;
+	}
 
-  .date {
-    padding: 0.2em 0.5em;
-  }
+	.edit {
+		background: var(--links);
+	}
 
-  .edit {
-    padding: 0.2em 0.5em;
-    flex:1;
-    text-align: right;
-  }
+	@media screen and (max-width: 700px) {
+		article.container {
+			max-width: 90%;
+			margin: 0 auto;
+		}
 
-  @media screen and (max-width:600px) {
-    .edit, .date {
-      width: 100%;
-    }
-  }
-
-  @media screen and (max-width:1024px) and (min-width:600px) {
-    .edit {
-      width: 100%;
-      flex: auto;
-    }
-  }
+		.container section {
+			width: inherit;
+		}
+	}
 </style>
-
-<svelte:head>
-  <title>{post.title}</title>
-</svelte:head>
-
-
-<div class="content" bind:this={el}>
-  <div class="inner">
-    <h1>{post.title}</h1>
-
-    <p class='meta'>
-      <span class='series'><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span> 
-      <span class='date'>{toLocale(post.date, $lang == 'cn' ? 'zh-cn' : 'en')}</span> 
-      <span class='edit'><a href={post.src + '?translate=' + ($lang == 'cn' ? 'zh' : 'en')} rel='noopener' target="_blank" style='margin-top: 0'>{$lang == 'cn' ? edit_text_cn : edit_text_en}</a></span>
-    </p>
-    
-    <p class='license'>
-      {#if $lang == 'cn'}
-      <a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> 本作品采用<a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
-      {:else}
-      <a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a> 
-      This work is licensed under a <a rel="license" target='_blank' href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-      {/if}
-    </p>
-    
-      {@html post.html}
-  </div>
-
-  <ScrollUp el={el} />
-  <Footer />
-
-</div>

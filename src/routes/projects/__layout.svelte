@@ -3,7 +3,6 @@
   import { onMount } from 'svelte';
   import "../../../node_modules/katex/dist/katex.min.css";
   import "../../../node_modules/highlight.js/styles/darcula.css";
-  import "$lib/Project/project.css";
 
   onMount(async () => {
 		const sysLang = window.userLanguage || window.navigator.language;
