@@ -5,30 +5,30 @@ import customMarked from "./md-it";
 import fs from "fs";
 import path from "path";
 const cwd = process.cwd();
-const { NODE_ENV } = process.env;
+const { NODE_ENV, GITHUB_QUTANG_DEV_TOKEN } = process.env;
 const dev = NODE_ENV === "development";
 
-const user_token = process.env.GITHUB_QUTANG_DEV_TOKEN;
+
 
 
 class GitHub {
-  constructor(token) {
+  constructor() {
     // workaround because octokit/rest is commonjs format, requiring different import method in dev or export mode.
-    this._token = token;
+    // this._token = token;
   }
 
   connect() {
     if (dev) {
       const Octokit = pkg.Octokit;
       this._client = new Octokit({
-        auth: this._token,
+        auth: GITHUB_QUTANG_DEV_TOKEN,
         userAgent: "qutang.dev github",
         timeZone: "US/New York",
       });
     } else {
       const { Octokit } = pkg2;
       this._client = new Octokit({
-        auth: this._token,
+        auth: GITHUB_QUTANG_DEV_TOKEN,
         userAgent: "qutang.dev github",
         timeZone: "US/New York",
       });
@@ -40,6 +40,7 @@ class GitHub {
       return this._readCache("projects");
     }
     this.connect();
+    const limit = await this._client.rateLimit.get();
     let projs = await Promise.all(
       projects.map(async (proj) => {
         let result;
@@ -53,6 +54,7 @@ class GitHub {
             },
           });
         } else {
+          console.log(proj['repo']);
           result = await this._client.repos.getReadme({
             owner: proj["owner"],
             repo: proj["repo"],
@@ -60,6 +62,7 @@ class GitHub {
               format: "raw",
             },
           });
+          console.log(proj['repo'] + " done");
         }
         let license = await this._client.licenses
           .getForRepo({
@@ -175,4 +178,4 @@ class GitHub {
   }
 }
 
-export default new GitHub(user_token);
+export default new GitHub();

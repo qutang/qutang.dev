@@ -47,7 +47,7 @@ const PROJECTS = [
       'en': 'Signaligner Pro: A professional mobile sensor data visualization, annotation tool',
       'cn': 'Signaligner Pro: 一种专业的移动传感器数据可视化以及标注工具'
     },
-    'official': 'https://crowdgames.github.io/signaligner-web/',
+    'official': 'https://signaligner.org',
     'desc': {
       'en': 'Signaligner Pro is an interactive tool for algorithm-assisted exploration and annotation of raw accelerometer data. The tool can be used by researchers using raw accelerometer data to support research in activity recognition/machine learning, exercise science, and sleep quality research among others.',
       'cn': 'Signaligner Pro是一种可视化交互工具。它支持算法辅助的数据探索以及数据标注。该工具能够帮助研究人员直观地探索高频可穿戴传感器数据，相比其他工具，它有优良的交互性和速度，能够支持交互探索长时间巨量的传感器数据。'
