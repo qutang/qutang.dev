@@ -4,8 +4,7 @@
 	import { navigating, page } from '$app/stores';
 	import { lang, scheme } from '$lib/stores';
 	import { browser } from '$app/env';
-	import '$lib/app.v2.css';
-	// import '$lib/medium.css';
+	import '$lib/app.css';
 	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
 	import '../../node_modules/katex/dist/katex.min.css';
 	import '../../node_modules/highlight.js/styles/darcula.css';

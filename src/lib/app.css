@@ -1,10 +1,13 @@
 /* Main css file for the common components of the website */
-@import url('fonts.v2.css');
+@import url('fonts.css');
 
 body {
 	max-width: 100%;
 	margin: 0;
 	padding: 0;
+	font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Segoe UI Emoji',
+		'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 }
 
 section {
@@ -17,6 +20,14 @@ section {
 	position: relative;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+}
 @media screen and (max-width: 700px) {
 	section {
 		height: inherit;
@@ -52,18 +63,35 @@ section {
 	text-decoration: none;
 }
 
-.box {
-	padding: 0.5em 0.5em;
-	width: inherit;
-	margin: 1em 0em;
-	border-radius: 5px;
-	background: var(--info-box);
-	color: white;
+.article h1 {
+	font-size: 1.8em;
+	line-height: 1.2em;
+	margin: 1em 0;
 }
 
-.box a {
-	color: white;
-	text-decoration: underline;
+.article .table-of-contents:before {
+	content: 'Table of content';
+	font-size: 1.4em;
+	margin: 0 1em;
+}
+
+.article .table-of-contents {
+	border-radius: 5px;
+	padding: 1em 0;
+	background: var(--background-alt);
+}
+
+.article .table-of-contents {
+	font-size: 0.9em;
+}
+
+.article .table-of-contents a {
+	color: var(--text-muted);
+}
+
+.article .table-of-contents a:hover {
+	color: var(--text-main);
+	text-decoration: none;
 }
 
 .article section {
@@ -72,7 +100,8 @@ section {
 }
 
 .article img {
-	background-color: white;
+	background-color: var(--background-alt);
+	border-radius: 5px;
 }
 
 h1 {

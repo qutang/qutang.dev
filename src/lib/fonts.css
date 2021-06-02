@@ -6,3 +6,11 @@
 	font-display: swap;
 	src: url(/css/shopping_script.ttf) format('truetype');
 }
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(/css/inter.ttf) format('truetype');
+}

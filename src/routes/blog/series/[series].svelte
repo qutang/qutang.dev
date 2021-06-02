@@ -40,25 +40,43 @@
 </svelte:head>
 
 <section>
-  <h2>{parseSeries[series][$lang]}</h2>
+	<h2>{parseSeries[series][$lang]}</h2>
 	<ul>
 		{#each posts as post}
 			<li>
-				<span>{toLocale(post.date, $lang)}</span>
-				<a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a>
+				<span class="time">{toLocale(post.date, $lang)}</span>
+				<h3><a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a></h3>
 			</li>
 		{/each}
 	</ul>
 </section>
 
 <style>
-  li {
-    margin: 1em 0;
-    line-height: 2em;
-  }
+	li {
+		margin: 1em 0;
+		line-height: 2em;
+	}
+
+	h3 {
+		display: inline;
+		font-size: 1em;
+	}
+
+	h3 > a {
+		color: var(--text-main);
+	}
+
+	h3 > a:hover {
+		color: var(--text-bright);
+		text-decoration: none;
+	}
+
+	.time {
+		color: var(--text-muted);
+	}
 
 	@media screen and (max-width: 700px) {
-    ul {
+		ul {
 			list-style-type: none;
 			padding-left: 0;
 		}

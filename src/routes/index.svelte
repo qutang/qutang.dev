@@ -39,7 +39,7 @@
 <section id="showcase">
 	<pre><span class='blue'>Wash</span><span class='gold'>&#8201;hands</span> regularly:</pre>
 	<Badge {data} {image} />
-	<h2>
+	<h2 class="slogan">
 		{i18n['home_slogan'][$lang]}
 	</h2>
 	<div class="control">
@@ -67,6 +67,10 @@
 		margin: 0 auto;
 		max-width: 600px;
 		text-align: center;
+	}
+
+	h2.slogan {
+		font-weight: 300;
 	}
 
 	#showcase h2 {

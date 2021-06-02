@@ -52,8 +52,8 @@
 	<ul>
 		{#each posts as post}
 			<li>
-				<span>{toLocale(post.date, $lang)}</span>
-				<a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a>
+				<span class='time'>{toLocale(post.date, $lang)}</span>
+				<h3><a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a></h3>
 				<span class="button">
 					<a href="/blog/series/{post.series}">
 						{series[post.series][$lang]}
@@ -85,18 +85,44 @@
 		align-content: center;
 	}
 
+	h3 {
+		display: inline;
+		font-size: 1em;
+	}
+
+	h3 > a {
+		color: var(--text-main);
+	}
+
+	h3 > a:hover {
+		color: var(--text-bright);
+		text-decoration: none;
+	}
+
+	h2 {
+		font-weight: normal;
+	}
+
 	li {
 		margin: 1em 0;
 		line-height: 2em;
 	}
 
+	.time {
+		color: var(--text-muted);
+	}
+
 	.button {
-		background: var(--focus);
-		font-weight: bold;
+		background: var(--background-alt);
+		font-weight: normal;
+	}
+
+	.button:hover {
+		background: var(--background);
 	}
 
 	.button a {
-		color: white;
+		color: var(--code);
 		text-decoration: none;
 	}
 
@@ -104,6 +130,14 @@
 		height: 20px;
 		display: block;
 		text-align: center;
+	}
+
+	.icon {
+		color: var(--text-muted);
+	}
+
+	.icon:hover {
+		color: var(--text-main);
 	}
 
 	@media screen and (max-width: 700px) {

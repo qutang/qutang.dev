@@ -113,7 +113,7 @@
 		display: block;
 		margin: 0 0.5em;
         padding: 0;
-        font-weight: bold;
+        font-weight: normal;
 	}
 
     a, .icon {
@@ -136,6 +136,7 @@
         font-family: "Shopping Script";
         margin: 0;
         padding: 0;
+        font-weight: bold;
     }
 
     .button {

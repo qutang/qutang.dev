@@ -37,18 +37,6 @@
 	},
 	{
 		"title": {
-			"en": "Active Training",
-			"cn": "主动训练系统"
-		},
-		"url": null,
-		"icon": "🈺",
-		"description": {
-			"en": "An innovative interactive system for building personalized activity recognition system.",
-			"cn": "一种用于构建个性化人类活动识别系统的创新交互式系统。"
-		}
-	},
-	{
-		"title": {
 			"en": "Want to explore more?",
 			"cn": "想了解更多吗?"
 		},

@@ -36,7 +36,7 @@
 <style>
 	article {
 		max-width: 600px;
-		margin: 120px auto;
+		margin: 200px auto;
 	}
 
 	@media screen and (max-width: 700px) {

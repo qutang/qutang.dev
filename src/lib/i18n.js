@@ -66,5 +66,9 @@ export default {
     "prev_page": {
         "cn": "上一页",
         "en": "Newer articles"
+    },
+    "check_detail": {
+        "cn": "了解详情",
+        "cn": "Check the details"
     }
 }

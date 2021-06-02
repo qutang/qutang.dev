@@ -5,7 +5,7 @@
 
 
 {#each content as section}
-    <h2 id="{section.anchor}"><b>{section.title[$lang]}</b></h2>
+    <h2 id="{section.anchor}">{section.title[$lang]}</h2>
     <div>
         {@html section.content[$lang]}
     </div>

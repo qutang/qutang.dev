@@ -1,4 +1,4 @@
-## **关于本站**
+## 关于本站
 
 If you are reading this page on Github, click here for [English](https://github.com/qutang/qutang.dev/blob/master/README.md) version.
 
@@ -17,7 +17,7 @@ If you are reading this page on Github, click here for [English](https://github.
 9.  **NEW!** 深色模式切换。
 10. **NEW!** 即使关闭页面，网站语言和颜色模式也会保存。
 
-**免责声明：该网站是在很短时间内（不到三天）开发的。代码的组织结构可能不够好，请谨慎使用。**
+*免责声明：该网站是在很短时间内（不到三天）开发的。代码的组织结构可能不够好，请谨慎使用。*
 
 ### 合作
 

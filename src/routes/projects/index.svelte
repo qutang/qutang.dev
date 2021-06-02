@@ -31,26 +31,7 @@
 	export let projects;
 	import { lang, navName } from '$lib/stores';
   import i18n from "$lib/i18n";
-	import colorsys from 'colorsys';
   import { browser } from "$app/env";
-	function toHex(str) {
-		var result = '';
-		for (var i = 0; i < str.length; i++) {
-			result += str.charCodeAt(i).toString(16);
-		}
-		return result;
-	}
-
-	function randomColor(data) {
-		var encoded = toHex(data);
-		if (encoded.length < 10) {
-			encoded = encoded.repeat(5);
-		}
-		var hh = parseInt(encoded.substring(1, 3), 16);
-		var ss = parseInt(encoded.substring(4, 6), 16) / 255;
-		var vv = (parseInt(encoded.substring(6, 8), 16) / 255) * 0.5 + 0.5;
-		return colorsys.stringify(colorsys.hsv2Rgb({ h: hh, s: ss * 100, v: vv * 100 }));
-	}
 
 	navName.update(() => 'project');
   if (browser) {
@@ -67,19 +48,18 @@
 			{i18n['projects'][$lang]}
 		</h2>
     {#each projects as project}
-      <hr>
-      <article>
-        <h3>
-          <a sveltekit:prefetch href="/projects/{project.repo}"
-            >{project.name[$lang]}</a
-          >
-        </h3>
-        <section class="tags">
-          {#each $lang == 'cn' ? project.tags.cn : project.tags.en as tag}
-            <span class="tag" style={`background: ${randomColor(tag)};`}>{tag}</span>
-          {/each}
-        </section>
-        <p>{project.desc[$lang]}</p>
+      <article class="project">
+        <a sveltekit:prefetch href="/projects/{project.repo}">
+          <h3>
+            {project.name[$lang]}
+          </h3>
+          <section class="tags">
+            {#each $lang == 'cn' ? project.tags.cn : project.tags.en as tag}
+              <span class="tag button">{tag}</span>
+            {/each}
+          </section>
+          <p>{project.desc[$lang]}</p>
+        </a>
       </article>
 
     {/each}
@@ -88,35 +68,68 @@
 <style>
 
   .container {
-    margin: 120px auto;
+    margin: 200px auto;
     max-width: 600px;
     height: inherit;
     display: block;
   }
 
+
+  .project {
+    padding: 0.5em 1em;
+    border-radius: 15px;
+  }
+
+  .project:hover {
+    background: var(--background-alt);
+    cursor: pointer;
+    transition: background 0.1s ease-in-out;
+  }
+
   h2 {
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
   }
 
   h3 {
     margin-bottom: 0;
+    margin-top: 0.5em;
+    color: var(--text-muted);
+  }
+
+  a {
+    color: var(--text-main);
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  a:hover h3, a:hover p {
+    color: var(--text-main);
+    transition: color var(--transition-duration) 0.1s;
   }
 
   .tags {
     height: inherit;
     display: block;
-    line-height: 1.5em;
+    line-height: 2em;
     text-align: left;
+    margin: 0.5em auto;
   }
 
   .tag {
-    color: white;
+    color: var(--code);
+    filter: contrast(90%);
+    background: var(--background-alt);
     margin-left: 0;
-    padding: 0.05em 0.2em;
-    margin: 0.05em 0.15em;
-    border-radius: 3px;
     font-size: 0.9em;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 0.5em;
+    font-size: 0.95em;
   }
 
   @media screen and (max-width: 700px) {

@@ -20,6 +20,15 @@
 		border: none;
 	}
 
+	a {
+		color: var(--text-muted);
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: var(--text-main);
+	}
+
 	p {
 		text-align: center;
 	}

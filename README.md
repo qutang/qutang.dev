@@ -1,4 +1,4 @@
-## **This website.**
+## This website.
 
 如果在通过Github仓库阅读，点这里切换到[中文](https://github.com/qutang/qutang.dev/blob/master/README.cn.md)。
 
@@ -17,7 +17,7 @@ This website supports,
 9. **NEW!** Switch between light and dark color mode.
 10. **NEW!** Persist language and color mode settings.
 
-**Disclaimer: The website is developed in harsh (literally THREE days), codes are not well organized. Use it with caution.**
+*Disclaimer: The website is developed in harsh (literally THREE days), codes are not well organized. Use it with caution.*
 
 ### Collaboration
 

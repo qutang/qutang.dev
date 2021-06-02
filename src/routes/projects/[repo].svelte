@@ -58,10 +58,8 @@
 
 <article class="container">
 	<section class="breadcumb">
-		<a href="/">qutang.dev</a> |
-		<a href="/projects">{$lang == 'cn' ? '其他项目' : 'Other projects'}</a>
-		|
-		<a href={project.official || project.src} rel="noopener" target="_blank">
+		<a href="/projects" class='button'>{$lang == 'cn' ? '其他项目' : 'Other projects'}</a>
+		<a href={project.official || project.src} rel="noopener" target="_blank" class='button'>
 			{#if $lang == 'cn'}
 				{project.official != null ? '官方网站' : 'GitHub仓库'}
 			{:else}
@@ -101,13 +99,26 @@
   */
 
 	.container {
-		margin: 120px auto;
+		margin: 200px auto;
 		max-width: 600px;
 	}
 
 	.breadcumb {
 		height: inherit;
-		display: block;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	.breadcumb .button {
+		background: var(--background-alt);
+		color: var(--code);
+		font-size: 0.9em;
+	}
+
+	.breadcumb .button:hover {
+		text-decoration: none;
+		background: var(--background);
 	}
 
 	.license {
@@ -116,6 +127,10 @@
 
 	.license a {
 		color: var(--code);
+	}
+
+	.license:hover {
+		background: var(--background);
 	}
 
 	.edit {
@@ -144,5 +159,9 @@
 			max-width: 90%;
 			margin-bottom: 0;
 		}
+	}
+	
+	footer {
+		border: none;
 	}
 </style>

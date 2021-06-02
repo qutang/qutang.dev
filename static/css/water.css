@@ -7,7 +7,6 @@
 
 :root {
   --transition-duration: 0.5s;
-  --info-box: rgb(247, 165, 44);
   --scheme-color: rgb(8, 8, 75);
   --background-body: #fff;
   --background: #efefef;
@@ -19,7 +18,7 @@
   --links: #0076d1;
   --focus: #0096bfab;
   --border: #dbdbdb;
-  --code: #000;
+  --code: rgb(29, 173, 230);
   --animation-duration: 0.1s;
   --button-hover: #ddd;
   --scrollbar-thumb: rgb(213, 213, 213);

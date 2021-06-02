@@ -29,7 +29,7 @@
 	import { lang, navName } from '$lib/stores';
 	import { toLocale } from '$lib/api/date';
 	import { onMount } from 'svelte';
-	import { browser } from "$app/env";
+	import { browser } from '$app/env';
 
 	let on_colab = post.src.includes('colab');
 	let on_yuque = post.src.includes('yuque');
@@ -46,7 +46,7 @@
 
 	navName.update(() => 'blog');
 	if (browser) {
-		lang.update(() => localStorage.getItem("lang"));
+		lang.update(() => localStorage.getItem('lang'));
 	}
 </script>
 
@@ -61,7 +61,7 @@
 		<span class="button series"
 			><a href="/blog/series/{post.series}">{series[post.series][$lang]}</a></span
 		>
-		<time class="date button" datetime={post.date}>{toLocale(post.date, $lang)}</time>
+
 		<span class="button edit"
 			><a
 				href={post.src + '?translate=' + ($lang == 'cn' ? 'zh' : 'en')}
@@ -70,23 +70,27 @@
 				style="margin-top: 0">{$lang == 'cn' ? edit_text_cn : edit_text_en}</a
 			></span
 		>
+
+		<time class="date button" datetime={post.date}>{toLocale(post.date, $lang)}</time>
 	</section>
 
-	<section class="license box">
+	<section class="license">
 		{#if $lang == 'cn'}
-			本作品采用<a
+			<a
 				rel="license"
 				target="_blank"
 				href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
-				>知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a
-			>进行许可。
+				><div class="box">本作品采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可。</div></a
+			>
 		{:else}
-			This work is licensed under a
+			
 			<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-				>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a
-			>.
+				><div class="box">This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</div></a
+			>
 		{/if}
 	</section>
+		
+	
 	<article class="article">
 		{@html post.html}
 	</article>
@@ -103,7 +107,7 @@
 	*/
 	article.container {
 		max-width: 600px;
-		margin: 120px auto;
+		margin: 200px auto;
 	}
 
 	.container section {
@@ -120,9 +124,32 @@
 		text-decoration: none;
 	}
 
+	.box {
+		padding: 0.5em 1.5em;
+		width: inherit;
+		margin: 1em 0em;
+		border-radius: 5px;
+		background: var(--background-alt);
+		color: var(--text-muted);
+	}
+
+	.box:hover {
+		background: var(--background);
+		color: var(--text-main);
+	}
+
+	.license a {
+		color: var(--text-muted);
+	}
+
+	.license a:hover {
+		color: var(--text-muted);
+		text-decoration: none;
+	}
+
 	.series {
 		background: var(--focus);
-		font-weight: bold;
+		font-weight: normal;
 	}
 
 	.edit {

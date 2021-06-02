@@ -30,9 +30,9 @@
 	import { lang, navName } from '$lib/stores';
 	import series from '$lib/Blog/_series';
 	import { toLocale } from '$lib/api/date';
-  import i18n from '$lib/i18n';
-  import IoIosArrowForward from 'svelte-icons/io/IoIosArrowForward.svelte'
-  import IoIosArrowBack from 'svelte-icons/io/IoIosArrowBack.svelte'
+	import i18n from '$lib/i18n';
+	import IoIosArrowForward from 'svelte-icons/io/IoIosArrowForward.svelte';
+	import IoIosArrowBack from 'svelte-icons/io/IoIosArrowBack.svelte';
 	navName.update(() => 'blog');
 </script>
 
@@ -41,82 +41,118 @@
 </svelte:head>
 
 <section class="container">
-  <h2>{i18n['article_list'][$lang]}</h2>
+	<h2>{i18n['article_list'][$lang]}</h2>
 	<ul>
 		{#each posts as post}
 			<li>
-				<span>{toLocale(post.date, $lang)}</span> 
-        <a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a>
+				<span class="time">{toLocale(post.date, $lang)}</span>
+				<h3><a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a></h3>
 				<span class="button">
-          <a href="/blog/series/{post.series}">
-            {series[post.series][$lang]}
-          </a>
-          </span>
+					<a href="/blog/series/{post.series}">
+						{series[post.series][$lang]}
+					</a>
+				</span>
 			</li>
 		{/each}
 	</ul>
-  <section class="pagination">
-    {#if page > 2}
-      <a href="/blog/page/{page - 1}" class="pagination-previous"
-        ><span class="icon"><IoIosArrowBack /></span></a
-      >
-    {:else if page == 2}
-      <a href="/blog" class="pagination-previous"><span class="icon"><IoIosArrowBack /></span></a>
-    {/if}
-  
-    {#if page < totalPages}
-      <a href="/blog/page/{page + 1}" class="pagination-next"
-        ><span class="icon"><IoIosArrowForward /></span></a
-      >
-    {/if}
-  </section>
+	<section class="pagination">
+		{#if page > 2}
+			<a href="/blog/page/{page - 1}" class="pagination-previous"
+				><span class="icon"><IoIosArrowBack /></span></a
+			>
+		{:else if page == 2}
+			<a href="/blog" class="pagination-previous"><span class="icon"><IoIosArrowBack /></span></a>
+		{/if}
+
+		{#if page < totalPages}
+			<a href="/blog/page/{page + 1}" class="pagination-next"
+				><span class="icon"><IoIosArrowForward /></span></a
+			>
+		{/if}
+	</section>
 </section>
 
-
 <style>
-  li {
-    margin: 1em 0;
-    line-height: 2em;
-  }
+	.container {
+		align-content: center;
+	}
 
-  .button {
-		background: var(--focus);
-		font-weight: bold;
+	h3 {
+		display: inline;
+		font-size: 1em;
+	}
+
+	h3 > a {
+		color: var(--text-main);
+	}
+
+	h3 > a:hover {
+		color: var(--text-bright);
+		text-decoration: none;
+	}
+
+	h2 {
+		font-weight: normal;
+	}
+
+	li {
+		margin: 1em 0;
+		line-height: 2em;
+	}
+
+	.time {
+		color: var(--text-muted);
+	}
+
+	.button {
+		background: var(--background-alt);
+		font-weight: normal;
+	}
+
+	.button:hover {
+		background: var(--background);
 	}
 
 	.button a {
-    color: white;
+		color: var(--code);
 		text-decoration: none;
 	}
 
 	.pagination {
 		height: 20px;
-    display: block;
-    text-align: center;
+		display: block;
+		text-align: center;
+	}
+
+	.icon {
+		color: var(--text-muted);
+	}
+
+	.icon:hover {
+		color: var(--text-main);
 	}
 
 	@media screen and (max-width: 700px) {
-    ul {
+		ul {
 			list-style-type: none;
 			padding-left: 0;
 		}
-    .pagination {
-      z-index: 1;
-      height: inherit;
-      display: block;
-      position: fixed;
-      bottom: 16px;
-    }
+		.pagination {
+			z-index: 1;
+			height: inherit;
+			display: block;
+			position: fixed;
+			bottom: 16px;
+		}
 
-    .pagination-next {
-      float: right;
-      margin-right: 0px;
-    }
+		.pagination-next {
+			float: right;
+			margin-right: 0px;
+		}
 
-    .pagination-previous {
-      float: left;
-      margin-left: 0px;
-    }
-		
+		.pagination-previous {
+			float: left;
+			margin-left: 0px;
+		}
 	}
 </style>
