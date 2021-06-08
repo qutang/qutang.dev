@@ -41,8 +41,8 @@ let parse_post = function (filename) {
 };
 
 let compare_posts = function (a, b) {
-  const dateA = new Date(a.date);
-  const dateB = new Date(b.date);
+  const dateA = new Date(a.update_date);
+  const dateB = new Date(b.update_date);
 
   if (dateA > dateB) return -1;
   if (dateA < dateB) return 1;

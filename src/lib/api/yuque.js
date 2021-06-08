@@ -84,7 +84,8 @@ class YuQue {
       title: content.title,
       slug: content.slug,
       description: content.description,
-      date: content.updated_at,
+      update_date: content.updated_at,
+      create_date: content.created_at,
       cover: content.cover,
       series: repoName,
       src: `https://www.yuque.com/qutang/blog-${repoName}/${content.slug}`,
@@ -120,7 +121,7 @@ class YuQue {
         namespace: `qutang/blog-${repoName}`,
       });
       rawPosts = await rawPosts.filter((raw) => {
-        return raw.status == 1;
+        return raw.status == 1 && raw.public == 1;
       });
       posts = await Promise.all(
         rawPosts.map(async (raw) => {
@@ -129,7 +130,8 @@ class YuQue {
             title: raw.title,
             slug: raw.slug,
             description: raw.description,
-            date: raw.updated_at,
+            update_date: raw.updated_at,
+            create_date: raw.created_at,
             cover: raw.cover,
             series: repoName,
             src: `https://www.yuque.com/qutang/blog-${repoName}/${raw.slug}`,

@@ -27,7 +27,7 @@
 
 	import series from '$lib/Blog/_series';
 	import { lang, navName } from '$lib/stores';
-	import { toLocale } from '$lib/api/date';
+	import { toLocale, toHumanReadable } from '$lib/api/date';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/env';
 
@@ -55,7 +55,7 @@
 </svelte:head>
 
 <article class="container">
-	<h2>{post.title}</h2>
+	<h2>{post.title}<span class="date"><sup>{$lang == "cn" ? toHumanReadable(post.update_date, $lang) + "更新" : "Updated " + toHumanReadable(post.update_date, $lang)}</sup></span></h2>
 
 	<section class="meta">
 		<span class="button series"
@@ -71,7 +71,7 @@
 			></span
 		>
 
-		<time class="date button" datetime={post.date}>{toLocale(post.date, $lang)}</time>
+		<time class="date button" datetime={post.create_date}>{toLocale(post.create_date, $lang)}</time>
 	</section>
 
 	<section class="license">
@@ -115,6 +115,12 @@
 		display: block;
 	}
 
+	h2 sup {
+		font-size: 0.5em;
+		color: var(--text-muted);
+		padding: 0 0.5em;
+	}
+
 	.meta {
 		line-height: 2.5em;
 	}
@@ -122,6 +128,10 @@
 	.button a {
 		color: white;
 		text-decoration: none;
+	}
+
+	.date {
+		cursor: auto;
 	}
 
 	.box {

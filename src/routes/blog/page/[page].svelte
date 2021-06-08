@@ -29,7 +29,7 @@
 	export let totalPages;
 	import { lang, navName } from '$lib/stores';
 	import series from '$lib/Blog/_series';
-	import { toLocale } from '$lib/api/date';
+	import { toLocale, toHumanReadable, getDaysAgo } from '$lib/api/date';
 	import i18n from '$lib/i18n';
 	import IoIosArrowForward from 'svelte-icons/io/IoIosArrowForward.svelte';
 	import IoIosArrowBack from 'svelte-icons/io/IoIosArrowBack.svelte';
@@ -45,8 +45,11 @@
 	<ul>
 		{#each posts as post}
 			<li>
-				<span class="time">{toLocale(post.date, $lang)}</span>
+				<span class="time">{toLocale(post.create_date, $lang)}</span>
 				<h3><a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a></h3>
+				{#if getDaysAgo(post.update_date) <= 31}
+					<span class='time update'><sup>{$lang == "cn" ? toHumanReadable(post.update_date, $lang) + "更新" : "Updated " + toHumanReadable(post.update_date, $lang)}</sup></span>
+				{/if}
 				<span class="button">
 					<a href="/blog/series/{post.series}">
 						{series[post.series][$lang]}
